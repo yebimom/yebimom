@@ -60,3 +60,7 @@ target/
 # IDE Settings
 .ropeproject/
 .idea/
+
+# Django Migrations
+# Ignore django migrations/ on development
+migrations/
