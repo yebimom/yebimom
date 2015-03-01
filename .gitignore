@@ -72,4 +72,4 @@ bower_components/
 node_modules/
 
 # Static Files for local developent ( STATIC_ROOT )
-yebimom/static/
+/static/
