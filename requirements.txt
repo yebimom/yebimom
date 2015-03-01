@@ -18,5 +18,6 @@ pep8==1.6.2
 psycopg2==2.6
 pygraphviz==1.2
 pytz==2014.10
+redis==2.10.3
 six==1.9.0
 termcolor==1.1.0
