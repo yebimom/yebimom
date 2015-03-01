@@ -13,3 +13,4 @@ from yebimom.settings.partials.static import *
 from yebimom.settings.partials.application import *
 from yebimom.settings.partials.development import *
 from yebimom.settings.partials.international import *
+from yebimom.settings.partials.celery import *
