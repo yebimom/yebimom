@@ -1,5 +1,11 @@
 # Application definition
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
 INSTALLED_APPS = (
     # Django Default
     'django.contrib.admin',
@@ -31,3 +37,7 @@ ROOT_URLCONF = 'yebimom.urls'
 WSGI_APPLICATION = 'yebimom.wsgi.application'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)

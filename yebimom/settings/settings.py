@@ -13,7 +13,3 @@ from yebimom.settings.partials.static import *
 from yebimom.settings.partials.application import *
 from yebimom.settings.partials.development import *
 from yebimom.settings.partials.international import *
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
