@@ -6,6 +6,7 @@
         <title>{% block title %}예비맘{% endblock %}</title>
     </head>
     <body>
+        {% include "partials/google-tag-manager.html" %}
         {% include "partials/header.html" %}
         {% block content %}{% endblock %}
         {% include "partials/footer.html" %}
