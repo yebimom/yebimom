@@ -1,0 +1,22 @@
+{
+  "name": "yebimom",
+  "version": "0.0.0",
+  "description": "산후조리원에 대한 다양한 정보와 신뢰성있는 리뷰를 제공하기 위한 서비스",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yebimom/yebimom.git"
+  },
+  "author": "dobestan <dobestan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yebimom/yebimom/issues"
+  },
+  "homepage": "https://github.com/yebimom/yebimom",
+  "dependencies": {
+    "bower": "^1.3.12"
+  }
+}
