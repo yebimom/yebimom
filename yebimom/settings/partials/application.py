@@ -16,8 +16,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Django 3rd Party Modules ( installed via pip )
-    'django_nose',
-    'django_extensions',
 
     # Yebimom Apps
 )
@@ -35,8 +33,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'yebimom.urls'
 
 WSGI_APPLICATION = 'yebimom.wsgi.application'
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
