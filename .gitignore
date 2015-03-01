@@ -64,3 +64,6 @@ target/
 # Django Migrations
 # Ignore django migrations/ on development
 migrations/
+
+# Bower Components
+bower_components/
