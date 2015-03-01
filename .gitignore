@@ -70,3 +70,6 @@ bower_components/
 
 # Node Modules
 node_modules/
+
+# Static Files for local developent ( STATIC_ROOT )
+yebimom/static/
