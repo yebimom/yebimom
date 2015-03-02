@@ -4,7 +4,6 @@ python:
 install:
 - pip install -r requirements/development.txt
 script:
-- python manage.py migrate
 - python manage.py test -v2
 
 deploy:
