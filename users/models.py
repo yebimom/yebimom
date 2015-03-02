@@ -10,3 +10,16 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True, primary_key=True)
+
+
+def create_user_profile(sender, instance, created, **kwargs):
+    """
+    User객체가 생성되면 User Profile을 생성
+    """
+
+    if created:
+        # Create UserProfile
+        UserProfile.objects.create(user=instance)
+
+
+post_save.connect(create_user_profile, sender=User)
