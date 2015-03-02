@@ -10,8 +10,9 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserProfileTest(TestCase):
+
     def test_user_profile_should_created_after_user_save(self):
-        user = User.objects.create_user(username = "test_username")
+        user = User.objects.create_user(username="test_username")
         try:
             user.userprofile
         except:
