@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     # Django 3rd Party Modules ( installed via pip )
 
     # Yebimom Apps
+    'centers',
 )
 
 MIDDLEWARE_CLASSES = (
