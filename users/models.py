@@ -10,6 +10,7 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True, primary_key=True)
+    nickname = models.CharField(max_length=20, blank=True, null=True)
 
 
 def create_user_profile(sender, instance, created, **kwargs):
