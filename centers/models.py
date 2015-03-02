@@ -6,6 +6,9 @@ class Center(models.Model):
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=45)
     url = models.URLField()
+    program = models.ForeignObject('Program')
+    facility = models.ForeignKey('Facility')
+    policy = models.ForeignKey('Policy')
 
 
 class Program(models.Model):
@@ -14,14 +17,10 @@ class Program(models.Model):
 
 
 class Facility(models.Model):
-    private_bathroom = models.BooleanField()
-    hip_bath = models.BooleanField()
-    television = models.BooleanField()
-    computer = models.BooleanField()
-    freezer = models.BooleanField()
+    name = models.CharField()
+    is_available = models.BooleanField()
 
 
 class Policy(models.Model):
-    is_delivery_available = models.BooleanField()
-    is_husband_visitation_available = models.BooleanField()
-    is_parents_visitation_available = models.BooleanField()
+    name = models.CharField()
+    is_available = models.BooleanField()
