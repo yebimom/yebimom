@@ -1,3 +1,12 @@
-from django.db import models
+# -*- coding:utf-8 -*-
 
-# Create your models here.
+# Django Models
+from django.db import models
+from django.contrib.auth.models import User
+
+# Django Models Helpers
+from django.db.models.signals import post_save
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, unique=True, primary_key=True)
