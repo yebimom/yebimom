@@ -57,6 +57,12 @@ target/
 # Ignore Autoenv environment file
 .env
 
+# Ignore SQLite3 DB file
+db.sqlite3
+
+# Ignore Vim swp files
+*.swp
+
 # IDE Settings
 .ropeproject/
 .idea/
