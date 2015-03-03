@@ -1,10 +1,10 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
-# Django Models
+# Models
 from django.db import models
 from django.contrib.auth.models import User
 
-# Django Models Helpers
+# Models Helper
 from django.db.models.signals import post_save
 
 
@@ -15,10 +15,14 @@ class UserProfile(models.Model):
     birthday = models.DateField(blank=True, null=True)
     is_male = models.BooleanField(default=True)
 
+    class Meta:
+        app_label = 'users'
+
 
 def create_user_profile(sender, instance, created, **kwargs):
     """
-    User객체가 생성되면 User Profile을 생성
+    User 객체가 생성되는 시점에
+    post_save Signal을 이용해서 UserProfile 객체를 생성한다
     """
 
     if created:
