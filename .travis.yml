@@ -9,8 +9,8 @@ install:
 before_script:
 - psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
-- python makemigrations users
-- python migrate
+- python manage.py makemigrations users
+- python manage.py migrate
 - python manage.py test -v2
 
 #deploy:
