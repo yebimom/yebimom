@@ -35,3 +35,14 @@ SOCIAL_AUTH_KAKAO_KEY = os.environ['SOCIAL_AUTH_KAKAO_KEY']
 SOCIAL_AUTH_KAKAO_SECRET = os.environ['SOCIAL_AUTH_KAKAO_SECRET']
 
 SOCIAL_AUTH_KAKAO_SCOPE = []
+
+# URL Options
+# http://psa.matiasaguirre.net/docs/configuration/settings.html#urls-options
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+# SOCIAL_AUTH_LOGIN_ERROR_URL = '/login-error/'
+# SOCIAL_AUTH_LOGIN_URL = '/login-url/'
+# SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
+# SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/new-association-redirect-url/'
+# SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/account-disconnected-redirect-url/'
+# SOCIAL_AUTH_INACTIVE_USER_URL = '/inactive-user/'
