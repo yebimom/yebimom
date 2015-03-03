@@ -1,4 +1,5 @@
 from yebimom.settings.settings import *
+import os
 
 
 INSTALLED_APPS += (
@@ -8,3 +9,5 @@ INSTALLED_APPS += (
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+SECRET_KEY = os.environ['SECRET_KEY']
