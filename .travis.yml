@@ -6,10 +6,10 @@ install:
 script:
 - python manage.py test -v2
 
-deploy:
-    provider: heroku
-    app: yebimom-dev
-    api_key:
-        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
-    on:
-        all_branches: true
+#deploy:
+#    provider: heroku
+#    app: yebimom-dev
+#    api_key:
+#        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
+#    on:
+#        all_branches: true
