@@ -6,6 +6,3 @@ class Program(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True, null=True)
     center = models.ForeignKey(Center)
-
-    class Meta:
-        app_label = 'centers'
