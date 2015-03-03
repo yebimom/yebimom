@@ -20,9 +20,6 @@ class UserProfile(models.Model):
     birthday = models.DateField(blank=True, null=True)
     is_male = models.BooleanField(default=True)
 
-    class Meta:
-        app_label = 'users'
-
 
 def create_user_profile(sender, instance, created, **kwargs):
     """

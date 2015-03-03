@@ -13,3 +13,9 @@ pygraphviz==1.2
 pytz==2014.10
 redis==2.10.3
 hashids==1.0.3
+PyJWT==0.4.1
+oauthlib==0.7.2
+python-openid==2.2.5
+python-social-auth==0.2.2
+requests==2.5.3
+requests-oauthlib==0.4.2
