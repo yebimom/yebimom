@@ -3,10 +3,13 @@ from django.contrib import admin
 
 urlpatterns = patterns(
     '',
-    # Examples:
-    # url(r'^$', 'yebimom.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
 
+    # Django Default
     url(r'^admin/', include(admin.site.urls)),
+
+    # Django 3rd Party Modules
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
+    # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
 )
