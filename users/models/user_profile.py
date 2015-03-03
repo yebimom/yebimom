@@ -10,6 +10,8 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, unique=True, primary_key=True)
+    hash_id = models.CharField(max_length=16, unique=True)
+
     nickname = models.CharField(max_length=20, blank=True, null=True)
     phone = models.CharField(max_length=11, blank=True, null=True)
     birthday = models.DateField(blank=True, null=True)

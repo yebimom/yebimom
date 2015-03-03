@@ -10,13 +10,14 @@ from users.utils.user_profile_hashids import decode_user_profile_hashids
 
 
 class HashidsTest(TestCase):
+
     def setUp(self):
         self.hashids = get_user_profile_hashids()
         self.userprofile_id = int(random() * 1000)
 
     def test_get_user_profile_hashids_should_return_hashids_object(self):
         self.assertTrue(
-            type(self.hashids) is Hashids
+            isinstance(self.hashids, Hashids)
         )
 
     def test_encode_user_profile_hashids_should_return_encoded_value(self):
