@@ -22,6 +22,15 @@ INSTALLED_APPS = (
     'users',
 )
 
+AUTHENTICATION_BACKENDS = (
+    # Django Default
+    'django.contrib.auth.backends.ModelBackend',
+
+    # Python-Social-Auth Modules
+    # 'social.backends.open_id.OpenIdAuth',
+    'social.backends.'
+)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
