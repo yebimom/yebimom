@@ -1,5 +1,5 @@
 from django.db import models
-from center.models.center import Center
+from centers.models.center import Center
 
 
 class Policy(models.Model):
