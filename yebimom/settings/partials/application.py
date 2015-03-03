@@ -38,3 +38,5 @@ WSGI_APPLICATION = 'yebimom.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
