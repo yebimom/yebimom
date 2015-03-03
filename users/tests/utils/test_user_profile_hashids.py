@@ -4,9 +4,9 @@ from random import random
 
 from hashids import Hashids
 
-from users.utils import get_user_profile_hashids
-from users.utils import encode_user_profile_hashids
-from users.utils import decode_user_profile_hashids
+from users.utils.user_profile_hashids import get_user_profile_hashids
+from users.utils.user_profile_hashids import encode_user_profile_hashids
+from users.utils.user_profile_hashids import decode_user_profile_hashids
 
 
 class HashidsTest(TestCase):
