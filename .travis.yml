@@ -1,9 +1,16 @@
 language: python
 python:
 - '2.7'
+addons:
+    postgresql: "9.3"
+
 install:
 - pip install -r requirements/development.txt
+before_script:
+- psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
+- python manage.py makemigrations users
+- python manage.py migrate
 - python manage.py test -v2
 
 #deploy:
