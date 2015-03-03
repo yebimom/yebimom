@@ -2,8 +2,7 @@ language: python
 python:
 - '2.7'
 addons:
-    postgresql: "9.3"
-
+  postgresql: '9.3'
 install:
 - pip install -r requirements/development.txt
 before_script:
@@ -12,14 +11,14 @@ script:
 - python manage.py makemigrations users
 - python manage.py migrate
 - python manage.py test -v2
-
-#deploy:
-#    provider: heroku
-#    app: yebimom-dev
-#    api_key:
-#        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
-#    on:
-#        all_branches: true
-
 notifications:
-    slack: molang:iOlv6ne427evuLd1S02CiLFD
+  slack: molang:iOlv6ne427evuLd1S02CiLFD
+env:
+  global:
+  - secure: XIvS8W+0A8ACPlPOV9i0Igtp8vQnkE8XTJj0/VR3Nxv6/wNPGfEp+VL4B2M0nCQOYO4ABy7EDfHA8lq9cH6BsrMHjKx9ApR5Ag6KZNjGpV4GxcyxgolsK6CLwmV3scgQb6xbUWegWyrONqfKFtvT7ZaBSHG4LB0JUIZ8ppA2rus=
+  - secure: RTBq2zrgS7j+NaeTPi4eVJTlRpK8bvNY1/P/GiOj8KoiMUCZS98sWmUmXthE/vOJvxCPLLuBn8Ieq14NAcDAkDnfq4LEgvylAiad5kM3NouU3i32wG4CqMU4cE+iGGISKKZ2kyfIjaPimvQvAIgKllm1fFK2SqiTQ8YUIqoDl6Y=
+  - secure: YmohPGEPXIQbgl0EQoG/R4CgLUPq0RZjlPJ73wiWC9kVk+VIUef8HAT6anopKtv8F+EjbAXeL5Rl/K7br2FtLi0oR62ZTQrbK3r49TIuST7fJ70Ee+dYzJoTFZ6vSHNAaKPTeT/d6B9whc8s5QQOjsOD3M6C7ogIDEAGOF8CcNM=
+  - secure: f/hfHWNdH/RsJFModyrCJKKe1z1rWj/Tk31lk0KKukgm8KWvqIDheUhRJn1iir76mSVORG7EQ6V5ENXaJ9qgODHMEyf06FursqbdhKsC8B+bgQibAD7IN/FhGQG/2Ai3pfXQOR3oKwHvrID6sL7N4yd5h5OYfbDnMq/gLgtuRvE=
+  - secure: M0HR3WAl7o91BTyjfWWTSbu2vksffdfPXjVum/zlwg1gPczxdt0vgXbgzQO+z/v5u6GuwRVqFpZoPe3DAhtOFLYYz+nN5KI9KcGD/Ba47o34R4csIlnwSOr6gJh2qSBCNO1HGk3s4F1yZd7kogiFvy1ssarWUq9Bm1ej/7hk9CI=
+  - secure: TjUoSaI6g+VYC0cjTC7S7y9FDwBwU9JSdZN76pWXG2YP1tXxAf5lmA/OH4jEcR22nhHehF07ktJfXMhiRpSRRRij3nfbY6IDNaqtQsnuA99i6YA3zXy1P1WlKkm4vWHTGEJkNc+x6KlW7eZIZ/Ktr36XeEubYDpmQl4TAXnnRRc=
+  - secure: Ei9/1ucgu4XTt7Dl/j0IgIy+xBImvCbHsdYgptTM60AtleUK7xySiQY4d/KlX70QR4y6XQ/bCfTwfdn0i2zn4dyoyxLRaDMchO3zvtulo1MyE7pbiB6Ax0CV2peYDatusB0XCTrwiPXiJ1wmjqjbKjh0nH7ajddKP4kDvBtV2zA=
