@@ -19,6 +19,7 @@ INSTALLED_APPS = (
 
     # Yebimom Apps
     'users',
+    'centers',
 )
 
 MIDDLEWARE_CLASSES = (
