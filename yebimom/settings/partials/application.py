@@ -16,6 +16,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Django 3rd Party Modules ( installed via pip )
+    'social.apps.django_app.default',
 
     # Yebimom Apps
     'users',
