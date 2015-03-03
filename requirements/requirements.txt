@@ -12,3 +12,4 @@ psycopg2==2.6
 pygraphviz==1.2
 pytz==2014.10
 redis==2.10.3
+hashids==1.0.3
