@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+from __future__ import absolute_import
+
 from yebimom.settings.partials.database import *
 from yebimom.settings.partials.static import *
 from yebimom.settings.partials.application import *
