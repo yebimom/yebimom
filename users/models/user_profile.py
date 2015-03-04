@@ -20,19 +20,20 @@ class UserProfile(models.Model):
     birthday = models.DateField(blank=True, null=True)
     is_male = models.BooleanField(default=True)
 
+    def __unicode__(self):
+        return self.user.username
 
-def create_user_profile(sender, instance, created, **kwargs):
-    """
-    User 객체가 생성되는 시점에
-    post_save Signal을 이용해서 UserProfile 객체를 생성하고 초기화한다
-    """
+    def create_user_profile(sender, instance, created, **kwargs):
+        """
+        User 객체가 생성되는 시점에
+        post_save Signal을 이용해서 UserProfile 객체를 생성하고 초기화한다
+        """
 
-    if created:
-        # Create UserProfile
-        userprofile = UserProfile.objects.create(
-            user=instance,
-            hash_id=encode_user_profile_hashids(instance.id)
-        )
+        if created:
+            # Create UserProfile
+            userprofile = UserProfile.objects.create(
+                user=instance,
+                hash_id=encode_user_profile_hashids(instance.id)
+            )
 
-
-post_save.connect(create_user_profile, sender=User)
+    post_save.connect(create_user_profile, sender=User)
