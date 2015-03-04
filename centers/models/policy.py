@@ -8,4 +8,4 @@ class Policy(models.Model):
     center = models.ForeignKey(Center)
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
