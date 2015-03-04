@@ -8,4 +8,4 @@ class Center(models.Model):
     url = models.URLField(blank=True, null=True)
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
