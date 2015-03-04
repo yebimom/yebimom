@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     # Yebimom Apps
     'users',
     'centers',
+    'imagekit',
 )
 
 MIDDLEWARE_CLASSES = (
