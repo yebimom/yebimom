@@ -20,6 +20,9 @@ class UserProfile(models.Model):
     birthday = models.DateField(blank=True, null=True)
     is_male = models.BooleanField(default=True)
 
+    def __unicode__(self):
+        return self.user.username
+
     def create_user_profile(sender, instance, created, **kwargs):
         """
         User 객체가 생성되는 시점에
