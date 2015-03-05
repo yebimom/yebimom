@@ -27,7 +27,7 @@ class RegionFirstLayer(models.Model):
 
 class RegionSecondLayer(models.Model):
     name = models.CharField(max_length=20)
-    first_layer = models.ForeignKey(RegionFirstLayer)
+    first_layer = models.ForeignKey('RegionFirstLayer')
 
     def __unicode__(self):
         return u"%s %s" % (
@@ -45,7 +45,7 @@ class RegionSecondLayer(models.Model):
 
 class RegionThirdLayer(models.Model):
     name = models.CharField(max_length=20)
-    second_layer = models.ForeignKey(RegionSecondLayer)
+    second_layer = models.ForeignKey('RegionSecondLayer')
 
     def __unicode__(self):
         return u"%s %s %s" % (
