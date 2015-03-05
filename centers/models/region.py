@@ -7,6 +7,9 @@ class RegionFirstLayer(models.Model):
     def __unicode__(self):
         return unicode(self.name)
 
+    def centers(self):
+        pass
+
 
 class RegionSecondLayer(models.Model):
     name = models.CharField(max_length=20)
@@ -19,13 +22,7 @@ class RegionSecondLayer(models.Model):
         )
 
     def centers(self):
-        centers = list()
-        region_third_layer_set = self.regionthirdlayer_set.all()
-        for region_third_layer in region_third_layer_set:
-            centers.extend(region_third_layer.centers())
-
-        return centers
-
+        pass
 
 
 class RegionThirdLayer(models.Model):

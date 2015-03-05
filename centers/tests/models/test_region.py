@@ -90,7 +90,7 @@ class RegionAllLayerTest(TestCase):
 
     def test_region_first_layer_centers_should_return_centers_queryset(self):
         """
-        RegionThirdLayer 객체가 centers() 함수를 호출한 결과의 type은
+        RegionFirstLayer 객체가 centers() 함수를 호출한 결과의 type은
         <class 'django.db.models.query.QuerySet'> 이다.
         """
         self.assertEqual(
@@ -100,7 +100,7 @@ class RegionAllLayerTest(TestCase):
 
     def test_region_second_layer_centers_should_return_centers_queryset(self):
         """
-        RegionThirdLayer 객체가 centers() 함수를 호출한 결과의 type은
+        RegionSecondLayer 객체가 centers() 함수를 호출한 결과의 type은
         <class 'django.db.models.query.QuerySet'> 이다.
         """
         self.assertEqual(
