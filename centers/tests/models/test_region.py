@@ -30,54 +30,93 @@ class RegionAllLayerTest(TestCase):
     """
 
     def setUp(self):
-        self.region_first_layer = RegionFirstLayer.objects.create(name="first_layer")
-        self.region_second_layer = RegionSecondLayer.objects.create(
-            name="second_layer",
-            first_layer = self.region_first_layer
-        )
-        self.region_third_layer = RegionThirdLayer.objects.create(
-            name="third_layer",
-            second_layer = self.region_second_layer
-        )
+        """
+        각각의 테스트를 수행하기 위해서 초기화 전략은 다음과 같다.
 
-        for i in range(100):
-            Center.objects.create(
-                name = "center_%s" % i,
-                region = self.region_third_layer
+        └── region_first_layer_0 ( RegionFirstLayer )
+            └── region_second_layer_0 ( RegionSecondLayer )
+                └── region_third_layer_0 ( RegionThirdLayer )
+                    └── center_0 ( Center )
+                    └── center_1 ( Center )
+
+                └── region_third_layer_1 ( RegionThirdLayer )
+
+            └── region_second_layer_1 ( RegionSecondLayer )
+
+        └── region_first_layer_1 ( RegionFirstLayer )
+        """
+
+        # RegionFirstLayer
+        for region_first_layer in range(2):
+            RegionFirstLayer.objects.create(
+                name="region_first_layer_%s" % region_first_layer
             )
 
+        self.region_first_layer_0 = RegionFirstLayer.objects.first()
+        self.region_first_layer_1 = RegionFirstLayer.objects.last()
 
-    def test_region_third_layer_should_return_centers_list(self):
-        """
-        RegionThirdLayer 객체는
-        그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
-        """
+        # RegionSecondLayer
+        for region_second_layer in range(2):
+            RegionSecondLayer.objects.create(
+                name="region_second_layer_%s" % region_second_layer,
+                first_layer = self.region_first_layer_0
+            )
 
-        try:
-            self.region_third_layer.centers()
-        except:
-            self.fail("RegionThirdLayer should have return all centers lists")
+        self.region_second_layer_0 = RegionSecondLayer.objects.first()
+        self.region_second_layer_1 = RegionSecondLayer.objects.last()
+
+        # RegionThirdLayer
+        for region_third_layer in range(2):
+            RegionThirdLayer.objects.create(
+                name="region_third_layer_%s" % region_third_layer,
+                second_layer = self.region_second_layer_0
+            )
+
+        self.region_third_layer_0 = RegionThirdLayer.objects.first()
+        self.region_third_layer_1 = RegionThirdLayer.objects.last()
+
+        # Center
+        for center in range(2):
+            center.objects.create(
+                name="center_%s" % center,
+                region=self.region_third_layer_0
+            )
+
+        self.center_0 = Center.objects.first()
+        self.center_1 = Center.objects.last()
 
 
-    def test_region_third_layer_should_return_centers_list_with_filter(self):
-        """
-        RegionThirdLayer 객체는
-        filter를 통해서 그 지역에 포함되어 있는 산후조리원 중
-        검색 조건에 맞는 산후조리원 리스트를 가져올 수 있어야 한다.
-        """
-
-        self.assertEqual(
-            self.region_third_layer.centers().filter(name="center_0")[0],
-            Center.objects.first()
-        )
-
-    def test_region_second_layer_should_return_centers_list(self):
-        """
-        RegionSecondLayer 객체는
-        그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
-        """
-
-        try:
-            self.region_second_layer.centers()
-        except:
-            self.fail("RegionSecondLayer should have return all centers lists")
+    # def test_region_third_layer_should_return_centers_list(self):
+    #     """
+    #     RegionThirdLayer 객체는
+    #     그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
+    #     """
+    #
+    #     try:
+    #         self.region_third_layer.centers()
+    #     except:
+    #         self.fail("RegionThirdLayer should have return all centers lists")
+    #
+    #
+    # def test_region_third_layer_should_return_centers_list_with_filter(self):
+    #     """
+    #     RegionThirdLayer 객체는
+    #     filter를 통해서 그 지역에 포함되어 있는 산후조리원 중
+    #     검색 조건에 맞는 산후조리원 리스트를 가져올 수 있어야 한다.
+    #     """
+    #
+    #     self.assertEqual(
+    #         self.region_third_layer.centers().filter(name="center_0")[0],
+    #         Center.objects.first()
+    #     )
+    #
+    # def test_region_second_layer_should_return_centers_list(self):
+    #     """
+    #     RegionSecondLayer 객체는
+    #     그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
+    #     """
+    #
+    #     try:
+    #         self.region_second_layer.centers()
+    #     except:
+    #         self.fail("RegionSecondLayer should have return all centers lists")
