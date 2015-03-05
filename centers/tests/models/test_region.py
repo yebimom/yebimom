@@ -22,6 +22,12 @@ class RegionAllLayerTest(TestCase):
             second_layer = self.region_second_layer
         )
 
+        for i in range(100):
+            Center.objects.create(
+                name = "center_%s" % i,
+                region = self.region_third_layer
+            )
+
 
     def test_region_third_layer_should_return_centers_list(self):
         """
@@ -41,13 +47,6 @@ class RegionAllLayerTest(TestCase):
         filter를 통해서 그 지역에 포함되어 있는 산후조리원 중
         검색 조건에 맞는 산후조리원 리스트를 가져올 수 있어야 한다.
         """
-
-
-        for i in range(100):
-            Center.objects.create(
-                name = "center_%s" % i,
-                region = self.region_third_layer
-            )
 
         self.assertEqual(
             self.region_third_layer.centers().filter(name="center_0")[0],

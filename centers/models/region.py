@@ -21,6 +21,8 @@ class RegionSecondLayer(models.Model):
     def centers(self):
         centers = list()
         region_third_layer_set = self.regionthirdlayer_set.all()
+        for region_third_layer in region_third_layer_set:
+            centers.extend(region_third_layer.centers())
 
         return centers
 
