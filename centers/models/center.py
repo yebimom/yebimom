@@ -1,10 +1,8 @@
 from django.db import models
 
-from centers.models.region import RegionThirdLayer
-
 
 class Center(models.Model):
-    region = models.ForeignKey(RegionThirdLayer)
+    region = models.ForeignKey("RegionThirdLayer")
 
     name = models.CharField(max_length=60)
     address = models.CharField(max_length=255, blank=True, null=True)

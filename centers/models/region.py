@@ -1,5 +1,8 @@
 from django.db import models
 
+# Models
+from centers.models.center import Center
+
 
 class RegionFirstLayer(models.Model):
     name = models.CharField(max_length=20)
@@ -8,7 +11,18 @@ class RegionFirstLayer(models.Model):
         return unicode(self.name)
 
     def centers(self):
-        pass
+        region_second_layer_set = self.regionsecondlayer_set.all()
+
+        region_third_layer_set = list()
+        for region_second_layer in region_second_layer_set:
+            region_third_layer_set.extend(
+                region_second_layer.regionthirdlayer_set.all()
+            )
+
+        centers =  Center.objects.filter(
+            region__in=region_third_layer_set
+        )
+        return centers
 
 
 class RegionSecondLayer(models.Model):
@@ -22,7 +36,11 @@ class RegionSecondLayer(models.Model):
         )
 
     def centers(self):
-        pass
+        region_third_layer_set = self.regionthirdlayer_set.all()
+        centers =  Center.objects.filter(
+            region__in=region_third_layer_set
+        )
+        return centers
 
 
 class RegionThirdLayer(models.Model):
