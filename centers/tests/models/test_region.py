@@ -22,6 +22,6 @@ class RegionAllLayerTest(TestCase):
 
         region_third_layer = RegionThirdLayer()
         try:
-            region_third_layer.centers.all()
+            region_third_layer.centers()
         except:
             self.fail("RegionThirdLayer should have return all centers lists")

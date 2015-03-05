@@ -29,3 +29,6 @@ class RegionThirdLayer(models.Model):
             self.second_layer.name,
             self.name
         )
+
+    def centers(self):
+        return self.center_set.all()
