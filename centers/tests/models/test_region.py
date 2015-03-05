@@ -11,6 +11,24 @@ from centers.models.region import RegionThirdLayer
 
 
 class RegionAllLayerTest(TestCase):
+    """
+    RegionAllLayer 모델에 대해서 다음의 세 가지 항목을 테스트한다.
+
+    1.
+    RegionLayer 모델이 centers() 라는 함수를 통해서
+    산후조리원 리스트를 가져올 수 있다
+
+    2.
+    RegionLayer 모델이 centers() 라는 함수를 통해서 받는 결과값은
+    <class 'django.db.models.query.QuerySet'> 이다.
+
+    이러한 결과값을 리턴할 때만, filter()를 이용하여 조건부 검색이 가능하다.
+
+    3.
+    RegionLayer 모델은 실제로 그 지역에 포함되어 있는
+    산후조리원 리스트를 가져올 수 있다.
+    """
+
     def setUp(self):
         self.region_first_layer = RegionFirstLayer.objects.create(name="first_layer")
         self.region_second_layer = RegionSecondLayer.objects.create(
