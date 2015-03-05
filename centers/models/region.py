@@ -19,7 +19,7 @@ class RegionFirstLayer(models.Model):
                 region_second_layer.regionthirdlayer_set.all()
             )
 
-        centers =  Center.objects.filter(
+        centers = Center.objects.filter(
             region__in=region_third_layer_set
         )
         return centers
@@ -37,7 +37,7 @@ class RegionSecondLayer(models.Model):
 
     def centers(self):
         region_third_layer_set = self.regionthirdlayer_set.all()
-        centers =  Center.objects.filter(
+        centers = Center.objects.filter(
             region__in=region_third_layer_set
         )
         return centers
