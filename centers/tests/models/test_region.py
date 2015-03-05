@@ -53,3 +53,14 @@ class RegionAllLayerTest(TestCase):
             self.region_third_layer.centers().filter(name="center_0")[0],
             Center.objects.first()
         )
+
+    def test_region_second_layer_should_return_centers_list(self):
+        """
+        RegionSecondLayer 객체는
+        그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
+        """
+
+        try:
+            self.region_second_layer.centers()
+        except:
+            self.fail("RegionSecondLayer should have return all centers lists")
