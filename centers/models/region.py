@@ -18,6 +18,13 @@ class RegionSecondLayer(models.Model):
             self.name
         )
 
+    def centers(self):
+        centers = list()
+        region_third_layer_set = self.regionthirdlayer_set.all()
+
+        return centers
+
+
 
 class RegionThirdLayer(models.Model):
     name = models.CharField(max_length=20)
