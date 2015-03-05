@@ -18,8 +18,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Django 3rd Party Modules ( installed via pip )
+    'social.apps.django_app.default',
 
     # Yebimom Apps
+    'users',
+    'centers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -32,6 +35,21 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # Django Default
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+
+    # Python Social Auth Custom TEMPLATE_CONTEXT_PROCESSORS
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
 ROOT_URLCONF = 'yebimom.urls'
 
 WSGI_APPLICATION = 'yebimom.wsgi.application'
@@ -39,3 +57,5 @@ WSGI_APPLICATION = 'yebimom.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
