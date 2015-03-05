@@ -14,9 +14,14 @@ class RegionAllLayerTest(TestCase):
         그 지역에 포함되어 있는 모든 산후조리원 리스트를 가져올 수 있어야 한다.
         """
 
+        # region_third_layer = RegionThirdLayer()
+        # try:
+        #     region_third_layer.center_set.all()
+        # except:
+        #     self.fail("RegionThirdLayer should have return all centers lists")
+
         region_third_layer = RegionThirdLayer()
         try:
-            region_third_layer.center_set.all()
+            region_third_layer.centers.all()
         except:
             self.fail("RegionThirdLayer should have return all centers lists")
-
