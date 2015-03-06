@@ -14,7 +14,7 @@ class Center(models.Model):
     phone = models.CharField(max_length=45, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     hash_id = models.CharField(
-        max_length=12, unique=True, default="default")
+        max_length=12, unique=True)
 
     def __unicode__(self):
         return unicode(self.name)
