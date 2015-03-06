@@ -19,9 +19,10 @@ class CenterTest(RegionAllLayerTest, TestCase):
             name="test",
             region=self.region_third_layer_0
         )
-        print "center:", center
+        updated_center = Center.objects.get(pk=center.pk)
+        print "updated_center:", updated_center, updated_center.hash_id
         self.assertEqual(
-            center.hash_id,
+            updated_center.hash_id,
             self.hashids.encode(center.id)
         )
 
@@ -30,6 +31,7 @@ class CenterTest(RegionAllLayerTest, TestCase):
             name="test",
             region=self.region_third_layer_0
         )
+        updated_center = Center.objects.get(pk=center.pk)
         self.assertTrue(
-            center.hash_id != 'default'
+            updated_center.hash_id != ''
         )
