@@ -17,11 +17,11 @@ INSTALLED_APPS = (
 
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
+    'imagekit',
 
     # Yebimom Apps
     'users',
     'centers',
-    'imagekit',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,3 +58,8 @@ TEMPLATE_DIRS = (
 )
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
+
+# Additional Imports When use shell_plus
+SHELL_PLUS_PRE_IMPORTS = (
+    ('users.utils.user_profile_hashids', ('*')),
+)
