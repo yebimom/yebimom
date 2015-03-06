@@ -12,4 +12,7 @@ urlpatterns = patterns(
 
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
+
+    # App
+    url('', include('centers.urls', namespace='centers')),
 )
