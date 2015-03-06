@@ -19,3 +19,4 @@ python-openid==2.2.5
 python-social-auth==0.2.2
 requests==2.5.3
 requests-oauthlib==0.4.2
+django-storages==1.1.8
