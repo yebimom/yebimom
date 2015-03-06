@@ -14,8 +14,7 @@ class Center(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=45, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
-    hash_id = models.CharField(
-        max_length=12, unique=True)
+    hash_id = models.CharField(max_length=12, unique=True)
 
     def __unicode__(self):
         return unicode(self.name)
@@ -24,7 +23,7 @@ class Center(models.Model):
 def update_center_hash_id(sender, instance, created, **kwargs):
     if created:
         # Update hash_id
-        Center.objects.filter(pk=instance.pk).update(
-            hash_id=get_encoded_center_hashid(instance.id))
+        instance.hash_id = get_encoded_center_hashid(instance.id)
+        instance.save()
 
 post_save.connect(update_center_hash_id, sender=Center)
