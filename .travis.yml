@@ -9,7 +9,7 @@ install:
 before_script:
 - psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
-- python manage.py collectstatic
+- python manage.py collectstatic --noinput
 - python manage.py makemigrations users centers
 - python manage.py migrate
 - python manage.py test -v2
