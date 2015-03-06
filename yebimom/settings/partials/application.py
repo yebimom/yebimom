@@ -58,6 +58,7 @@ TEMPLATE_DIRS = (
 )
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
+HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
 
 # Additional Imports When use shell_plus
 SHELL_PLUS_PRE_IMPORTS = (
