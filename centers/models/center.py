@@ -1,6 +1,7 @@
 from django.db import models
 
 # Model Helper
+from django.dispatch import receiver
 from django.db.models.signals import post_save
 
 # Util
@@ -20,10 +21,15 @@ class Center(models.Model):
         return unicode(self.name)
 
 
+@receiver(post_save, sender=Center)
 def update_center_hash_id(sender, instance, created, **kwargs):
+    """
+    This is sent at the end of a Center’s save() method.
+
+    # Features
+    - Generate hash_id property, from center's id
+    """
+
     if created:
-        # Update hash_id
         instance.hash_id = get_encoded_center_hashid(instance.id)
         instance.save()
-
-post_save.connect(update_center_hash_id, sender=Center)
