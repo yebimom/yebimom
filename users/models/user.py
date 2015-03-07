@@ -15,7 +15,7 @@ from users.utils.user_profile_hashids import encode_user_profile_hashids
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     """
-    This is sent at the beginning of a User’s save() method.
+    This is sent at the end of a User’s save() method.
 
     # Features
     - Create User Profile object,
