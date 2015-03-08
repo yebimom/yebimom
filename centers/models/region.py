@@ -17,7 +17,7 @@ class RegionSecondLayer(models.Model):
 
     def __unicode__(self):
         return u"%s %s" % (
-            self.first_layer.name,
+            self.region_first_layer.name,
             self.name
         )
 
@@ -28,7 +28,7 @@ class RegionThirdLayer(models.Model):
 
     def __unicode__(self):
         return u"%s %s %s" % (
-            self.second_layer.first_layer.name,
-            self.second_layer.name,
+            self.region_second_layer.region_first_layer.name,
+            self.region_second_layer.name,
             self.name
         )
