@@ -33,5 +33,9 @@ class CenterHashidsTest(TestCase):
         self.encoded_hashid = self.hashids.encode(self.instance_id)
         self.assertEqual(
             get_decoded_center_hashid(self.encoded_hashid),
-            self.hashids.decode(self.encoded_hashid)
+            self.hashids.decode(self.encoded_hashid)[0]
+        )
+        self.assertEqual(
+            get_decoded_center_hashid(self.encoded_hashid),
+            self.instance_id
         )
