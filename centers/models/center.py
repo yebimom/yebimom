@@ -26,7 +26,7 @@ class Center(models.Model):
 
 
 @receiver(post_save, sender=Center)
-def update_center_hash_id(sender, instance, created, **kwargs):
+def _update_center_hash_id(sender, instance, created, **kwargs):
     """
     This is sent at the end of a Center's save() method.
 
