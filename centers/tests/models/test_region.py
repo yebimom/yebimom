@@ -150,4 +150,3 @@ class RegionAllLayerTest(TestCase):
             type(self.region_third_layer_0.center_set.all()),
             QuerySet
         )
-

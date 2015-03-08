@@ -19,7 +19,6 @@ class CenterTest(RegionAllLayerTest, TestCase):
         self.hashids = get_center_hashids_object()
         super(CenterTest, self).setUp()
 
-
     def test_encoded_center_hashids_should_have_valid_value(self):
         center = Center.objects.create(
             name="test",
