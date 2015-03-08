@@ -9,7 +9,7 @@ install:
 before_script:
 - psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
-- find . -name '*.py' -exec pep8 --verbose '{}' \;
+- pep8
 - python manage.py makemigrations users centers
 - python manage.py migrate
 - python manage.py test -v2
