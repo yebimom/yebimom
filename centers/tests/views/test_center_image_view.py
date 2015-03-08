@@ -11,7 +11,7 @@ import os
 from shutil import rmtree
 
 
-class CenterImageFormTest(TestCase):
+class CenterImageViewTest(TestCase):
     """
     For saftry purpose, media.TEST_MEDIA_ROOT is used to upload test.
     (after set the media.MEDIA_ROOT value by media.TEST_MEDIA_ROOT)
@@ -24,8 +24,8 @@ class CenterImageFormTest(TestCase):
         if not os.path.isdir(media.TEST_MEDIA_ROOT):
             os.mkdir(media.TEST_MEDIA_ROOT)
 
-        # file_name = "%s/%s.%s" % (media.MEDIA_ROOT, "temp_name", "jpg")
-        # self.f = open(file_name, 'w')
+        file_name = "%s/%s.%s" % (media.MEDIA_ROOT, "temp_name", "jpg")
+        self.f = open(file_name, 'w')
 
     def tearDown(self):
         if os.path.isdir(media.TEST_MEDIA_ROOT):
