@@ -48,6 +48,7 @@ class RegionAllLayerTest(TestCase):
                     └── center_3 ( Center )
 
             └── region_second_layer_1 ( RegionSecondLayer )
+                └── region_third_layer_2 ( RegionThirdLayer )
 
         └── region_first_layer_1 ( RegionFirstLayer )
         """
@@ -80,6 +81,11 @@ class RegionAllLayerTest(TestCase):
 
         self.region_third_layer_0 = RegionThirdLayer.objects.first()
         self.region_third_layer_1 = RegionThirdLayer.objects.last()
+
+        self.region_third_layer_2 = RegionThirdLayer.objects.create(
+                name="RTL_2",
+                region_second_layer=self.region_second_layer_1
+        )
 
         # Center
         for center in range(2):
