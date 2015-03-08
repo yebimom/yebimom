@@ -1,15 +1,25 @@
 language: python
 python:
 - '2.7'
+addons:
+    postgresql: "9.3"
+
 install:
 - pip install -r requirements/development.txt
+before_script:
+- psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
+- python manage.py makemigrations users centers
+- python manage.py migrate
 - python manage.py test -v2
 
-deploy:
-    provider: heroku
-    app: yebimom-dev
-    api_key:
-        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
-    on:
-        all_branches: true
+#deploy:
+#    provider: heroku
+#    app: yebimom-dev
+#    api_key:
+#        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
+#    on:
+#        all_branches: true
+
+notifications:
+    slack: molang:iOlv6ne427evuLd1S02CiLFD
