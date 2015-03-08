@@ -26,7 +26,6 @@ class CenterTest(RegionAllLayerTest, TestCase):
             region_third_layer=self.region_third_layer_0
         )
         updated_center = Center.objects.get(pk=center.pk)
-        print "updated_center:", updated_center, updated_center.hash_id
         self.assertEqual(
             updated_center.hash_id,
             get_encoded_center_hashid(center.id)
