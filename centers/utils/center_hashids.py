@@ -13,4 +13,4 @@ def get_encoded_center_hashid(center_id):
 
 def get_decoded_center_hashid(center_hash_id):
     hashids = get_center_hashids_object()
-    return hashids.decode(center_hash_id)
+    return hashids.decode(center_hash_id)[0]
