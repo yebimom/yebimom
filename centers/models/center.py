@@ -9,7 +9,9 @@ from centers.utils.center_hashids import get_encoded_center_hashid
 
 
 class Center(models.Model):
-    region = models.ForeignKey("RegionThirdLayer")
+    region_first_layer = models.ForeignKey("RegionFirstLayer", null=True)
+    region_second_layer = models.ForeignKey("RegionSecondLayer", null=True)
+    region_third_layer = models.ForeignKey("RegionThirdLayer")
 
     name = models.CharField(max_length=60)
     address = models.CharField(max_length=255, blank=True, null=True)

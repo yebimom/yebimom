@@ -68,19 +68,19 @@ class CenterTest(TestCase):
         for center in range(2):
             Center.objects.create(
                 name="center_%s" % center,
-                region=self.region_third_layer_0
+                region_third_layer=self.region_third_layer_0
             )
 
         for center in range(2, 4):
             Center.objects.create(
                 name="center_%s" % center,
-                region=self.region_third_layer_1
+                region_third_layer=self.region_third_layer_1
             )
 
     def test_encoded_center_hashids_should_have_valid_value(self):
         center = Center.objects.create(
             name="test",
-            region=self.region_third_layer_0
+            region_third_layer=self.region_third_layer_0
         )
         updated_center = Center.objects.get(pk=center.pk)
         print "updated_center:", updated_center, updated_center.hash_id
@@ -92,7 +92,7 @@ class CenterTest(TestCase):
     def test_center_should_update_hash_id(self):
         center = Center.objects.create(
             name="test",
-            region=self.region_third_layer_0
+            region_third_layer=self.region_third_layer_0
         )
         updated_center = Center.objects.get(pk=center.pk)
         self.assertTrue(
