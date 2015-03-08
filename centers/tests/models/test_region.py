@@ -98,36 +98,37 @@ class RegionAllLayerTest(TestCase):
         """
         RegionLayer should get centers list belongs to region itself
         """
-        pass
-        # self.assertListEqual(
-        #     list(self.region_third_layer_0.centers()),
-        #     list(Center.objects.filter(region=self.region_third_layer_0))
-        # )
-        #
-        # self.assertListEqual(
-        #     list(self.region_second_layer_0.centers()),
-        #     list(Center.objects.filter(
-        #         region__in=[
-        #             self.region_third_layer_0,
-        #             self.region_third_layer_1
-        #         ]
-        #     ))
-        # )
-        #
-        # self.assertListEqual(
-        #     list(self.region_first_layer_0.centers()),
-        #     list(Center.objects.all())
-        # )
-        #
-        # self.assertListEqual(
-        #     list(self.region_second_layer_1.centers()),
-        #     list()
-        # )
-        #
-        # self.assertListEqual(
-        #     list(self.region_first_layer_1.centers()),
-        #     list()
-        # )
+        self.assertListEqual(
+            list(self.region_third_layer_0.center_set.all().order_by('id')),
+            list(Center.objects.filter(
+                region_third_layer=self.region_third_layer_0
+            ).order_by('id'))
+        )
+
+        self.assertListEqual(
+            list(self.region_second_layer_0.center_set.all().order_by('id')),
+            list(Center.objects.filter(
+                region_third_layer__in=[
+                    self.region_third_layer_0,
+                    self.region_third_layer_1
+                ]
+            ).order_by('id'))
+        )
+
+        self.assertListEqual(
+            list(self.region_first_layer_0.center_set.all().order_by('id')),
+            list(Center.objects.all().order_by('id'))
+        )
+
+        self.assertListEqual(
+            list(self.region_second_layer_1.center_set.all()),
+            list()
+        )
+
+        self.assertListEqual(
+            list(self.region_first_layer_1.center_set.all()),
+            list()
+        )
 
     def test_region_layer_centers_set_should_return_centers_queryset(self):
         """
