@@ -63,4 +63,6 @@ HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
 # Additional Imports When use shell_plus
 SHELL_PLUS_PRE_IMPORTS = (
     ('users.utils.user_profile_hashids', ('*')),
+    ('yebimom.settings.partials', ('*')),
+    ('os'),
 )
