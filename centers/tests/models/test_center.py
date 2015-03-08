@@ -48,7 +48,7 @@ class CenterTest(TestCase):
         for region_second_layer in range(2):
             RegionSecondLayer.objects.create(
                 name="RSL_%s" % region_second_layer,
-                first_layer=self.region_first_layer_0
+                region_first_layer=self.region_first_layer_0
             )
 
         self.region_second_layer_0 = RegionSecondLayer.objects.first()
@@ -58,7 +58,7 @@ class CenterTest(TestCase):
         for region_third_layer in range(2):
             RegionThirdLayer.objects.create(
                 name="RTL_%s" % region_third_layer,
-                second_layer=self.region_second_layer_0
+                region_second_layer=self.region_second_layer_0
             )
 
         self.region_third_layer_0 = RegionThirdLayer.objects.first()
@@ -97,4 +97,15 @@ class CenterTest(TestCase):
         updated_center = Center.objects.get(pk=center.pk)
         self.assertTrue(
             updated_center.hash_id != ''
+        )
+
+    def test_center_should_have_regions_information(self):
+        center = Center.objects.create(
+            name="test",
+            region_third_layer=self.region_third_layer_0
+        )
+
+        self.assertEqual(
+            center.region_second_layer,
+            self.region_second_layer_0
         )

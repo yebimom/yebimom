@@ -2,7 +2,7 @@ from django.db import models
 
 # Model Helper
 from django.dispatch import receiver
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save, post_save
 
 # Util
 from centers.utils.center_hashids import get_encoded_center_hashid
@@ -35,3 +35,16 @@ def update_center_hash_id(sender, instance, created, **kwargs):
     if created:
         instance.hash_id = get_encoded_center_hashid(instance.id)
         instance.save()
+
+
+@receiver(pre_save, sender=Center)
+def update_center_regions(sender, instance, *arg, **kwargs):
+    """
+    This is sent at the beginning of a Center's save() method.
+
+    # Features
+    - Connect with RegionFirstLayer, RegionThirdLayer
+    """
+
+    instance.region_second_layer = \
+        instance.region_third_layer.region_second_layer
