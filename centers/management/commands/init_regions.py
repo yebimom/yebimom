@@ -62,7 +62,7 @@ class Command(BaseCommand):
                     name=region_second_layer["name"]
                 )
                 self.stdout.write(
-                    "<RegionSecondLayer: %s %s>" % \
+                    "<RegionSecondLayer: %s %s>" %
                     (
                         region_first_layer["name"].decode('utf-8'),
                         region_second_layer["name"].decode('utf-8')
@@ -75,7 +75,7 @@ class Command(BaseCommand):
                         name=region_third_layer["name"]
                     )
                     self.stdout.write(
-                        "<RegionSecondLayer: %s %s %s>" % \
+                        "<RegionSecondLayer: %s %s %s>" %
                         (
                             region_first_layer["name"].decode('utf-8'),
                             region_second_layer["name"].decode('utf-8'),
