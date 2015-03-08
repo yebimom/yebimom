@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from centers.forms.center_image_form import CenterImageForm
-from centers.utils.handle_uploaded_file import handle_uploaded_file
+from centers.utils.handle_upload_file import handle_uploaded_file
 
 
 def upload(request):
