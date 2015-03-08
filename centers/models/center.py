@@ -17,14 +17,18 @@ class Center(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=45, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
-    hash_id = models.CharField(max_length=12, unique=True)
+    hash_id = models.CharField(
+        "center's_private_unique_id",
+        max_length=12,
+        unique=True
+    )
 
     def __unicode__(self):
         return unicode(self.name)
 
 
 @receiver(post_save, sender=Center)
-def update_center_hash_id(sender, instance, created, **kwargs):
+def _update_center_hash_id(sender, instance, created, **kwargs):
     """
     This is sent at the end of a Center's save() method.
 
