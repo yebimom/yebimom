@@ -17,6 +17,7 @@ INSTALLED_APPS = (
 
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
+    'imagekit',
 
     # Yebimom Apps
     'users',
@@ -58,3 +59,13 @@ TEMPLATE_DIRS = (
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
+
+# Test Image URL
+TEST_IMAGE_URL = os.environ['TEST_IMAGE_URL']
+
+# Additional Imports When use shell_plus
+SHELL_PLUS_PRE_IMPORTS = (
+    ('users.utils.user_profile_hashids', ('*')),
+    ('yebimom.settings.partials', ('*')),
+    ('os'),
+)

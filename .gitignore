@@ -76,3 +76,9 @@ db.sqlite3
 # Django Migrations
 # Ignore django migrations/ on development
 migrations/
+
+# Local Media Directory
+media/
+
+# Test media directory
+TEST_MEDIA_DIR/

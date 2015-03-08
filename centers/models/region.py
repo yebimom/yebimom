@@ -13,6 +13,7 @@ class RegionFirstLayer(models.Model):
 
 class RegionSecondLayer(models.Model):
     name = models.CharField(max_length=20)
+
     region_first_layer = models.ForeignKey(RegionFirstLayer)
 
     def __unicode__(self):
