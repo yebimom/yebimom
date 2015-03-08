@@ -109,3 +109,8 @@ class CenterTest(TestCase):
             center.region_second_layer,
             self.region_second_layer_0
         )
+
+        self.assertEqual(
+            center.region_first_layer,
+            self.region_first_layer_0
+        )

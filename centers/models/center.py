@@ -43,8 +43,13 @@ def update_center_regions(sender, instance, *arg, **kwargs):
     This is sent at the beginning of a Center's save() method.
 
     # Features
-    - Connect with RegionFirstLayer, RegionThirdLayer
+    - Connect with RegionFirstLayer, RegionSecondLayer
     """
 
+    # Connect with RegionSecondLayer via RegionThirdLayer
     instance.region_second_layer = \
         instance.region_third_layer.region_second_layer
+
+    # Connect with RegionFirstLayer via RegionSecondLayer
+    instance.region_first_layer = \
+        instance.region_second_layer.region_first_layer
