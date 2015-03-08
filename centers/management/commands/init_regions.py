@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Command
 from django.core.management.base import BaseCommand, CommandError
 
@@ -8,42 +6,8 @@ from centers.models.region import RegionFirstLayer
 from centers.models.region import RegionSecondLayer
 from centers.models.region import RegionThirdLayer
 
-REGIONS = [
-    {
-        "name": "전국/서울",
-        "region_second_layers": [
-            {
-                "name": "전국전체",
-                "region_third_layers": [
-                    {
-                        "name": "강남/논현/반포",
-                    },
-                    {
-                        "name": "삼성/선릉/역삼",
-                    },
-                    {
-                        "name": "압구정/청담/신사",
-                    }
-                ]
-            },
-            {
-                "name": "서울전체",
-                "region_third_layers": [
-                ]
-            }
-        ]
-    },
-    {
-        "name": "인천/경기",
-        "region_second_layers": [
-        ]
-    },
-    {
-        "name": "대구/부산",
-        "region_second_layers": [
-        ]
-    }
-]
+# Data
+from centers.management.commands._regions import REGIONS
 
 
 class Command(BaseCommand):
