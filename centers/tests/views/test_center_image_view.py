@@ -1,14 +1,13 @@
-from django.test import TestCase
+from django.test import TestCase, Client
+from django.test.utils import override_settings
 
-# Form
-# from centers.forms.center_image_form import CenterImageForm
-
-# settings
+# Settings
 from yebimom.settings.partials import media
 
-# built-in module
+# Built-in module
 import os
 from shutil import rmtree
+import urllib2
 
 
 class CenterImageViewTest(TestCase):
@@ -18,14 +17,21 @@ class CenterImageViewTest(TestCase):
     """
 
     def setUp(self):
-        media.MEDIA_ROOT = media.TEST_MEDIA_ROOT
-        media.MEDIA_URL = media.TEST_MEDIA_URL
-
+        # test upload directory
         if not os.path.isdir(media.TEST_MEDIA_ROOT):
             os.mkdir(media.TEST_MEDIA_ROOT)
 
-        file_name = "%s/%s.%s" % (media.MEDIA_ROOT, "temp_name", "jpg")
-        self.f = open(file_name, 'w')
+        # sample file set
+        TEST_IMAGE_URL = os.environ['TEST_IMAGE_URL']
+        self.file_path = \
+            "%s/%s.%s" % (media.TEST_MEDIA_ROOT, 'temp_name', 'png')
+        self.f = open(self.file_path, 'w+')
+        self.f.write(urllib2.urlopen(TEST_IMAGE_URL).read())
+        self.f.seek(0)
+
+        # client
+        self.client = Client()
+        self.upload_url = '/upload/'
 
     def tearDown(self):
         if os.path.isdir(media.TEST_MEDIA_ROOT):
@@ -41,3 +47,14 @@ class CenterImageViewTest(TestCase):
         self.assertTrue(
             os.path.isdir(media.TEST_MEDIA_ROOT)
         )
+
+    def test_sub_directory_of_media_path_should_be_created_after_upload(self):
+        self.client.post(self.upload_url, {'image': self.f})
+        self.assertTrue(os.path.isdir(media.TEST_MEDIA_ROOT + '/test/'))
+
+
+# Settings for Test
+CenterImageViewTest = override_settings(
+    MEDIA_ROOT=media.TEST_MEDIA_ROOT,
+    MEDIA_URL=media.MEDIA_URL
+)(CenterImageViewTest)
