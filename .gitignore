@@ -73,3 +73,6 @@ migrations/
 
 # Local Media Directory
 media/
+
+# Test media directory
+TEST_MEDIA_DIR/
