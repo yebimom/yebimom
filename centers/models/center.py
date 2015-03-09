@@ -15,6 +15,12 @@ class Center(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=45, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
+    price = models.DecimalField(
+        max_digits=9,
+        decimal_places=0,
+        blank=True,
+        null=True
+    )
     hash_id = models.CharField(
         "center's_private_unique_id",
         max_length=12,
