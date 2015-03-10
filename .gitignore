@@ -66,6 +66,9 @@ db.sqlite3
 # Ignore Vim swo files
 *.swo
 
+# Ignore Vim swn files
+*.swn
+
 # IDE Settings
 .ropeproject/
 .idea/

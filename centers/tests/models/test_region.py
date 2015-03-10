@@ -48,6 +48,7 @@ class RegionAllLayerTest(TestCase):
                     └── center_3 ( Center )
 
             └── region_second_layer_1 ( RegionSecondLayer )
+                └── region_third_layer_2 ( RegionThirdLayer )
 
         └── region_first_layer_1 ( RegionFirstLayer )
         """
@@ -65,7 +66,7 @@ class RegionAllLayerTest(TestCase):
         for region_second_layer in range(2):
             RegionSecondLayer.objects.create(
                 name="RSL_%s" % region_second_layer,
-                first_layer=self.region_first_layer_0
+                region_first_layer=self.region_first_layer_0
             )
 
         self.region_second_layer_0 = RegionSecondLayer.objects.first()
@@ -75,76 +76,83 @@ class RegionAllLayerTest(TestCase):
         for region_third_layer in range(2):
             RegionThirdLayer.objects.create(
                 name="RTL_%s" % region_third_layer,
-                second_layer=self.region_second_layer_0
+                region_second_layer=self.region_second_layer_0
             )
 
         self.region_third_layer_0 = RegionThirdLayer.objects.first()
         self.region_third_layer_1 = RegionThirdLayer.objects.last()
 
+        self.region_third_layer_2 = RegionThirdLayer.objects.create(
+                name="RTL_2",
+                region_second_layer=self.region_second_layer_1
+        )
+
         # Center
         for center in range(2):
             Center.objects.create(
                 name="center_%s" % center,
-                region=self.region_third_layer_0
+                region_third_layer=self.region_third_layer_0
             )
 
         for center in range(2, 4):
             Center.objects.create(
                 name="center_%s" % center,
-                region=self.region_third_layer_1
+                region_third_layer=self.region_third_layer_1
             )
-
-    def test_region_layer_centers_should_return_centers_queryset(self):
-        """
-        RegionLayer 객체가 centers() 함수를 호출한 결과의 type은
-        <class 'django.db.models.query.QuerySet'> 이다.
-        """
-        self.assertEqual(
-            type(self.region_first_layer_0.centers()),
-            QuerySet
-        )
-
-        self.assertEqual(
-            type(self.region_second_layer_0.centers()),
-            QuerySet
-        )
-
-        self.assertEqual(
-            type(self.region_third_layer_0.centers()),
-            QuerySet
-        )
 
     def test_region_layer_centers_should_return_valid_result(self):
         """
-        RegionLayer 객체가 centers() 함수를 통해서
-        실제로 그 지역에 포함되어 있는 산후조리원 리스트를 가져올 수 있다.
+        RegionLayer should get centers list belongs to region itself
         """
         self.assertListEqual(
-            list(self.region_third_layer_0.centers()),
-            list(Center.objects.filter(region=self.region_third_layer_0))
+            list(self.region_third_layer_0.center_set.all().order_by('id')),
+            list(Center.objects.filter(
+                region_third_layer=self.region_third_layer_0
+            ).order_by('id'))
         )
 
         self.assertListEqual(
-            list(self.region_second_layer_0.centers()),
+            list(self.region_second_layer_0.center_set.all().order_by('id')),
             list(Center.objects.filter(
-                region__in=[
+                region_third_layer__in=[
                     self.region_third_layer_0,
                     self.region_third_layer_1
                 ]
-            ))
+            ).order_by('id'))
         )
 
         self.assertListEqual(
-            list(self.region_first_layer_0.centers()),
-            list(Center.objects.all())
+            list(self.region_first_layer_0.center_set.all().order_by('id')),
+            list(Center.objects.all().order_by('id'))
         )
 
         self.assertListEqual(
-            list(self.region_second_layer_1.centers()),
+            list(self.region_second_layer_1.center_set.all()),
             list()
         )
 
         self.assertListEqual(
-            list(self.region_first_layer_1.centers()),
+            list(self.region_first_layer_1.center_set.all()),
             list()
+        )
+
+    def test_region_layer_centers_set_should_return_centers_queryset(self):
+        """
+        RegionLayer should get centers list
+        Result should be type of <class 'django.db.models.query.QuerySet'>
+        """
+
+        self.assertEqual(
+            type(self.region_first_layer_0.center_set.all()),
+            QuerySet
+        )
+
+        self.assertEqual(
+            type(self.region_second_layer_0.center_set.all()),
+            QuerySet
+        )
+
+        self.assertEqual(
+            type(self.region_third_layer_0.center_set.all()),
+            QuerySet
         )
