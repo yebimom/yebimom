@@ -76,7 +76,3 @@ db.sqlite3
 # Django Migrations
 # Ignore django migrations/ on development
 migrations/
-
-# Initial data
-*/fixtures/*
-!*/fixtures/examples/
