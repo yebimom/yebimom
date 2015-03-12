@@ -727,7 +727,7 @@
 },
 {
   "fields": {
-    "name": "천안-서북구",
+    "name": "천안 서북구",
     "region_second_layer": [
       "충청"
     ]
@@ -736,7 +736,7 @@
 },
 {
   "fields": {
-    "name": "천안-동남구",
+    "name": "천안 동남구",
     "region_second_layer": [
       "충청"
     ]
@@ -745,7 +745,7 @@
 },
 {
   "fields": {
-    "name": "청주-흥덕구",
+    "name": "청주 흥덕구",
     "region_second_layer": [
       "충청"
     ]
@@ -754,7 +754,7 @@
 },
 {
   "fields": {
-    "name": "청주-상당구",
+    "name": "청주 상당구",
     "region_second_layer": [
       "충청"
     ]
@@ -952,7 +952,7 @@
 },
 {
   "fields": {
-    "name": "광주-서구",
+    "name": "광주 서구",
     "region_second_layer": [
       "전라"
     ]
@@ -961,7 +961,7 @@
 },
 {
   "fields": {
-    "name": "광주-광산구",
+    "name": "광주 광산구",
     "region_second_layer": [
       "전라"
     ]
@@ -970,7 +970,7 @@
 },
 {
   "fields": {
-    "name": "광주-동구/남구",
+    "name": "광주 동구/남구",
     "region_second_layer": [
       "전라"
     ]
@@ -979,7 +979,7 @@
 },
 {
   "fields": {
-    "name": "광주-북구",
+    "name": "광주 북구",
     "region_second_layer": [
       "전라"
     ]
