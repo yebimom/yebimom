@@ -1,0 +1,1016 @@
+[
+{
+  "fields": {
+    "name": "전국"
+  },
+  "model": "centers.regionfirstlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "서울"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "경기"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "인천"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "대전"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "충청"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "강원"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "부산"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "울산"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "대구"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "경상"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "전라"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "전국"
+    ],
+    "name": "제주"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "name": "강남역",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "강동/천호/길동",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "강서/화곡",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "구로/신도림",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "논현/학동/신논현",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "강동/천호/길동",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "강서/화곡",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "구로/신도림",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "논현/학동/신논현",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "당산/문래",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "방배/서래마을",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "방이/올림픽공원",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "사당/이수/동작",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "삼성/이수/동작",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "삼성/대치",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서울대입구/신림",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서초/교대",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "송파/가락/문정",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "압구정/신사/가로수",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "양재/매봉",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "양천/목동",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "여의도/영등포",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "역삼/선릉/도곡",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "잠실/신천",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "청담",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "강북/중랑",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "건대/구의",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "노원/도봉",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "동대문/왕십리/한양대",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "마포/공덕",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "명동/시청/중구",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "수유/미아/대학로",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "이대/서대문",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "은평",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "이태원/용산/한남",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "종로/광화문/인사동",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "합정/상수",
+    "region_second_layer": [
+      "서울"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "광명",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "시흥",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "원미구/송내",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "소사구/오정구/역곡",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "구리/하남",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "남양주/양평",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "의정부/동두천/양주",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서현/수내/야탑",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "정자/미금/오리",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "판교",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "성남/모란",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "수원 인계/팔달",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "수원 영통",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "수원 장안/권선",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "동탄/병점",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "화성/오산/평택",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "용인/광주/이천",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "안양",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "군포/과천/의왕",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "안산",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "일산/동구",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "일산/서구/덕양",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "파주/김포",
+    "region_second_layer": [
+      "경기"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "남동구/남구",
+    "region_second_layer": [
+      "인천"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "연수구/중구",
+    "region_second_layer": [
+      "인천"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "부평구",
+    "region_second_layer": [
+      "인천"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "계양구/서구",
+    "region_second_layer": [
+      "인천"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서구",
+    "region_second_layer": [
+      "대전"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "유성구",
+    "region_second_layer": [
+      "대전"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "중구",
+    "region_second_layer": [
+      "대전"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "동구/대덕구",
+    "region_second_layer": [
+      "대전"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "천안-서북구",
+    "region_second_layer": [
+      "충청"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "천안-동남구",
+    "region_second_layer": [
+      "충청"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "청주-흥덕구",
+    "region_second_layer": [
+      "충청"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "청주-상당구",
+    "region_second_layer": [
+      "충청"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "원주",
+    "region_second_layer": [
+      "강원"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "춘천",
+    "region_second_layer": [
+      "강원"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "경성대/광안/수영",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "남포/중구/사하",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "부산대/동래/연산",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "사상/북구/양산",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서면/부산진/동구",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "해운대/센텀시티/기장",
+    "region_second_layer": [
+      "부산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "남구/울주군",
+    "region_second_layer": [
+      "울산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "동구/중구/북구",
+    "region_second_layer": [
+      "울산"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "중구/남구",
+    "region_second_layer": [
+      "대구"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "수성구/동구",
+    "region_second_layer": [
+      "대구"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "달서구/달성군",
+    "region_second_layer": [
+      "대구"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "북구/서구",
+    "region_second_layer": [
+      "대구"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "거제/통영",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "구미/경산",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "김해/장유",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "마산",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "진주",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "창원/진해",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "포항/경주",
+    "region_second_layer": [
+      "경상"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "광주-서구",
+    "region_second_layer": [
+      "전라"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "광주-광산구",
+    "region_second_layer": [
+      "전라"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "광주-동구/남구",
+    "region_second_layer": [
+      "전라"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "광주-북구",
+    "region_second_layer": [
+      "전라"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "전주/익산/군산",
+    "region_second_layer": [
+      "전라"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "서귀포시",
+    "region_second_layer": [
+      "제주"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+},
+{
+  "fields": {
+    "name": "제주시",
+    "region_second_layer": [
+      "제주"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+}
+]
