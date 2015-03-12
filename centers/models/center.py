@@ -8,6 +8,11 @@ from django.db.models.signals import pre_save, post_save
 from centers.utils.center_hashids import get_encoded_center_hashid
 
 
+class CenterManager(models.Manager):
+    def get_by_natural_key(self, region_third_layer, name):
+        return self.get(region_third_layer=region_third_layer, name=name)
+
+
 class Center(models.Model):
     region_first_layer = models.ForeignKey("RegionFirstLayer", null=True)
     region_second_layer = models.ForeignKey("RegionSecondLayer", null=True)
@@ -21,6 +26,9 @@ class Center(models.Model):
 
     def __unicode__(self):
         return unicode(self.name)
+
+    def natural_key(self):
+        return (self.region_third_layer, self.name)
 
 
 @receiver(post_save, sender=Center)
