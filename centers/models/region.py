@@ -40,6 +40,7 @@ class RegionSecondLayer(models.Model):
 
     def natural_key(self):
         return tuple([self.name])
+    natural_key.dependencies = ['centers.regionfirstlayer']
 
 
 class RegionThirdLayerManager(models.Manager):
@@ -62,3 +63,4 @@ class RegionThirdLayer(models.Model):
 
     def natural_key(self):
         return tuple([self.name])
+    natural_key.dependencies = ['centers.regionsecondlayer']

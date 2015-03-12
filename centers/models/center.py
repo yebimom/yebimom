@@ -28,7 +28,8 @@ class Center(models.Model):
         return unicode(self.name)
 
     def natural_key(self):
-        return (self.region_third_layer, self.name)
+        return self.region_third_layer.natural_key() + (self.name, )
+    natural_key.dependencies = ['centers.regionthirdlayer']
 
 
 @receiver(post_save, sender=Center)
