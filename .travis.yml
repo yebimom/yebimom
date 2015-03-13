@@ -11,6 +11,8 @@ before_script:
 script:
 - npm install -g bower grunt-cli
 - npm install
+- gem install sass
+
 - grunt bowercopy sass
 
 - python manage.py collectstatic --noinput --ignore '*.sass'
