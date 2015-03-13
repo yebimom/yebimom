@@ -73,8 +73,7 @@ migrations/
 
 # Bower Components
 bower_components/
-# /components/
-# this folder should be ignored after Grunt setting
+/components/
 
 # Node Modules
 node_modules/
