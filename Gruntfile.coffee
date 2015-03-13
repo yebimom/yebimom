@@ -43,5 +43,6 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', [
         'bowercopy'
         'sass'
+        'jshint'
         'watch'
     ]
