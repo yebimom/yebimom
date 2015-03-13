@@ -9,6 +9,10 @@ install:
 before_script:
 - psql -c 'CREATE DATABASE yebimom;' -U postgres
 script:
+- npm install -g bower grunt-cli
+- npm install
+- grunt
+
 - python manage.py collectstatic --noinput
 - python manage.py makemigrations users centers
 - python manage.py migrate
