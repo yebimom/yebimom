@@ -80,3 +80,7 @@ node_modules/
 
 # Static Files for local developent ( STATIC_ROOT )
 /static/
+
+# CSS
+*.css
+*.map
