@@ -1,0 +1,26 @@
+[
+{
+  "fields": {
+    "name": "test_region_layer_1"
+  },
+  "model": "centers.regionfirstlayer"
+},
+{
+  "fields": {
+    "region_first_layer": [
+      "test_region_layer_1"
+    ],
+    "name": "test_region_layer_2"
+  },
+  "model": "centers.regionsecondlayer"
+},
+{
+  "fields": {
+    "name": "test_region_layer_3",
+    "region_second_layer": [
+      "test_region_layer_2"
+    ]
+  },
+  "model": "centers.regionthirdlayer"
+}
+]
