@@ -25,6 +25,13 @@ module.exports = (grunt) ->
         jshint:
             files: ['yebimom/**/*.js']
 
+        shell:
+            pep8:
+                command: 'pep8'
+
+            testing:
+                command: 'NOSE_NOCAPTURE=1 python manage.py test -v2 --color --noinput'
+
         watch:
             sass:
                 files: '**/*.sass'
@@ -34,10 +41,15 @@ module.exports = (grunt) ->
                 files: '<%= jshint.files %>'
                 tasks: 'jshint'
 
+            pep8:
+                files: '**/*.py'
+                tasks: ['shell:pep8', 'shell:testing']
+
 
     grunt.loadNpmTasks 'grunt-bowercopy'
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-jshint'
+    grunt.loadNpmTasks 'grunt-shell'
     grunt.loadNpmTasks 'grunt-contrib-watch'
 
     grunt.registerTask 'default', [
