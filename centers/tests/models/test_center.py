@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from django.test import TestCase
-
 # Model
 from centers.models.center import Center
 
@@ -13,7 +11,7 @@ from centers.utils.center_hashids import get_encoded_center_hashid
 from centers.utils.center_hashids import get_center_hashids_object
 
 
-class CenterTest(RegionAllLayerTest, TestCase):
+class CenterTest(RegionAllLayerTest):
 
     def setUp(self):
         self.hashids = get_center_hashids_object()

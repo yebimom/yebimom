@@ -1,0 +1,21 @@
+[
+{
+  "fields": {
+    "name": "test_center_1",
+    "url": null,
+    "phone": null,
+    "region_first_layer": [
+      "test_region_layer_1"
+    ],
+    "region_second_layer": [
+      "test_region_layer_2"
+    ],
+    "address": null,
+    "region_third_layer": [
+      "test_region_layer_3"
+    ],
+    "hash_id": "x3bKL"
+  },
+  "model": "centers.center"
+}
+]
