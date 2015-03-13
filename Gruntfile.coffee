@@ -17,8 +17,16 @@ module.exports = (grunt) ->
                     'js/underscore.min.js': 'bower_components/underscore/underscore-min.js'
                     'js/underscore-min.map': 'bower_components/underscore/underscore-min.map'
 
+        sass:
+            dist:
+                files:
+                    'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.sass'
+
+
     grunt.loadNpmTasks 'grunt-bowercopy'
+    grunt.loadNpmTasks 'grunt-contrib-sass'
 
     grunt.registerTask 'default', [
         'bowercopy'
+        'sass'
     ]
