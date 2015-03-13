@@ -6,16 +6,19 @@ module.exports = (grunt) ->
                 clean: true
             libs:
                 options:
-                    destPrefix: 'components'
+                    destPrefix: 'components/bower_components'
                 files:
-                    'js/jquery.min.js': 'bower_components/jquery/dist/jquery.min.js'
-                    'js/jquery.min.map': 'bower_components/jquery/dist/jquery.min.map'
+                    'js/jquery.min.js': 'jquery/dist/jquery.min.js'
+                    'js/jquery.min.map': 'jquery/dist/jquery.min.map'
 
-                    'js/bootstrap.min.js': 'bower_components/bootstrap/dist/js/bootstrap.min.js'
-                    'css/bootstrap.min.css': 'bower_components/bootstrap/dist/css/bootstrap.min.css'
+                    'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
+                    'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
-                    'js/underscore.min.js': 'bower_components/underscore/underscore-min.js'
-                    'js/underscore-min.map': 'bower_components/underscore/underscore-min.map'
+                    'js/underscore.min.js': 'underscore/underscore-min.js'
+                    'js/underscore-min.map': 'underscore/underscore-min.map'
+
+                    'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
+                    'fonts/': 'components-font-awesome/fonts/'
 
         sass:
             dist:
