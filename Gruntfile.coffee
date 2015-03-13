@@ -22,11 +22,18 @@ module.exports = (grunt) ->
                 files:
                     'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.sass'
 
+        watch:
+            sass:
+                files: '**/*.sass'
+                tasks: 'sass'
+
 
     grunt.loadNpmTasks 'grunt-bowercopy'
     grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
 
     grunt.registerTask 'default', [
         'bowercopy'
         'sass'
+        'watch'
     ]
