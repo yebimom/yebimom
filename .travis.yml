@@ -14,10 +14,13 @@ script:
 - gem install sass
 
 - grunt bowercopy sass
-
 - python manage.py collectstatic --noinput --ignore '*.sass'
+
+- pep8
+
 - python manage.py makemigrations users centers
 - python manage.py migrate
+- python manage.py loaddata regions
 - python manage.py test -v2
 
 #deploy:
