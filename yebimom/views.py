@@ -11,25 +11,25 @@ def service(request):
     """
     이용약관
     """
-    return render(request, "service.html", {})
+    return render(request, "rules/service.html", {})
 
 
 def privacy(request):
     """
     개인정보 취급방침
     """
-    return render(request, "privacy.html", {})
+    return render(request, "rules/privacy.html", {})
 
 
 def disclaimer(request):
     """
     책임의 한계와 법적고지
     """
-    return render(request, "disclaimer.html", {})
+    return render(request, "rules/disclaimer.html", {})
 
 
 def search_policy(request):
     """
     검색결과 수집에 대한 정책
     """
-    return render(request, "search_policy.html", {})
+    return render(request, "rules/search_policy.html", {})
