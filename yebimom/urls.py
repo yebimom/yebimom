@@ -12,4 +12,7 @@ urlpatterns = patterns(
 
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
+
+    # Included Apps Urls
+    url(r'^events/', include('events.urls', namespace='events', app_name='events')),
 )
