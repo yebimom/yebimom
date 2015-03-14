@@ -5,6 +5,7 @@ from django.db import models
 
 
 class RegionFirstLayerManager(models.Manager):
+
     def get_by_natural_key(self, name):
         return self.get(name=name)
 
@@ -22,6 +23,7 @@ class RegionFirstLayer(models.Model):
 
 
 class RegionSecondLayerManager(models.Manager):
+
     def get_by_natural_key(self, name):
         return self.get(name=name)
 
@@ -44,6 +46,7 @@ class RegionSecondLayer(models.Model):
 
 
 class RegionThirdLayerManager(models.Manager):
+
     def get_by_natural_key(self, name):
         return self.get(name=name)
 

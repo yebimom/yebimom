@@ -83,8 +83,8 @@ class RegionAllLayerTest(TestCase):
         self.region_third_layer_1 = RegionThirdLayer.objects.last()
 
         self.region_third_layer_2 = RegionThirdLayer.objects.create(
-                name="RTL_2",
-                region_second_layer=self.region_second_layer_1
+            name="RTL_2",
+            region_second_layer=self.region_second_layer_1
         )
 
         # Center
