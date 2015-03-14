@@ -31,4 +31,7 @@
 <input type="submit" value="회원가입" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
+
+<a href="{% url "social:begin" backend="kakao" %}">카카오톡으로 로그인하기</a>
+<a href="{% url "social:begin" backend="facebook" %}">페이스북으로 로그인하기</a>
 {% endblock %}
