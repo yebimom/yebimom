@@ -1,12 +1,17 @@
 module.exports = (grunt) ->
     grunt.initConfig
+        clean: [
+            'components'
+            'static'
+        ]
+
         bowercopy:
             options:
                 # Bower components folder will be removed afterwards
                 clean: true
             libs:
                 options:
-                    destPrefix: 'components/bower_components'
+                    destPrefix: 'components'
                 files:
                     'js/jquery.min.js': 'jquery/dist/jquery.min.js'
                     'js/jquery.min.map': 'jquery/dist/jquery.min.map'
@@ -62,6 +67,7 @@ module.exports = (grunt) ->
                 tasks: 'test'
 
 
+    grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-bowercopy'
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-jshint'
@@ -79,6 +85,7 @@ module.exports = (grunt) ->
     ]
 
     grunt.registerTask 'default', [
+        'clean'
         'bowercopy'
         'sass'
         'jshint'
