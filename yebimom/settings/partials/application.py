@@ -5,6 +5,8 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+
 
 INSTALLED_APPS = (
     # Django Default
@@ -17,6 +19,7 @@ INSTALLED_APPS = (
 
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
+    'storages',
 
     # Yebimom Apps
     'users',

@@ -76,3 +76,17 @@ db.sqlite3
 # Django Migrations
 # Ignore django migrations/ on development
 migrations/
+
+# Bower Components
+bower_components/
+/components/
+
+# Node Modules
+node_modules/
+
+# Static Files for local developent ( STATIC_ROOT )
+/static/
+
+# CSS
+*.css
+*.map

@@ -1,0 +1,24 @@
+{
+  "name": "yebimom",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yebimom/yebimom",
+  "authors": [
+    "dobestan <dobestan@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3",
+    "underscore": "~1.8.2",
+    "components-font-awesome": "~4.3.0"
+  }
+}
