@@ -8,7 +8,11 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 
+# Decorators
+from users.decorators import anonymous_required
 
+
+@anonymous_required
 def login_view(request):
     return default_login_view(
         request, template_name="users/login.html"
@@ -20,6 +24,7 @@ def logout_view(request):
     return redirect("home")
 
 
+@anonymous_required
 def signup(request):
     if request.method == "POST":
         user_form = UserCreationForm(request.POST)
