@@ -32,8 +32,17 @@ module.exports = (grunt) ->
             pep8:
                 command: 'pep8'
 
-            testing:
+            unittest:
                 command: 'NOSE_NOCAPTURE=1 python manage.py test -v2 --color --noinput'
+
+            reset_db:
+                command: [
+                    'rm -rf **/migrations/'
+                    'python manage.py reset_db --noinput'
+                    'python manage.py makemigrations users centers'
+                    'python manage.py migrate'
+                    'python manage.py loaddata regions'
+                ].join '&&'
 
         watch:
             sass:
@@ -44,9 +53,13 @@ module.exports = (grunt) ->
                 files: '<%= jshint.files %>'
                 tasks: 'jshint'
 
-            pep8:
+            models:
+                files: ['**/models.py', '**/models/*.py']
+                tasks: 'shell:reset_db'
+
+            django:
                 files: '**/*.py'
-                tasks: ['shell:pep8', 'shell:testing']
+                tasks: 'test'
 
 
     grunt.loadNpmTasks 'grunt-bowercopy'
@@ -55,6 +68,15 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-shell'
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-notify'
+
+
+    grunt.registerTask 'test', [
+        'shell:pep8'
+        'shell:unittest'
+    ]
+
+    grunt.registerTask 'dev', [
+    ]
 
     grunt.registerTask 'default', [
         'bowercopy'
