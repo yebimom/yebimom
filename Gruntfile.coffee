@@ -49,6 +49,9 @@ module.exports = (grunt) ->
                     'python manage.py loaddata regions'
                 ].join '&&'
 
+            deploy_staticfiles:
+                command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
+
         watch:
             sass:
                 files: '**/*.sass'
@@ -82,6 +85,10 @@ module.exports = (grunt) ->
     ]
 
     grunt.registerTask 'dev', [
+    ]
+
+    grunt.registerTask 'deploy', [
+        'shell:deploy_staticfiles'
     ]
 
     grunt.registerTask 'default', [
