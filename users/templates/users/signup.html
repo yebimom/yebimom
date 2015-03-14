@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}회원가입 - 예비맘{% endblock %}
+
+
+{% block content %}
 <h1>Sign Up</h1>
 
 
@@ -25,3 +31,4 @@
 <input type="submit" value="회원가입" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
+{% endblock %}
