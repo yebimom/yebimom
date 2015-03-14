@@ -6,7 +6,6 @@ def center_registration(request):
     if request.method == 'GET':
         return render(request, 'centers/center_registration.html')
     else:
-        errors = []
         try:
             name = request.POST.get('name', 0)
             address = request.POST.get('address', 0)
@@ -15,13 +14,12 @@ def center_registration(request):
             price = request.POST.get('price', 0)
             result = name, address, phone, url, price
         except ValueError:
-            errors.append('Not a Valid Value')
             result = 0
 
         return render(
             request,
             'centers/center_registration.html',
-            {'result': result, 'errors': errors}
+            {'result': result}
         )
 
 
