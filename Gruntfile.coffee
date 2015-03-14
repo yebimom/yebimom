@@ -40,14 +40,14 @@ module.exports = (grunt) ->
             unittest:
                 command: 'NOSE_NOCAPTURE=1 python manage.py test -v2 --color --noinput'
 
-            reset_db:
-                command: [
-                    'rm -rf **/migrations/'
-                    'python manage.py reset_db --noinput'
-                    'python manage.py makemigrations users centers'
-                    'python manage.py migrate'
-                    'python manage.py loaddata regions'
-                ].join '&&'
+            # reset_db:
+            #     command: [
+            #         'rm -rf **/migrations/'
+            #         'python manage.py reset_db --noinput'
+            #         'python manage.py makemigrations users centers'
+            #         'python manage.py migrate'
+            #         'python manage.py loaddata regions'
+            #     ].join '&&'
 
             deploy_staticfiles:
                 command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
@@ -61,13 +61,24 @@ module.exports = (grunt) ->
                 files: '<%= jshint.files %>'
                 tasks: 'jshint'
 
-            models:
-                files: ['**/models.py', '**/models/*.py']
-                tasks: 'shell:reset_db'
+            # models:
+            #     files: ['**/models.py', '**/models/*.py']
+            #     tasks: 'shell:reset_db'
 
             django:
                 files: '**/*.py'
                 tasks: 'test'
+
+        notify:
+            pep8:
+                options:
+                    title: "PEP8 - Success!"
+                    message: "A Foolish Consistency is the Hobgoblin of Little Minds"
+
+            unittest:
+                options:
+                    title: "UnitTest - Suceess!"
+                    message: "Keep Calm and Love TDD"
 
 
     grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -81,7 +92,9 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'test', [
         'shell:pep8'
+        'notify:pep8'
         'shell:unittest'
+        'notify:unittest'
     ]
 
     grunt.registerTask 'dev', [
