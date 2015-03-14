@@ -12,5 +12,7 @@ urlpatterns = patterns(
 
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
-    url(r'^login/', 'users.views.login', name='login'),
+
+    url(r'^login/', 'users.views.login_view', name='login'),
+    url(r'^logout/', 'users.views.logout_view', name='logout'),
 )
