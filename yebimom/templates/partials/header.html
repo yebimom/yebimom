@@ -1,5 +1,9 @@
 <header>
-    <a href="{% url 'signup' %}">회원가입</a>
-    <a href="{% url 'login' %}">로그인</a>
-    <a href="{% url 'logout' %}">로그아웃</a>
+    {% if user.is_authenticated %}
+        <span>{{ user.username }}</span>
+        <a href="{% url 'logout' %}">로그아웃</a>
+    {% else %}
+        <a href="{% url 'signup' %}">회원가입</a>
+        <a href="{% url 'login' %}">로그인</a>
+    {% endif %}
 </header>
