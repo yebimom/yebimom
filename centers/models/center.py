@@ -9,6 +9,7 @@ from centers.utils.center_hashids import get_encoded_center_hashid
 
 
 class CenterManager(models.Manager):
+
     def get_by_natural_key(self, region_third_layer, name):
         return self.get(region_third_layer=region_third_layer, name=name)
 
