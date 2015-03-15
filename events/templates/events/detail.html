@@ -4,8 +4,13 @@
 
 {% block content %}
     {{ event.title }}
-    {{ event.contents }}
     {{ event.starts_at }}
     {{ event.ends_at }}
     {{ event.is_in_progress }}
+
+    <div>
+    {% autoescape off %}
+        {{ event.contents }}
+    {% endautoescape %}
+    </div>
 {% endblock %}
