@@ -84,8 +84,9 @@ bower_components/
 # Node Modules
 node_modules/
 
-# Static Files for local developent ( STATIC_ROOT )
+# Static, Media Files for local developent ( STATIC_ROOT )
 /static/
+/media/
 
 # CSS
 *.css

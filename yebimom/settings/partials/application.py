@@ -20,6 +20,8 @@ INSTALLED_APPS = (
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
     'storages',
+    'imagekit',
+    'rest_framework',
 
     # Yebimom Apps
     'users',
