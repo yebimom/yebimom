@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Event{% endblock %}
+
+{% block content %}
+    <h1>이벤트 리스트</h1>
+    <ul>
+    {% for event in events %}
+        <li>{{ event.title}}</li>
+    {% endfor %}
+    </ul>
+
+    <pre>
+    # 전체 이벤트 : {{ events.count }}
+    </pre>
+{% endblock %}
