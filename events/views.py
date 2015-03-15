@@ -7,7 +7,7 @@ from events.models import Event
 
 
 class EventList(ListView):
-    model = Event
+    queryset = Event.objects.order_by('-ends_at')
     template_name = 'events/list.html'
     context_object_name = 'events'
 
