@@ -21,3 +21,7 @@ requests==2.5.3
 requests-oauthlib==0.4.2
 django-storages==1.1.8
 boto==2.36.0
+pillow==2.7.0
+django-appconf==1.0.1
+django-imagekit==3.2.6
+pilkit==1.1.12
