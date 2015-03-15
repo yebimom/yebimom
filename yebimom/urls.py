@@ -17,5 +17,5 @@ urlpatterns = patterns(
     url(r'^$', 'yebimom.views.home', name='home'),
 
     # Included Apps Urls
-    url(r'^', include('events.urls', namespace='events', app_name='events')),
+    url(r'^events/', include('events.urls', namespace='events', app_name='events')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
