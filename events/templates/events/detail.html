@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% block meta_description %}{{ event.description }}{% endblock %}
+{% block meta_description %}{{ event.meta_description }}{% endblock %}
+{% block meta_keywords %}{{ event.meta_keywords }}{% endblock %}
 {% block title %}{{ event.title }}{% endblock %}
 
 {% block content %}
