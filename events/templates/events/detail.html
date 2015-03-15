@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
+{% block title %}{{ event.title }}{% endblock %}
+
 {% block content %}
-  {% autoescape off %}
-    <p>{{ object.template_contents }}</p>
-  {% endautoescape %}
+    {{ event.title }}
+    {{ event.contents }}
 {% endblock %}

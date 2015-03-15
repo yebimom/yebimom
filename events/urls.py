@@ -1,10 +1,12 @@
 from django.conf.urls import patterns, url
-from events.views import EventDetailView
+
+# Views
+from events.views import EventDetail
 
 
 urlpatterns = patterns(
     '',
 
     # Event Urls
-    url(r'^(?P<pk>\d+)/$', EventDetailView.as_view(), name='detail'),
+    url(r'^event/(?P<pk>\d+)/$', EventDetail.as_view(), name='detail'),
 )
