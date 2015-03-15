@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'storages',
     'imagekit',
+    'rest_framework',
 
     # Yebimom Apps
     'users',
