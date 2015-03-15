@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% autoescape off %}
+    <p>{{ object.template_contents }}</p>
+  {% endautoescape %}
+{% endblock %}
