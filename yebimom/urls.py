@@ -23,4 +23,7 @@ urlpatterns = patterns(
     url(r'^rules/privacy/$', 'yebimom.views.privacy', name='privacy'),
     url(r'^rules/disclaimer/$', 'yebimom.views.disclaimer', name='disclaimer'),
     url(r'^rules/search_policy/$', 'yebimom.views.search_policy', name='search_policy'),
+
+    # Included Apps Urls
+    url(r'^events/', include('events.urls', namespace='events', app_name='events')),
 )
