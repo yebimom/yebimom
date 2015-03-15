@@ -6,7 +6,7 @@
     <h1>이벤트 리스트</h1>
     <ul>
     {% for event in events %}
-        <li>{{ event.title}}</li>
+    <li><a href="{% url "events:detail" pk=event.pk %}">{{ event.title }}</a></li>
     {% endfor %}
     </ul>
 
