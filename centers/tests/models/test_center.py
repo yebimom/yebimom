@@ -23,7 +23,6 @@ class CenterTest(RegionAllLayerTest):
 
     def test_encoded_center_hashids_should_have_valid_value(self):
         updated_center = Center.objects.get(pk=self.center.pk)
-        print "updated_center:", updated_center, updated_center.hash_id
         self.assertEqual(
             updated_center.hash_id,
             get_encoded_center_hashid(self.center.id)
