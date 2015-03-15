@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 
+{% block meta_description %}{{ event.meta_description }}{% endblock %}
+{% block meta_keywords %}{{ event.meta_keywords }}{% endblock %}
+{% block title %}{{ event.title }}{% endblock %}
+
 {% block content %}
-  {% autoescape off %}
-    <p>{{ object.template_contents }}</p>
-  {% endautoescape %}
+    {{ event.title }}
+    {{ event.starts_at }}
+    {{ event.ends_at }}
+    {{ event.is_in_progress }}
+
+    <div>
+    {% autoescape off %}
+        {{ event.contents }}
+    {% endautoescape %}
+    </div>
 {% endblock %}

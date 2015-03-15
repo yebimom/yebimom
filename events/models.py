@@ -1,6 +1,24 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Event(models.Model):
-    template_contents = models.TextField(null=True)
-    is_in_progress = models.BooleanField(default=True)
+    title = models.CharField(max_length=255)
+    contents = models.TextField(blank=True, null=True)
+
+    starts_at = models.DateTimeField(blank=True, null=True)
+    ends_at = models.DateTimeField(blank=True, null=True)
+
+    thumbnail = models.ImageField(
+        upload_to='events'
+    )
+
+    meta_description = models.CharField(max_length=255, blank=True, null=True)
+    meta_keywords = models.CharField(max_length=255, blank=True, null=True)
+
+    def _is_in_progress(self):
+        return self.ends_at > timezone.now()
+    is_in_progress = property(_is_in_progress)
+
+    def __unicode__(self):
+        return self.title

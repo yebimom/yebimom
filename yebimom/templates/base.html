@@ -3,6 +3,16 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
+        {# Meta - Description, Keywords #}
+        <meta
+            name="description"
+            content="{% block meta_description %}산모의 산모에 의한 산모를 위한 에비맘닷컴{% endblock %}"
+        >
+        <meta
+            name="keywords"
+            content="{% block meta_keywords %}예비맘, 예비맘닷컴, 산후조리원{% endblock %}"
+        >
+
         <title>{% block title %}예비맘{% endblock %}</title>
 
         {% include "partials/stylesheets.html" %}
