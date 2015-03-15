@@ -18,4 +18,6 @@ urlpatterns = patterns(
 
     # Included Apps Urls
     url(r'^events/', include('events.urls', namespace='events', app_name='events')),
+    url(r'^api/', include('api.urls', namespace='api', app_name='api')),
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
