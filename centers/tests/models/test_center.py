@@ -34,13 +34,6 @@ class CenterTest(RegionAllLayerTest):
             updated_center.hash_id != ''
         )
 
-    def test_price_should_have_valid_value(self):
-        try:
-            self.center.price = 3000000
-            self.center.save()
-        except:
-            self.fail("fail to set price")
-
     def test_center_should_have_regions_information(self):
         center = Center.objects.create(
             name="test",
