@@ -5,21 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib.sitemaps.views import sitemap
-from django.contrib.sitemaps import GenericSitemap
+from yebimom.sitemaps import sitemaps
 
-from yebimom.sitemaps import StaticViewSitemap
-from events.models import Event
-
-
-info_dict = {
-    'queryset': Event.objects.all(),
-    'date_field': 'starts_at',
-}
-
-sitemaps = {
-    'static': StaticViewSitemap,
-    'event': GenericSitemap(info_dict, priority=0.6),
-}
 
 urlpatterns = patterns(
     '',
