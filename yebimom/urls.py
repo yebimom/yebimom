@@ -4,20 +4,9 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib.sitemaps.views import sitemap
+from yebimom.sitemaps import sitemaps
 
-from events.models import Event
-
-
-info_dict = {
-    'queryset': Event.objects.all(),
-    'date_field': 'starts_at',
-}
-
-sitemaps = {
-    'event': GenericSitemap(info_dict, priority=0.6),
-}
 
 urlpatterns = patterns(
     '',
