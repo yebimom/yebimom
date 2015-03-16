@@ -1,13 +1,14 @@
-from django.contrib.sitemaps import GenericSitemap
+from django.contrib import sitemaps
 
-from events.models import Event
+from django.core.urlresolvers import reverse
 
 
-info_dict = {
-    'queryset': Event.objects.all(),
-    'date_field': 'starts_at',
-}
+class StaticViewSitemap(sitemaps.Sitemap):
+    priority = 0.5
+    changefreq = 'daily'
 
-sitemaps = {
-    'event': GenericSitemap(info_dict, priority=0.6),
-}
+    def items(self):
+        return ['home']
+
+    def location(self, item):
+        return reverse(item)
