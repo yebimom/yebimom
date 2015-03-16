@@ -21,6 +21,17 @@ urlpatterns = patterns(
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
 
+    # Login, Logout
+    url(r'^login/$', 'users.views.login_view', name='login'),
+    url(r'^logout/$', 'users.views.logout_view', name='logout'),
+    url(r'^signup/$', 'users.views.signup', name='signup'),
+
+    # Rules ( Static Pages )
+    url(r'^rules/service/$', 'yebimom.views.service', name='service'),
+    url(r'^rules/privacy/$', 'yebimom.views.privacy', name='privacy'),
+    url(r'^rules/disclaimer/$', 'yebimom.views.disclaimer', name='disclaimer'),
+    url(r'^rules/search-policy/$', 'yebimom.views.search_policy', name='search_policy'),
+
     # Included Apps Urls
     url(r'^events/', include('events.urls', namespace='events', app_name='events')),
     url(r'^api/', include('api.urls', namespace='api', app_name='api')),
