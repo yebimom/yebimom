@@ -24,6 +24,7 @@ INSTALLED_APPS = (
     'storages',
     'imagekit',
     'rest_framework',
+    'robots',
 
     # Yebimom Apps
     'users',
