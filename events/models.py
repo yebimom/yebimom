@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from django.core.urlresolvers import reverse
+
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
@@ -22,3 +24,6 @@ class Event(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('events:detail', args=[str(self.id)])
