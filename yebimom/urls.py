@@ -4,11 +4,16 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib.sitemaps.views import sitemap
+from yebimom.sitemaps import sitemaps
+
+
 urlpatterns = patterns(
     '',
 
-    # Django Default
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^robots\.txt$', include('robots.urls')),
 
     # Django 3rd Party Modules
     url('', include('social.apps.django_app.urls', namespace='social')),

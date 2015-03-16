@@ -28,3 +28,4 @@ pilkit==1.1.12
 django-filter==0.9.2
 djangorestframework==3.1.0
 markdown==2.6.1
+django-robots==1.0

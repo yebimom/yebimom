@@ -16,12 +16,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
     'storages',
     'imagekit',
     'rest_framework',
+    'robots',
 
     # Yebimom Apps
     'users',
@@ -64,3 +67,5 @@ TEMPLATE_DIRS = (
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
+
+SITE_ID = 1
