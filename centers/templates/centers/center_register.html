@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block contentss %}
-<form method='POST' action='center/register'>
+<form method='POST' action='{% url 'register' %}'>
+    <table>
     {% csrf_token %}
     {{ center_form }}
+    <table/>
     <input type='submit' value='Register'/>
 </form>
 {% endblock %}
