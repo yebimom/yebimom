@@ -1,13 +1,16 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 # Model
 from centers.models.center import Center
 
 
-class Center(forms.ModelForm):
+class CenterForm(forms.ModelForm):
     class Meta:
         model = Center
-        fields = ['region_third_layer', 'name', 'address', 'phone', 'url', 'price']
+        fields = '__all__'
+        # fields = ['region_third_layer', 'name', 'address', 'phone', 'url', 'price']
+        # exclude = ('region_first_layer', 'region_second_layer')
         labels = {
             'region_third_layer': _('Region'),
             'name': _('Center Name'),
