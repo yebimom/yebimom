@@ -5,19 +5,8 @@
 
 {% block contentss %}
 <form method='POST' action='center/register'>
-    name: <input type='text' name='name'><br>
-    address: <input type='text' name='address'><br>
-    phone: <input type='text' name='phone'><br>
-    url: <input type='text' name='url'><br>
-    price: <input type='text' name='price'><br>
-    <input type='submit' value='register'><br>
     {% csrf_token %}
-    {% for error in errors %}
-        {{ error }} <br>
-        {% empty %}
-        {% if result %}
-            result is {{ result }}
-        {% endif %}
-    {% endfor %}
+    {{ center_form }}
+    <input type='submit' value='Register'/>
 </form>
 {% endblock %}
