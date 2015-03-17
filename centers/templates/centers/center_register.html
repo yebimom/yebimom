@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<form method='POST' action='{% url 'register' %}'>
+<form method='POST' action='{% url 'centers:register' %}'>
     <table>
     {% csrf_token %}
     {{ center_form }}
