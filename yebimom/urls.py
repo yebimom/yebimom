@@ -22,7 +22,7 @@ urlpatterns = patterns(
     url(r'^$', 'yebimom.views.home', name='home'),
 
     # Centers Urls
-    url(r'^', include('centers.urls')),
+    url(r'^centers/', include('centers.urls', namespace='centers', app_name='centers')),
 
     # Included Apps Urls
     url(r'^events/', include('events.urls', namespace='events', app_name='events')),
