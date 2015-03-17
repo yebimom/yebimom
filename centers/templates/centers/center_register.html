@@ -1,9 +1,10 @@
+{% extends "base.html" %}
 
 {% block title %}
 <H1>Center Registration</H1>
 {% endblock %}
 
-{% block contentss %}
+{% block content %}
 <form method='POST' action='{% url 'register' %}'>
     <table>
     {% csrf_token %}
