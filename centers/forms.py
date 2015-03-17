@@ -24,3 +24,12 @@ class CenterForm(forms.ModelForm):
             },
         }
         localized_fields = '__all__'
+
+    def clean_phone(self):
+        phone = self.cleaned_data['phone']
+        if '-' in phone:
+            raise forms.ValidationError("You have to enter phone number without Hypen(-)")
+        elif len(phone) > 11:
+            raise forms.ValidationError("You have to enter 11or10-digit phone number")
+
+        return phone
