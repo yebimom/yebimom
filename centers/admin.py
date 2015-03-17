@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+# Model
+from centers.models.center import Center
+
+
+admin.site.register(Center)
