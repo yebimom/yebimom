@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Event{% endblock %}
+
+{% block content %}
+    <h1>이벤트 리스트</h1>
+    <ul>
+    {% for event in events %}
+    <div>
+        <a href="{% url "events:detail" pk=event.pk %}">
+            <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" width="300" height="200">
+            {{ event.title }}
+            {% if event.is_in_progress %}
+                <span class="label label-primary">진행중인 이벤트</span>
+            {% else %}
+                <span class="label label-danger">종료된 이벤트</span>
+            {% endif %}
+        </a>
+    </div>
+    {% endfor %}
+    </ul>
+
+    <pre>
+    # 전체 이벤트 : {{ events.count }}
+    </pre>
+{% endblock %}

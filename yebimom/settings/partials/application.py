@@ -5,6 +5,8 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+
 
 INSTALLED_APPS = (
     # Django Default
@@ -14,13 +16,20 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     # Django 3rd Party Modules ( installed via pip )
     'social.apps.django_app.default',
+    'storages',
+    'imagekit',
+    'rest_framework',
+    'robots',
 
     # Yebimom Apps
     'users',
     'centers',
+    'events',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,3 +67,5 @@ TEMPLATE_DIRS = (
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
+
+SITE_ID = 1
