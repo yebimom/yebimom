@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 # Form
 from centers.forms import CenterForm
@@ -13,7 +14,7 @@ def center_register(request):
 
         if center_form.is_valid():
             center_form.save()
-            return HttpResponseRedirect('/center/register_complete')
+            return HttpResponseRedirect(reverse('centers:register_complete'))
 
     return render(
         request,
