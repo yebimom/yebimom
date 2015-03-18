@@ -21,6 +21,9 @@ urlpatterns = patterns(
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
 
+    # Centers Urls
+    url(r'^centers/', include('centers.urls', namespace='centers', app_name='centers')),
+
     # Rules ( Static Pages )
     url(r'^rules/service/$', 'yebimom.views.service', name='service'),
     url(r'^rules/privacy/$', 'yebimom.views.privacy', name='privacy'),

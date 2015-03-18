@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+산후조리원 리스트
+{% endblock %}
+
+{% block content %}
+{% if query %}
+<p><b>{{ query }}에 대한 검색결과</b></p>
+{% endif %}
+{% if centers %}
+    <p>{{ centers|length }} 개의 검색 결과를 찾았습니다.</p>
+    {% for center in centers %}
+        <p>
+        <h3><a href=''>{{ center.name }}</a></h3><br>
+        address : {{ center.address }}<br>
+        phone : {{ center.phone }}<br>
+        url : {{ center.url }}<br>
+        price : {{ center.price }}<br>
+        region : {{ center.region_third_layer }}</p>
+        
+    {% endfor %}
+{% else %}
+    <p>{{ query }}에 대한 검색결과가 없습니다.</p>
+{% endif %}
+{% endblock %}
