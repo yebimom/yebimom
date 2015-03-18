@@ -37,6 +37,5 @@ def center(request):
         return render(request, 'centers/center_list.html', {'centers': centers})
 
 
-
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")

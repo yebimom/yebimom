@@ -6,6 +6,7 @@ from centers.models.center import Center
 
 
 class CenterForm(forms.ModelForm):
+
     class Meta:
         model = Center
         fields = ['region_third_layer', 'name', 'address', 'phone', 'url', 'price']
