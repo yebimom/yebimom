@@ -15,5 +15,5 @@ urlpatterns = patterns(
     url(r'^events/(?P<pk>\d+)/$', EventDetail.as_view(), name='detail'),
 
     url(r'^centers/$', CenterList.as_view(), name='list'),
-    url(r'^centers/(?P<pk>\d+)/$', CenterDetail.as_view(), name='detail'),
+    url(r'^centers/(?P<hash_id>\w{5})/$', CenterDetail.as_view(), name='detail'),
 )
