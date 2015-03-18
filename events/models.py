@@ -3,6 +3,9 @@ from django.utils import timezone
 
 from django.core.urlresolvers import reverse
 
+# Utils
+from events.utils.thumbnail_handling import _get_thumbnail_path
+
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
@@ -12,7 +15,7 @@ class Event(models.Model):
     ends_at = models.DateTimeField(blank=True, null=True)
 
     thumbnail = models.ImageField(
-        upload_to='events'
+        upload_to=_get_thumbnail_path
     )
 
     meta_description = models.CharField(max_length=255, blank=True, null=True)
