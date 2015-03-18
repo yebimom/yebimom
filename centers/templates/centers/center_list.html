@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block content %}
+{% if query %}
 <p><b>{{ query }}에 대한 검색결과</b></p>
+{% endif %}
 {% if centers %}
     <p>{{ centers|length }} 개의 검색 결과를 찾았습니다.</p>
     {% for center in centers %}
@@ -21,5 +23,4 @@
 {% else %}
     <p>{{ query }}에 대한 검색결과가 없습니다.</p>
 {% endif %}
-
 {% endblock %}

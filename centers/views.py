@@ -31,11 +31,11 @@ def center(request):
     if 'query' in request.GET and request.GET['query']:
         query = request.GET['query']
         centers = Center.objects.filter(name__icontains=query)
-        return render(request, 'centers/center_list.html',
-                      {'centers': centers, 'query': query}
-                      )
+        return render(request, 'centers/center_list.html', {'centers': centers, 'query': query})
     else:
-        return HttpResponse("검색을 클릭해주세요.")
+        centers = Center.objects.all()
+        return render(request, 'centers/center_list.html', {'centers': centers})
+
 
 
 def center_register_complete(request):
