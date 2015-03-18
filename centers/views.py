@@ -39,3 +39,12 @@ def center(request):
 
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
+
+
+def center_detail(request, hash_id):
+    if request.method == 'POST':
+        return HttpResponse("Don't using method POST")
+    else:
+        center = Center.objects.get(hash_id=hash_id)
+        return render(request, 'centers/center_detail.html',
+                      {'center': center, 'hash_id': hash_id})
