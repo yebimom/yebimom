@@ -4,7 +4,7 @@ from centers import views
 urlpatterns = patterns(
     '',
 
-    url(r'^$', views.center),
+    url(r'^$', views.center, name='center'),
 
     # Center registration
     url(r'^register/', views.center_register, name='register'),
