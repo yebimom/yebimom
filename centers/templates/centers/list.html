@@ -12,7 +12,7 @@
     <p>{{ centers|length }} 개의 검색 결과를 찾았습니다.</p>
     {% for center in centers %}
         <p>
-        <h3><a href='/centers/{{ center.hash_id }}'>{{ center.name }}</a></h3><br>
+        <h3><a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a></h3><br>
         address : {{ center.address }}<br>
         phone : {{ center.phone }}<br>
         url : {{ center.url }}<br>

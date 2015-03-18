@@ -22,7 +22,7 @@ def center_register(request):
 
     return render(
         request,
-        'centers/center_register.html',
+        'centers/register.html',
         {'center_form': center_form}
     )
 
@@ -31,10 +31,10 @@ def center(request):
     if 'query' in request.GET and request.GET['query']:
         query = request.GET['query']
         centers = Center.objects.filter(name__icontains=query)
-        return render(request, 'centers/center_list.html', {'centers': centers, 'query': query})
+        return render(request, 'centers/list.html', {'centers': centers, 'query': query})
     else:
         centers = Center.objects.all()
-        return render(request, 'centers/center_list.html', {'centers': centers})
+        return render(request, 'centers/list.html', {'centers': centers})
 
 
 def center_register_complete(request):
@@ -46,5 +46,5 @@ def center_detail(request, hash_id):
         return HttpResponse("Don't using method POST")
     else:
         center = Center.objects.get(hash_id=hash_id)
-        return render(request, 'centers/center_detail.html',
+        return render(request, 'centers/detail.html',
                       {'center': center, 'hash_id': hash_id})
