@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+# Models
+from centers.models import CenterImage
+
+
+@admin.register(CenterImage)
+class CenterImageAdmin(admin.ModelAdmin):
+    pass
