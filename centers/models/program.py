@@ -3,7 +3,7 @@ from centers.models.center import Center
 
 
 class Program(models.Model):
-    center = models.ForeignKey(Center, related_name='program_set')
+    center = models.ForeignKey(Center)
 
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True, null=True)
