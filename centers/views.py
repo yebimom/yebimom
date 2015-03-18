@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.views.decorators.http import require_http_methods
 
 # Form
 from centers.forms import CenterForm
@@ -10,6 +11,7 @@ from centers.forms import CenterForm
 from centers.models.center import Center
 
 
+@require_http_methods(["GET", "POST"])
 def center_register(request):
     if request.method == 'GET':
         center_form = CenterForm()
@@ -27,6 +29,7 @@ def center_register(request):
     )
 
 
+@require_http_methods(["GET", "POST"])
 def center(request):
     if 'query' in request.GET and request.GET['query']:
         query = request.GET['query']
@@ -41,10 +44,8 @@ def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
 
 
+@require_http_methods(["GET"])
 def center_detail(request, hash_id):
-    if request.method == 'POST':
-        return HttpResponse("Don't using method POST")
-    else:
-        center = Center.objects.get(hash_id=hash_id)
-        return render(request, 'centers/detail.html',
-                      {'center': center, 'hash_id': hash_id})
+    center = Center.objects.get(hash_id=hash_id)
+    return render(request, 'centers/detail.html',
+                  {'center': center, 'hash_id': hash_id})
