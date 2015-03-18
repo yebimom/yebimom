@@ -1,10 +1,11 @@
 from django.conf.urls import patterns, url
 
 # Views
-from api.views import EventList
-from api.views import EventDetail
-from api.views import CenterList
-from api.views import CenterDetail
+from api.views.view_events import EventList
+from api.views.view_events import EventDetail
+from api.views.view_centers import CenterList
+from api.views.view_centers import CenterDetail
+
 
 urlpatterns = patterns(
     '',
