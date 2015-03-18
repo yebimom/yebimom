@@ -3,6 +3,7 @@ from rest_framework.generics import RetrieveAPIView
 
 from events.models import Event
 from events.serializers import EventSerializer
+
 from centers.models import Center
 from centers.serializers import CenterSerializer
 

@@ -13,7 +13,6 @@ urlpatterns = patterns(
     url(r'^events/$', EventList.as_view(), name='list'),
     url(r'^events/(?P<pk>\d+)/$', EventDetail.as_view(), name='detail'),
 
-    url(r'^centers/$', CenterList.as_view(), name='center'),
+    url(r'^centers/$', CenterList.as_view(), name='list'),
     url(r'^centers/(?P<pk>\d+)/$', CenterDetail.as_view(), name='detail'),
-
 )
