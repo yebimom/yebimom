@@ -18,7 +18,7 @@ script:
 
 - pep8
 
-- python manage.py makemigrations users centers
+- python manage.py makemigrations users centers events reviews
 - python manage.py migrate
 - python manage.py loaddata regions
 - python manage.py test -v2
