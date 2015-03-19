@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.views.decorators.http import require_http_methods
 
 # Form
 from centers.forms import CenterForm
@@ -10,6 +11,7 @@ from centers.forms import CenterForm
 from centers.models.center import Center
 
 
+@require_http_methods(["GET", "POST"])
 def center_register(request):
     if request.method == 'GET':
         center_form = CenterForm()
@@ -22,20 +24,28 @@ def center_register(request):
 
     return render(
         request,
-        'centers/center_register.html',
+        'centers/register.html',
         {'center_form': center_form}
     )
 
 
+@require_http_methods(["GET", "POST"])
 def center(request):
     if 'query' in request.GET and request.GET['query']:
         query = request.GET['query']
         centers = Center.objects.filter(name__icontains=query)
-        return render(request, 'centers/center_list.html', {'centers': centers, 'query': query})
+        return render(request, 'centers/list.html', {'centers': centers, 'query': query})
     else:
         centers = Center.objects.all()
-        return render(request, 'centers/center_list.html', {'centers': centers})
+        return render(request, 'centers/list.html', {'centers': centers})
 
 
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
+
+
+@require_http_methods(["GET"])
+def center_detail(request, hash_id):
+    center = Center.objects.get(hash_id=hash_id)
+    return render(request, 'centers/detail.html',
+                  {'center': center, 'hash_id': hash_id})
