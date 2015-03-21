@@ -4,6 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.http import require_http_methods
 
+# Views
+from django.views.generic.detail import DetailView
+
 # Form
 from centers.forms import CenterForm
 
@@ -44,8 +47,8 @@ def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
 
 
-@require_http_methods(["GET"])
-def center_detail(request, hash_id):
-    center = Center.objects.get(hash_id=hash_id)
-    return render(request, 'centers/detail.html',
-                  {'center': center, 'hash_id': hash_id})
+class CenterDetail(DetailView):
+    model = Center
+    template_name = 'centers/detail.html'
+    context_object_name = 'center'
+    slug_field = 'hash_id'
