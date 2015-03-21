@@ -27,7 +27,9 @@ class Center(models.Model):
     hash_id = models.CharField(
         "center's_private_unique_id",
         max_length=12,
-        unique=True
+        unique=True,
+        blank=True,
+        null=True
     )
 
     def __unicode__(self):
