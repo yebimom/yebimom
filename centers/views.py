@@ -53,7 +53,8 @@ class CenterList(ListView):
     context_object_name = 'centers'
 
     def get_queryset(self):
-        return Center.objects.all()
+        search_query = self.request.GET.get('search') or str()
+        return Center.objects.filter(name__contains=search_query)
 
 
 class CenterDetail(DetailView):
