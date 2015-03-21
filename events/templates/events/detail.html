@@ -5,14 +5,14 @@
 {% block title %}{{ event.title }}{% endblock %}
 
 {% block content %}
-    {{ event.title }}
-    {{ event.starts_at }}
-    {{ event.ends_at }}
-    {{ event.is_in_progress }}
+  {{ event.title }}
+  {{ event.starts_at }}
+  {{ event.ends_at }}
+  {{ event.is_in_progress }}
 
-    <div>
+  <div>
     {% autoescape off %}
-        {{ event.contents }}
+      {{ event.contents }}
     {% endautoescape %}
-    </div>
+  </div>
 {% endblock %}
