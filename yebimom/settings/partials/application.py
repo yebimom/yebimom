@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'users',
     'centers',
     'events',
+    'reviews'
 )
 
 MIDDLEWARE_CLASSES = (

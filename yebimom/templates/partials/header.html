@@ -1,10 +1,9 @@
-<H1>[예비맘]</H1>
 <header>
-    {% if user.is_authenticated %}
-        <span>{{ user.username }}</span>
-        <a href="{% url 'users:logout' %}">로그아웃</a>
-    {% else %}
-        <a href="{% url 'users:signup' %}">회원가입</a>
-        <a href="{% url 'users:login' %}">로그인</a>
-    {% endif %}
+  {% if user.is_authenticated %}
+    <span>{{ user.username }}</span>
+    <a href="{% url 'users:logout' %}">로그아웃</a>
+  {% else %}
+    <a href="{% url 'users:signup' %}">회원가입</a>
+    <a href="{% url 'users:login' %}">로그인</a>
+  {% endif %}
 </header>

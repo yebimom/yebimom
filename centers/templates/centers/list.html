@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}
-산후조리원 리스트
-{% endblock %}
+{% block title %}산후조리원 리스트{% endblock %}
 
 {% block content %}
-{% if query %}
-<p><b>{{ query }}에 대한 검색결과</b></p>
-{% endif %}
-{% if centers %}
-    <p>{{ centers|length }} 개의 검색 결과를 찾았습니다.</p>
+
+  {% if query %}
+    <h1>{{ query }}에 대한 검색결과</h1>
+  {% endif %}
+
+  {% if centers %}
+    <h1>{{ centers|length }} 개의 검색 결과를 찾았습니다.</h1>
     {% for center in centers %}
-        <p>
+      <div>
         <h3><a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a></h3><br>
+
         address : {{ center.address }}<br>
         phone : {{ center.phone }}<br>
         url : {{ center.url }}<br>
         price : {{ center.price }}<br>
-        region : {{ center.region_third_layer }}</p>    
+        region : {{ center.region_third_layer }}
+      </div>
     {% endfor %}
-{% else %}
-    <p>{{ query }}에 대한 검색결과가 없습니다.</p>
-{% endif %}
+  {% else %}
+      <p>{{ query }}에 대한 검색결과가 없습니다.</p>
+  {% endif %}
+
 {% endblock %}

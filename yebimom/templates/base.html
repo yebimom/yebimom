@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-        {# Meta - Description, Keywords #}
-        <meta
-            name="description"
-            content="{% block meta_description %}산모의 산모에 의한 산모를 위한 에비맘닷컴{% endblock %}"
-        >
-        <meta
-            name="keywords"
-            content="{% block meta_keywords %}예비맘, 예비맘닷컴, 산후조리원{% endblock %}"
-        >
+    {# Meta - Description, Keywords #}
+    <meta
+      name="description"
+      content="{% block meta_description %}산모의 산모에 의한 산모를 위한 에비맘닷컴{% endblock %}"
+    >
+    <meta
+      name="keywords"
+      content="{% block meta_keywords %}예비맘, 예비맘닷컴, 산후조리원{% endblock %}"
+    >
 
-        <title>{% block title %}예비맘{% endblock %}</title>
+    <title>{% block title %}예비맘{% endblock %}</title>
 
-        {% include "partials/stylesheets.html" %}
-        {% include "partials/google-analytics.html" %}
-    </head>
-    <body>
-        {% include "partials/header.html" %}
-        {% include "partials/search.html" %}
-        {% block content %}{% endblock %}
-        {% include "partials/debug.html" %}
-        {% include "partials/footer.html" %}
+    {% include "partials/stylesheets.html" %}
+    {% include "partials/google-analytics.html" %}
+  </head>
+  <body>
+    {% include "partials/header.html" %}
+    {% include "partials/search.html" %}
+    {% block content %}{% endblock %}
+    {% include "partials/debug.html" %}
+    {% include "partials/footer.html" %}
 
-        {% include "partials/javascripts.html" %}
-    </body>
+    {% include "partials/javascripts.html" %}
+  </body>
 </html>

@@ -11,5 +11,7 @@ class CenterList(ListAPIView):
 
 
 class CenterDetail(RetrieveAPIView):
+
+    lookup_field = 'hash_id'
     queryset = Center.objects.all()
     serializer_class = CenterSerializer
