@@ -49,9 +49,11 @@ def center_register_complete(request):
 
 
 class CenterList(ListView):
-    model = Center
     template_name = 'centers/new_list.html'
     context_object_name = 'centers'
+
+    def get_queryset(self):
+        return Center.objects.all()
 
 
 class CenterDetail(DetailView):
