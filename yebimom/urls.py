@@ -17,6 +17,7 @@ urlpatterns = patterns(
 
     # Django 3rd Party Modules
     url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^grappelli/', include('grappelli.urls')),
 
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
