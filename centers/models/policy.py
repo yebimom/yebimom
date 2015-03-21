@@ -3,7 +3,7 @@ from centers.models.center import Center
 
 
 class Policy(models.Model):
-    center = models.ForeignKey(Center)
+    center = models.ManyToManyField(Center)
 
     name = models.CharField(max_length=40)
     is_available = models.BooleanField(default=False)
