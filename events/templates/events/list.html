@@ -14,7 +14,7 @@
       {% for event in three_events %}
         <div class="col-md-4">
           <a href="{% url "events:detail" pk=event.pk %}">
-            <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" width="300" height="200">
+            <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" class="img-responsive">
 
             <div>
               {{ event.title }}
