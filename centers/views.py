@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.http import require_http_methods
 
 # Views
+from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 # Form
@@ -45,6 +46,12 @@ def center(request):
 
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
+
+
+class CenterList(ListView):
+    model = Center
+    template_name = 'centers/list.html'
+    context_object_name = 'centers'
 
 
 class CenterDetail(DetailView):
