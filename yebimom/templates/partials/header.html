@@ -1,4 +1,4 @@
-<header>
+<header id="header">
   {% if user.is_authenticated %}
     <span>{{ user.username }}</span>
     <a href="{% url 'users:logout' %}">로그아웃</a>
