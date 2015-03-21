@@ -4,6 +4,8 @@
 
 {% block content %}
 
+Search Query : {{ request.GET.search }}
+
 <ul>
 {% for center in centers %}
   <li><a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a></li>

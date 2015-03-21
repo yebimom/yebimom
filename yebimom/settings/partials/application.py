@@ -53,6 +53,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
 
+    # Django Customs
+    "django.core.context_processors.request",
+
     # Python Social Auth Custom TEMPLATE_CONTEXT_PROCESSORS
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
