@@ -7,8 +7,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
-
 INSTALLED_APPS = (
+    # Custom admin, must set before django.contrib.admin
+    'grappelli',
+
     # Django Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,6 +58,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # Python Social Auth Custom TEMPLATE_CONTEXT_PROCESSORS
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
+
+    # Custom admin grappelli
+    "django.core.context_processors.request",
 )
 
 ROOT_URLCONF = 'yebimom.urls'
@@ -70,3 +75,7 @@ HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
 
 SITE_ID = 1
+
+
+# Grapelli admin settings
+GRAPPELLI_ADMIN_TITLE = 'Yebimom'
