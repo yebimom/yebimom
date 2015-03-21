@@ -33,23 +33,12 @@ def center_register(request):
     )
 
 
-@require_http_methods(["GET", "POST"])
-def center(request):
-    if 'query' in request.GET and request.GET['query']:
-        query = request.GET['query']
-        centers = Center.objects.filter(name__icontains=query)
-        return render(request, 'centers/list.html', {'centers': centers, 'query': query})
-    else:
-        centers = Center.objects.all()
-        return render(request, 'centers/list.html', {'centers': centers})
-
-
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
 
 
 class CenterList(ListView):
-    template_name = 'centers/new_list.html'
+    template_name = 'centers/list.html'
     context_object_name = 'centers'
 
     def get_queryset(self):

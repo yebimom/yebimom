@@ -7,8 +7,7 @@ from centers.views import CenterDetail
 urlpatterns = patterns(
     '',
 
-    url(r'^$', views.center, name='list'),
-    url(r'^list/$', CenterList.as_view()),
+    url(r'^$', CenterList.as_view(), name='list'),
     url(r'^(?P<slug>\w{5})/$', CenterDetail.as_view(), name='detail'),
 
     # Center registration
