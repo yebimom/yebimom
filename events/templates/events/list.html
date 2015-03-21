@@ -1,25 +1,32 @@
 {% extends "base.html" %}
+{% load event_extras %}
 
 {% block title %}Event{% endblock %}
 
 {% block content %}
-<h1>이벤트 리스트</h1>
-
-<ul>
-{% for event in events %}
-<div>
-  <a href="{% url "events:detail" pk=event.pk %}">
-    <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" width="300" height="200">
-    {{ event.title }}
-    {% if event.is_in_progress %}
-      <span class="label label-primary">진행중인 이벤트</span>
-    {% else %}
-      <span class="label label-danger">종료된 이벤트</span>
-    {% endif %}
-  </a>
-</div>
-{% endfor %}
-</ul>
+<section id="events">
+  <div class="container">
+    {% for three_events in events|group_by:3 %}
+      <div class="row">
+        {% for event in three_events %}
+          <div class="col-sm-12 col-md-4">
+            <a href="{% url "events:detail" pk=event.pk %}">
+              <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" class="img-responsive">
+              <div>
+                {{ event.title }}
+                {% if event.is_in_progress %}
+                  <span class="label label-primary">진행중인 이벤트</span>
+                {% else %}
+                  <span class="label label-danger">종료된 이벤트</span>
+                {% endif %}
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
 
 <pre>
 # 전체 이벤트 : {{ events.count }}
