@@ -1,16 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}
-산후조리원 등록
-{% endblock %}
+{% block title %}산후조리원 등록{% endblock %}
 
 {% block content %}
-<H3>산후조리원 등록</H3>
-<form method='POST' action='{% url 'centers:register' %}'>
-    <table>
-    {% csrf_token %}
-    {{ center_form }}
-    <table/>
-    <input type='submit' value='Register'/>
+<h1>산후조리원 등록</h1>
+<form method='POST' action='{% url 'centers:register' %}'>{% csrf_token %}
+  <table>
+  {{ center_form }}
+  <table/>
+  <input type='submit' value='Register'/>
 </form>
 {% endblock %}
