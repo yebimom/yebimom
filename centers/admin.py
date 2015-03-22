@@ -9,10 +9,12 @@ from centers.models import CenterImage
 
 class PolicyInline(admin.TabularInline):
     model = Policy.center.through
+    classes = ('grp-collapse grp-closed',)
 
 
 class FacilityInline(admin.TabularInline):
     model = Facility.center.through
+    classes = ('grp-collapse grp-closed',)
 
 
 class CenterAdmin(admin.ModelAdmin):

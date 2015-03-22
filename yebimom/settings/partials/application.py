@@ -7,8 +7,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
-
 INSTALLED_APPS = (
+    # Custom admin, must set before django.contrib.admin
+    'grappelli',
+
     # Django Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -73,3 +75,7 @@ HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
 
 SITE_ID = 1
+
+
+# Grapelli admin settings
+GRAPPELLI_ADMIN_TITLE = 'Yebimom'
