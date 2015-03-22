@@ -1,7 +1,8 @@
 from django.db import models
 
-# utils
-from centers.utils.image_handling import _generate_upload_path
+
+def _generate_upload_path(self, file_name):
+    return "centers/%s/%s" % (self.center.hash_id, file_name)
 
 
 class CenterImage(models.Model):
