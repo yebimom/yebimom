@@ -7,8 +7,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
-
 INSTALLED_APPS = (
+    # Custom admin, must set before django.contrib.admin
+    'grappelli',
+
     # Django Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,6 +65,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # Yebimom Customs
     'yebimom.context_processors.google_analytics',
 )
+
+# Grapelli admin settings
+GRAPPELLI_ADMIN_TITLE = 'Yebimom'
 
 ROOT_URLCONF = 'yebimom.urls'
 
