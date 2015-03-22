@@ -8,6 +8,6 @@ def google_analytics(request):
     GOOGLE_ANALYTICS_TRACKING_ID = getattr(settings, 'GOOGLE_ANALYTICS_TRACKING_ID', False)
     if not settings.DEBUG and GOOGLE_ANALYTICS_TRACKING_ID:
         return {
-                'GOOGLE_ANALYTICS_TRACKING_ID': GOOGLE_ANALYTICS_TRACKING_ID,
+            'GOOGLE_ANALYTICS_TRACKING_ID': GOOGLE_ANALYTICS_TRACKING_ID,
         }
     return {}
