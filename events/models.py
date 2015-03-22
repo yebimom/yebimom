@@ -3,8 +3,9 @@ from django.utils import timezone
 
 from django.core.urlresolvers import reverse
 
-# Utils
-from events.utils.thumbnail_handling import _get_thumbnail_path
+
+def _get_thumbnail_path(self, file_name):
+    return "events/%s/%s" % (self.id, file_name)
 
 
 class Event(models.Model):
