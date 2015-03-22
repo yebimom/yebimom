@@ -59,6 +59,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # Python Social Auth Custom TEMPLATE_CONTEXT_PROCESSORS
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
+
+    # Yebimom Customs
+    'yebimom.context_processors.google_analytics',
 )
 
 ROOT_URLCONF = 'yebimom.urls'
