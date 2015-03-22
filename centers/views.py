@@ -4,6 +4,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.http import require_http_methods
 
+# Views
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+
 # Form
 from centers.forms import CenterForm
 
@@ -29,23 +33,21 @@ def center_register(request):
     )
 
 
-@require_http_methods(["GET", "POST"])
-def center(request):
-    if 'query' in request.GET and request.GET['query']:
-        query = request.GET['query']
-        centers = Center.objects.filter(name__icontains=query)
-        return render(request, 'centers/list.html', {'centers': centers, 'query': query})
-    else:
-        centers = Center.objects.all()
-        return render(request, 'centers/list.html', {'centers': centers})
-
-
 def center_register_complete(request):
     return HttpResponse("Center Registration COMPLETE!")
 
 
-@require_http_methods(["GET"])
-def center_detail(request, hash_id):
-    center = Center.objects.get(hash_id=hash_id)
-    return render(request, 'centers/detail.html',
-                  {'center': center, 'hash_id': hash_id})
+class CenterList(ListView):
+    template_name = 'centers/list.html'
+    context_object_name = 'centers'
+
+    def get_queryset(self):
+        search_query = self.request.GET.get('search') or str()
+        return Center.objects.filter(name__contains=search_query)
+
+
+class CenterDetail(DetailView):
+    model = Center
+    template_name = 'centers/detail.html'
+    context_object_name = 'center'
+    slug_field = 'hash_id'

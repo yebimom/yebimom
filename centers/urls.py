@@ -1,14 +1,16 @@
 from django.conf.urls import patterns, url
 from centers import views
 
+from centers.views import CenterList
+from centers.views import CenterDetail
+
 urlpatterns = patterns(
     '',
 
-    url(r'^$', views.center, name='center'),
+    url(r'^$', CenterList.as_view(), name='list'),
+    url(r'^(?P<slug>\w{5})/$', CenterDetail.as_view(), name='detail'),
 
     # Center registration
     url(r'^register/', views.center_register, name='register'),
     url(r'^register_complete/', views.center_register_complete, name='register_complete'),
-    # url(r'^detail/', views.center_detail, name='detail'),
-    url(r'^(?P<hash_id>\w{5})/$', views.center_detail, name='detail'),
 )
