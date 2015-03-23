@@ -69,4 +69,4 @@ def reviews(request, slug):
         center=center,
     )
 
-    return redirect("home")
+    return redirect("centers:detail", slug=slug)
