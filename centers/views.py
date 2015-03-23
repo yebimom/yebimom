@@ -54,5 +54,6 @@ class CenterDetail(DetailView):
     slug_field = 'hash_id'
 
 
+@require_http_methods(["POST"])
 def reviews(request, slug):
     return redirect("home")
