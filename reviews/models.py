@@ -6,7 +6,7 @@ from centers.models.center import Center
 class Review(models.Model):
 
     class Meta:
-        unique_together = (('user_id', 'center_id'),)
+        unique_together = (('user', 'center'),)
 
     user = models.ForeignKey(User)
     center = models.ForeignKey(Center)
