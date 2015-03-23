@@ -10,6 +10,7 @@ from django.views.generic.detail import DetailView
 
 # Form
 from centers.forms import CenterForm
+from reviews.forms import ReviewForm
 
 # Model
 from centers.models.center import Center
@@ -57,6 +58,11 @@ class CenterDetail(DetailView):
     context_object_name = 'center'
     slug_field = 'hash_id'
 
+    def get_context_data(self, **kwargs):
+        context = super(CenterDetail, self).get_context_data(**kwargs)
+        context['review_form'] = ReviewForm()
+        return context
+
 
 @login_required
 @require_http_methods(["POST"])
@@ -67,6 +73,7 @@ def reviews(request, slug):
     review = Review.objects.create(
         user=user,
         center=center,
+        content=request.POST['content'],
     )
 
     return redirect("centers:detail", slug=slug)

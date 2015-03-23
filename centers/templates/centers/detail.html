@@ -24,6 +24,7 @@
 
     <form action='{% url 'centers:reviews' slug=center.hash_id %}' method="post">{% csrf_token %}
       <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
+      {{ review_form }}
       <input type="submit" name="Post Review">
     </form>
   </div>
