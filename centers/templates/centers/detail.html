@@ -1,20 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}
-{{ center.name }} 상세 정보
-{% endblock %}
+{% block title %}{{ center.name }}{% endblock %}
 
 {% block content %}
-<p><h3>[{{ center.name }} 상세 정보]</h3></p>
-{% if center %}
-  <p>
-  <h3>{{ center.name }}</a></h3><br>
-  address : {{ center.address }}<br>
-  phone : {{ center.phone }}<br>
-  url : {{ center.url }}<br>
-  price : {{ center.price }}<br>
-  region : {{ center.region_third_layer }}</p>    
-{% else %}
-  <p>{{ center.name }}에 대한 상세 정보가 없습니다.</p>
-{% endif %}
+
+<section id="center">
+  <h1>{{ center.name }}</h1>
+</section>
+
+<section id="reviews">
+  <h1>Reviews</h1>
+</section>
+
 {% endblock %}
