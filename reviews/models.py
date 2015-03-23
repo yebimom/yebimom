@@ -12,7 +12,7 @@ class Review(models.Model):
     center = models.ForeignKey(Center)
 
     def __unicode__(self):
-        return  u"%s %s" % (
+        return u"%s %s" % (
             self.center.name,
             self.user.username,
         )
