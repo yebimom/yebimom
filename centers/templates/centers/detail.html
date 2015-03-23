@@ -14,6 +14,14 @@
   <div class="container">
     <h1>Reviews</h1>
 
+    <div class="alert alert-info">{{ center.review_set.count }}개의 리뷰가 있습니다.</div>
+
+    <ul>
+      {% for review in center.review_set.all %}
+      <li>{{ review }}</li>
+      {% endfor %}
+    </ul>
+
     <form action='{% url 'centers:reviews' slug=center.hash_id %}' method="post">{% csrf_token %}
       <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
       <input type="submit" name="Post Review">
