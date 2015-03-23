@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.http import require_http_methods
@@ -51,3 +52,7 @@ class CenterDetail(DetailView):
     template_name = 'centers/detail.html'
     context_object_name = 'center'
     slug_field = 'hash_id'
+
+
+def reviews(request, slug):
+    return redirect("home")
