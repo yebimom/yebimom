@@ -22,9 +22,6 @@ urlpatterns = patterns(
     # Yebimom Urls
     url(r'^$', 'yebimom.views.home', name='home'),
 
-    # Centers Urls
-    url(r'^centers/', include('centers.urls', namespace='centers', app_name='centers')),
-
     # Rules ( Static Pages )
     url(r'^rules/service/$', 'yebimom.views.service', name='service'),
     url(r'^rules/privacy/$', 'yebimom.views.privacy', name='privacy'),
@@ -32,6 +29,7 @@ urlpatterns = patterns(
     url(r'^rules/search-policy/$', 'yebimom.views.search_policy', name='search_policy'),
 
     # Included Apps Urls
+    url(r'^centers/', include('centers.urls', namespace='centers', app_name='centers')),
     url(r'^events/', include('events.urls', namespace='events', app_name='events')),
     url(r'^', include('users.urls', namespace='users', app_name='users')),
     url(r'^api/', include('api.urls', namespace='api', app_name='api')),

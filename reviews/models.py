@@ -6,7 +6,15 @@ from centers.models.center import Center
 class Review(models.Model):
 
     class Meta:
-        unique_together = (('user_id', 'center_id'),)
+        unique_together = (('user', 'center'),)
 
-    user_id = models.ForeignKey(User)
-    center_id = models.ForeignKey(Center)
+    user = models.ForeignKey(User)
+    center = models.ForeignKey(Center)
+
+    content = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return u"%s %s" % (
+            self.center.name,
+            self.user.username,
+        )

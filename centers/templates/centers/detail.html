@@ -1,20 +1,38 @@
 {% extends "base.html" %}
 
-{% block title %}
-{{ center.name }} 상세 정보
-{% endblock %}
+{% block title %}{{ center.name }}{% endblock %}
 
 {% block content %}
-<p><h3>[{{ center.name }} 상세 정보]</h3></p>
-{% if center %}
-  <p>
-  <h3>{{ center.name }}</a></h3><br>
-  address : {{ center.address }}<br>
-  phone : {{ center.phone }}<br>
-  url : {{ center.url }}<br>
-  price : {{ center.price }}<br>
-  region : {{ center.region_third_layer }}</p>    
-{% else %}
-  <p>{{ center.name }}에 대한 상세 정보가 없습니다.</p>
-{% endif %}
+
+<section id="center">
+  <div class="container">
+    <h1>{{ center.name }}</h1>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <h1>Reviews ({{ center.review_set.count }})</h1>
+
+    <ul>
+      {% for review in center.review_set.all %}
+      <li>{{ review.user }} - {{ review.content }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if user.is_authenticated %}
+      <form action='{% url 'centers:reviews' slug=center.hash_id %}' method="post">{% csrf_token %}
+        <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
+        {{ review_form }}
+        <input type="submit" name="Post Review">
+      </form>
+    {% else %}
+      <div class="alert alert-danger">
+        리뷰를 남기시려면 로그인이 필요합니다. <a href='{% url 'users:login' %}'>로그인 바로가기</a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
 {% endblock %}
