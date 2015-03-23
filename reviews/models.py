@@ -10,3 +10,9 @@ class Review(models.Model):
 
     user = models.ForeignKey(User)
     center = models.ForeignKey(Center)
+
+    def __unicode__(self):
+        return  u"%s %s" % (
+            self.center.name,
+            self.user.username,
+        )
