@@ -6,7 +6,6 @@ from django.views.generic.detail import DetailView
 from centers.models.center import Center
 from reviews.models import Review
 
-from centers.forms import CenterForm
 from reviews.forms import ReviewForm
 
 from django.contrib.auth.decorators import login_required
