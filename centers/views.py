@@ -13,6 +13,7 @@ from centers.forms import CenterForm
 
 # Model
 from centers.models.center import Center
+from reviews.models import Review
 
 # Decorators
 from django.contrib.auth.decorators import login_required
@@ -60,4 +61,12 @@ class CenterDetail(DetailView):
 @login_required
 @require_http_methods(["POST"])
 def reviews(request, slug):
+    user = request.user
+    center = Center.objects.get(hash_id=slug)
+
+    review = Review.objects.create(
+        user=user,
+        center=center,
+    )
+
     return redirect("home")
