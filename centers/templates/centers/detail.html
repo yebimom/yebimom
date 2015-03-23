@@ -18,7 +18,7 @@
 
     <ul>
       {% for review in center.review_set.all %}
-      <li>{{ review }}</li>
+      <li>{{ review.user }} - {{ review.content }}</li>
       {% endfor %}
     </ul>
 

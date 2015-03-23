@@ -11,6 +11,8 @@ class Review(models.Model):
     user = models.ForeignKey(User)
     center = models.ForeignKey(Center)
 
+    content = models.CharField(max_length=255)
+
     def __unicode__(self):
         return u"%s %s" % (
             self.center.name,
