@@ -4,6 +4,8 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 from centers.models.center import Center
+from centers.models.region import RegionSecondLayer
+from centers.models.region import RegionThirdLayer
 from reviews.models import Review
 
 from reviews.forms import ReviewForm
@@ -18,6 +20,13 @@ class CenterList(ListView):
 
     def get_queryset(self):
         search_query = self.request.GET.get('search') or str()
+        location_query = self.request.GET.get('location') or str()
+        if location_query is not '':
+            nd_region = RegionSecondLayer.objects.filter(name__contains=location_query)
+            th_region = RegionThirdLayer.objects.filter(name__contains=location_query)
+            nd_center = Center.objects.filter(region_second_layer__contains=nd_region)
+            th_center = Center.objects.filter(region_third_layer__contains=th_region)
+            return nd_center | th_center
         return Center.objects.filter(name__contains=search_query)
 
 
