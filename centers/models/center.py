@@ -28,6 +28,8 @@ class Center(models.Model):
         "center's hashed id",
         max_length=12, unique=True, blank=True, null=True
     )
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
 
     def __unicode__(self):
         return unicode(self.name)
