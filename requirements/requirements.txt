@@ -30,3 +30,4 @@ djangorestframework==3.1.0
 markdown==2.6.1
 django-robots==1.0
 django-grappelli
+djangorestframework-jwt==1.4.0
