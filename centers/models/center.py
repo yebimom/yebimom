@@ -25,12 +25,11 @@ class Center(models.Model):
     url = models.URLField(blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     hash_id = models.CharField(
-        "center's_private_unique_id",
-        max_length=12,
-        unique=True,
-        blank=True,
-        null=True
+        "center's hashed id",
+        max_length=12, unique=True, blank=True, null=True
     )
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
 
     def __unicode__(self):
         return unicode(self.name)
