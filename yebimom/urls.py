@@ -34,6 +34,4 @@ urlpatterns = patterns(
     url(r'^', include('users.urls', namespace='users', app_name='users')),
     url(r'^api/', include('api.urls', namespace='api', app_name='api')),
 
-    url(r'^api-token-auth/', 'rest_framework_jwt.views.obtain_jwt_token'),
-
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
