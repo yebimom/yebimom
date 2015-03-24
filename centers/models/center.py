@@ -15,8 +15,8 @@ class CenterManager(models.Manager):
 
 
 class Center(models.Model):
-    region_first_layer = models.ForeignKey("RegionFirstLayer", null=True)
-    region_second_layer = models.ForeignKey("RegionSecondLayer", null=True)
+    region_first_layer = models.ForeignKey("RegionFirstLayer", null=True, blank=True)
+    region_second_layer = models.ForeignKey("RegionSecondLayer", null=True, blank=True)
     region_third_layer = models.ForeignKey("RegionThirdLayer")
 
     name = models.CharField(max_length=60)
