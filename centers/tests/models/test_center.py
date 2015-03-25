@@ -23,7 +23,6 @@ class CenterTest(RegionAllLayerTest):
 
     def test_encoded_center_hashids_should_have_valid_value(self):
         updated_center = Center.objects.get(pk=self.center.pk)
-        print "updated_center:", updated_center, updated_center.hash_id
         self.assertEqual(
             updated_center.hash_id,
             get_encoded_center_hashid(self.center.id)
@@ -34,13 +33,6 @@ class CenterTest(RegionAllLayerTest):
         self.assertTrue(
             updated_center.hash_id != ''
         )
-
-    def test_price_should_have_valid_value(self):
-        try:
-            self.center.price = 3000000
-            self.center.save()
-        except:
-            self.fail("fail to set price")
 
     def test_center_should_have_regions_information(self):
         center = Center.objects.create(
