@@ -12,6 +12,30 @@
   </div>
 </section>
 
+<section id="facilities">
+  <div class="container">
+    <h1>Facilities</h1>
+
+    <ul>
+      {% for facility in center.facility_set.all %}
+        <li>{{ facility.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="policies">
+  <div class="container">
+    <h1>Policies</h1>
+
+    <ul>
+      {% for policy in center.policy_set.all %}
+        <li>{{ policy.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <section id="reviews">
   <div class="container">
     <h1>Reviews ({{ center.review_set.count }})</h1>
