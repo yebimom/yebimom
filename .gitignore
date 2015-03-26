@@ -94,3 +94,6 @@ node_modules/
 
 # SASS file
 .sass-cache
+
+# vagrant folder
+.vagrant/
