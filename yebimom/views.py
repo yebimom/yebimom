@@ -36,7 +36,7 @@ def search_policy(request):
 
 
 def map(request, latitude, longitude, width, height):
-    return render(request, "partials/map.html", {
+    return render(request, "map.html", {
         "latitude": latitude,
         "longitude": longitude,
         "width": width,
