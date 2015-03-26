@@ -33,12 +33,6 @@ script:
 
 notifications:
     slack: molang:iOlv6ne427evuLd1S02CiLFD
-
     email:
-        recipients:
-            - dobestan@gmail.com
-            - konomama0505@gmail.com
-            - wikibootup@gmail.com
-            - xme1226@gmail.com
         on_success: [never]
         on_failure: [always]
