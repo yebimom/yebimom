@@ -5,6 +5,7 @@ from django.views.generic.detail import DetailView
 
 from centers.models.center import Center
 from centers.models.facility import Facility
+from centers.models.policy import Policy
 from centers.models.region import RegionSecondLayer
 from centers.models.region import RegionThirdLayer
 from reviews.models import Review
@@ -41,6 +42,7 @@ class CenterDetail(DetailView):
         context = super(CenterDetail, self).get_context_data(**kwargs)
         context['review_form'] = ReviewForm()
         context['facilities'] = Facility.objects.all()
+        context['policies'] = Policy.objects.all()
         return context
 
 
