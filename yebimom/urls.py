@@ -34,4 +34,6 @@ urlpatterns = patterns(
     url(r'^', include('users.urls', namespace='users', app_name='users')),
     url(r'^api/', include('api.urls', namespace='api', app_name='api')),
 
+    url(r'^map/(?P<latitude>.*)/(?P<longitude>.*)/(?P<width>.*)/(?P<height>.*)/$', "yebimom.views.map", name='map'),
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
