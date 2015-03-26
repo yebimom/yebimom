@@ -34,5 +34,5 @@ script:
 notifications:
     slack: molang:iOlv6ne427evuLd1S02CiLFD
     email:
-        on_success: [never]
-        on_failure: [always]
+        on_success: never
+        on_failure: always
