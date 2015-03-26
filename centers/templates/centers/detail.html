@@ -17,8 +17,8 @@
     <h1>Facilities</h1>
 
     <ul>
-      {% for facility in center.facility_set.all %}
-        <li>{{ facility.name }}</li>
+      {% for facility in facilities %}
+      <li>{{ facility.name }}</li>
       {% endfor %}
     </ul>
   </div>
