@@ -7,6 +7,8 @@ from django.db.models.signals import pre_save, post_save
 # Util
 from centers.utils.center_hashids import get_encoded_center_hashid
 
+from yebimom.models import MetaMixin
+
 
 class CenterManager(models.Manager):
 
@@ -14,7 +16,7 @@ class CenterManager(models.Manager):
         return self.get(region_third_layer=region_third_layer, name=name)
 
 
-class Center(models.Model):
+class Center(MetaMixin):
     region_first_layer = models.ForeignKey("RegionFirstLayer", null=True, blank=True)
     region_second_layer = models.ForeignKey("RegionSecondLayer", null=True, blank=True)
     region_third_layer = models.ForeignKey("RegionThirdLayer")
