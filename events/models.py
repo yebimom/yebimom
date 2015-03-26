@@ -3,13 +3,9 @@ from django.utils import timezone
 
 from django.core.urlresolvers import reverse
 
+from yebimom.models import MetaMixin
 
-class MetaMixin(models.Model):
-    meta_description = models.CharField(max_length=255, blank=True, null=True)
-    meta_keywords = models.CharField(max_length=255, blank=True, null=True)
 
-    class Meta:
-        abstract = True
 
 
 def _get_thumbnail_path(self, file_name):
