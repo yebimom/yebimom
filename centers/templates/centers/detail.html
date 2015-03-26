@@ -18,7 +18,11 @@
 
     <ul>
       {% for facility in facilities %}
-      <li>{{ facility.name }}</li>
+        {% if facility in center.facility_set.all %}
+          <li>{{ facility.name }}</li>
+        {% else %}
+          <li><strike>{{ facility.name }}</strike></li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>
