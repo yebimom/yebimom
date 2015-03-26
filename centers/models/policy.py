@@ -3,7 +3,7 @@ from centers.models.center import Center
 
 
 class Policy(models.Model):
-    center = models.ManyToManyField(Center)
+    center = models.ManyToManyField(Center, blank=True)
 
     name = models.CharField(max_length=40)
 
