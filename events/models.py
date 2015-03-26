@@ -3,12 +3,14 @@ from django.utils import timezone
 
 from django.core.urlresolvers import reverse
 
+from yebimom.models import MetaMixin
+
 
 def _get_thumbnail_path(self, file_name):
     return "events/%s/%s" % (self.id, file_name)
 
 
-class Event(models.Model):
+class Event(MetaMixin):
     title = models.CharField(max_length=255)
     contents = models.TextField(blank=True, null=True)
 
@@ -18,9 +20,6 @@ class Event(models.Model):
     thumbnail = models.ImageField(
         upload_to=_get_thumbnail_path
     )
-
-    meta_description = models.CharField(max_length=255, blank=True, null=True)
-    meta_keywords = models.CharField(max_length=255, blank=True, null=True)
 
     def _is_in_progress(self):
         return self.ends_at > timezone.now()
