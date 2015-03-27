@@ -16,8 +16,10 @@ from reviews.models import Review
 
 from reviews.forms import ReviewForm
 
+from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_POST
 
 
 class CenterList(ListView):
@@ -53,6 +55,11 @@ class CenterDetail(DetailView):
 class ReviewCreate(CreateView):
     model = Review
     fields = ['content', ]
+
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewCreate, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
