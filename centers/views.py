@@ -47,20 +47,15 @@ class CenterDetail(DetailView):
         return context
 
 
-@login_required
-@require_http_methods(["POST"])
-def reviews(request, slug):
-    user = request.user
-    center = Center.objects.get(hash_id=slug)
+class CenterReview(View):
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        center = Center.objects.get(hash_id=kwargs['slug'])
 
-    review = Review.objects.create(
-        user=user,
-        center=center,
-        content=request.POST['content'],
-    )
+        review = Review.objects.create(
+            user=user,
+            center=center,
+            content=request.POST['content'],
+        )
 
-    return redirect("centers:detail", slug=slug)
-
-
-class Review(View):
-    pass
+        return redirect("centers:detail", slug=kwargs['slug'])
