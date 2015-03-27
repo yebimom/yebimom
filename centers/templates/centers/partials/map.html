@@ -1,0 +1,34 @@
+<script type="text/javascript" charset="utf-8" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key={{ NAVER_OPENAPI_MAP_API_KEY }}"></script>
+<div id="map"></div>
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function(){
+    var oPoint = new nhn.api.map.LatLng({{ center.latitude }}, {{ center.longitude }});
+    nhn.api.map.setDefaultPoint('LatLng');
+    var defaultLevel = 12;
+
+    var oMap = new nhn.api.map.Map(document.getElementById('map'), {
+                                    point : oPoint,
+                                    zoom : 12,
+                                    enableWheelZoom : true,
+                                    enableDragPan : true,
+                                    enableDblClickZoom : false,
+                                    mapMode : 0,
+                                    activateTrafficMap : false,
+                                    activateBicycleMap : false,
+                                    minMaxLevel : [ 1, 14 ],
+                                    size : new nhn.api.map.Size({{ width }}, {{ height }})
+    });
+
+
+    var oSlider = new nhn.api.map.ZoomControl();
+    oSlider.setPosition({top:5, left:5});
+    oMap.addControl(oSlider);
+
+    var oSize = new nhn.api.map.Size(28, 37);
+    var oOffset = new nhn.api.map.Size(14, 37);
+    var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
+    var oMarker = new nhn.api.map.Marker(oIcon, { title : ''});
+    oMarker.setPoint(oPoint);
+    oMap.addOverlay(oMarker);
+  })
+</script>

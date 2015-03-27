@@ -9,7 +9,8 @@
 <section id="center">
   <div class="container">
     <h1>{{ center.name }}</h1>
-  </div>
+
+    {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}
 </section>
 
 <section id="facilities">
