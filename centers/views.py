@@ -1,7 +1,6 @@
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 
-from django.views.generic.base import View
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -49,20 +48,6 @@ class CenterDetail(DetailView):
         context['facilities'] = Facility.objects.all()
         context['policies'] = Policy.objects.all()
         return context
-
-
-class CenterReview(View):
-    def post(self, request, *args, **kwargs):
-        user = request.user
-        center = Center.objects.get(hash_id=kwargs['slug'])
-
-        review = Review.objects.create(
-            user=user,
-            center=center,
-            content=request.POST['content'],
-        )
-
-        return redirect("centers:detail", slug=kwargs['slug'])
 
 
 class ReviewCreate(CreateView):
