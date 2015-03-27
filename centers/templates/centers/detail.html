@@ -56,6 +56,11 @@
           <form action='{% url 'centers:delete_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <input type="submit" name="delete" value="delete">
           </form>
+
+          <form action='{% url 'centers:update_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+            {{ review_form }}
+            <input type="submit" name="update" value="update">
+          </form>
         {% endif %}
       </li>
       {% endfor %}
