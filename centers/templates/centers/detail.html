@@ -50,7 +50,14 @@
 
     <ul>
       {% for review in center.review_set.all %}
-      <li>{{ review.user }} - {{ review.content }}</li>
+      <li>
+        {{ review.user }} - {{ review.content }}
+        {% if review.user == user %}
+          <form action='{% url 'centers:delete_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+            <input type="submit" name="delete" value="delete">
+          </form>
+        {% endif %}
+      </li>
       {% endfor %}
     </ul>
 

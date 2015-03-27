@@ -74,4 +74,8 @@ class ReviewCreate(CreateView):
 
 
 class ReviewDelete(DeleteView):
-    pass
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def get_object(self):
+        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
