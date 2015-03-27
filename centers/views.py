@@ -74,6 +74,12 @@ class ReviewCreate(CreateView):
 
 
 class ReviewDelete(DeleteView):
+
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewDelete, self).dispatch(*args, **kwargs)
+
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
