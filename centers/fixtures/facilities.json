@@ -1,0 +1,62 @@
+[
+{
+  "fields": {
+    "name": "헤어드라이기"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "개인 화장실"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "비데"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "좌욕기"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "찜질기"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "유축기"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "공기청정기"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "와이파이"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "마사지"
+  },
+  "model": "centers.facility"
+},
+{
+  "fields": {
+    "name": "남편식사"
+  },
+  "model": "centers.facility"
+}
+]
