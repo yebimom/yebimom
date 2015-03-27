@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 
+from django.views.generic.base import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
@@ -59,3 +60,7 @@ def reviews(request, slug):
     )
 
     return redirect("centers:detail", slug=slug)
+
+
+class Review(View):
+    pass
