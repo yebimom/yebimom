@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
@@ -70,3 +71,7 @@ class ReviewCreate(CreateView):
         review.user = self.request.user
         review.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class ReviewDelete(DeleteView):
+    pass
