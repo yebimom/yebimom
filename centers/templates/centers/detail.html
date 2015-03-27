@@ -11,7 +11,12 @@
     <h1>{{ center.name }}</h1>
 
     <div class="map">
-      <iframe src='{% url 'map' latitude=37.5540915 longitude=126.9367687 width=600 height=400 %}' width=600 height=400></iframe>
+      <iframe src='{% url 'map' latitude=37.5540915 longitude=126.9367687 width=600 height=400 %}'
+        width=600
+        height=400
+        frameborder="0"
+        scrolling="no"
+      /></iframe>
     </div>
   </div>
 </section>
