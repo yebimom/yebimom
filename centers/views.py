@@ -15,6 +15,8 @@ from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 
+from django.conf import settings
+
 
 class CenterList(ListView):
     template_name = 'centers/list.html'
@@ -43,6 +45,7 @@ class CenterDetail(DetailView):
         context['review_form'] = ReviewForm()
         context['facilities'] = Facility.objects.all()
         context['policies'] = Policy.objects.all()
+        context['NAVER_OPENAPI_MAP_API_KEY'] = getattr(settings, 'NAVER_OPENAPI_MAP_API_KEY', False)
         return context
 
 
