@@ -2,7 +2,7 @@
 <div id="map"></div>
 <script type="text/javascript" charset="utf-8">
   $(window).load(function(){
-    var oPoint = new nhn.api.map.LatLng({{ latitude }}, {{ longitude }});
+    var oPoint = new nhn.api.map.LatLng({{ center.latitude }}, {{ center.longitude }});
     nhn.api.map.setDefaultPoint('LatLng');
     var defaultLevel = 12;
 

@@ -10,7 +10,7 @@
   <div class="container">
     <h1>{{ center.name }}</h1>
 
-    {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with latitude=center.latitude longitude=center.longitude width=600 height=400 %}{% endif %}
+    {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}
 </section>
 
 <section id="facilities">
