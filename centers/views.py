@@ -75,7 +75,19 @@ class ReviewCreate(CreateView):
 
 
 class ReviewUpdate(UpdateView):
-    pass
+    model = Review
+    fields = ['content', ]
+
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewUpdate, self).dispatch(*args, **kwargs)
+
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def get_object(self):
+        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
 
 
 class ReviewDelete(DeleteView):
