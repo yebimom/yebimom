@@ -2,6 +2,8 @@ from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
@@ -73,3 +75,33 @@ class ReviewCreate(CreateView):
         review.user = self.request.user
         review.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class ReviewUpdate(UpdateView):
+    model = Review
+    fields = ['content', ]
+
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewUpdate, self).dispatch(*args, **kwargs)
+
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def get_object(self):
+        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+
+
+class ReviewDelete(DeleteView):
+
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewDelete, self).dispatch(*args, **kwargs)
+
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def get_object(self):
+        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
