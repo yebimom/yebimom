@@ -1,9 +1,12 @@
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 
 from django.views.generic.base import View
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+
+from django.http import HttpResponseRedirect
 
 from centers.models.center import Center
 from centers.models.facility import Facility
@@ -63,4 +66,15 @@ class CenterReview(View):
 
 
 class ReviewCreate(CreateView):
-    pass
+    model = Review
+    fields = ['content', ]
+
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def form_valid(self, form):
+        review = form.save(commit=False)
+        review.center = Center.objects.get(hash_id=self.kwargs['slug'])
+        review.user = self.request.user
+        review.save()
+        return HttpResponseRedirect(self.get_success_url())
