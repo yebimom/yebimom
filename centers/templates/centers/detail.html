@@ -10,7 +10,7 @@
   <div class="container">
     <h1>{{ center.name }}</h1>
 
-    {% include "centers/partials/map.html" with latitude=37.5540915 longitude=126.9367687 width=600 height=400 %}
+    {% include "centers/partials/map.html" with latitude=center.latitude longitude=center.longitude width=600 height=400 %}
 </section>
 
 <section id="facilities">
