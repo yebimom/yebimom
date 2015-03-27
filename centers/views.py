@@ -1,7 +1,11 @@
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 
+from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+
+from django.http import HttpResponseRedirect
 
 from centers.models.center import Center
 from centers.models.facility import Facility
@@ -12,8 +16,10 @@ from reviews.models import Review
 
 from reviews.forms import ReviewForm
 
+from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.http import require_POST
 
 from django.conf import settings
 
@@ -49,16 +55,21 @@ class CenterDetail(DetailView):
         return context
 
 
-@login_required
-@require_http_methods(["POST"])
-def reviews(request, slug):
-    user = request.user
-    center = Center.objects.get(hash_id=slug)
+class ReviewCreate(CreateView):
+    model = Review
+    fields = ['content', ]
 
-    review = Review.objects.create(
-        user=user,
-        center=center,
-        content=request.POST['content'],
-    )
+    @method_decorator(require_POST)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewCreate, self).dispatch(*args, **kwargs)
 
-    return redirect("centers:detail", slug=slug)
+    def get_success_url(self):
+        return reverse("centers:detail", kwargs=self.kwargs)
+
+    def form_valid(self, form):
+        review = form.save(commit=False)
+        review.center = Center.objects.get(hash_id=self.kwargs['slug'])
+        review.user = self.request.user
+        review.save()
+        return HttpResponseRedirect(self.get_success_url())
