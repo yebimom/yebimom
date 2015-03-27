@@ -3,8 +3,8 @@ from django.conf.urls import patterns, url
 from centers.views import CenterList
 from centers.views import CenterDetail
 from centers.views import ReviewCreate
-# from centers.views import ReviewCreate
-from centers.views import ReviewCDelete
+# from centers.views import ReviewUpdate
+from centers.views import ReviewDelete
 
 urlpatterns = patterns(
     '',
