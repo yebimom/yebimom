@@ -41,3 +41,8 @@ pip install -r requirements.txt
 
 # Load Environment Variables
 source .env.production
+
+# Init Database
+sudo -u postgres createdb yebimom
+sudo -u postgres psql -c "CREATE USER yebimom;"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE yebimom to yebimom;"
