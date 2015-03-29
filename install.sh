@@ -23,6 +23,11 @@ source ~/.bashrc
 pyenv install 2.7.9
 pyenv virtualenv 2.7.9 yebimom
 
+# Install Postgresql
+# https://help.ubuntu.com/community/PostgreSQL
+sudo apt-get install -y postgresql-client
+sudo apt-get install -y postgresql postgresql-contrib libpq-dev
+
 # Activate Installed Virtual Environment ( Yebimom )
 pyenv shell yebimom
 pyenv activate yebimom
