@@ -22,3 +22,7 @@ source ~/.bashrc
 # Install Yebimom Production Environment
 pyenv install 2.7.9
 pyenv virtualenv 2.7.9 yebimom
+
+# Activate Installed Virtual Environment ( Yebimom )
+pyenv shell yebimom
+pyenv activate yebimom
