@@ -38,3 +38,6 @@ pyenv activate yebimom
 
 # Install Project Dependencies
 pip install -r requirements.txt
+
+# Load Environment Variables
+source .env.production

@@ -56,6 +56,7 @@ target/
 
 # Ignore Autoenv environment file
 .env
+.env.production
 
 # Ignore SQLite3 DB file
 db.sqlite3
