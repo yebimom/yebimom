@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # rest framework
 from rest_framework.views import APIView
 from rest_framework.response import Response
