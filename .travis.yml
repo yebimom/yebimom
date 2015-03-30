@@ -20,10 +20,11 @@ script:
 - python manage.py test -v2
 deploy:
   provider: heroku
-  app: yebimom-dev
   api_key:
-    secure: EZpVqKISJB+tv0bBDJBEJeKVeZuGdJC4Dh5MOev+ckV2FXfdRmcKTA/VPoYBeIYLnmMlL3kPjIxXTeqdkGEkBXSNfZV9ClJEPN+pRjwkNmVji+H+51c1jjE890dI6YGXxpz0k0Q72JfaLTn3tGScLjtgg7IYaxR7LaM6+VNZHfM=
-  on: develop
+    secure: RI2daRfO/7uy221oO88Ts/hYENSPMyds8hFndOcIPezXsK+TUypz4PaJ3jIjWD/L5YES59t52BT6USOE1HFeQarsZ23ZSD7PGegXqiKZCWqaTgqsUgWiXXoJPZWsEfGViB5sSYekQS6tJsFEYvAfl0Qo4Ai1UcF5B34XCdsUFDE=
+  app: yebimom-dev
+  on:
+    repo: yebimom/yebimom
 notifications:
   slack: molang:iOlv6ne427evuLd1S02CiLFD
   email:
