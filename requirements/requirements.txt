@@ -31,3 +31,4 @@ markdown==2.6.1
 django-robots==1.0
 django-grappelli
 djangorestframework-jwt==1.4.0
+raven==5.2.0

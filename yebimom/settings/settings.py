@@ -17,3 +17,4 @@ from yebimom.settings.partials.celery import *
 from yebimom.settings.partials.auth import *
 from yebimom.settings.partials.media import *
 from yebimom.settings.partials.restframework import *
+from yebimom.settings.partials.sentry import *
