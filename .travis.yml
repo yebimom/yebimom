@@ -22,7 +22,7 @@ deploy:
   provider: heroku
   app: yebimom-dev
   api_key:
-      secure: RXvv7JDq4xxq3CHn3IZP9yc8KPAsEMZbwKFq7K79K4x/Ns4Ogf3R9uTfzqctTeG4cp5pu/3ErbrB4ALs/yULAwPqI/S4w9sgtpqnvnnzJSwA7kEK0i5YC3P+n5YDH72r//Pny4uIvY313hgiptmaUSDDQI7iFSDJ+/Uyhn3FYwY=
+    secure: RXvv7JDq4xxq3CHn3IZP9yc8KPAsEMZbwKFq7K79K4x/Ns4Ogf3R9uTfzqctTeG4cp5pu/3ErbrB4ALs/yULAwPqI/S4w9sgtpqnvnnzJSwA7kEK0i5YC3P+n5YDH72r//Pny4uIvY313hgiptmaUSDDQI7iFSDJ+/Uyhn3FYwY=
   on: develop
 notifications:
   slack: molang:iOlv6ne427evuLd1S02CiLFD
