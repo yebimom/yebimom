@@ -3,6 +3,8 @@ from __future__ import absolute_import
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+
+# Rest-Framework Jwt
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from reviews.models import Review
