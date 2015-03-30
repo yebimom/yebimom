@@ -2,8 +2,7 @@ language: python
 python:
 - '2.7'
 addons:
-    postgresql: "9.3"
-
+  postgresql: '9.3'
 install:
 - pip install -r requirements/development.txt
 before_script:
@@ -12,26 +11,21 @@ script:
 - npm install -g bower grunt-cli
 - npm install
 - gem install sass
-
 - grunt bowercopy sass
 - python manage.py collectstatic --noinput --ignore '*.sass'
-
 - pep8
-
 - python manage.py makemigrations users centers events reviews
 - python manage.py migrate
 - python manage.py loaddata regions facilities
 - python manage.py test -v2
-
 deploy:
-    provider: heroku
-    app: yebimom-dev
-    api_key:
-        secure: MKNwPIC3bHBUbaa4yPtF+XbZKZ2bjYUPK4TyAcAedEC2RMhDudD4T6QHkEde7eqNCDz3spJJvxdpGDxLlo9H3BGIZBQcjfHlwtwDWif7sHS19AjzS0cZEDVw6nmrsbS74GEMOQ+311Cx+HXzjjI5zg8l0EKTAELIV7d+jLTaoY0=
-    on: develop
-
+  provider: heroku
+  app: yebimom-dev
+  api_key:
+    secure: RXvv7JDq4xxq3CHn3IZP9yc8KPAsEMZbwKFq7K79K4x/Ns4Ogf3R9uTfzqctTeG4cp5pu/3ErbrB4ALs/yULAwPqI/S4w9sgtpqnvnnzJSwA7kEK0i5YC3P+n5YDH72r//Pny4uIvY313hgiptmaUSDDQI7iFSDJ+/Uyhn3FYwY=
+  on: develop
 notifications:
-    slack: molang:iOlv6ne427evuLd1S02CiLFD
-    email:
-        on_success: never
-        on_failure: always
+  slack: molang:iOlv6ne427evuLd1S02CiLFD
+  email:
+    on_success: never
+    on_failure: always
