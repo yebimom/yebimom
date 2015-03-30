@@ -5,6 +5,7 @@ from centers.models.center import Center
 from centers.models.policy import Policy
 from centers.models.facility import Facility
 from centers.models import CenterImage
+from centers.models.region import RegionSecondLayer, RegionThirdLayer
 
 
 class PolicyInline(admin.TabularInline):
@@ -38,4 +39,18 @@ class FacilityAdmin(admin.ModelAdmin):
 class CenterImageAdmin(admin.ModelAdmin):
     pass
 
+
+class RegionThirdLayerInline(admin.TabularInline):
+    model = RegionThirdLayer
+    classes = ('grp-collapse grp-open',)
+
+
+class RegionAdmin(admin.ModelAdmin):
+    inlines = [
+        RegionThirdLayerInline,
+    ]
+    exclude = ('region_first_layer',)
+
+
 admin.site.register(Center, CenterAdmin)
+admin.site.register(RegionSecondLayer, RegionAdmin)
