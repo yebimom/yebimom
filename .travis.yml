@@ -25,6 +25,7 @@ deploy:
   app: yebimom-dev
   on:
     repo: yebimom/yebimom
+    all_branches: true
 notifications:
   slack: molang:iOlv6ne427evuLd1S02CiLFD
   email:
