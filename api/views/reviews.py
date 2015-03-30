@@ -1,16 +1,14 @@
-# rest framework
+from __future__ import absolute_import
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-# rest framework JWT
+# Rest-Framework Jwt
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-# Review app
 from reviews.models import Review
 from api.serializers.review_serializer import ReviewSerializer
-
-# Center app
 from centers.models.center import Center
 
 
