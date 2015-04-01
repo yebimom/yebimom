@@ -4,7 +4,7 @@
 import os
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+BASE_DIR = os.path.abspath(os.path.dirname(__file__) + "../../../")
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 INSTALLED_APPS = (
