@@ -1,0 +1,948 @@
+[
+{
+  "fields": {
+    "name": "앙즐레 아이통곡 산후조리원",
+    "address": "서울특별시 강남구 역삼동 837-26 삼일프라자 3층",
+    "phone": "02-555-7700",
+    "url": null,
+    "price": null,
+    "latitude": 314640,
+    "longitude": 543624,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강남역"
+    ],
+    "hash_id": "9Yo6E"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "세인트파크 산후조리원",
+    "address": "서울특별시 강남구 삼성동 63-12",
+    "phone": "02-518-9782",
+    "url": null,
+    "price": null,
+    "latitude": 316536,
+    "longitude": 546592,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강남역"
+    ],
+    "hash_id": "Mk6Vk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "베네크레산후조리원",
+    "address": "서울특별시 강남구 청담동 71-3 185 튼튼병원 빌딩",
+    "phone": "1899-2227",
+    "url": null,
+    "price": null,
+    "latitude": 316725,
+    "longitude": 547002,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강남역"
+    ],
+    "hash_id": "NkmPX"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "미즈앤노블산후조리원",
+    "address": "서울특별시 강서구 가양동 1480-8 주영빌딩 5층",
+    "phone": "02-2659-0031",
+    "url": null,
+    "price": null,
+    "latitude": 298797,
+    "longitude": 551822,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강서/화곡"
+    ],
+    "hash_id": "kaAPk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "궁 산후조리원 강서점",
+    "address": "서울특별시 강서구 등촌동 632-6 파인블루빌딩 3,4층",
+    "phone": "02-2083-0600",
+    "url": null,
+    "price": null,
+    "latitude": 299886,
+    "longitude": 550977,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강서/화곡"
+    ],
+    "hash_id": "EAVlY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "베베글로리산후조리원",
+    "address": "서울특별시 강서구 등촌3동 664-8 원풍빌딩 5층",
+    "phone": "02-3661-8825",
+    "url": null,
+    "price": null,
+    "latitude": 298217,
+    "longitude": 551293,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강서/화곡"
+    ],
+    "hash_id": "kwGjk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "동그라미산후조리원 미아점",
+    "address": "서울특별시 강북구 송천동 703-13 유유빌딩6층",
+    "phone": "02-988-0838",
+    "url": null,
+    "price": null,
+    "latitude": 313792,
+    "longitude": 557997,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "강남역"
+    ],
+    "hash_id": "OE7DY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "에델린산후조리원",
+    "address": "서울특별시 도봉구 창동 715-27 한영빌딩 2층",
+    "phone": "02-993-4300",
+    "url": null,
+    "price": null,
+    "latitude": 315531,
+    "longitude": 561817,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "노원/도봉"
+    ],
+    "hash_id": "Xd42X"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "에이치큐브병원",
+    "address": "서울특별시 도봉구 창동 731-1",
+    "phone": "02-900-2000",
+    "url": null,
+    "price": null,
+    "latitude": 315591,
+    "longitude": 562208,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "노원/도봉"
+    ],
+    "hash_id": "k25JX"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "누리산후조리원",
+    "address": "서울특별시 도봉구 도봉2동 79-8 3층",
+    "phone": "02-3493-9955",
+    "url": null,
+    "price": null,
+    "latitude": 316365,
+    "longitude": 565026,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "서울"
+    ],
+    "region_third_layer": [
+      "노원/도봉"
+    ],
+    "hash_id": "kqv6E"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "마미맘산후조리원",
+    "address": "경기도 광명시 소하동 1341-3",
+    "phone": "02-897-8100",
+    "url": null,
+    "price": null,
+    "latitude": 301392,
+    "longitude": 538908,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경기"
+    ],
+    "region_third_layer": [
+      "광명"
+    ],
+    "hash_id": "Y1G1k"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "사임당산후조리원 광명점",
+    "address": "경기도 광명시 하안2동 34-9 원촌빌딩 4층",
+    "phone": "02-896-3006",
+    "url": null,
+    "price": null,
+    "latitude": 300997,
+    "longitude": 540617,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경기"
+    ],
+    "region_third_layer": [
+      "광명"
+    ],
+    "hash_id": "kvxBY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "광명제일산후조리원",
+    "address": "경기도 광명시 광명3동 158-81",
+    "phone": "02-2686-5800",
+    "url": null,
+    "price": null,
+    "latitude": 298918,
+    "longitude": 542574,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경기"
+    ],
+    "region_third_layer": [
+      "광명"
+    ],
+    "hash_id": "XdJ2E"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "우리맘산후조리원",
+    "address": "인천광역시 부평구 갈산1동 79 2층",
+    "phone": "070-7326-8757",
+    "url": null,
+    "price": null,
+    "latitude": 287832,
+    "longitude": 547003,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "인천"
+    ],
+    "region_third_layer": [
+      "부평구"
+    ],
+    "hash_id": "Y1olk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "해와달출장산후조리 인천광역점",
+    "address": "인천광역시 부평구 부평동 378-1 포레빌 오피스텔 608호",
+    "phone": "032-515-0045",
+    "url": null,
+    "price": null,
+    "latitude": 287923,
+    "longitude": 544891,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "인천"
+    ],
+    "region_third_layer": [
+      "부평구"
+    ],
+    "hash_id": "X9Q5X"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "새봄산후조리원",
+    "address": "인천광역시 부평구 산곡동 100-104",
+    "phone": "032-507-7200",
+    "url": null,
+    "price": null,
+    "latitude": 285589,
+    "longitude": 545745,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "인천"
+    ],
+    "region_third_layer": [
+      "부평구"
+    ],
+    "hash_id": "k0B1Y"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "순풍산후조리원",
+    "address": "대전광역시 중구 유천1동 306-26",
+    "phone": "042-586-3580",
+    "url": null,
+    "price": null,
+    "latitude": 345738,
+    "longitude": 413118,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대전"
+    ],
+    "region_third_layer": [
+      "중구"
+    ],
+    "hash_id": "kPArE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "평안조산원",
+    "address": "대전광역시 중구 대흥동",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 348421,
+    "longitude": 413581,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대전"
+    ],
+    "region_third_layer": [
+      "중구"
+    ],
+    "hash_id": "kvPRY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "미즈산부인과의원",
+    "address": "대구광역시 중구 계산동2가 80-1",
+    "phone": "053-255-1020",
+    "url": null,
+    "price": null,
+    "latitude": 453280,
+    "longitude": 363155,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대전"
+    ],
+    "region_third_layer": [
+      "중구"
+    ],
+    "hash_id": "EAWdX"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "모유사랑 청주점",
+    "address": "충청북도 청주시 상당구 용암동 2658 삼성산후조리원 건물 3층",
+    "phone": "010-4659-9221",
+    "url": null,
+    "price": null,
+    "latitude": 356859,
+    "longitude": 446787,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "충청"
+    ],
+    "region_third_layer": [
+      "청주 상당구"
+    ],
+    "hash_id": "XQGDE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "모유사랑 청주점",
+    "address": "충청북도 청주시 상당구 용암동 2658 삼성산후조리원 건물 3층",
+    "phone": "010-4659-9221",
+    "url": null,
+    "price": null,
+    "latitude": 356859,
+    "longitude": 446787,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "충청"
+    ],
+    "region_third_layer": [
+      "청주 상당구"
+    ],
+    "hash_id": "XQGDE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "해피맘산부인과의원",
+    "address": "충청북도 청주시 흥덕구 가경동 1453-1",
+    "phone": "043-233-7339",
+    "url": null,
+    "price": null,
+    "latitude": 349621,
+    "longitude": 447423,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "충청"
+    ],
+    "region_third_layer": [
+      "청주 흥덕구"
+    ],
+    "hash_id": "X440X"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "미즈산부인과의원",
+    "address": "강원도 원주시 단계동 833-7",
+    "phone": "033-733-6100",
+    "url": null,
+    "price": null,
+    "latitude": 394094,
+    "longitude": 527351,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "강원"
+    ],
+    "region_third_layer": [
+      "원주"
+    ],
+    "hash_id": "XxB7E"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "새봄산후조리원",
+    "address": "강원도 원주시 무실동 1642-3",
+    "phone": "033-745-5602",
+    "url": null,
+    "price": null,
+    "latitude": 393879,
+    "longitude": 526002,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "강원"
+    ],
+    "region_third_layer": [
+      "원주"
+    ],
+    "hash_id": "kmaMk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "미래산후조리원",
+    "address": "강원도 원주시 단계동 883-9",
+    "phone": "033-733-3537",
+    "url": null,
+    "price": null,
+    "latitude": 394195,
+    "longitude": 526847,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "강원"
+    ],
+    "region_third_layer": [
+      "원주"
+    ],
+    "hash_id": "YRgOX"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "제일여성병원산후조리원",
+    "address": "부산광역시 해운대구 중동 192-4",
+    "phone": "051-743-0331",
+    "url": null,
+    "price": null,
+    "latitude": 507048,
+    "longitude": 286390,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "부산"
+    ],
+    "region_third_layer": [
+      "해운대/센텀시티/기장"
+    ],
+    "hash_id": "XpnwE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "마미캠프산후조리원",
+    "address": "부산광역시 기장군 정관면 매학리",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 507557,
+    "longitude": 302973,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "부산"
+    ],
+    "region_third_layer": [
+      "해운대/센텀시티/기장"
+    ],
+    "hash_id": "kP9gE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "나이팅게일 산후조리원",
+    "address": "부산광역시 동래구 안락동 604-4 안락타운 4층",
+    "phone": "051-522-3575",
+    "url": null,
+    "price": null,
+    "latitude": 500894,
+    "longitude": 288927,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "부산"
+    ],
+    "region_third_layer": [
+      "부산대/동래/연산"
+    ],
+    "hash_id": "k82zY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "르보아산후조리원",
+    "address": "울산광역시 남구 신정동 1099-6",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 518782,
+    "longitude": 326520,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "울산"
+    ],
+    "region_third_layer": [
+      "남구/울주군"
+    ],
+    "hash_id": "ELdbE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "르베르쏘산후조리원",
+    "address": "울산광역시 울주군 범서읍 굴화리",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 513980,
+    "longitude": 329428,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "울산"
+    ],
+    "region_third_layer": [
+      "남구/울주군"
+    ],
+    "hash_id": "EDm1Y"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "마미스산후조리원",
+    "address": "울산광역시 중구 성안동",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 519548,
+    "longitude": 331136,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "울산"
+    ],
+    "region_third_layer": [
+      "동구/중구/북구"
+    ],
+    "hash_id": "XQwZE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "파티마출장산후조리파견센타",
+    "address": "대구광역시 동구 신암동 246-12 신암빌딩3층",
+    "phone": "053-943-9350",
+    "url": null,
+    "price": null,
+    "latitude": 456600,
+    "longitude": 364989,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대구"
+    ],
+    "region_third_layer": [
+      "수성구/동구"
+    ],
+    "hash_id": "kVwxE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "우리조산원",
+    "address": "대구광역시 북구 동천동 912-3",
+    "phone": "053-326-0136",
+    "url": null,
+    "price": null,
+    "latitude": 450994,
+    "longitude": 371458,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대구"
+    ],
+    "region_third_layer": [
+      "북구/서구"
+    ],
+    "hash_id": "EllOE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "아세아연합의원",
+    "address": "대구광역시 서구 내당동 245-7",
+    "phone": "053-562-0100",
+    "url": null,
+    "price": null,
+    "latitude": 450409,
+    "longitude": 362641,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "대구"
+    ],
+    "region_third_layer": [
+      "북구/서구"
+    ],
+    "hash_id": "E7y9X"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "마미캠프산후조리원 진주점",
+    "address": "경상남도 진주시 가좌동 480-7",
+    "phone": "055-752-3080",
+    "url": null,
+    "price": null,
+    "latitude": 409875,
+    "longitude": 283807,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경상"
+    ],
+    "region_third_layer": [
+      "진주"
+    ],
+    "hash_id": "ky2qE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "행복한산후조리원",
+    "address": "경상남도 김해시 외동 1256-1 정우센타빌딩 7층",
+    "phone": "055-323-3575",
+    "url": null,
+    "price": null,
+    "latitude": 479107,
+    "longitude": 293161,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경상"
+    ],
+    "region_third_layer": [
+      "김해/장유"
+    ],
+    "hash_id": "Ee4bk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "행복한산후조리원",
+    "address": "경상남도 김해시 외동 1256-1 정우센타빌딩 7층",
+    "phone": "055-323-3575",
+    "url": null,
+    "price": null,
+    "latitude": 479107,
+    "longitude": 293161,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "경상"
+    ],
+    "region_third_layer": [
+      "김해/장유"
+    ],
+    "hash_id": "Ee4bk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "세인트포레 산후조리원",
+    "address": "전라북도 전주시 완산구 효자동2가 1244-1",
+    "phone": "063-236-1052",
+    "url": null,
+    "price": null,
+    "latitude": 319362,
+    "longitude": 357668,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "전라"
+    ],
+    "region_third_layer": [
+      "전주/익산/군산"
+    ],
+    "hash_id": "kmoMY"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "참조은산후조리원",
+    "address": "전라북도 전주시 완산구 평화동1가 736-1",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 321770,
+    "longitude": 355175,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "전라"
+    ],
+    "region_third_layer": [
+      "전주/익산/군산"
+    ],
+    "hash_id": "ky1yk"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "세나산후조리원",
+    "address": "전라북도 전주시 완산구 평화동2가 890-4",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 321723,
+    "longitude": 354498,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "전라"
+    ],
+    "region_third_layer": [
+      "전주/익산/군산"
+    ],
+    "hash_id": "YoP2X"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "프린세스산후조리원",
+    "address": "제주특별자치도 제주시 삼도1동 570",
+    "phone": "",
+    "url": null,
+    "price": null,
+    "latitude": 262676,
+    "longitude": 101381,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "제주"
+    ],
+    "region_third_layer": [
+      "제주시"
+    ],
+    "hash_id": "kq2PE"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "김순선 산후조리원",
+    "address": "제주특별자치도 제주시 오라2동 885-1",
+    "phone": "064-757-5141",
+    "url": null,
+    "price": null,
+    "latitude": 262101,
+    "longitude": 98772,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "제주"
+    ],
+    "region_third_layer": [
+      "제주시"
+    ],
+    "hash_id": "EeObX"
+  },
+  "model": "centers.center"
+},
+{
+  "fields": {
+    "name": "맘스맘산후조리원",
+    "address": "제주특별자치도 제주시 노형동 1054-6",
+    "phone": "064-745-0974",
+    "url": null,
+    "price": null,
+    "latitude": 258625,
+    "longitude": 100241,
+    "region_first_layer": [
+      "전국"
+    ],
+    "region_second_layer": [
+      "제주"
+    ],
+    "region_third_layer": [
+      "제주시"
+    ],
+    "hash_id": "X4WJY"
+  },
+  "model": "centers.center"
+}
+]
