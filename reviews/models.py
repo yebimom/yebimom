@@ -5,14 +5,16 @@ from users.models.user import User
 from centers.models.center import Center
 
 
-class Review(models.Model):
+class BaseReview(models.Model):
     user = models.ForeignKey(User)
     center = models.ForeignKey(Center)
+    content = models.TextField()
 
     def __unicode__(self):
-        return u"'%s'에 '%s'님이 남긴 리뷰" % (
+        return u"%s's review on %s : %s" % (
             self.center.name,
             self.user.username,
+            self.content
         )
 
     class Meta:
@@ -20,9 +22,9 @@ class Review(models.Model):
         abstract = True
 
 
-class VisitReview(Review):
-    content = models.TextField()
+class VisitReview(BaseReview):
+    pass
 
 
-class ExperienceReview(Review):
-    content = models.TextField()
+class UseReview(BaseReview):
+    pass
