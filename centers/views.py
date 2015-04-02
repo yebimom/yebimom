@@ -61,29 +61,42 @@ class CenterDetail(DetailView):
         return context
 
 
-class VisitReviewBase(View):
-    model = VisitReview
+class ReviewBase(View):
     fields = ['content', ]
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(VisitReviewBase, self).dispatch(*args, **kwargs)
+        return super(ReviewBase, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
     def get_object(self):
-        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+        return self.model.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
 
-
-class VisitReviewCreate(VisitReviewBase, CreateView):
     def form_valid(self, form):
         review = form.save(commit=False)
         review.center = Center.objects.get(hash_id=self.kwargs['slug'])
         review.user = self.request.user
         review.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class VisitReviewBase(ReviewBase):
+    model = VisitReview
+
+
+class UseReviewBase(ReviewBase):
+    model = UseReview
+
+
+class VisitReviewCreate(VisitReviewBase, CreateView):
+    pass
+
+
+class UseReviewCreate(UseReviewBase, CreateView):
+    pass
 
 
 class VisitReviewUpdate(VisitReviewBase, UpdateView):
@@ -92,31 +105,6 @@ class VisitReviewUpdate(VisitReviewBase, UpdateView):
 
 class VisitReviewDelete(VisitReviewBase, DeleteView):
     pass
-
-
-class UseReviewBase(View):
-    model = UseReview
-    fields = ['content', ]
-
-    @method_decorator(require_POST)
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(UseReviewBase, self).dispatch(*args, **kwargs)
-
-    def get_success_url(self):
-        return reverse("centers:detail", kwargs=self.kwargs)
-
-    def get_object(self):
-        return UseReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
-
-
-class UseReviewCreate(UseReviewBase, CreateView):
-    def form_valid(self, form):
-        review = form.save(commit=False)
-        review.center = Center.objects.get(hash_id=self.kwargs['slug'])
-        review.user = self.request.user
-        review.save()
-        return HttpResponseRedirect(self.get_success_url())
 
 
 class UseReviewUpdate(UseReviewBase, UpdateView):
