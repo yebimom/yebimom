@@ -1,7 +1,8 @@
 <section id="reviews">
   <section id="visit-reviews">
     <div class="container">
-      <h1>VisitReviews ({{ center.visitreview_set.count }})</h1>
+      <h2>방문/상담 리뷰 ({{ center.visitreview_set.count }})</h2>
+      <p>산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
 
       <ul>
         {% for review in center.visitreview_set.all %}
@@ -38,7 +39,8 @@
 
   <section id="use-reviews">
     <div class="container">
-      <h1>UseReviews ({{ center.usereview_set.count }})</h1>
+      <h2>이용 리뷰 ({{ center.usereview_set.count }})</h2>
+      <p>실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
 
       <ul>
         {% for review in center.usereview_set.all %}
