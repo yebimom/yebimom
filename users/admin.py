@@ -23,14 +23,10 @@ class AnswerInline(admin.StackedInline):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    classes = ('grp-collapse grp-closed',)
-
     readonly_fields = ('is_complete', 'question_date',)
     fields = ('is_complete', 'question_date', 'user', 'content',)
 
-    inlines = [
-        AnswerInline
-    ]
+    inlines = [AnswerInline]
 
 
 admin.site.unregister(User)
