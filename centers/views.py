@@ -19,6 +19,7 @@ from reviews.models import VisitReview
 from reviews.models import UseReview
 
 from reviews.forms import VisitReviewForm
+from reviews.forms import UseReviewForm
 
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -52,30 +53,28 @@ class CenterDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CenterDetail, self).get_context_data(**kwargs)
-        context['review_form'] = VisitReviewForm()
+        context['visit_review_form'] = VisitReviewForm()
+        context['use_review_form'] = UseReviewForm()
         context['facilities'] = Facility.objects.all()
         context['policies'] = Policy.objects.all()
         context['NAVER_OPENAPI_MAP_API_KEY'] = getattr(settings, 'NAVER_OPENAPI_MAP_API_KEY', False)
         return context
 
 
-class VisitReviewBase(View):
-    model = VisitReview
+class ReviewBase(View):
     fields = ['content', ]
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(VisitReviewBase, self).dispatch(*args, **kwargs)
+        return super(ReviewBase, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
     def get_object(self):
-        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+        return self.model.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
 
-
-class VisitReviewCreate(VisitReviewBase, CreateView):
     def form_valid(self, form):
         review = form.save(commit=False)
         review.center = Center.objects.get(hash_id=self.kwargs['slug'])
@@ -84,9 +83,33 @@ class VisitReviewCreate(VisitReviewBase, CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
+class VisitReviewBase(ReviewBase):
+    model = VisitReview
+
+
+class UseReviewBase(ReviewBase):
+    model = UseReview
+
+
+class VisitReviewCreate(VisitReviewBase, CreateView):
+    pass
+
+
+class UseReviewCreate(UseReviewBase, CreateView):
+    pass
+
+
 class VisitReviewUpdate(VisitReviewBase, UpdateView):
     pass
 
 
 class VisitReviewDelete(VisitReviewBase, DeleteView):
+    pass
+
+
+class UseReviewUpdate(UseReviewBase, UpdateView):
+    pass
+
+
+class UseReviewDelete(UseReviewBase, DeleteView):
     pass
