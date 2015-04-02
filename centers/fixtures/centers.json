@@ -6,8 +6,8 @@
     "phone": "02-555-7700",
     "url": null,
     "price": null,
-    "latitude": 314640,
-    "longitude": 543624,
+    "longitude": 127.03251676559748,
+    "latitude": 37.49082694142993,
     "region_first_layer": [
       "전국"
     ],
@@ -28,8 +28,8 @@
     "phone": "02-518-9782",
     "url": null,
     "price": null,
-    "latitude": 316536,
-    "longitude": 546592,
+    "longitude": 127.05361794609738,
+    "latitude": 37.51774097094263,
     "region_first_layer": [
       "전국"
     ],
@@ -50,8 +50,8 @@
     "phone": "1899-2227",
     "url": null,
     "price": null,
-    "latitude": 316725,
-    "longitude": 547002,
+    "longitude": 127.05570926907586,
+    "latitude": 37.52145200781828,
     "region_first_layer": [
       "전국"
     ],
@@ -72,8 +72,8 @@
     "phone": "02-2659-0031",
     "url": null,
     "price": null,
-    "latitude": 298797,
-    "longitude": 551822,
+    "longitude": 126.85225702206272,
+    "latitude": 37.56308238328492,
     "region_first_layer": [
       "전국"
     ],
@@ -94,8 +94,8 @@
     "phone": "02-2083-0600",
     "url": null,
     "price": null,
-    "latitude": 299886,
-    "longitude": 550977,
+    "longitude": 126.86469693435328,
+    "latitude": 37.555588785845664,
     "region_first_layer": [
       "전국"
     ],
@@ -116,8 +116,8 @@
     "phone": "02-3661-8825",
     "url": null,
     "price": null,
-    "latitude": 298217,
-    "longitude": 551293,
+    "longitude": 126.84576646034462,
+    "latitude": 37.55825271730232,
     "region_first_layer": [
       "전국"
     ],
@@ -133,35 +133,13 @@
 },
 {
   "fields": {
-    "name": "동그라미산후조리원 미아점",
-    "address": "서울특별시 강북구 송천동 703-13 유유빌딩6층",
-    "phone": "02-988-0838",
-    "url": null,
-    "price": null,
-    "latitude": 313792,
-    "longitude": 557997,
-    "region_first_layer": [
-      "전국"
-    ],
-    "region_second_layer": [
-      "서울"
-    ],
-    "region_third_layer": [
-      "강남역"
-    ],
-    "hash_id": "OE7DY"
-  },
-  "model": "centers.center"
-},
-{
-  "fields": {
     "name": "에델린산후조리원",
     "address": "서울특별시 도봉구 창동 715-27 한영빌딩 2층",
     "phone": "02-993-4300",
     "url": null,
     "price": null,
-    "latitude": 315531,
-    "longitude": 561817,
+    "longitude": 127.04049366270493,
+    "latitude": 37.65481907264672,
     "region_first_layer": [
       "전국"
     ],
@@ -182,8 +160,8 @@
     "phone": "02-900-2000",
     "url": null,
     "price": null,
-    "latitude": 315591,
-    "longitude": 562208,
+    "longitude": 127.04111711989799,
+    "latitude": 37.658338162905196,
     "region_first_layer": [
       "전국"
     ],
@@ -204,8 +182,8 @@
     "phone": "02-3493-9955",
     "url": null,
     "price": null,
-    "latitude": 316365,
-    "longitude": 565026,
+    "longitude": 127.04957634456947,
+    "latitude": 37.6838065958255,
     "region_first_layer": [
       "전국"
     ],
@@ -226,8 +204,8 @@
     "phone": "02-897-8100",
     "url": null,
     "price": null,
-    "latitude": 301392,
-    "longitude": 538908,
+    "longitude": 126.88335769118241,
+    "latitude": 37.44701950714889,
     "region_first_layer": [
       "전국"
     ],
@@ -248,8 +226,8 @@
     "phone": "02-896-3006",
     "url": null,
     "price": null,
-    "latitude": 300997,
-    "longitude": 540617,
+    "longitude": 126.87866467106397,
+    "latitude": 37.4623740845881,
     "region_first_layer": [
       "전국"
     ],
@@ -270,8 +248,8 @@
     "phone": "02-2686-5800",
     "url": null,
     "price": null,
-    "latitude": 298918,
-    "longitude": 542574,
+    "longitude": 126.8548989728782,
+    "latitude": 37.47977992540285,
     "region_first_layer": [
       "전국"
     ],
@@ -292,8 +270,8 @@
     "phone": "070-7326-8757",
     "url": null,
     "price": null,
-    "latitude": 287832,
-    "longitude": 547003,
+    "longitude": 126.72890354309442,
+    "latitude": 37.51839970424869,
     "region_first_layer": [
       "전국"
     ],
@@ -314,8 +292,8 @@
     "phone": "032-515-0045",
     "url": null,
     "price": null,
-    "latitude": 287923,
-    "longitude": 544891,
+    "longitude": 126.73025475525802,
+    "latitude": 37.499384470003164,
     "region_first_layer": [
       "전국"
     ],
@@ -336,8 +314,8 @@
     "phone": "032-507-7200",
     "url": null,
     "price": null,
-    "latitude": 285589,
-    "longitude": 545745,
+    "longitude": 126.70373122261762,
+    "latitude": 37.506791468738705,
     "region_first_layer": [
       "전국"
     ],
@@ -358,8 +336,8 @@
     "phone": "042-586-3580",
     "url": null,
     "price": null,
-    "latitude": 345738,
-    "longitude": 413118,
+    "longitude": 127.39354461704869,
+    "latitude": 36.31719681875286,
     "region_first_layer": [
       "전국"
     ],
@@ -380,8 +358,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 348421,
-    "longitude": 413581,
+    "longitude": 127.4233703382196,
+    "latitude": 36.32147180479848,
     "region_first_layer": [
       "전국"
     ],
@@ -402,8 +380,8 @@
     "phone": "053-255-1020",
     "url": null,
     "price": null,
-    "latitude": 453280,
-    "longitude": 363155,
+    "longitude": 128.58781313167088,
+    "latitude": 35.86691938759288,
     "region_first_layer": [
       "전국"
     ],
@@ -419,13 +397,13 @@
 },
 {
   "fields": {
-    "name": "모유사랑 청주점",
-    "address": "충청북도 청주시 상당구 용암동 2658 삼성산후조리원 건물 3층",
-    "phone": "010-4659-9221",
+    "name": "굿모닝 산후조리센터",
+    "address": "충청북도 청주시 상당구 금천동 276 굿모닝 메디컬타워 9F,10F",
+    "phone": "043-296-6559",
     "url": null,
     "price": null,
-    "latitude": 356859,
-    "longitude": 446787,
+    "longitude": 127.5035434787697,
+    "latitude": 36.63085547087958,
     "region_first_layer": [
       "전국"
     ],
@@ -435,7 +413,7 @@
     "region_third_layer": [
       "청주 상당구"
     ],
-    "hash_id": "XQGDE"
+    "hash_id": "XbD9E"
   },
   "model": "centers.center"
 },
@@ -468,8 +446,8 @@
     "phone": "043-233-7339",
     "url": null,
     "price": null,
-    "latitude": 349621,
-    "longitude": 447423,
+    "longitude": 127.4345288989137,
+    "latitude": 36.6265203254584,
     "region_first_layer": [
       "전국"
     ],
@@ -490,8 +468,8 @@
     "phone": "033-733-6100",
     "url": null,
     "price": null,
-    "latitude": 394094,
-    "longitude": 527351,
+    "longitude": 127.93114821522158,
+    "latitude": 37.34812165136359,
     "region_first_layer": [
       "전국"
     ],
@@ -512,8 +490,8 @@
     "phone": "033-745-5602",
     "url": null,
     "price": null,
-    "latitude": 393879,
-    "longitude": 526002,
+    "longitude": 127.92873273736296,
+    "latitude": 37.335964228848184,
     "region_first_layer": [
       "전국"
     ],
@@ -534,8 +512,8 @@
     "phone": "033-733-3537",
     "url": null,
     "price": null,
-    "latitude": 394195,
-    "longitude": 526847,
+    "longitude": 127.9322922152586,
+    "latitude": 37.343580689458385,
     "region_first_layer": [
       "전국"
     ],
@@ -556,8 +534,8 @@
     "phone": "051-743-0331",
     "url": null,
     "price": null,
-    "latitude": 507048,
-    "longitude": 286390,
+    "longitude": 129.17299909875447,
+    "latitude": 35.17071861887938,
     "region_first_layer": [
       "전국"
     ],
@@ -578,8 +556,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 507557,
-    "longitude": 302973,
+    "longitude": 129.18075319896263,
+    "latitude": 35.320116998604725,
     "region_first_layer": [
       "전국"
     ],
@@ -600,8 +578,8 @@
     "phone": "051-522-3575",
     "url": null,
     "price": null,
-    "latitude": 500894,
-    "longitude": 288927,
+    "longitude": 129.10576242559762,
+    "latitude": 35.19421999229585,
     "region_first_layer": [
       "전국"
     ],
@@ -622,8 +600,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 518782,
-    "longitude": 326520,
+    "longitude": 129.30760875484003,
+    "latitude": 35.531045697752226,
     "region_first_layer": [
       "전국"
     ],
@@ -644,8 +622,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 513980,
-    "longitude": 329428,
+    "longitude": 129.25507862259514,
+    "latitude": 35.557814728891366,
     "region_first_layer": [
       "전국"
     ],
@@ -666,8 +644,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 519548,
-    "longitude": 331136,
+    "longitude": 129.31673404353,
+    "latitude": 35.572550696412655,
     "region_first_layer": [
       "전국"
     ],
@@ -688,8 +666,8 @@
     "phone": "053-943-9350",
     "url": null,
     "price": null,
-    "latitude": 456600,
-    "longitude": 364989,
+    "longitude": 128.6247047750657,
+    "latitude": 35.88326300744855,
     "region_first_layer": [
       "전국"
     ],
@@ -710,8 +688,8 @@
     "phone": "053-326-0136",
     "url": null,
     "price": null,
-    "latitude": 450994,
-    "longitude": 371458,
+    "longitude": 128.56303172276097,
+    "latitude": 35.94187489485852,
     "region_first_layer": [
       "전국"
     ],
@@ -732,8 +710,8 @@
     "phone": "053-562-0100",
     "url": null,
     "price": null,
-    "latitude": 450409,
-    "longitude": 362641,
+    "longitude": 128.5559905042239,
+    "latitude": 35.862438431212034,
     "region_first_layer": [
       "전국"
     ],
@@ -754,8 +732,8 @@
     "phone": "055-752-3080",
     "url": null,
     "price": null,
-    "latitude": 409875,
-    "longitude": 283807,
+    "longitude": 128.10621814479916,
+    "latitude": 35.153079842132016,
     "region_first_layer": [
       "전국"
     ],
@@ -776,8 +754,8 @@
     "phone": "055-323-3575",
     "url": null,
     "price": null,
-    "latitude": 479107,
-    "longitude": 293161,
+    "longitude": 128.8669504575524,
+    "latitude": 35.23433333613294,
     "region_first_layer": [
       "전국"
     ],
@@ -793,13 +771,13 @@
 },
 {
   "fields": {
-    "name": "행복한산후조리원",
-    "address": "경상남도 김해시 외동 1256-1 정우센타빌딩 7층",
-    "phone": "055-323-3575",
+    "name": "더원",
+    "address": "경상남도 김해시 대청동 62-2",
+    "phone": "055-323-2701",
     "url": null,
     "price": null,
-    "latitude": 479107,
-    "longitude": 293161,
+    "longitude": 128.80269469774433,
+    "latitude": 35.19348381423641,
     "region_first_layer": [
       "전국"
     ],
@@ -809,7 +787,7 @@
     "region_third_layer": [
       "김해/장유"
     ],
-    "hash_id": "Ee4bk"
+    "hash_id": "Xb7wk"
   },
   "model": "centers.center"
 },
@@ -820,8 +798,8 @@
     "phone": "063-236-1052",
     "url": null,
     "price": null,
-    "latitude": 319362,
-    "longitude": 357668,
+    "longitude": 127.10547509933141,
+    "latitude": 35.815590136285955,
     "region_first_layer": [
       "전국"
     ],
@@ -842,8 +820,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 321770,
-    "longitude": 355175,
+    "longitude": 127.13236354050801,
+    "latitude": 35.793317117139466,
     "region_first_layer": [
       "전국"
     ],
@@ -864,8 +842,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 321723,
-    "longitude": 354498,
+    "longitude": 127.1319098777839,
+    "latitude": 35.787211932876474,
     "region_first_layer": [
       "전국"
     ],
@@ -886,8 +864,8 @@
     "phone": "",
     "url": null,
     "price": null,
-    "latitude": 262676,
-    "longitude": 101381,
+    "longitude": 126.5199414635465,
+    "latitude": 33.49961036340039,
     "region_first_layer": [
       "전국"
     ],
@@ -908,8 +886,8 @@
     "phone": "064-757-5141",
     "url": null,
     "price": null,
-    "latitude": 262101,
-    "longitude": 98772,
+    "longitude": 126.51415632072019,
+    "latitude": 33.47601914244989,
     "region_first_layer": [
       "전국"
     ],
@@ -930,8 +908,8 @@
     "phone": "064-745-0974",
     "url": null,
     "price": null,
-    "latitude": 258625,
-    "longitude": 100241,
+    "longitude": 126.4765369798556,
+    "latitude": 33.488806905489014,
     "region_first_layer": [
       "전국"
     ],
