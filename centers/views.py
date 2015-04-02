@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 
+from django.views.generic import View
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
@@ -58,18 +59,23 @@ class CenterDetail(DetailView):
         return context
 
 
-class VisitReviewCreate(CreateView):
+class VisitReviewBase(View):
     model = VisitReview
     fields = ['content', ]
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(VisitReviewCreate, self).dispatch(*args, **kwargs)
+        return super(VisitReviewBase, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
+    def get_object(self):
+        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+
+
+class VisitReviewCreate(VisitReviewBase, CreateView):
     def form_valid(self, form):
         review = form.save(commit=False)
         review.center = Center.objects.get(hash_id=self.kwargs['slug'])
@@ -78,31 +84,9 @@ class VisitReviewCreate(CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-class VisitReviewUpdate(UpdateView):
-    model = VisitReview
-    fields = ['content', ]
-
-    @method_decorator(require_POST)
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(VisitReviewUpdate, self).dispatch(*args, **kwargs)
-
-    def get_success_url(self):
-        return reverse("centers:detail", kwargs=self.kwargs)
-
-    def get_object(self):
-        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+class VisitReviewUpdate(VisitReviewBase, UpdateView):
+    pass
 
 
-class VisitReviewDelete(DeleteView):
-
-    @method_decorator(require_POST)
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(VisitReviewDelete, self).dispatch(*args, **kwargs)
-
-    def get_success_url(self):
-        return reverse("centers:detail", kwargs=self.kwargs)
-
-    def get_object(self):
-        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+class VisitReviewDelete(VisitReviewBase, DeleteView):
+    pass
