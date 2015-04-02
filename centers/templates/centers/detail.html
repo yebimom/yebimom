@@ -48,10 +48,10 @@
 
 <section id="reviews">
   <div class="container">
-    <h1>Reviews ({{ center.review_set.count }})</h1>
+    <h1>VisitReviews ({{ center.visitreview_set.count }})</h1>
 
     <ul>
-      {% for review in center.review_set.all %}
+      {% for review in center.visitreview_set.all %}
       <li>
         {{ review.user }} - {{ review.content }}
         {% if review.user == user %}

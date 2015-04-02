@@ -14,10 +14,10 @@ from centers.models.facility import Facility
 from centers.models.policy import Policy
 from centers.models.region import RegionSecondLayer
 from centers.models.region import RegionThirdLayer
-from reviews.models import VisitReview as Review
+from reviews.models import VisitReview
 from reviews.models import UseReview
 
-from reviews.forms import ReviewForm
+from reviews.forms import VisitReviewForm
 
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -51,21 +51,21 @@ class CenterDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CenterDetail, self).get_context_data(**kwargs)
-        context['review_form'] = ReviewForm()
+        context['review_form'] = VisitReviewForm()
         context['facilities'] = Facility.objects.all()
         context['policies'] = Policy.objects.all()
         context['NAVER_OPENAPI_MAP_API_KEY'] = getattr(settings, 'NAVER_OPENAPI_MAP_API_KEY', False)
         return context
 
 
-class ReviewCreate(CreateView):
-    model = Review
+class VisitReviewCreate(CreateView):
+    model = VisitReview
     fields = ['content', ]
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(ReviewCreate, self).dispatch(*args, **kwargs)
+        return super(VisitReviewCreate, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
@@ -78,31 +78,31 @@ class ReviewCreate(CreateView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-class ReviewUpdate(UpdateView):
-    model = Review
+class VisitReviewUpdate(UpdateView):
+    model = VisitReview
     fields = ['content', ]
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(ReviewUpdate, self).dispatch(*args, **kwargs)
+        return super(VisitReviewUpdate, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
     def get_object(self):
-        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
 
 
-class ReviewDelete(DeleteView):
+class VisitReviewDelete(DeleteView):
 
     @method_decorator(require_POST)
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(ReviewDelete, self).dispatch(*args, **kwargs)
+        return super(VisitReviewDelete, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return reverse("centers:detail", kwargs=self.kwargs)
 
     def get_object(self):
-        return Review.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)
+        return VisitReview.objects.get(center__hash_id=self.kwargs['slug'], user=self.request.user)

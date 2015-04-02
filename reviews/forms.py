@@ -1,10 +1,10 @@
 from django import forms
 
-from reviews.models import VisitReview as Review
+from reviews.models import VisitReview
 
 
-class ReviewForm(forms.ModelForm):
+class VisitReviewForm(forms.ModelForm):
 
     class Meta:
-        model = Review
+        model = VisitReview
         exclude = ('user', 'center', )
