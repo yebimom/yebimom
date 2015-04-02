@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 # Model
-from reviews.models import Review
+from reviews.models import VisitReview, ExperienceReview
 
-admin.site.register(Review)
+
+admin.site.register(VisitReview)
+admin.site.register(ExperienceReview)
