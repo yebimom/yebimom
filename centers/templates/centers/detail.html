@@ -55,11 +55,11 @@
       <li>
         {{ review.user }} - {{ review.content }}
         {% if review.user == user %}
-          <form action='{% url 'centers:delete_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+          <form action='{% url 'centers:delete_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <input type="submit" name="delete" value="delete">
           </form>
 
-          <form action='{% url 'centers:update_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+          <form action='{% url 'centers:update_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             {{ review_form }}
             <input type="submit" name="update" value="update">
           </form>
@@ -69,7 +69,7 @@
     </ul>
 
     {% if user.is_authenticated %}
-      <form action='{% url 'centers:create_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+      <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
         <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
         {{ review_form }}
         <input type="submit" name="Post Review">
