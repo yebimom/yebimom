@@ -14,7 +14,8 @@ from centers.models.facility import Facility
 from centers.models.policy import Policy
 from centers.models.region import RegionSecondLayer
 from centers.models.region import RegionThirdLayer
-from reviews.models import Review
+from reviews.models import VisitReview as Review
+from reviews.models import UseReview
 
 from reviews.forms import ReviewForm
 
