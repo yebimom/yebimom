@@ -12,6 +12,11 @@ class Question(models.Model):
         return hasattr(self, 'answer') and True or False
     is_complete = property(_is_complete)
 
+    def __unicode__(self):
+        return "%s %s" % (
+            self.user,
+            not hasattr(self, 'answer') and "Need answer" or ""
+        )
 
 class Answer(models.Model):
     question = models.OneToOneField(Question)
