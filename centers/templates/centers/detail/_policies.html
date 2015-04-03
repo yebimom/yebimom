@@ -1,0 +1,15 @@
+<section id="policies">
+  <div class="container">
+    <h1>Policies</h1>
+
+    <ul>
+      {% for policy in policies %}
+        {% if policy in center.policy_set.all %}
+          <li>{{ policy.name }}</li>
+        {% else %}
+          <li><strike>{{ policy.name }}</strike></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>

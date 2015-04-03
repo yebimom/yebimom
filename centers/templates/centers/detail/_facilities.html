@@ -1,0 +1,15 @@
+<section id="facilities">
+  <div class="container">
+    <h1>Facilities</h1>
+
+    <ul>
+      {% for facility in facilities %}
+        {% if facility in center.facility_set.all %}
+          <li>{{ facility.name }}</li>
+        {% else %}
+          <li><strike>{{ facility.name }}</strike></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
