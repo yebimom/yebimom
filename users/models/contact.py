@@ -6,7 +6,7 @@ from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-from yebimom.tasks import send_contact_us_email
+from yebimom.tasks import send_question_email
 
 
 class Question(models.Model):
@@ -32,8 +32,8 @@ class Question(models.Model):
 @receiver(post_save, sender=Question)
 def question_complete(sender, instance, created, **kwargs):
     if created:
-        send_contact_us_email.delay(instance.title, instance.content,
-                                    instance.email, instance.phone)
+        send_question_email.delay(instance.email, instance.phone,
+                                  instance.title, instance.content)
 
 
 class Answer(models.Model):
