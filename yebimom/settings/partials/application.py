@@ -32,7 +32,8 @@ INSTALLED_APPS = (
     'users',
     'centers',
     'events',
-    'reviews'
+    'reviews',
+    'corsheaders'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -43,6 +44,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -84,3 +87,25 @@ SITE_ID = 1
 
 GOOGLE_ANALYTICS_TRACKING_ID = os.environ['GOOGLE_ANALYTICS_TRACKING_ID']
 NAVER_OPENAPI_MAP_API_KEY = os.environ['NAVER_OPENAPI_MAP_API_KEY']
+
+# django cors headers
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = (
+        'GET',
+        'POST',
+        'PUT',
+        'PATCH',
+        'DELETE',
+        'OPTIONS'
+    )
+
+CORS_ALLOW_HEADERS = (
+        'x-requested-with',
+        'content-type',
+        'accept',
+        'origin',
+        'authorization',
+        'x-csrftoken'
+    )
