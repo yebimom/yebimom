@@ -8,8 +8,14 @@ from centers.serializers import CenterSerializer
 
 
 class CenterList(ListAPIView):
-    queryset = Center.objects.all()
     serializer_class = CenterSerializer
+
+    def get_queryset(self):
+        search_query = self.request.GET.get('search', None)
+        if search_query is not None:
+            return Center.objects.filter(name__contains=search_query)
+
+        return Center.objects.all()
 
 
 class CenterDetail(RetrieveAPIView):
