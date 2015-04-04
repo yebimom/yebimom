@@ -14,7 +14,7 @@ class Question(models.Model):
     question_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
-    phone = models.CharField(max_length=11, blank=True, null=True)
+    phone = models.CharField(max_length=30, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
 
     def _is_complete(self):
