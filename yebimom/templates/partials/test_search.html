@@ -2,43 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Autocomplete - Remote datasource</title>
+  <title>jQuery UI Autocomplete - Custom data and display</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
 
+
+
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #project-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  #project-description {
+    margin: 0;
+    padding: 0;
+  }
+  </style>
   <script>
   $(function() {
-    function log( message ) {
-      $( "<div>" ).text( message ).prependTo( "#log" );
-      $( "#log" ).scrollTop( 0 );
-    }
-
-    $( "#birds" ).autocomplete({
+ 
+    $( "#project" ).autocomplete({
+      minLength: 0,
       source: "http://localhost:8000/api/centers/",
-      minLength: 2,
+      focus: function( event, ui ) {
+        $( "#project" ).val( ui.item.label );
+        return false;
+      },
       select: function( event, ui ) {
-        log( ui.item ?
-          "Selected: " + ui.item.value + " aka " + ui.item.id :
-          "Nothing selected, input was " + this.value );
+        $( "#project" ).val( ui.item.label );
+        $( "#project-id" ).val( ui.item.value );
+        $( "#project-description" ).html( ui.item.desc );
+        $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+ 
+        return false;
       }
-    });
+    })
+    .autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+        .append( "<a>" + item.name + "<br>" + item.hash_id + "</a>" )
+        .appendTo( ul );
+    };
   });
   </script>
 </head>
 <body>
-
-<div class="ui-widget">
-  <label for="birds">Birds: </label>
-  <input id="birds">
-</div>
-
-<div class="ui-widget" style="margin-top:2em; font-family:Arial">
-  Result:
-  <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
-</div>
-
-
+ 
+<div id="project-label">Select a project (type "j" for a start):</div>
+<input id="project">
+<input type="hidden" id="project-id">
+<p id="project-description"></p>
+ 
+ 
 </body>
 </html>
