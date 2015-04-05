@@ -42,8 +42,8 @@ class Answer(models.Model):
     content = models.TextField()
 
 
-@receiver(post_save, sender=Question)
+@receiver(post_save, sender=Answer)
 def answer_complete(sender, instance, created, **kwargs):
     if created:
-        send_answer_email.delay(instance.email, instance.phone,
+        send_answer_email.delay(instance.question.email, instance.question.phone,
                                 instance.question.title, instance.content)

@@ -51,7 +51,7 @@ def send_question_email(email, phone, title, content):
 
 
 def send_answer_email_to_admin(email, phone, question_title, content):
-    email_template = get_template('email/admin/contact/question.html')
+    email_template = get_template('email/admin/contact/answer.html')
     email_context = Context({
         'email': email,
         'phone': phone,
