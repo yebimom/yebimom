@@ -10,7 +10,7 @@ from django.template import Context
 
 
 def send_question_email_to_admin(email, phone, title, content):
-    email_template = get_template('email/admin/contact/content.html')
+    email_template = get_template('email/admin/contact/question.html')
     email_context = Context({
         'email': email,
         'phone': phone,
@@ -29,7 +29,7 @@ def send_question_email_to_admin(email, phone, title, content):
 
 
 def send_question_email_to_user(email, content):
-    email_template = get_template('email/contact/content.html')
+    email_template = get_template('email/contact/question.html')
     email_context = Context({
         'content': content
     })
