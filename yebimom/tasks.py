@@ -15,7 +15,7 @@ from yebimom.settings.partials.application import \
 import requests
 
 
-def send_question_email_to_admin(email, phone, title, content):
+def _send_question_email_to_admin(email, phone, title, content):
     email_template = get_template('email/admin/contact/question.html')
     email_context = Context({
         'email': email,
@@ -34,7 +34,7 @@ def send_question_email_to_admin(email, phone, title, content):
     )
 
 
-def send_question_email_to_user(email, content):
+def _send_question_email_to_user(email, content):
     email_template = get_template('email/contact/question.html')
     email_context = Context({
         'content': content
@@ -50,13 +50,7 @@ def send_question_email_to_user(email, content):
     )
 
 
-@shared_task
-def send_question_email(email, phone, title, content):
-    send_question_email_to_user(email, content)
-    send_question_email_to_admin(email, phone, title, content)
-
-
-def send_answer_email_to_admin(email, phone, question_title, content):
+def _send_answer_email_to_admin(email, phone, question_title, content):
     email_template = get_template('email/admin/contact/answer.html')
     email_context = Context({
         'email': email,
@@ -75,7 +69,7 @@ def send_answer_email_to_admin(email, phone, question_title, content):
     )
 
 
-def send_answer_email_to_user(email, question_title, content):
+def _send_answer_email_to_user(email, question_title, content):
     email_template = get_template('email/contact/answer.html')
     email_context = Context({
         'content': content
@@ -89,12 +83,6 @@ def send_answer_email_to_user(email, question_title, content):
         [email],
         fail_silently=False,
     )
-
-
-@shared_task
-def send_answer_email(email, phone, question_title, content):
-    send_answer_email_to_user(email, question_title, content)
-    send_answer_email_to_admin(email, phone, question_title, content)
 
 
 def _send_sms(phone, username, data):
@@ -112,6 +100,18 @@ def _send_sms(phone, username, data):
     requests.post(
         API_STORE_SMS_BASE_URL, data=data, headers=headers
     )
+
+
+@shared_task
+def send_question_email(email, phone, title, content):
+    _send_question_email_to_user(email, content)
+    _send_question_email_to_admin(email, phone, title, content)
+
+
+@shared_task
+def send_answer_email(email, phone, question_title, content):
+    _send_answer_email_to_user(email, question_title, content)
+    _send_answer_email_to_admin(email, phone, question_title, content)
 
 
 @shared_task
