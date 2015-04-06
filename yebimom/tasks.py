@@ -90,15 +90,16 @@ def _send_sms(phone, username, data):
         'x-waple-authorization': API_STORE_SMS_KEY
     }
 
-    data.update = {
+    sms_data = {
         'dest_phone': phone,
         'dest_name': username,
         'send_phone': SMS_SEND_PHONE,
         'send_name': "예비맘파트너스",
     }
+    sms_data.update(data)
 
     requests.post(
-        API_STORE_SMS_BASE_URL, data=data, headers=headers
+        API_STORE_SMS_BASE_URL, data=sms_data, headers=headers
     )
 
 
