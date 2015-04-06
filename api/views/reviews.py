@@ -10,7 +10,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from reviews.models import VisitReview as Review
 from reviews.models import UseReview
 
-from api.serializers.review_serializer import ReviewSerializer
+from api.serializers.reviews import ReviewSerializer
 from centers.models.center import Center
 
 
