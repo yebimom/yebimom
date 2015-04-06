@@ -36,7 +36,8 @@ def question_complete(sender, instance, created, **kwargs):
         send_question_email.delay(instance.email, instance.phone,
                                   instance.title, instance.content)
 
-        send_question_sms.delay(instance.phone, instance.user.user.username)
+        send_question_sms.delay(instance.phone,
+                                instance.user.user.username)
 
 
 class Answer(models.Model):
@@ -51,4 +52,5 @@ def answer_complete(sender, instance, created, **kwargs):
         send_answer_email.delay(instance.question.email, instance.question.phone,
                                 instance.question.title, instance.content)
 
-        send_answer_sms.delay(instance.phone, instance.user.user.username)
+        send_answer_sms.delay(instance.question.phone,
+                              instance.question.user.user.username)
