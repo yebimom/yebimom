@@ -11,7 +11,8 @@ from api.views.reviews import UserAllReviewList
 urlpatterns = patterns(
     '',
 
-    # Event Urls
+    url(r'^login/', 'rest_framework_jwt.views.obtain_jwt_token'),
+
     url(r'^events/$', EventList.as_view(), name='list'),
     url(r'^events/(?P<pk>\d+)/$', EventDetail.as_view(), name='detail'),
 
@@ -20,6 +21,5 @@ urlpatterns = patterns(
 
     url(r'^regions/$', RegionList.as_view(), name='list'),
 
-    url(r'^login/', 'rest_framework_jwt.views.obtain_jwt_token'),
     url(r'^reviews/$', UserAllReviewList.as_view(), name='list'),
 )
