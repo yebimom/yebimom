@@ -1,11 +1,10 @@
 from django.conf.urls import patterns, url
 
 # Views
-from api.views.events import EventList
-from api.views.events import EventDetail
+from api.views.events import EventList, EventDetail
 from api.views.centers import CenterList, CenterDetail
 from api.views.regions import RegionList
-from api.views.reviews import UserAllReviewList
+from api.views.reviews import UserReviewList
 
 
 urlpatterns = patterns(
@@ -21,5 +20,5 @@ urlpatterns = patterns(
 
     url(r'^regions/$', RegionList.as_view(), name='list'),
 
-    url(r'^reviews/$', UserAllReviewList.as_view(), name='list'),
+    url(r'^reviews/$', UserReviewList.as_view(), name='list'),
 )
