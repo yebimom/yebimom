@@ -4,7 +4,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework.generics import RetrieveAPIView
 
 from events.models import Event
-from events.serializers import EventSerializer
+from api.serializers.events import EventSerializer
 
 
 class EventList(ListAPIView):
