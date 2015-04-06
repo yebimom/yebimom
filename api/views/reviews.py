@@ -2,33 +2,27 @@ from __future__ import absolute_import
 
 from rest_framework import generics
 from rest_framework.response import Response
+from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
-
-# Rest-Framework Jwt
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from reviews.models import VisitReview as Review
 # from reviews.models import UseReview
 
 from api.serializers.reviews import ReviewSerializer
-from centers.models.center import Center
 
 
-class UserAllReviewList(generics.ListAPIView):
+class UserReviewList(ListAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
 
-    def get(self, request):
-        username = request.user.username
-        review = Review.objects.filter(user__username=username)
-        serializer = ReviewSerializer(review, many=True)
+    serializer_class = ReviewSerializer
 
-        return Response(serializer.data)
+    def get_queryset(self):
+        return Review.objects.filter(user=self.request.user)
 
 
 class CreateReview(generics.CreateAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
+    # authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
@@ -47,7 +41,6 @@ class CreateReview(generics.CreateAPIView):
 
 class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
