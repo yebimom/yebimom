@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 from django.template.loader import get_template
 from django.template import Context
 
-# Environment variables
+# Configuration variables
 from yebimom.settings.partials.application import \
     API_STORE_SMS_KEY, API_STORE_SMS_BASE_URL, SMS_SEND_PHONE
 
