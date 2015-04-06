@@ -26,6 +26,10 @@ urlpatterns = patterns(
 
     # visited review
     url(r'^center/(?P<hash_id>\w{5})/reviews/visit', reviews.CreateReview.as_view(), name='create_visit_review'),
-    url(r'^center/(?P<hash_id>\w{5})/reviews/visit/update', reviews.RetrieveUpdateDestroyReview.as_view(), name='update_visit_review'),
-    url(r'^center/(?P<hash_id>\w{5})/reviews/visit/delete', reviews.RetrieveUpdateDestroyReview.as_view(), name='delete_visit_delete'),
+    url(r'^center/(?P<hash_id>\w{5})/reviews/visit/update',
+        reviews.RetrieveUpdateDestroyReview.as_view(),
+        name='update_visit_review'),
+    url(r'^center/(?P<hash_id>\w{5})/reviews/visit/delete',
+        reviews.RetrieveUpdateDestroyReview.as_view(),
+        name='delete_visit_delete'),
 )
