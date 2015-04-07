@@ -1,18 +1,25 @@
 from __future__ import absolute_import
 
 from rest_framework import generics
+from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView
+from rest_framework.mixins import CreateModelMixin
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from reviews.models import VisitReview as Review
 # from reviews.models import UseReview
 
 from api.serializers.reviews import ReviewSerializer
+from centers.models.center import Center
+from users.models.user import UserProfile
+
+import json
 
 
-class UserReviewList(ListAPIView):
+class UserReviewList(generics.ListAPIView):
     permission_classes = (IsAuthenticated, )
+    authentication_classes = (JSONWebTokenAuthentication, )
 
     serializer_class = ReviewSerializer
 
@@ -20,27 +27,49 @@ class UserReviewList(ListAPIView):
         return Review.objects.filter(user=self.request.user)
 
 
-class CreateReview(generics.CreateAPIView):
+class CreateReview(generics.CreateAPIView, CreateModelMixin):
     permission_classes = (IsAuthenticated, )
-    # authentication_classes = (JSONWebTokenAuthentication, )
+    authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
 
-    def get_object(self):
-        return self.model.objects.get(center__hash_id=self.kwargs['hash_id'],
-                                      user=self.request.user)
+    def create(self, request, *args, **kwargs):
+        username = request.user.username
+        center_hash_id = self.kwargs['hash_id']
+
+        center_object = Center.objects.get(hash_id=center_hash_id)
+        user_object = UserProfile.objects.get(user__username=username)
+
+        payload = json.loads(request.body)
+
+        review_object = Review()
+        review_object.user = user_object.user
+        review_object.center = center_object
+        review_object.content = payload['content']
+        review_object.save()
+
+        # review_object = Review.objects.all()
+
+        # serializer = self.get_serializer(data=request.data)
+        # serializer.data.center = center_object.name
+        # serializer.data.user = username
+
+        # self.perform_create()
+        # headers = self.get_success_headers()
+        return Response(status=status.HTTP_201_CREATED)
+
 
     # def create(self, request, *args, **kwargs):
     #     username = request.user.username
 
     # def forms_valid(self, form, inlines):
-    #     form.instance.owner = self.request.user
     #     return super(CreateReview, self).forms_valid(form, inlines)
 
 
 class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
+    authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
