@@ -109,3 +109,16 @@ CORS_ALLOW_HEADERS = (
     'authorization',
     'x-csrftoken'
 )
+
+
+# Mailgun Email delivery & authentication
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = os.environ['MAILGUN_ACCESS_KEY']
+MAILGUN_SERVER_NAME = os.environ['MAILGUN_SERVER_NAME']
+
+
+# API store SMS delivery
+API_STORE_SMS_KEY = os.environ['API_STORE_SMS_KEY']
+API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
+SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
+

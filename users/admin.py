@@ -5,7 +5,7 @@ from django.contrib.auth.admin import UserAdmin
 
 # Models
 from users.models import UserProfile
-from users.models.contact_us import Question, Answer
+from users.models.contact import Question, Answer
 
 
 class UserProfileInline(admin.StackedInline):
@@ -24,7 +24,8 @@ class AnswerInline(admin.StackedInline):
 
 class QuestionAdmin(admin.ModelAdmin):
     readonly_fields = ('is_complete', 'question_date',)
-    fields = ('is_complete', 'question_date', 'user', 'content',)
+    fields = ('is_complete', 'question_date', 'user',
+              'phone', 'email', 'title', 'content',)
 
     inlines = [AnswerInline]
 
