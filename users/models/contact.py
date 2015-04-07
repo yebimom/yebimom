@@ -7,6 +7,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 
 from yebimom.tasks import send_question_email, send_answer_email
+from yebimom.tasks import send_question_sms, send_answer_sms
 
 
 class Question(models.Model):
@@ -35,6 +36,9 @@ def question_complete(sender, instance, created, **kwargs):
         send_question_email.delay(instance.email, instance.phone,
                                   instance.title, instance.content)
 
+        send_question_sms.delay(instance.phone,
+                                instance.user.user.username)
+
 
 class Answer(models.Model):
     question = models.OneToOneField(Question)
@@ -47,3 +51,6 @@ def answer_complete(sender, instance, created, **kwargs):
     if created:
         send_answer_email.delay(instance.question.email, instance.question.phone,
                                 instance.question.title, instance.content)
+
+        send_answer_sms.delay(instance.question.phone,
+                              instance.question.user.user.username)
