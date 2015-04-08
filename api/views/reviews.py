@@ -34,7 +34,7 @@ class CreateReview(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         user = request.user
         center = Center.objects.get(hash_id=kwargs['hash_id'])
-        
+
         review = Review.objects.create(
             user=user,
             center=center,
