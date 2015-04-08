@@ -10,9 +10,12 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from reviews.models import VisitReview as Review
+from reviews.models import VisitReview
+from reviews.models import UseReview
 
-from api.serializers.reviews import ReviewSerializer
+from api.serializers.reviews import VisitReviewSerializer
+from api.serializers.reviews import UseReviewSerializer
+
 from centers.models.center import Center
 from users.models.user import UserProfile
 
@@ -20,17 +23,14 @@ from users.models.user import UserProfile
 class UserReviewList(ListAPIView):
     permission_classes = (IsAuthenticated, )
 
-    serializer_class = ReviewSerializer
+    serializer_class = VisitReviewSerializer
 
     def get_queryset(self):
-        return Review.objects.filter(user=self.request.user)
+        return VisitReview.objects.filter(user=self.request.user)
 
 
 class ReviewBase(APIView):
     permission_classes = (IsAuthenticated, )
-
-    model = Review
-    serializer_class = ReviewSerializer
 
     def perform_create(self, serializer):
         serializer.save(
@@ -39,19 +39,41 @@ class ReviewBase(APIView):
         )
 
     def get_object(self):
-        return Review.objects.get(
+        return self.model.objects.get(
             user=self.request.user,
             center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
 
 
-class CreateReview(ReviewBase, CreateAPIView):
+class VisitReviewBase(ReviewBase):
+    model = VisitReview
+    serializer_class = VisitReviewSerializer
+
+
+class UseReviewBase(ReviewBase):
+    model = UseReview
+    serializer_class = UseReviewSerializer
+
+
+class CreateVisitReview(VisitReviewBase, CreateAPIView):
     pass
 
 
-class UpdateReview(ReviewBase, UpdateAPIView):
+class UpdateVisitReview(VisitReviewBase, UpdateAPIView):
     pass
 
 
-class DestroyReview(ReviewBase, DestroyAPIView):
+class DeleteVisitReview(VisitReviewBase, DestroyAPIView):
+    pass
+
+
+class CreateUseReview(UseReviewBase, CreateAPIView):
+    pass
+
+
+class UpdateUseReview(UseReviewBase, UpdateAPIView):
+    pass
+
+
+class DeleteUseReview(UseReviewBase, DestroyAPIView):
     pass
