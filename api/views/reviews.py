@@ -25,26 +25,21 @@ class UserReviewList(generics.ListAPIView):
         return Review.objects.filter(user=self.request.user)
 
 
-class CreateReview(generics.CreateAPIView, CreateModelMixin):
+class CreateReview(generics.CreateAPIView):
     permission_classes = (IsAuthenticated, )
 
     model = Review
     serializer_class = ReviewSerializer
 
     def create(self, request, *args, **kwargs):
-        username = request.user.username
-        center_hash_id = self.kwargs['hash_id']
-
-        center_object = Center.objects.get(hash_id=center_hash_id)
-        user_object = UserProfile.objects.get(user__username=username)
-
-        payload = json.loads(request.body)
-
-        review_object = Review()
-        review_object.user = user_object.user
-        review_object.center = center_object
-        review_object.content = payload['content']
-        review_object.save()
+        user = request.user
+        center = Center.objects.get(hash_id=kwargs['hash_id'])
+        
+        review = Review.objects.create(
+            user=user,
+            center=center,
+            content='hello world',
+        )
 
         return Response(status=status.HTTP_201_CREATED)
 
