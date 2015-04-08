@@ -11,7 +11,7 @@ class CenterList(ListAPIView):
     serializer_class = CenterSerializer
 
     def get_queryset(self):
-        search_query = self.request.GET.get('search', None)
+        search_query = self.request.GET.get('term', None)
         if search_query is not None:
             return Center.objects.filter(name__contains=search_query)
 
