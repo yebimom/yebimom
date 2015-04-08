@@ -1,11 +1,12 @@
 from __future__ import absolute_import
 
-from rest_framework import generics
+from rest_framework.generics import ListAPIView
+from rest_framework.generics import CreateAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView
+
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.mixins import CreateModelMixin
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from reviews.models import VisitReview as Review
 
@@ -13,10 +14,8 @@ from api.serializers.reviews import ReviewSerializer
 from centers.models.center import Center
 from users.models.user import UserProfile
 
-import json
 
-
-class UserReviewList(generics.ListAPIView):
+class UserReviewList(ListAPIView):
     permission_classes = (IsAuthenticated, )
 
     serializer_class = ReviewSerializer
@@ -25,7 +24,7 @@ class UserReviewList(generics.ListAPIView):
         return Review.objects.filter(user=self.request.user)
 
 
-class CreateReview(generics.CreateAPIView):
+class CreateReview(CreateAPIView):
     permission_classes = (IsAuthenticated, )
 
     model = Review
@@ -44,7 +43,7 @@ class CreateReview(generics.CreateAPIView):
         return Response(status=status.HTTP_201_CREATED)
 
 
-class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
+class RetrieveUpdateDestroyReview(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
 
     model = Review
