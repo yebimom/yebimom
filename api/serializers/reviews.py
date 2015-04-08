@@ -16,5 +16,4 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = ('content', )
         exclude = ('user', 'center')
