@@ -18,7 +18,6 @@ import json
 
 class UserReviewList(generics.ListAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
 
     serializer_class = ReviewSerializer
 
@@ -28,7 +27,6 @@ class UserReviewList(generics.ListAPIView):
 
 class CreateReview(generics.CreateAPIView, CreateModelMixin):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
@@ -53,7 +51,6 @@ class CreateReview(generics.CreateAPIView, CreateModelMixin):
 
 class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
-    authentication_classes = (JSONWebTokenAuthentication, )
 
     model = Review
     serializer_class = ReviewSerializer
