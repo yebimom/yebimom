@@ -8,7 +8,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from reviews.models import VisitReview as Review
-# from reviews.models import UseReview
 
 from api.serializers.reviews import ReviewSerializer
 from centers.models.center import Center
@@ -49,22 +48,7 @@ class CreateReview(generics.CreateAPIView, CreateModelMixin):
         review_object.content = payload['content']
         review_object.save()
 
-        # review_object = Review.objects.all()
-
-        # serializer = self.get_serializer(data=request.data)
-        # serializer.data.center = center_object.name
-        # serializer.data.user = username
-
-        # self.perform_create()
-        # headers = self.get_success_headers()
         return Response(status=status.HTTP_201_CREATED)
-
-
-    # def create(self, request, *args, **kwargs):
-    #     username = request.user.username
-
-    # def forms_valid(self, form, inlines):
-    #     return super(CreateReview, self).forms_valid(form, inlines)
 
 
 class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
