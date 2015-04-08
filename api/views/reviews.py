@@ -27,7 +27,7 @@ class UserReviewList(generics.ListAPIView):
         return Review.objects.filter(user=self.request.user)
 
 
-class CreateReview(generics.CreateAPIView, CreateModelMixin):
+class CreateReview(generics.CreateAPIView):
     permission_classes = (IsAuthenticated, )
     authentication_classes = (JSONWebTokenAuthentication, )
 
