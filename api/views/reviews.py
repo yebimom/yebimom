@@ -61,6 +61,9 @@ class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     model = Review
     serializer_class = ReviewSerializer
 
+    def get(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
     def put(self, request, *args, **kwargs):
         username = request.user.username
         center_hash_id = self.kwargs['hash_id']
@@ -75,7 +78,14 @@ class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
         return Response(status=status.HTTP_200_OK)
 
     def patch(self, request, *args, **kwargs):
-        pass
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def delete(self, request, *args, **kwargs):
-        pass
+        username = request.user.username
+        center_hash_id = self.kwargs['hash_id']
+
+        review_object = Review.objects.get(center__hash_id=center_hash_id,
+                                           user__username=username)
+        review_object.delete()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
