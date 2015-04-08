@@ -20,13 +20,22 @@ from centers.models.center import Center
 from users.models.user import UserProfile
 
 
-class UserReviewList(ListAPIView):
+class UserVisitReviewList(ListAPIView):
     permission_classes = (IsAuthenticated, )
 
     serializer_class = VisitReviewSerializer
 
     def get_queryset(self):
         return VisitReview.objects.filter(user=self.request.user)
+
+
+class UserUseReviewList(ListAPIView):
+    permission_classes = (IsAuthenticated, )
+
+    serializer_class = UseReviewSerializer
+
+    def get_queryset(self):
+        return UseReview.objects.filter(user=self.request.user)
 
 
 class ReviewBase(APIView):
