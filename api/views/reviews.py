@@ -3,7 +3,6 @@ from __future__ import absolute_import
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework import mixins
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
@@ -55,7 +54,7 @@ class CreateReview(generics.CreateAPIView):
 
 
 # TODO-wonkyun: Need Documentation
-class RetrieveUpdateDestroyReview(mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, )
     authentication_classes = (JSONWebTokenAuthentication, )
 
@@ -63,7 +62,17 @@ class RetrieveUpdateDestroyReview(mixins.UpdateModelMixin, mixins.DestroyModelMi
     serializer_class = ReviewSerializer
 
     def put(self, request, *args, **kwargs):
-        pass
+        username = request.user.username
+        center_hash_id = self.kwargs['hash_id']
+
+        payload = json.loads(request.body)
+
+        review_object = Review.objects.get(center__hash_id=center_hash_id,
+                                           user__username=username)
+        review_object.content = payload['content']
+        review_object.save()
+
+        return Response(status=status.HTTP_200_OK)
 
     def patch(self, request, *args, **kwargs):
         pass
