@@ -35,13 +35,3 @@ class CreateReview(CreateAPIView):
             user=self.request.user,
             center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
-
-
-class RetrieveUpdateDestroyReview(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated, )
-
-    model = Review
-    serializer_class = ReviewSerializer
-
-    def get_queryset(self):
-        return self.model.objects.get(center__hash_id=self.kwargs['hash_id'])
