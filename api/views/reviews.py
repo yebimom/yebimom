@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import CreateAPIView
 from rest_framework.generics import UpdateAPIView
@@ -25,7 +26,7 @@ class UserReviewList(ListAPIView):
         return Review.objects.filter(user=self.request.user)
 
 
-class CreateReview(CreateAPIView):
+class ReviewBase(APIView):
     permission_classes = (IsAuthenticated, )
 
     model = Review
@@ -37,13 +38,6 @@ class CreateReview(CreateAPIView):
             center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
 
-
-class UpdateReview(UpdateAPIView):
-    permission_classes = (IsAuthenticated, )
-
-    model = Review
-    serializer_class = ReviewSerializer
-
     def get_object(self):
         return Review.objects.get(
             user=self.request.user,
@@ -51,14 +45,13 @@ class UpdateReview(UpdateAPIView):
         )
 
 
-class DestroyReview(DestroyAPIView):
-    permission_classes = (IsAuthenticated, )
+class CreateReview(ReviewBase, CreateAPIView):
+    pass
 
-    model = Review
-    serializer_class = ReviewSerializer
 
-    def get_object(self):
-        return Review.objects.get(
-            user=self.request.user,
-            center=Center.objects.get(hash_id=self.kwargs['hash_id']),
-        )
+class UpdateReview(ReviewBase, UpdateAPIView):
+    pass
+
+
+class DestroyReview(ReviewBase, DestroyAPIView):
+    pass
