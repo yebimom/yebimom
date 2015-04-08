@@ -47,11 +47,13 @@ class UseReviewBase(ReviewBase):
 
 
 class UserVisitReviewList(VisitReviewBase, ListAPIView):
+
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
 
 
 class UserUseReviewList(UseReviewBase, ListAPIView):
+
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
 
