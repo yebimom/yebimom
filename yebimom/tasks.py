@@ -26,7 +26,7 @@ def _send_question_email_to_admin(email, phone, title, content):
 
     # send email to admin
     send_mail(
-        "[1:1 문의] " + str(title),
+        "[1:1 문의] " + title.encode('utf-8'),
         email_template.render(email_context),
         "예비맘 <contact@yebimom.com>",
         ["contact@yebimom.com"],
@@ -61,7 +61,7 @@ def _send_answer_email_to_admin(email, phone, question_title, content):
 
     # send email to admin
     send_mail(
-        "[1:1 문의 답변] " + str(question_title),
+        "[1:1 문의 답변] " + question_title.encode('utf-8'),
         email_template.render(email_context),
         "예비맘 <contact@yebimom.com>",
         ["contact@yebimom.com"],
@@ -77,7 +77,7 @@ def _send_answer_email_to_user(email, question_title, content):
 
     # send email to user
     send_mail(
-        "[1:1 문의 답변] : " + str(question_title),
+        "[1:1 문의 답변] : " + question_title.encode('utf-8'),
         email_template.render(email_context),
         "예비맘 <contact@yebimom.com>",
         [email],
