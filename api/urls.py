@@ -30,4 +30,8 @@ urlpatterns = patterns(
     url(r'^centers/(?P<hash_id>\w{5})/reviews/visit/update/$',
         reviews.UpdateReview.as_view(),
         name='update_visit_review'),
+
+    url(r'^centers/(?P<hash_id>\w{5})/reviews/visit/delete/$',
+        reviews.DestroyReview.as_view(),
+        name='delete_visit_review'),
 )
