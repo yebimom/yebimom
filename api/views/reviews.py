@@ -30,17 +30,11 @@ class CreateReview(CreateAPIView):
     model = Review
     serializer_class = ReviewSerializer
 
-    def create(self, request, *args, **kwargs):
-        user = request.user
-        center = Center.objects.get(hash_id=kwargs['hash_id'])
-
-        review = Review.objects.create(
-            user=user,
-            center=center,
-            content='hello world',
+    def perform_create(self, serializer):
+        serializer.save(
+            user=self.request.user,
+            center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
-
-        return Response(status=status.HTTP_201_CREATED)
 
 
 class RetrieveUpdateDestroyReview(RetrieveUpdateDestroyAPIView):
