@@ -32,6 +32,12 @@ module.exports = (grunt) ->
                 files:
                     'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.scss'
 
+        compass:
+            dist:
+                options:
+                    sassDir: 'yebimom/static/sass'
+                    cssDir: 'yebimom/static/css'
+
         jshint:
             files: ['yebimom/**/*.js']
 
@@ -110,7 +116,7 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', [
         'clean'
         'bowercopy'
-        'sass'
+        'compass'
         'jshint'
         'watch'
     ]
