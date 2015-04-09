@@ -14,13 +14,13 @@ urlpatterns = patterns(
 
     url(r'^login/', 'rest_framework_jwt.views.obtain_jwt_token'),
 
-    url(r'^events/$', EventList.as_view(), name='list'),
-    url(r'^events/(?P<pk>\d+)/$', EventDetail.as_view(), name='detail'),
+    url(r'^events/$', EventList.as_view(), name='events_list'),
+    url(r'^events/(?P<pk>\d+)/$', EventDetail.as_view(), name='event_detail'),
 
-    url(r'^centers/$', CenterList.as_view(), name='list'),
-    url(r'^centers/(?P<hash_id>\w{5})/$', CenterDetail.as_view(), name='detail'),
+    url(r'^centers/$', CenterList.as_view(), name='centers_list'),
+    url(r'^centers/(?P<hash_id>\w{5})/$', CenterDetail.as_view(), name='center_detail'),
 
-    url(r'^regions/$', RegionList.as_view(), name='list'),
+    url(r'^regions/$', RegionList.as_view(), name='regions_list'),
 
     url(r'^users/reviews/visit/$', UserVisitReviewList.as_view(), name='visit_reviews'),
     url(r'^users/reviews/use/$', UserUseReviewList.as_view(), name='use_reviews'),
