@@ -27,11 +27,6 @@ module.exports = (grunt) ->
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': 'components-font-awesome/fonts/'
 
-        sass:
-            dist:
-                files:
-                    'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.scss'
-
         compass:
             dist:
                 options:
@@ -91,7 +86,6 @@ module.exports = (grunt) ->
 
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-bowercopy'
-    grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-compass'
     grunt.loadNpmTasks 'grunt-contrib-jshint'
     grunt.loadNpmTasks 'grunt-shell'
