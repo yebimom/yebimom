@@ -36,10 +36,12 @@
 </head>
 <body>
 
+<div class="text-center">
 <form action="{% url 'centers:list' %}" method='GET'>
     <input name="search" id="search" size="50">
     <input type="hidden" id="center_hash_id" name="hash_id">
     <input type="submit" value="검색">
 </form>
-
+</div>
+</body>
 </html>
