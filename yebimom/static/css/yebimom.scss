@@ -1,6 +1,10 @@
 // Modules and Variables
 @import "partials/base";
 
+// Partials
+@import "partials/typography";
+@import "partials/buttons";
+
 body {
   color: $primary-color;
 }
