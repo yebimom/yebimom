@@ -4,17 +4,11 @@
 // Partials
 @import "partials/typography";
 @import "partials/buttons";
+@import "partials/header";
 
 // Third-Party Vendors
 @import "vendors/bootstrap";
 
-body {
-  color: $primary-color;
-}
-
-header {
-  background-color: yellow;
-}
 
 footer {
   background-color: green;
