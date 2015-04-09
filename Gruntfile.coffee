@@ -30,7 +30,7 @@ module.exports = (grunt) ->
         sass:
             dist:
                 files:
-                    'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.sass'
+                    'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.scss'
 
         jshint:
             files: ['yebimom/**/*.js']
@@ -56,7 +56,7 @@ module.exports = (grunt) ->
 
         watch:
             sass:
-                files: '**/*.sass'
+                files: '**/*.scss'
                 tasks: 'sass'
 
             jshint:
