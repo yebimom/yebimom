@@ -1,13 +1,11 @@
-$primary-color: #333;
+// Modules and Variables
+@import "partials/base";
 
-body {
-  color: $primary-color;
-}
+// Partials
+@import "partials/typography";
+@import "partials/buttons";
+@import "partials/header";
+@import "partials/footer";
 
-header {
-  background-color: yellow;
-}
-
-footer {
-  background-color: green;
-}
+// Third-Party Vendors
+@import "vendors/bootstrap";
