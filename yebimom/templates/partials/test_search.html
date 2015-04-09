@@ -14,7 +14,7 @@
   $(function() {
     $( "#search" ).autocomplete({
       minLength: 0,
-      source: "http://localhost:8000/api/centers/",
+      source: "{% url 'api:centers_list' %}",
       focus: function( event, ui ) {
         return false;
       },
@@ -34,7 +34,7 @@
 </head>
 <body>
 
-<input id="search">
+<input id="search" size="50">
 <input type="hidden" id="center_hash_id">
  
 </body>
