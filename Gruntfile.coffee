@@ -17,6 +17,7 @@ module.exports = (grunt) ->
                     'js/jquery.min.map': 'jquery/dist/jquery.min.map'
 
                     'js/jquery-ui.min.js': 'jquery-ui/jquery-ui.min.js'
+                    'css/jquery-ui-smoothness.min.css': 'jquery-ui/themes/smoothness/jquery-ui.min.css'
 
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
@@ -27,10 +28,11 @@ module.exports = (grunt) ->
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': 'components-font-awesome/fonts/'
 
-        sass:
+        compass:
             dist:
-                files:
-                    'yebimom/static/css/yebimom.css': 'yebimom/static/css/yebimom.sass'
+                options:
+                    sassDir: 'yebimom/static/sass'
+                    cssDir: 'yebimom/static/css'
 
         jshint:
             files: ['yebimom/**/*.js']
@@ -55,9 +57,9 @@ module.exports = (grunt) ->
                 command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
 
         watch:
-            sass:
-                files: '**/*.sass'
-                tasks: 'sass'
+            compass:
+                files: '**/*.scss'
+                tasks: 'compass'
 
             jshint:
                 files: '<%= jshint.files %>'
@@ -85,7 +87,7 @@ module.exports = (grunt) ->
 
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-bowercopy'
-    grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-compass'
     grunt.loadNpmTasks 'grunt-contrib-jshint'
     grunt.loadNpmTasks 'grunt-shell'
     grunt.loadNpmTasks 'grunt-contrib-watch'
@@ -109,7 +111,7 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', [
         'clean'
         'bowercopy'
-        'sass'
+        'compass'
         'jshint'
         'watch'
     ]

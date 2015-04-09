@@ -12,9 +12,10 @@ class CenterList(ListAPIView):
 
     def get_queryset(self):
         search_query = self.request.GET.get('term', None)
+        if search_query == '':
+            return None
         if search_query is not None:
             return Center.objects.filter(name__contains=search_query)
-
         return Center.objects.all()
 
 
