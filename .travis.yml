@@ -10,9 +10,9 @@ before_script:
 script:
 - npm install -g bower grunt-cli
 - npm install
-- gem install sass
+- gem install compass
 - grunt bowercopy sass
-- python manage.py collectstatic --noinput --ignore '*.sass'
+- python manage.py collectstatic --noinput --ignore '*.scss'
 - pep8
 - python manage.py makemigrations users centers events reviews
 - python manage.py migrate
