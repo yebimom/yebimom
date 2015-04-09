@@ -6,8 +6,6 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.generics import UpdateAPIView
 from rest_framework.generics import DestroyAPIView
 
-from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from reviews.models import VisitReview
@@ -17,7 +15,6 @@ from api.serializers.reviews import VisitReviewSerializer
 from api.serializers.reviews import UseReviewSerializer
 
 from centers.models.center import Center
-from users.models.user import UserProfile
 
 
 class ReviewBase(APIView):
