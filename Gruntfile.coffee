@@ -56,9 +56,9 @@ module.exports = (grunt) ->
                 command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
 
         watch:
-            sass:
+            compass:
                 files: '**/*.scss'
-                tasks: 'sass'
+                tasks: 'compass'
 
             jshint:
                 files: '<%= jshint.files %>'
