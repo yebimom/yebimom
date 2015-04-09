@@ -58,8 +58,10 @@ class UserUseReviewList(UseReviewBase, ListAPIView):
         return self.model.objects.filter(user=self.request.user)
 
 
-class CreateVisitReview(VisitReviewBase, CreateAPIView):
-    pass
+class CreateVisitReview(VisitReviewBase, CreateAPIView, ListAPIView):
+
+    def get_queryset(self):
+        return self.model.objects.all()
 
 
 class UpdateVisitReview(VisitReviewBase, UpdateAPIView):
@@ -70,8 +72,10 @@ class DeleteVisitReview(VisitReviewBase, DestroyAPIView):
     pass
 
 
-class CreateUseReview(UseReviewBase, CreateAPIView):
-    pass
+class CreateUseReview(UseReviewBase, CreateAPIView, ListAPIView):
+
+    def get_queryset(self):
+        return self.model.objects.all()
 
 
 class UpdateUseReview(UseReviewBase, UpdateAPIView):
