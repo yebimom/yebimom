@@ -17,6 +17,7 @@ module.exports = (grunt) ->
                     'js/jquery.min.map': 'jquery/dist/jquery.min.map'
 
                     'js/jquery-ui.min.js': 'jquery-ui/jquery-ui.min.js'
+                    'css/jquery-ui-smoothness.min.css': 'jquery-ui/themes/smoothness/jquery-ui.min.css'
 
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
