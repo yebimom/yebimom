@@ -2,58 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Autocomplete - Custom data and display</title>
+  <title>Center Autocomplete Search</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-
-
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #project-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 1em;
-  }
 
-  #project-description {
-    margin: 0;
-    padding: 0;
-  }
+  <style>
   </style>
+
   <script>
+
   $(function() {
- 
-    $( "#project" ).autocomplete({
+    $( "#search" ).autocomplete({
       minLength: 0,
       source: "http://localhost:8000/api/centers/",
       focus: function( event, ui ) {
-        $( "#project" ).val( ui.item.label );
         return false;
       },
       select: function( event, ui ) {
-        $( "#project" ).val( ui.item.label );
-        $( "#project-id" ).val( ui.item.value );
-        $( "#project-description" ).html( ui.item.desc );
-        $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
- 
+        $( "#search" ).val( ui.item.name );
+        $( "#center_hash_id" ).val( ui.item.hash_id );
         return false;
       }
     })
     .autocomplete( "instance" )._renderItem = function( ul, item ) {
       return $( "<li>" )
-        .append( "<a>" + item.name + "<br>" + item.hash_id + "</a>" )
+        .append( "<a>" + item.name )
         .appendTo( ul );
     };
   });
   </script>
 </head>
 <body>
- 
-<div id="project-label">Select a project (type "j" for a start):</div>
-<input id="project">
-<input type="hidden" id="project-id">
-<p id="project-description"></p>
- 
+
+<input id="search">
+<input type="hidden" id="center_hash_id">
  
 </body>
 </html>
