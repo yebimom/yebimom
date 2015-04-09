@@ -5,6 +5,9 @@
 @import "partials/typography";
 @import "partials/buttons";
 
+// Third-Party Vendors
+@import "vendors/bootstrap";
+
 body {
   color: $primary-color;
 }
