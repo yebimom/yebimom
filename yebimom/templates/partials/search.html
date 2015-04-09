@@ -1,16 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Center Autocomplete Search</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-  <style>
-  </style>
-
-  <script>
-
+<script>
   $(function() {
     $( "#search" ).autocomplete({
       minLength: 0,
@@ -20,7 +10,6 @@
       },
       select: function( event, ui ) {
         $( "#search" ).val( ui.item.name );
-        $( "#center_hash_id" ).val( ui.item.hash_id );
           var hash_id = ui.item.hash_id;
           window.location.href="{% url 'centers:detail' 'abcde' %}".replace('abcde', hash_id);
         return false;
@@ -33,15 +22,11 @@
     };
   });
   </script>
-</head>
-<body>
+
 
 <div class="text-center">
 <form action="{% url 'centers:list' %}" method='GET'>
     <input name="search" id="search" size="50">
-    <input type="hidden" id="center_hash_id" name="hash_id">
     <input type="submit" value="검색">
 </form>
 </div>
-</body>
-</html>
