@@ -25,7 +25,8 @@ class Center(MetaMixin):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=45, blank=True, null=True)
     url = models.URLField(blank=True, null=True)
-    price = models.IntegerField(blank=True, null=True)
+    min_price = models.IntegerField(blank=True, null=True)
+    max_price = models.IntegerField(blank=True, null=True)
     hash_id = models.CharField(
         "center's hashed id",
         max_length=12, unique=True, blank=True, null=True
