@@ -50,4 +50,4 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE yebimom to yebimom;"
 
 python manage.py makemigrations users centers events reviews
 python manage.py migrate
-python manage.py loaddata regions facilities
+python manage.py loaddata regions centers facilities
