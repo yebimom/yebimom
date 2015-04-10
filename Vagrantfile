@@ -58,5 +58,5 @@ Vagrant.configure(2) do |config|
   # end
 
   # Enable provisioning with a shell script.
-  config.vm.provision :shell, path: "install.sh"
+  config.vm.provision :shell, path: "etc/install/install.sh"
 end
