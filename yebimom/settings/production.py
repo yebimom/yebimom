@@ -7,7 +7,7 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = [".herokuapp.com", ".yebimom.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # partials/static.py
