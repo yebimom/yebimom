@@ -122,3 +122,8 @@ MAILGUN_SERVER_NAME = os.environ['MAILGUN_SERVER_NAME']
 API_STORE_SMS_KEY = os.environ['API_STORE_SMS_KEY']
 API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
 SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
+
+
+# Template Tags for All template
+from django.template.base import add_to_builtins
+add_to_builtins('django.templatetags.i18n')
