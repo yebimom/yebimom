@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}1:1 문의 - 예비맘{% endblock %}
+
+
+{% block content %}
+<h1>Contact</h1>
+
+<form method="post">{% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ form.email.label_tag }}</td>
+      <td>{{ form.email }}</td>
+      <td>{{ form.phone.label_tag }}</td>
+      <td>{{ form.phone }}</td>
+      <td>{{ form.title.label_tag }}</td>
+      <td>{{ form.title }}</td>
+      <td>{{ form.content.label_tag }}</td>
+      <td>{{ form.content }}</td>
+    </tr>
+  </table>
+
+  <input type="submit" value="상담 신청" />
+</form>
+{% endblock %}
