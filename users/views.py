@@ -51,8 +51,8 @@ def signup(request):
 
 
 class MyPage(DetailView):
-
     template_name = "users/mypage.html"
+    context_object_name = 'user'
 
     def get_object(self):
-        pass
+        return self.request.user
