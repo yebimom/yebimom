@@ -2,7 +2,7 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+from django.template.base import add_to_builtins
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
@@ -125,5 +125,4 @@ SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
 
 
 # Template Tags for All template
-from django.template.base import add_to_builtins
 add_to_builtins('django.templatetags.i18n')
