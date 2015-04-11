@@ -29,8 +29,8 @@ urlpatterns = patterns(
     url(r'^rules/search-policy/$', 'yebimom.views.search_policy', name='search_policy'),
 
     # Included Apps Urls
-    url(r'^centers/', include('centers.urls', namespace='centers', app_name='centers')),
-    url(r'^events/', include('events.urls', namespace='events', app_name='events')),
-    url(r'^', include('users.urls', namespace='users', app_name='users')),
-    url(r'^api/', include('api.urls', namespace='api', app_name='api')),
+    url(r'^centers/', include('centers.urls', namespace='centers')),
+    url(r'^events/', include('events.urls', namespace='events')),
+    url(r'^', include('users.urls', namespace='users')),
+    url(r'^api/', include('api.urls', namespace='api')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
