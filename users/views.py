@@ -38,9 +38,8 @@ def signup(request):
             user_form.save()
 
             user = authenticate(username=username, password=password)
-            user_profile = user.userprofile
-
             login(request, user)
+
             return redirect("home")
 
         return render(request, "users/signup.html", {
