@@ -52,13 +52,16 @@ def signup(request):
     })
 
 
-class MyPage(DetailView):
-    template_name = "users/mypage.html"
+class UserBase(DetailView):
     context_object_name = 'user'
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(MyPage, self).dispatch(*args, **kwargs)
+        return super(UserBase, self).dispatch(*args, **kwargs)
 
     def get_object(self):
         return self.request.user
+
+
+class Dashboard(UserBase):
+    template_name = "users/dashboard.html"
