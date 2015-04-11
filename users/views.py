@@ -4,12 +4,16 @@ from django.shortcuts import redirect
 from django.contrib.auth.views import login as default_login_view
 from django.contrib.auth.forms import UserCreationForm
 
+from django.views.generic.detail import DetailView
+
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 
-# Decorators
+from django.utils.decorators import method_decorator
+
 from users.decorators import anonymous_required
+from django.contrib.auth.decorators import login_required
 
 
 @anonymous_required
@@ -46,3 +50,15 @@ def signup(request):
     return render(request, "users/signup.html", {
         'form': UserCreationForm
     })
+
+
+class MyPage(DetailView):
+    template_name = "users/mypage.html"
+    context_object_name = 'user'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(MyPage, self).dispatch(*args, **kwargs)
+
+    def get_object(self):
+        return self.request.user
