@@ -3,11 +3,14 @@ from django.shortcuts import redirect
 
 from django.contrib.auth.views import login as default_login_view
 
+from django.views.generic.detail import DetailView
+
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 
 # Decorators
+from django.utils.decorators import method_decorator
 from users.decorators import anonymous_required
 from django.contrib.auth.decorators import login_required
 
@@ -64,3 +67,18 @@ def contact(request):
     return render(request, "users/contact.html", {
         'form': ContactForm
     })
+
+
+class UserBase(DetailView):
+    context_object_name = 'user'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(UserBase, self).dispatch(*args, **kwargs)
+
+    def get_object(self):
+        return self.request.user
+
+
+class Dashboard(UserBase):
+    template_name = "users/dashboard.html"
