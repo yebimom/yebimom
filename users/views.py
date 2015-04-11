@@ -58,7 +58,7 @@ class MyPage(DetailView):
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(ReviewBase, self).dispatch(*args, **kwargs)
+        return super(MyPage, self).dispatch(*args, **kwargs)
 
     def get_object(self):
         return self.request.user
