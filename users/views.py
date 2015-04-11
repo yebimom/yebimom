@@ -10,8 +10,10 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
 
-# Decorators
+from django.utils.decorators import method_decorator
+
 from users.decorators import anonymous_required
+from django.contrib.auth.decorators import login_required
 
 
 @anonymous_required
@@ -53,6 +55,10 @@ def signup(request):
 class MyPage(DetailView):
     template_name = "users/mypage.html"
     context_object_name = 'user'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ReviewBase, self).dispatch(*args, **kwargs)
 
     def get_object(self):
         return self.request.user
