@@ -124,5 +124,5 @@ API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
 SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
 
 
-# Template Tags for All template
+# Load template tags to All template
 add_to_builtins('django.templatetags.i18n')
