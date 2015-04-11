@@ -4,6 +4,8 @@ from django.shortcuts import redirect
 from django.contrib.auth.views import login as default_login_view
 from django.contrib.auth.forms import UserCreationForm
 
+from django.views.generic.detail import DetailView
+
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate
@@ -46,3 +48,11 @@ def signup(request):
     return render(request, "users/signup.html", {
         'form': UserCreationForm
     })
+
+
+class MyPage(DetailView):
+
+    template_name = "users/mypage.html"
+
+    def get_object(self):
+        pass
