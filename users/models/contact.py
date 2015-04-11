@@ -9,9 +9,12 @@ from django.db.models.signals import post_save
 from yebimom.tasks import send_question_email, send_answer_email
 from yebimom.tasks import send_question_sms, send_answer_sms
 
+# Explicit User for ForeignKey
+from django.contrib.auth.models import User
+
 
 class Question(models.Model):
-    user = models.ForeignKey("UserProfile")
+    user = models.ForeignKey(User)
     question_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -37,7 +40,7 @@ def question_complete(sender, instance, created, **kwargs):
                                   instance.title, instance.content)
 
         send_question_sms.delay(instance.phone,
-                                instance.user.user.username)
+                                instance.user.username)
 
 
 class Answer(models.Model):
@@ -53,4 +56,4 @@ def answer_complete(sender, instance, created, **kwargs):
                                 instance.question.title, instance.content)
 
         send_answer_sms.delay(instance.question.phone,
-                              instance.question.user.user.username)
+                              instance.question.user.username)
