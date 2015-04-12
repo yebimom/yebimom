@@ -11,7 +11,7 @@ module.exports = (grunt) ->
                 clean: true
             libs:
                 options:
-                    destPrefix: 'components'
+                    destPrefix: 'yebimom/components'
                 files:
                     'js/jquery.min.js': 'jquery/dist/jquery.min.js'
                     'js/jquery.min.map': 'jquery/dist/jquery.min.map'
