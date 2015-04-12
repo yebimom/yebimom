@@ -2,7 +2,7 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+from django.template.base import add_to_builtins
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
@@ -38,6 +38,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -121,3 +122,7 @@ MAILGUN_SERVER_NAME = os.environ['MAILGUN_SERVER_NAME']
 API_STORE_SMS_KEY = os.environ['API_STORE_SMS_KEY']
 API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
 SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
+
+
+# Load template tags to All template
+add_to_builtins('django.templatetags.i18n')
