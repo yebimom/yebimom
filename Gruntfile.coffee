@@ -35,7 +35,7 @@ module.exports = (grunt) ->
                     cssDir: 'yebimom/static/css'
 
         jshint:
-            files: ['yebimom/**/*.js']
+            files: ['yebimom/yebimom/**/*.js']
 
         shell:
             pep8:
