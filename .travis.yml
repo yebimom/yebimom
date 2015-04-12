@@ -12,12 +12,12 @@ script:
 - npm install
 - gem install compass
 - grunt bowercopy compass
-- python manage.py collectstatic --noinput --ignore '*.scss'
+- python yebimom/manage.py collectstatic --noinput --ignore '*.scss'
 - pep8
-- python manage.py makemigrations users centers events reviews
-- python manage.py migrate
-- python manage.py loaddata regions facilities
-- python manage.py test -v2
+- python yebimom/manage.py makemigrations users centers events reviews
+- python yebimom/manage.py migrate
+- python yebimom/manage.py loaddata regions facilities
+- python yebimom/manage.py test -v2
 deploy:
   provider: heroku
   api_key:
