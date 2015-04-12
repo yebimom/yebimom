@@ -31,8 +31,8 @@ module.exports = (grunt) ->
         compass:
             dist:
                 options:
-                    sassDir: 'yebimom/static/sass'
-                    cssDir: 'yebimom/static/css'
+                    sassDir: 'yebimom/yebimom/static/sass'
+                    cssDir: 'yebimom/yebimom/static/css'
 
         jshint:
             files: ['yebimom/yebimom/**/*.js']
@@ -58,7 +58,7 @@ module.exports = (grunt) ->
 
         watch:
             compass:
-                files: '**/*.scss'
+                files: 'yebimom/**/*.scss'
                 tasks: 'compass'
 
             jshint:
