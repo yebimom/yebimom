@@ -42,7 +42,7 @@ module.exports = (grunt) ->
                 command: 'pep8'
 
             unittest:
-                command: 'NOSE_NOCAPTURE=1 python manage.py test -v2 --color --noinput'
+                command: 'NOSE_NOCAPTURE=1 python yebimom/manage.py test -v2 --color --noinput'
 
             # reset_db:
             #     command: [
@@ -54,7 +54,7 @@ module.exports = (grunt) ->
             #     ].join '&&'
 
             deploy_staticfiles:
-                command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
+                command: 'python yebimom/manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
 
         watch:
             compass:
