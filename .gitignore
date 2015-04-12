@@ -80,7 +80,7 @@ migrations/
 
 # Bower Components
 bower_components/
-/components/
+yebimom/components/
 
 # Node Modules
 node_modules/

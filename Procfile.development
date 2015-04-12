@@ -1,2 +1,2 @@
-web: python manage.py runserver
-worker: celery --app=yebimom.celery:app worker --loglevel INFO
+web: python yebimom/manage.py runserver
+worker: celery --workdir=yebimom/ --app=yebimom.celery:app worker --loglevel INFO

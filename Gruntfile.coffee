@@ -11,7 +11,7 @@ module.exports = (grunt) ->
                 clean: true
             libs:
                 options:
-                    destPrefix: 'components'
+                    destPrefix: 'yebimom/components'
                 files:
                     'js/jquery.min.js': 'jquery/dist/jquery.min.js'
                     'js/jquery.min.map': 'jquery/dist/jquery.min.map'
@@ -31,18 +31,18 @@ module.exports = (grunt) ->
         compass:
             dist:
                 options:
-                    sassDir: 'yebimom/static/sass'
-                    cssDir: 'yebimom/static/css'
+                    sassDir: 'yebimom/yebimom/static/sass'
+                    cssDir: 'yebimom/yebimom/static/css'
 
         jshint:
-            files: ['yebimom/**/*.js']
+            files: ['yebimom/yebimom/**/*.js']
 
         shell:
             pep8:
                 command: 'pep8'
 
             unittest:
-                command: 'NOSE_NOCAPTURE=1 python manage.py test -v2 --color --noinput'
+                command: 'NOSE_NOCAPTURE=1 python yebimom/manage.py test -v2 --color --noinput'
 
             # reset_db:
             #     command: [
@@ -54,11 +54,11 @@ module.exports = (grunt) ->
             #     ].join '&&'
 
             deploy_staticfiles:
-                command: 'python manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
+                command: 'python yebimom/manage.py collectstatic --settings="yebimom.settings.production" --ignore "*.sass" --noinput'
 
         watch:
             compass:
-                files: '**/*.scss'
+                files: 'yebimom/**/*.scss'
                 tasks: 'compass'
 
             jshint:
