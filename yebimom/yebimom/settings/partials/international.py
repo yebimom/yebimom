@@ -2,6 +2,7 @@
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 import os
 from yebimom.settings.partials.application import BASE_DIR
+from django.utils.translation import ugettext_lazy as _
 
 
 LANGUAGE_CODE = 'ko-KR'
@@ -16,4 +17,9 @@ USE_TZ = False
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
+)
+
+LANGUAGES = (
+    ('ko', _('Korea')),
+    ('en', _('English')),
 )
