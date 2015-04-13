@@ -33,4 +33,7 @@ urlpatterns = patterns(
     url(r'^events/', include('events.urls', namespace='events')),
     url(r'^', include('users.urls', namespace='users')),
     url(r'^api/', include('api.urls', namespace='api')),
+
+    # I18n ( Set language dynamically )
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
