@@ -5,11 +5,21 @@
       <div class="col-sm-3">
         예비맘
         <div>
-        {% get_available_languages as LANGUAGES %}
-        {% get_language_info_list for LANGUAGES as langs %}
-          {% for lang in langs %}
-            {{ lang.name_local }}
-          {% endfor %}
+          <form action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+            <select name="language">
+            {% get_language_info_list for LANGUAGES as langs %}
+            {% for lang in langs %}
+              <option 
+                value="{{ lang.code }}"
+                {% if lang.code == LANGUAGE_CODE %} selected="selected"{% endif %}
+              >
+                {{ lang.code }}
+              </option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="select" />
+          </form>
         </div>
       </div>
       <div class="col-xs-12 col-sm-9">
