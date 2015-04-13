@@ -4,6 +4,23 @@
     <div id="info" class="row">
       <div class="col-sm-3">
         예비맘
+        <div>
+          <form action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+            <select name="language">
+            {% get_language_info_list for LANGUAGES as langs %}
+            {% for lang in langs %}
+              <option 
+                value="{{ lang.code }}"
+                {% if lang.code == LANGUAGE_CODE %} selected="selected"{% endif %}
+              >
+                {{ lang.code }}
+              </option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="select" />
+          </form>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-9">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
