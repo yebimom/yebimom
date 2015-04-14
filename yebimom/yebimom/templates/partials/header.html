@@ -1,11 +1,5 @@
-<header id="header">
+<header id="header" class="navbar-fixed-top">
   <div class="container">
-    {% if user.is_authenticated %}
-      <span>{{ user.username }}</span>
-      <a href="{% url 'users:logout' %}">로그아웃</a>
-    {% else %}
-      <a href="{% url 'users:signup' %}">회원가입</a>
-      <a href="{% url 'users:login' %}">로그인</a>
-    {% endif %}
+    모두의 산후조리원
   </div>
 </header>

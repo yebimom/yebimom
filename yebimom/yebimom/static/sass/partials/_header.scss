@@ -1,7 +1,8 @@
 header {
   background-color: yellow;
-  position: fixed;
-  height: 100px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   .container {
       width: 970px;
@@ -10,4 +11,6 @@ header {
 
 section#search-section {
     padding-top: 100px;
+    height: 200px;
+    background-color: red;
 }
