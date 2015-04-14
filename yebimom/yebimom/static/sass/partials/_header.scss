@@ -1,3 +1,13 @@
 header {
   background-color: yellow;
+  position: fixed;
+  height: 100px;
+
+  .container {
+      width: 970px;
+  }
+}
+
+section#search-section {
+    padding-top: 100px;
 }

@@ -22,7 +22,7 @@
   <body>
     {% include "partials/header.html" %}
     {% include "partials/search.html" %}
-    {% block content %}{% endblock %}
+    <div id="content">{% block content %}{% endblock %}</div>
     {% include "partials/debug.html" %}
     {% include "partials/footer.html" %}
   </body>
