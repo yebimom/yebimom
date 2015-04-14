@@ -3,16 +3,6 @@
 {% block title %}산후조리원 리스트{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="alert alert-info">
-    {% if request.GET.search %}
-      "{{ request.GET.search }}" 에 대한 검색결과로 {{ centers|length }} 개의 산후조리원을 찾았습니다.
-    {% elif request.GET.location %}
-      "{{ request.GET.location }}" 에 대한 검색결과로 {{ centers|length }} 개의 산후조리원을 찾았습니다. 
-    {% endif %}
-  </div>
-</div>
-
 <section id="centers">
   <div class="container">
     {% for center in centers %}
