@@ -1,29 +1,29 @@
 footer {
   background-color: $base-color;
   .container {
-      width: 970px;
+    width: 970px;
   }
 
   #footer-link {
-      padding: 10px 0px;
-      ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
+    padding: 10px 0px;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
 
-          li {
-              display: inline;
+      li {
+        display: inline;
 
-              a {
-                  color: white;
-              }
-          }
+        a {
+          color: white;
+        }
       }
+    }
   }
 
   #info {
     #company-info {
-        font-size: 11px;
+      font-size: 11px;
     }
   }
 }
