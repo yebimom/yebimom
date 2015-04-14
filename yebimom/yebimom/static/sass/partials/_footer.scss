@@ -5,6 +5,7 @@ footer {
   }
 
   #footer-link {
+      padding: 10px 0px;
       ul {
           list-style-type: none;
           margin: 0;
@@ -18,5 +19,11 @@ footer {
               }
           }
       }
+  }
+
+  #info {
+    #company-info {
+        font-size: 11px;
+    }
   }
 }
