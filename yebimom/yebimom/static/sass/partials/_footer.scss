@@ -1,5 +1,8 @@
 footer {
   background-color: $base-color;
+  .container {
+      width: 970px;
+  }
 
   #footer-link {
       ul {
