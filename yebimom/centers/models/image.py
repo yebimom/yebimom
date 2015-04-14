@@ -9,10 +9,7 @@ class CenterImage(models.Model):
     center = models.ForeignKey('Center')
 
     image = models.ImageField(upload_to=_generate_upload_path)
-    is_main_image = models.BooleanField(
-        "Is this used to main image?",
-        default=False
-    )
+    is_main = models.BooleanField(default=False)
 
     def __unicode__(self):
         return "%s %s" % (self.center.name, self.image.name)
