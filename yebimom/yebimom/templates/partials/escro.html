@@ -1,0 +1,14 @@
+<script>
+function onPopCertMar(key){
+   window.open('','self','height=700, width=650, status=yes, toolbar=no, menubar=no, location=no');
+   document.CERTMARK_FORM.certMarkURLKey.value = key;
+   document.CERTMARK_FORM.action='https://escrow.nonghyup.com/?certMarkURLKey=' + key; 
+   document.CERTMARK_FORM.target='self';
+   document.CERTMARK_FORM.submit();
+}
+</script>
+
+ <FORM name='CERTMARK_FORM' METHOD='POST'>
+    <input type="hidden" name="certMarkURLKey">
+</FORM> 
+<a href="javascript:onPopCertMar('019326a09cf5628ec86c55403c6c10dc')"><img src='https://escrow.nonghyup.com/images/IC/es/img_nh_mark02.gif' alt='에스크로이체로 결제하기' border='0'/></a> 
