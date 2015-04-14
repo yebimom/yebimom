@@ -41,6 +41,18 @@ class Center(MetaMixin):
         return self.region_third_layer.natural_key() + (self.name, )
     natural_key.dependencies = ['centers.regionthirdlayer']
 
+    def get_main_image_url(self):
+        """
+        if Center has a main image,
+            return a main image url to use in template.
+        it not
+            return a place holder image.
+        """
+        main_image = self.centerimage_set.filter(is_main=True).first()
+        if main_image:
+            return main_image.image.url
+        return "http://placehold.it/400x300"
+
 
 @receiver(post_save, sender=Center)
 def _update_center_hash_id(sender, instance, created, **kwargs):

@@ -1,24 +1,20 @@
 {% extends "base.html" %}
+{% load event_extras %}
 
 {% block title %}산후조리원 리스트{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="alert alert-info">
-    {% if request.GET.search %}
-      "{{ request.GET.search }}" 에 대한 검색결과로 {{ centers|length }} 개의 산후조리원을 찾았습니다.
-    {% elif request.GET.location %}
-      "{{ request.GET.location }}" 에 대한 검색결과로 {{ centers|length }} 개의 산후조리원을 찾았습니다. 
-    {% endif %}
-  </div>
-</div>
-
 <section id="centers">
   <div class="container">
-    {% for center in centers %}
-      <div class="row">
-        <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
-      </div>
+    {% for three_centers in centers|group_by:3 %}
+    <div class="row">
+      {% for center in three_centers %}
+        <div class="col-sm-12 col-md-4">
+          <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
+          <img src="{{ center.get_main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
+        </div>
+      {% endfor %}
+    </div>
     {% endfor %}
   </div>
 </section>
