@@ -9,10 +9,7 @@
     {% for three_centers in centers|group_by:3 %}
     <div class="row">
       {% for center in three_centers %}
-        <div class="col-sm-12 col-md-4">
-          <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
-          <img src="{{ center.get_main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
-        </div>
+        {% include "centers/list/_center.html" %}
       {% endfor %}
     </div>
     {% endfor %}
