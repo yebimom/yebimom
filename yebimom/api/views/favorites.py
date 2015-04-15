@@ -19,12 +19,12 @@ class FavoriteBase(APIView):
 
     def perform_create(self, serializer):
         serializer.save(
-            user=self.request.user,
+            user_profile=self.request.user.userprofile,
             center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
 
     def get_queryset(self):
-        return self.model.objects.filter(user=self.request.user)
+        return self.model.objects.filter(user_profile=self.request.user.userprofile)
 
 
 class CreateFavorite(FavoriteBase, CreateAPIView):

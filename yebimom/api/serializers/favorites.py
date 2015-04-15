@@ -9,4 +9,4 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favorite
-        exclude = ('user', 'center')
+        exclude = ('user_profile', 'center')
