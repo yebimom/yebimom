@@ -20,6 +20,8 @@ LOCALE_PATHS = (
 )
 
 LANGUAGES = (
-    ('ko', _('Korea')),
+    ('ko', _('Korean')),
     ('en', _('English')),
+    ('zh-cn', _('Simplified Chinese')),
+    ('zh-tw', _('Traditional Chinese')),
 )
