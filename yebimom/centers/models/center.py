@@ -41,7 +41,7 @@ class Center(MetaMixin):
         return self.region_third_layer.natural_key() + (self.name, )
     natural_key.dependencies = ['centers.regionthirdlayer']
 
-    def get_main_image_url(self):
+    def _get_main_image_url(self):
         """
         if Center has a main image,
             return a main image url to use in template.
@@ -52,6 +52,7 @@ class Center(MetaMixin):
         if main_image:
             return main_image.image.url
         return "http://placehold.it/400x300"
+    main_image_url = property(_get_main_image_url)
 
 
 @receiver(post_save, sender=Center)

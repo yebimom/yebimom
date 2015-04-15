@@ -1,4 +1,4 @@
 <div class="col-sm-12 col-md-4">
   <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
-  <img src="{{ center.get_main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
+  <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
 </div>
