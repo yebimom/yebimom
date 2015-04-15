@@ -1,18 +1,9 @@
 {% extends "base.html" %}
-{% load event_extras %}
 
 {% block title %}산후조리원 리스트{% endblock %}
 
 {% block content %}
 <section id="centers">
-  <div class="container">
-    {% for three_centers in centers|group_by:3 %}
-    <div class="row">
-      {% for center in three_centers %}
-        {% include "centers/list/_center.html" %}
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </div>
+  {% include "centers/list/_centers.html" %}
 </section>
 {% endblock %}
