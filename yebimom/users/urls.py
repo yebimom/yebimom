@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-from users.views import Dashboard
+from users.views import Dashboard, Favorites
 
 
 urlpatterns = patterns(
@@ -11,4 +11,5 @@ urlpatterns = patterns(
     url(r'^signup/$', 'users.views.signup', name='signup'),
     url(r'^contact/$', 'users.views.contact', name='contact'),
     url(r'^dashboard/$', Dashboard.as_view(), name='dashboard'),
+    url(r'^favorites/$', Favorites.as_view(), name='favorites'),
 )

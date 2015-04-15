@@ -85,5 +85,13 @@ class Dashboard(UserBase):
     def get_context_data(self, **kwargs):
         context = super(Dashboard, self).get_context_data(**kwargs)
         context['favorites'] = self.request.user.userprofile.favorites.all()[:3]
+        return context
 
+
+class Favorites(UserBase):
+    template_name = "users/favorites.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(Favorites, self).get_context_data(**kwargs)
+        context['favorites'] = self.request.user.userprofile.favorites.all()
         return context
