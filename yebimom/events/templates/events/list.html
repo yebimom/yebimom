@@ -9,7 +9,7 @@
     {% for three_events in events|group_by:3 %}
       <div class="row">
         {% for event in three_events %}
-          <div class="col-sm-12 col-md-4">
+          <div class="col-xs-4">
             <a href="{% url "events:detail" pk=event.pk %}">
               <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" class="img-responsive">
               <div>
