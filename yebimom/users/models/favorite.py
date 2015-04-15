@@ -9,5 +9,11 @@ class Favorite(models.Model):
     center = models.ForeignKey(Center)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return u"%s -> %s" % (
+            self.user.username,
+            self.center.name,
+        )
+
     class Meta:
         unique_together = (('user', 'center'),)
