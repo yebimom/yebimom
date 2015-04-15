@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
 
-def home(request):
-    return render(request, "home.html", {})
+class Home(TemplateView):
+    template_name = "home.html"
 
 
 def service(request):
