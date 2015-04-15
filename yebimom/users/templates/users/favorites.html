@@ -4,11 +4,8 @@
 
 {% block content %}
 <div class="container">
-  <h1>Dashboard</h1>
-
   <section id="favorites">
     <h2>찜한 산후조리원</h2>
-    <p><a href="{% url 'users:favorites' %}">찜한 산후조리원 전체보기</a></p>
     {% include "centers/list/_centers.html" with centers=favorites %}
   </section>
 </div>
