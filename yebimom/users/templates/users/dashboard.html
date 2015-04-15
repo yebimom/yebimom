@@ -3,7 +3,12 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-<h1>Dashboard</h1>
+<div class="container">
+  <h1>Dashboard</h1>
 
-{{ user }}
+  <section id="favorites">
+    <h2>찜한 산후조리원</h2>
+    {% include "centers/list/_centers.html" with centers=favorites %}
+  </section>
+</div>
 {% endblock %}
