@@ -3,5 +3,15 @@
 {% block content %}
 <div class="container">
   <h1>메인페이지</h1>
+
+  <section id="centers-with-celeb">
+    <h2>연예인이 방문한 산후조리원</h2>
+    {% include "centers/list/_centers.html" with centers=centers_with_celeb %}
+  </section>
+
+  <section id="centers-with-window_view">
+    <h2>뷰가 좋은 산후조리원</h2>
+    {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
+  </section>
 </div>
 {% endblock %}

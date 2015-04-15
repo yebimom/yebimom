@@ -1,10 +1,24 @@
 # -*- coding: utf-8 -*-
 
+from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
+from centers.models import Center
 
-def home(request):
-    return render(request, "home.html", {})
+
+class Home(TemplateView):
+    template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(Home, self).get_context_data(**kwargs)
+
+        """
+        this is just a simple example for centers/templates/centers/list/_centers.html
+        should refactor after Category app is finished.
+        """
+        context['centers_with_celeb'] = Center.objects.all()[:3]
+        context['centers_with_window_view'] = Center.objects.all()[:3]
+        return context
 
 
 def service(request):
