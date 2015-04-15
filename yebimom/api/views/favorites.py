@@ -12,7 +12,7 @@ from centers.models import Center
 from api.serializers.favorites import FavoriteSerializer
 
 
-class CreateFavorite(CreateAPIView):
+class FavoriteBase(APIView):
     permission_classes = (IsAuthenticated, )
     model = Favorite
     serializer_class = FavoriteSerializer
@@ -23,10 +23,13 @@ class CreateFavorite(CreateAPIView):
             center=Center.objects.get(hash_id=self.kwargs['hash_id']),
         )
 
-
-class UserFavoritesList(ListAPIView):
-    model = Favorite
-    serializer_class = FavoriteSerializer
-
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
+
+
+class CreateFavorite(FavoriteBase, CreateAPIView):
+    pass
+
+
+class UserFavoritesList(FavoriteBase, ListAPIView):
+    pass
