@@ -7,7 +7,7 @@ from api.views.regions import RegionList
 from api.views.reviews import UserVisitReviewList, UserUseReviewList
 from api.views.reviews import CreateVisitReview, UpdateVisitReview, DeleteVisitReview
 from api.views.reviews import CreateUseReview, UpdateUseReview, DeleteUseReview
-from api.views.favorites import CreateFavorite, UserFavoritesList
+from api.views.favorites import CreateFavorite, DeleteFavorite, UserFavoritesList
 
 
 urlpatterns = patterns(
@@ -36,4 +36,5 @@ urlpatterns = patterns(
     url(r'^centers/(?P<hash_id>\w{5})/reviews/use/delete/$', DeleteUseReview.as_view(), name='delete_use_review'),
 
     url(r'^centers/(?P<hash_id>\w{5})/favorite/$', CreateFavorite.as_view(), name='create_favorite'),
+    url(r'^centers/(?P<hash_id>\w{5})/favorite/delete/$', DeleteFavorite.as_view(), name='delete_favorite'),
 )

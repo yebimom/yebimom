@@ -18,3 +18,4 @@ class Favorite(models.Model):
 
     class Meta:
         unique_together = (('user_profile', 'center'),)
+        auto_created = True
