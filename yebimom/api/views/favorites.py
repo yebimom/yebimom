@@ -26,8 +26,18 @@ class FavoriteBase(APIView):
 
         return Response(status=status.HTTP_200_OK)
 
+    def delete(self, request, *args, **kwargs):
+        center = Center.objects.get(hash_id=self.kwargs['hash_id'])
+        self.request.user.userprofile.favorites.remove(center)
 
-class CreateFavorite(FavoriteBase, CreateAPIView):
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class CreateFavorite(FavoriteBase):
+    pass
+
+
+class DeleteFavorite(FavoriteBase):
     pass
 
 
