@@ -4,6 +4,9 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import CreateAPIView
 
+from rest_framework.response import Response
+from rest_framework import status
+
 from rest_framework.permissions import IsAuthenticated
 
 from centers.models import Center
@@ -16,6 +19,12 @@ class FavoriteBase(APIView):
 
     def get_queryset(self):
         return self.request.user.userprofile.favorites.all()
+
+    def post(self, request, *args, **kwargs):
+        center = Center.objects.get(hash_id=self.kwargs['hash_id'])
+        self.request.user.userprofile.favorites.add(center)
+
+        return Response(status=status.HTTP_200_OK)
 
 
 class CreateFavorite(FavoriteBase, CreateAPIView):
