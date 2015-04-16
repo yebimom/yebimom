@@ -5,7 +5,16 @@
             <div class="text-center-xs filter-label">
                 <label>예정 날짜</label>
             </div>
+            <div>
                 <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
+                <select name="baby_num">
+                    <option value="" selected="selected">아기 수</option>
+                    <option value="">=====</option>
+                    <option value="1">하나</option>
+                    <option value="2">쌍둥이</option>
+                    <option value="3">다둥이</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="filters-section category">
@@ -13,7 +22,11 @@
             <div class="text-center-xs filter-label">
                 <label>조리원 타입</label>
             </div>
-
+            <div>
+                <input type="checkbox" name="center_type" value="GREAT_VIEW">전망이 좋은
+                <input type="checkbox" name="center_type" value="CELEB">연예인이 이용한
+                <input type="checkbox" name="center_type" value="EVENT">이벤트가 있는
+            </div>
         </div>
     </div>
     <div class="filters-section price">
