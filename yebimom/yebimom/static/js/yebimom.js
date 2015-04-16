@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.center i').click(function(){
+  $('.center i.favorite').click(function(){
     alert("add to favorites");
   });
 });
