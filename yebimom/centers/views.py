@@ -62,7 +62,6 @@ class CenterList(ListView):
         return centers_region_second_layer | centers_region_third_layer
 
 
-
 class CenterDetail(DetailView):
     model = Center
     template_name = 'centers/detail.html'
