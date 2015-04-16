@@ -6,25 +6,16 @@ from rest_framework.generics import CreateAPIView
 
 from rest_framework.permissions import IsAuthenticated
 
-from users.models import Favorite
 from centers.models import Center
-
-from api.serializers.favorites import FavoriteSerializer
+from api.serializers.centers import CenterSerializer
 
 
 class FavoriteBase(APIView):
     permission_classes = (IsAuthenticated, )
-    model = Favorite
-    serializer_class = FavoriteSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(
-            user_profile=self.request.user.userprofile,
-            center=Center.objects.get(hash_id=self.kwargs['hash_id']),
-        )
+    serializer_class = CenterSerializer
 
     def get_queryset(self):
-        return self.model.objects.filter(user_profile=self.request.user.userprofile)
+        return self.request.user.userprofile.favorites.all()
 
 
 class CreateFavorite(FavoriteBase, CreateAPIView):
