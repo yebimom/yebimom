@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $('.center i.favorite').click(function(){
-    alert("add to favorites");
+    var center_hash_id = $(this).closest('.center').data('center_hash_id');
+    alert(center_hash_id);
   });
 });
