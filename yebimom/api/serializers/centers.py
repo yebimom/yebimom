@@ -24,4 +24,5 @@ class CenterSerializer(serializers.ModelSerializer):
             'facility_set',
             'policy_set',
             'program_set',
+            'main_image_url',
         )

@@ -27,6 +27,7 @@ INSTALLED_APPS = (
     'imagekit',
     'rest_framework',
     'robots',
+    'rosetta',
 
     # Yebimom Apps
     'users',

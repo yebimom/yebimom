@@ -19,6 +19,8 @@ module.exports = (grunt) ->
                     'js/jquery-ui.min.js': 'jquery-ui/jquery-ui.min.js'
                     'css/jquery-ui-smoothness.min.css': 'jquery-ui/themes/smoothness/jquery-ui.min.css'
 
+                    'js/jquery-cookie.js': 'jquery-cookie/jquery.cookie.js'
+
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -42,7 +44,7 @@ module.exports = (grunt) ->
                 command: 'pep8'
 
             unittest:
-                command: 'NOSE_NOCAPTURE=1 python yebimom/manage.py test -v2 --color --noinput'
+                command: 'NOSE_NOCAPTURE=1 python yebimom/manage.py test yebimom/ -v2 --color --noinput'
 
             # reset_db:
             #     command: [

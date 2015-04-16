@@ -6,6 +6,7 @@ from django.contrib.auth.admin import UserAdmin
 # Models
 from users.models import UserProfile
 from users.models.contact import Question, Answer
+from users.models.favorite import Favorite
 
 
 class UserProfileInline(admin.StackedInline):
@@ -33,3 +34,4 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 admin.site.register(User, UserProfileAdmin)
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Favorite)

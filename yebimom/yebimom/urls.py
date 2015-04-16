@@ -7,6 +7,8 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from yebimom.sitemaps import sitemaps
 
+from yebimom.views import Home
+
 
 urlpatterns = patterns(
     '',
@@ -20,7 +22,7 @@ urlpatterns = patterns(
     url(r'^grappelli/', include('grappelli.urls')),
 
     # Yebimom Urls
-    url(r'^$', 'yebimom.views.home', name='home'),
+    url(r'^$', Home.as_view(), name='home'),
 
     # Rules ( Static Pages )
     url(r'^rules/service/$', 'yebimom.views.service', name='service'),
@@ -36,4 +38,7 @@ urlpatterns = patterns(
 
     # I18n ( Set language dynamically )
     url(r'^i18n/', include('django.conf.urls.i18n')),
+
+    # Translation
+    url(r'^rosetta/', include('rosetta.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

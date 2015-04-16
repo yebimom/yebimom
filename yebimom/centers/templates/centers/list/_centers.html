@@ -1,0 +1,9 @@
+{% load event_extras %}
+
+{% for three_centers in centers|group_by:3 %}
+<div class="row centers">
+  {% for center in three_centers %}
+    {% include "centers/list/_center.html" %}
+  {% endfor %}
+</div>
+{% endfor %}
