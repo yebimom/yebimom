@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.filter(name='favorite_class')
 def favorite_class(user, center):
-    if _is_center_in_favorites(user, center):
+    if user.is_authenticated() and _is_center_in_favorites(user, center):
         return "favorite-on"
     else:
         return "favorite-off"
