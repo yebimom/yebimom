@@ -36,11 +36,21 @@ class CenterList(ListView):
     def get_queryset(self):
         search_query = self.request.GET.get('search') or str()
         location_query = self.request.GET.get('location') or str()
+        center_type_query = self.request.GET.get('center_type', None)
+        min_price_query = self.request.GET.get('min_price', None)
+        max_price_query = self.request.GET.get('max_price', None)
 
         centers = Center.objects.filter(name__contains=search_query)
 
         if location_query is not '':
             centers = self.get_queryset_by_location(location_query)
+
+        if center_type_query:
+            centers = centers.filter(category__slag__startswith=center_type_query)
+
+        if min_price_query and max_price_query:
+            centers = centers.filter(min_price__gte=min_price_query)
+            centers = centers.filter(max_price__lte=max_price_query)
 
         return centers
 
