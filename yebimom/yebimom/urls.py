@@ -38,4 +38,7 @@ urlpatterns = patterns(
 
     # I18n ( Set language dynamically )
     url(r'^i18n/', include('django.conf.urls.i18n')),
+
+    # Translation
+    url(r'^rosetta/', include('rosetta.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
