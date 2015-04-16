@@ -1,5 +1,7 @@
 <div class="container">
     <form>
+        <input type="hidden" name="search" value="{{ request.GET.search }}">
+        <input type="hidden" name="location" value="{{ request.GET.location }}">
     <div class="filters-section intro-filter">
         <div class="row">
             <div class="text-center-xs filter-label">
