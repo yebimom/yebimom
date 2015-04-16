@@ -19,6 +19,8 @@ module.exports = (grunt) ->
                     'js/jquery-ui.min.js': 'jquery-ui/jquery-ui.min.js'
                     'css/jquery-ui-smoothness.min.css': 'jquery-ui/themes/smoothness/jquery-ui.min.css'
 
+                    'js/jquery-cookie.js': 'jquery-cookie/jquery.cookie.js'
+
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
