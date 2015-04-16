@@ -1,42 +1,42 @@
 [
 {
   "fields": {
-    "slag": "GREAT_VIEW",
+    "slag": "great_view",
     "name": "전망이 좋은"
   },
   "model": "centers.category"
 },
 {
   "fields": {
-    "slag": "CELEB",
+    "slag": "celeb",
     "name": "연예인이 방문한"
   },
   "model": "centers.category"
 },
   {
   "fields": {
-    "slag": "MANY_REVIEW",
+    "slag": "many_review",
     "name": "리뷰가 많은"
   },
   "model": "centers.category"
 },
   {
   "fields": {
-    "slag": "EVENT",
+    "slag": "event",
     "name": "이벤트를 진행중인"
   },
   "model": "centers.category"
 },
   {
   "fields": {
-    "slag": "HIGH_GRADE",
+    "slag": "high_grade",
     "name": "평점이 좋은"
   },
   "model": "centers.category"
 },
   {
   "fields": {
-    "slag": "MASSAGE",
+    "slag": "massage",
     "name": "마사지가 포함된"
   },
   "model": "centers.category"
