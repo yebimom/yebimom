@@ -1,11 +1,18 @@
 .center {
-  i {
+  i.favorite {
     font-size: 30px;
-    color: grey;
     cursor: pointer;
     
     position: absolute;
     top: 30px;
     right: 30px;
+
+    &.favorite-off {
+      color: grey;
+    }
+
+    &.favorite-on {
+      color: red;
+    }
   }
 }
