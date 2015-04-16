@@ -1,4 +1,7 @@
-<div class="col-xs-4">
+{% load favorites %}
+
+<div class="col-xs-4 center" data-center_hash_id={{ center.hash_id }}>
   <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
   <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
+  <i class="favorite {{ user|favorite_class:center }} fa fa-heart"></i>
 </div>
