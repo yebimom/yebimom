@@ -1,3 +1,5 @@
-var app = function(){
-    console.log("hello world");
-};
+$(document).ready(function(){
+  $('.center i').click(function(){
+    alert("add to favorites");
+  });
+});
