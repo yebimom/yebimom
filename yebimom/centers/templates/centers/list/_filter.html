@@ -1,12 +1,34 @@
 <div class="container">
+    <form>
     <div class="filters-section intro-filter">
         <div class="row">
             <div class="text-center-xs filter-label">
                 <label>예정 날짜</label>
             </div>
-            <form class="date-form">
                 <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
-            </form>
         </div>
     </div>
+    <div class="filters-section category">
+        <div class="row">
+            <div class="text-center-xs filter-label">
+                <label>조리원 타입</label>
+            </div>
+
+        </div>
+    </div>
+    <div class="filters-section price">
+        <div class="row">
+            <div class="text-center-xs filter-label">
+                <label>가격</label>
+            </div>
+                <input name="min_price" type="text" placeholder="최소가격">
+                <input name="max_price" type="text" placeholder="최대가격">
+        </div>
+    </div>
+    <div class="filters-section price">
+        <div class="row">
+            <input type="submit" value="필터링">
+        </div>
+    </div>
+    </form>
 </div>
