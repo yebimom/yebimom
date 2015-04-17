@@ -43,10 +43,10 @@ class CenterList(ListView):
         centers = Center.objects.filter(name__contains=search_query)
 
         if location_query is not '':
-            centers = self.get_queryset_by_location(location_query)
+            centers = self._get_queryset_by_location(location_query)
 
         if center_type_query:
-            centers = centers.filter(category__slag__startswith=center_type_query)
+            centers = centers.filter(category__slug=center_type_query)
 
         if min_price_query and max_price_query:
             centers = centers.filter(min_price__gte=min_price_query)
@@ -54,7 +54,7 @@ class CenterList(ListView):
 
         return centers
 
-    def get_queryset_by_location(self, location_query):
+    def _get_queryset_by_location(self, location_query):
         regions_second_layer = RegionSecondLayer.objects.filter(name__contains=location_query)
         regions_third_layer = RegionThirdLayer.objects.filter(name__contains=location_query)
         centers_region_second_layer = Center.objects.filter(region_second_layer__contains=regions_second_layer)
