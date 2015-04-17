@@ -60,6 +60,8 @@ class CenterDetail(DetailView):
         context['NAVER_OPENAPI_MAP_API_KEY'] = getattr(settings, 'NAVER_OPENAPI_MAP_API_KEY', False)
         context['centers_nearby'] = Center.objects.filter(
             region_third_layer=context[self.context_object_name].region_third_layer
+        ).exclude(
+            id=context[self.context_object_name].id
         )
 
         return context
