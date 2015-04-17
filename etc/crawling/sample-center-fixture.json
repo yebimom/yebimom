@@ -1,0 +1,22 @@
+{
+  "fields": {
+    "name": TITLE,
+    "address": ADDRESS,
+    "phone": TELEPHONE,
+    "url": LINK,
+    "price": null,
+    "longitude": LONGITUDE,
+    "latitude": LATITUDE,
+    "region_first_layer": [
+      REGION_FIRST_LAYER
+    ],
+    "region_second_layer": [
+      REGION_SECOND_LAYER
+    ],
+    "region_third_layer": [
+      REGION_THIRD_LAYER
+    ],
+    "hash_id": HASH
+  },
+  "model": "centers.center"
+}
