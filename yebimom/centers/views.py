@@ -62,7 +62,7 @@ class CenterDetail(DetailView):
             region_third_layer=context[self.context_object_name].region_third_layer
         ).exclude(
             id=context[self.context_object_name].id
-        )
+        )[:3]
 
         return context
 
