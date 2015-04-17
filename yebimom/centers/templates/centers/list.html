@@ -3,9 +3,14 @@
 {% block title %}산후조리원 리스트{% endblock %}
 
 {% block content %}
-<section id="centers">
-  <div class="container">
-    {% include "centers/list/_centers.html" %}
-  </div>
-</section>
+
+  <section id="filters">
+    {% include "centers/list/_filter.html" %}
+  </section>
+
+  <section id="centers">
+    <div class="container">
+      {% include "centers/list/_centers.html" %}
+    </div>
+  </section>
 {% endblock %}

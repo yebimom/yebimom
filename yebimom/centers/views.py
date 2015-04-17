@@ -36,13 +36,30 @@ class CenterList(ListView):
     def get_queryset(self):
         search_query = self.request.GET.get('search') or str()
         location_query = self.request.GET.get('location') or str()
+        center_type_query = self.request.GET.get('center_type', None)
+        min_price_query = self.request.GET.get('min_price', None)
+        max_price_query = self.request.GET.get('max_price', None)
+
+        centers = Center.objects.filter(name__contains=search_query)
+
         if location_query is not '':
-            regions_second_layer = RegionSecondLayer.objects.filter(name__contains=location_query)
-            regions_third_layer = RegionThirdLayer.objects.filter(name__contains=location_query)
-            centers_region_second_layer = Center.objects.filter(region_second_layer__contains=regions_second_layer)
-            centers_region_third_layer = Center.objects.filter(region_third_layer__contains=regions_third_layer)
-            return centers_region_second_layer | centers_region_third_layer
-        return Center.objects.filter(name__contains=search_query)
+            centers = self._get_queryset_by_location(location_query)
+
+        if center_type_query:
+            centers = centers.filter(category__slug=center_type_query)
+
+        if min_price_query and max_price_query:
+            centers = centers.filter(min_price__gte=min_price_query)
+            centers = centers.filter(max_price__lte=max_price_query)
+
+        return centers
+
+    def _get_queryset_by_location(self, location_query):
+        regions_second_layer = RegionSecondLayer.objects.filter(name__contains=location_query)
+        regions_third_layer = RegionThirdLayer.objects.filter(name__contains=location_query)
+        centers_region_second_layer = Center.objects.filter(region_second_layer__contains=regions_second_layer)
+        centers_region_third_layer = Center.objects.filter(region_third_layer__contains=regions_third_layer)
+        return centers_region_second_layer | centers_region_third_layer
 
 
 class CenterDetail(DetailView):
