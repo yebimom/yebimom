@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+"""
+Make centers fixture from crawling xml data by Naver Search API
+"""
+
 from centers.utils.center_hashids import get_encoded_center_hashid
 from bs4 import BeautifulSoup
 import re
