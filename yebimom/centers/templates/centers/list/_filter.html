@@ -1,59 +1,59 @@
 <div class="container">
-    <form>
-        <input type="hidden" name="search" value="{{ request.GET.search }}">
-        <input type="hidden" name="location" value="{{ request.GET.location }}">
+  <form>
+    <input type="hidden" name="search" value="{{ request.GET.search }}">
+    <input type="hidden" name="location" value="{{ request.GET.location }}">
     <div class="filters-section intro-filter">
-        <div class="row">
-            <div class="text-center-xs filter-label">
-                <label>예정 날짜</label>
-            </div>
-            <div>
-                <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
-                <select name="baby_num">
-                    <option value="" selected="selected">아기 수</option>
-                    <option value="">=====</option>
-                    <option value="1">하나</option>
-                    <option value="2">쌍둥이</option>
-                    <option value="3">다둥이</option>
-                </select>
-            </div>
+      <div class="row">
+        <div class="text-center-xs filter-label">
+          <label>예정 날짜</label>
         </div>
+        <div>
+          <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
+          <select name="baby_num">
+            <option value="" selected="selected">아기 수</option>
+            <option value="">=====</option>
+            <option value="1">하나</option>
+            <option value="2">쌍둥이</option>
+            <option value="3">다둥이</option>
+          </select>
+        </div>
+      </div>
     </div>
     <div class="filters-section category">
-        <div class="row">
-            <div class="text-center-xs filter-label">
-                <label>조리원 타입</label>
-            </div>
-
-            <div>
-                <label class="checkbox checkbox-inline panel">
-                    <input type="checkbox" class="pull-left" name="center_type" value="great_view">
-                    전망이 좋은
-                </label>
-                <label class="checkbox checkbox-inline panel">
-                    <input type="checkbox" class="pull-left" name="center_type" value="celeb">
-                    연예인이 이용한
-                </label>
-                <label class="checkbox checkbox-inline panel">
-                    <input type="checkbox" class="pull-left" name="center_type" value="event">
-                    이벤트가 있는
-                </label>
-            </div>
+      <div class="row">
+        <div class="text-center-xs filter-label">
+          <label>조리원 타입</label>
         </div>
+
+        <div>
+          <label class="checkbox checkbox-inline panel">
+            <input type="checkbox" class="pull-left" name="center_type" value="great_view">
+            전망이 좋은
+          </label>
+          <label class="checkbox checkbox-inline panel">
+            <input type="checkbox" class="pull-left" name="center_type" value="celeb">
+            연예인이 이용한
+          </label>
+          <label class="checkbox checkbox-inline panel">
+            <input type="checkbox" class="pull-left" name="center_type" value="event">
+            이벤트가 있는
+          </label>
+        </div>
+      </div>
     </div>
     <div class="filters-section price">
-        <div class="row">
-            <div class="text-center-xs filter-label">
-                <label>가격</label>
-            </div>
-                <input name="min_price" type="text" placeholder="최소가격">~
-                <input name="max_price" type="text" placeholder="최대가격">
+      <div class="row">
+        <div class="text-center-xs filter-label">
+          <label>가격</label>
         </div>
+        <input name="min_price" type="text" placeholder="최소가격">~
+        <input name="max_price" type="text" placeholder="최대가격">
+      </div>
     </div>
     <div>
-        <div class="row">
-            <input type="submit" value="필터링">
-        </div>
+      <div class="row">
+        <input type="submit" value="필터링">
+      </div>
     </div>
-    </form>
+  </form>
 </div>
