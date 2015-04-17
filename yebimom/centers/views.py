@@ -58,6 +58,10 @@ class CenterDetail(DetailView):
         context['facilities'] = Facility.objects.all()
         context['policies'] = Policy.objects.all()
         context['NAVER_OPENAPI_MAP_API_KEY'] = getattr(settings, 'NAVER_OPENAPI_MAP_API_KEY', False)
+        context['centers_nearby'] = Center.objects.filter(
+            region_third_layer=context[self.context_object_name].region_third_layer
+        )
+
         return context
 
 
