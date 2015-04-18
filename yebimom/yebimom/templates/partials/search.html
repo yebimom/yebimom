@@ -14,24 +14,27 @@
 </section>
 
 <script>
-  $(function() {
-    $( "#search" ).autocomplete({
-      minLength: 0,
-      source: "{% url 'api:centers_list' %}",
-      focus: function( event, ui ) {
-        return false;
-      },
-      select: function( event, ui ) {
-        $( "#search" ).val( ui.item.name );
-          var hash_id = ui.item.hash_id;
-          window.location.href="{% url 'centers:detail' 'abcde' %}".replace('abcde', hash_id);
-        return false;
-      }
-    })
-    .autocomplete( "instance" )._renderItem = function( ul, item ) {
-      return $( "<li>" )
-        .append( "<a>" + item.name )
-        .appendTo( ul );
-    };
-  });
+function autocomplete_center(src){
+  $(src).autocomplete({
+    minLength: 0,
+    source: "{% url 'api:centers_list' %}",
+    focus: function( event, ui ) {
+      return false;
+    },
+    select: function( event, ui ) {
+      $( "#search" ).val( ui.item.name );
+        var hash_id = ui.item.hash_id;
+        window.location.href="{% url 'centers:detail' 'abcde' %}".replace('abcde', hash_id);
+      return false;
+    }
+  })
+  .autocomplete( "instance" )._renderItem = function( ul, item ) {
+    return $( "<li>" )
+      .append( "<a>" + item.name )
+      .appendTo( ul );
+  };
+};
+
+autocomplete_center("#header input");
+autocomplete_center("#search");
 </script>
