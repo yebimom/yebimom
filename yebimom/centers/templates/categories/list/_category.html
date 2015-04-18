@@ -1,8 +1,7 @@
 <div class="col-xs-3 category">
-  <div class="category-title">
-    <a href="{% url 'category-detail' category.slug %}">
-      <h2>{{ category.name }}</h2>
-      <img src="{{ category.thumbnail_image_url }}" alt="{{ category.name }}" class="img-responsive"/>
-    </a>
-  </div>
+  <a href="{% url 'category-detail' category.slug %}">
+    <h2 class="category-title">{{ category.name }}</h2>
+    <p class="category-description">{{ category.centers.count }}개 산후조리원</p>
+    <img src="{{ category.thumbnail_image_url }}" alt="{{ category.name }}" class="img-responsive"/>
+  </a>
 </div>
