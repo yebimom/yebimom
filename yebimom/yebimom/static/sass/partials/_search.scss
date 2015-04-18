@@ -3,4 +3,14 @@ section#search-section {
   height: 300px;
   background-image: url(http://cfile22.uf.tistory.com/image/1227EF49501F792435FB10);
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+
+  input {
+    width: 500px;
+    height: 60px;
+
+    font-size: 20px;
+
+    border: 1px solid red;
+    border-radius: 60px;
+  }
 }
