@@ -1,4 +1,13 @@
-header {
+header#header {
   background-color: #EEE8E9;
   opacity: 0.8;
+
+  .navbar-header a {
+    color: black;
+    // should remove after change it to logo image
+  }
+
+  ul.nav.navbar-nav li a {
+    color: black;
+  }
 }

@@ -10,8 +10,18 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="">로그인</a></li>
-      <li><a href="">회원가입</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="" data-toggle="dropdown"><i class="fa fa-user"></i> 마이페이지</a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'users:dashboard' %}">대쉬보드</a></li>
+            <li><a href="{% url 'users:logout' %}">로그아웃</a></li>
+          </ul>
+        </li>
+        <li><a href="">리뷰 작성하고 상품권 받기</a></li>
+      {% else %}
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+      {% endif %}
     </ul>
   </div>
 </header>
