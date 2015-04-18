@@ -1,0 +1,9 @@
+{% load event_extras %}
+
+{% for four_categories in categories|group_by:4 %}
+<div class="row categories">
+  {% for category in four_categories %}
+    {% include "categories/list/_category.html" %}
+  {% endfor %}
+</div>
+{% endfor %}

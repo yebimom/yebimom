@@ -13,8 +13,8 @@ from django.http import HttpResponseRedirect
 from centers.models.center import Center
 from centers.models.facility import Facility
 from centers.models.policy import Policy
-from centers.models.region import RegionSecondLayer
-from centers.models.region import RegionThirdLayer
+from centers.models.region import RegionSecondLayer, RegionThirdLayer
+from centers.models.category import Category
 from reviews.models import VisitReview
 from reviews.models import UseReview
 
@@ -136,3 +136,9 @@ class UseReviewUpdate(UseReviewBase, UpdateView):
 
 class UseReviewDelete(UseReviewBase, DeleteView):
     pass
+
+
+class CategoryList(ListView):
+    template_name = "categories/list.html"
+    model = Category
+    context_object_name = 'categories'

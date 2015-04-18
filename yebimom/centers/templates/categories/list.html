@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}카테고리별 산후조리원{% endblock %}
+
+{% block content %}
+  <section id="categories">
+    <div class="container">
+      {% include "categories/list/_categories.html" %}
+    </div>
+  </section>
+{% endblock %}
