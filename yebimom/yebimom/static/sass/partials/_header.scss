@@ -14,5 +14,23 @@ header#header {
   input {
     margin-top: 15px;
     margin-bottom: 15px;
+
+    height: 30px;
+    width: 200px;
+
+    border: 1px solid red;
+    border-radius: 20px;
+
+    font-size: 12px;
+    text-indent: 15px;
+  }
+
+  form button {
+    border: 0px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 17px;
+    right: 5px;
   }
 }

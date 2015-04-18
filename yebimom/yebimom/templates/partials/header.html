@@ -12,8 +12,8 @@
     <ul class="nav navbar-nav navbar-right">
       <li>
         <form action="{% url 'centers:list' %}" method='GET'>
-            <input type="text" placeholder="산후조리원 이름으로 검색">
-            <input type="submit" value="검색">
+            <input type="text" name="search" placeholder="산후조리원 이름으로 검색">
+            <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </li>
       
