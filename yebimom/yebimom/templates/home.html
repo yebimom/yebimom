@@ -11,5 +11,10 @@
     <h2>뷰가 좋은 산후조리원</h2>
     {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
   </section>
+
+  <section id="category">
+    <h2>인기 카테고리별 산후조리원</h2>
+    {% include "categories/list/_categories.html" with categories=categories %}
+  </section>
 </div>
 {% endblock %}

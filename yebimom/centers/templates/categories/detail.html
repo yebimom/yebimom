@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="category">
+  <div class="container">
+    <h1>{{ category.name }}</h1>
+
+    <section id="centers-in-category">
+      {% include "centers/list/_centers.html" with centers=category.centers.all %}
+    </section>
+  </div>
+</section>
+
+{% endblock %}

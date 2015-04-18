@@ -3,7 +3,7 @@
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
-from centers.models import Center
+from centers.models import Center, Category
 
 
 class Home(TemplateView):
@@ -18,6 +18,9 @@ class Home(TemplateView):
         """
         context['centers_with_celeb'] = Center.objects.all()[:3]
         context['centers_with_window_view'] = Center.objects.all()[:3]
+
+        context['categories'] = Category.objects.all()[:8]
+
         return context
 
 

@@ -23,7 +23,7 @@ class FacilityInline(admin.TabularInline):
 
 
 class CategoryInline(admin.TabularInline):
-    model = Category.center.through
+    model = Category.centers.through
     classes = ('grp-collapse grp-closed',)
 
 

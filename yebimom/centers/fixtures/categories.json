@@ -40,5 +40,19 @@
     "name": "마사지가 포함된"
   },
   "model": "centers.category"
+},
+  {
+  "fields": {
+    "slug": "husband",
+    "name": "남편 방문이 가능한"
+  },
+  "model": "centers.category"
+},
+  {
+  "fields": {
+    "slug": "franchise",
+    "name": "프랜차이즈"
+  },
+  "model": "centers.category"
 }
 ]
