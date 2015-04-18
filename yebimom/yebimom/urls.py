@@ -8,7 +8,7 @@ from django.contrib.sitemaps.views import sitemap
 from yebimom.sitemaps import sitemaps
 
 from yebimom.views import Home
-from centers.views import CategoryList
+from centers.views import CategoryList, CategoryDetail
 
 
 urlpatterns = patterns(
@@ -38,6 +38,7 @@ urlpatterns = patterns(
     url(r'^api/', include('api.urls', namespace='api')),
 
     url(r'^category/$', CategoryList.as_view(), name='category-list'),
+    url(r'^category/(?P<slug>\w+)/$', CategoryDetail.as_view(), name='category-detail'),
 
     # I18n ( Set language dynamically )
     url(r'^i18n/', include('django.conf.urls.i18n')),

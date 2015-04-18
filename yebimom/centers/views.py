@@ -142,3 +142,8 @@ class CategoryList(ListView):
     template_name = "categories/list.html"
     model = Category
     context_object_name = 'categories'
+
+
+class CategoryDetail(DetailView):
+    template_name = "categories/detail.html"
+    model = Category
