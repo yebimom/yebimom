@@ -1,12 +1,14 @@
 <section id="search-section">
   <div class="container">
     <div class="row">
-      <div class="text-center">
-        <form action="{% url 'centers:list' %}" method='GET'>
-            <input name="search" id="search" size="50">
-            <input type="submit" value="검색">
-        </form>
-      </div>
+      <p class="text-center">함께 만드는 프리미엄 산후조리원 정보</p>
+
+      <form action="{% url 'centers:list' %}" method='GET' class="text-center">
+        <label>
+          <input name="search" id="search" placeholder="한글로 산후조리원 이름을 검색하세요">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </label>
+      </form>
     </div>
   </div>
 </section>
