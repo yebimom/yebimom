@@ -13,3 +13,7 @@ class Category(models.Model):
 
     def __unicode__(self):
         return unicode(self.name)
+
+    def _get_thumbnail_image_url(self):
+        return "http://placehold.it/300x200"
+    thumbnail_image_url = property(_get_thumbnail_image_url)
