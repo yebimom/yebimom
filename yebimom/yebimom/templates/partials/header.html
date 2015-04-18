@@ -1,5 +1,17 @@
 <header id="header" class="navbar-fixed-top">
   <div class="container">
-    모두의 산후조리원
+    <div class="navbar-header">
+      <a href="{% url 'home' %}" class="navbar-brand">모두의 산후조리원</a>
+    </div>
+    
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'centers:list' %}">산후조리원 가격비교</a></li>
+      <li><a href="{% url 'events:list' %}">이벤트 전체보기</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="">로그인</a></li>
+      <li><a href="">회원가입</a></li>
+    </ul>
   </div>
 </header>
