@@ -5,11 +5,18 @@
     </div>
     
     <ul class="nav navbar-nav">
-      <li><a href="{% url 'centers:list' %}">산후조리원 가격비교</a></li>
-      <li><a href="{% url 'events:list' %}">이벤트 전체보기</a></li>
+      <li><a href="{% url 'centers:list' %}">산후조리원</a></li>
+      <li><a href="{% url 'events:list' %}">이벤트</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
+      <li>
+        <form action="{% url 'centers:list' %}" method='GET'>
+            <input type="text" placeholder="산후조리원 이름으로 검색">
+            <input type="submit" value="검색">
+        </form>
+      </li>
+      
       {% if user.is_authenticated %}
         <li><a href="" data-toggle="dropdown"><i class="fa fa-user"></i> 마이페이지</a>
           <ul class="dropdown-menu">
