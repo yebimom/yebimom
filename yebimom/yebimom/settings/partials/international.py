@@ -25,3 +25,5 @@ LANGUAGES = (
     ('zh-cn', _('Simplified Chinese')),
     ('zh-tw', _('Traditional Chinese')),
 )
+
+MODELTRANSLATION_AUTO_POPULATE = True

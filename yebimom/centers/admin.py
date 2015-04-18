@@ -8,6 +8,9 @@ from centers.models import CenterImage
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
 from centers.models.category import Category
 
+# Translation
+from modeltranslation.admin import TranslationAdmin
+
 
 class PolicyInline(admin.TabularInline):
     model = Policy.center.through
@@ -30,6 +33,10 @@ class CenterAdmin(admin.ModelAdmin):
         FacilityInline,
         CategoryInline,
     ]
+
+
+class CenterTranslationAdmin(CenterAdmin, TranslationAdmin):
+    pass
 
 
 @admin.register(Policy)
@@ -64,5 +71,5 @@ class CategoryAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(Center, CenterAdmin)
+admin.site.register(Center, CenterTranslationAdmin)
 admin.site.register(RegionSecondLayer, RegionAdmin)
