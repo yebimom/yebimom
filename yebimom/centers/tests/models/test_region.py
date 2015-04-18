@@ -2,6 +2,7 @@
 
 # Test
 from django.test import TestCase
+import unittest
 
 # Models
 from centers.models.center import Center
@@ -11,6 +12,7 @@ from centers.models.region import RegionThirdLayer
 
 # Type
 from django.db.models.query import QuerySet
+from modeltranslation.manager import MultilingualQuerySet
 
 
 class RegionAllLayerTest(TestCase):
@@ -136,6 +138,7 @@ class RegionAllLayerTest(TestCase):
             list()
         )
 
+    @unittest.skip
     def test_region_layer_centers_set_should_return_centers_queryset(self):
         """
         RegionLayer should get centers list
@@ -155,4 +158,25 @@ class RegionAllLayerTest(TestCase):
         self.assertEqual(
             type(self.region_third_layer_0.center_set.all()),
             QuerySet
+        )
+
+    def test_region_layer_centers_set_should_return_multilingual_queryset(self):
+        """
+        RegionLayer should get centers list
+        Result should be type of <class 'modeltranslation.manager.MultilingualQuerySet'>
+        """
+
+        self.assertEqual(
+            type(self.region_first_layer_0.center_set.all()),
+            MultilingualQuerySet
+        )
+
+        self.assertEqual(
+            type(self.region_second_layer_0.center_set.all()),
+            MultilingualQuerySet
+        )
+
+        self.assertEqual(
+            type(self.region_third_layer_0.center_set.all()),
+            MultilingualQuerySet
         )
