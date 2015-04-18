@@ -1,12 +1,10 @@
 <section id="search-section">
   <div class="container">
     <div class="row">
-      <div class="text-center">
-        <form action="{% url 'centers:list' %}" method='GET'>
-            <input name="search" id="search" size="50">
-            <input type="submit" value="검색">
-        </form>
-      </div>
+      <form action="{% url 'centers:list' %}" method='GET'>
+        <input name="search" id="search" size="50">
+        <button type="submit">검색</button>
+      </form>
     </div>
   </div>
 </section>
