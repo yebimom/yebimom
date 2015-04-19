@@ -22,6 +22,7 @@
   <body>
     {% include "partials/header.html" %}
     {% include "partials/search.html" %}
+    {% if regions_second_layer and regions_third_layer %} {% include "partials/regions-navigation.html" %} {% endif %}
     <div id="content">{% block content %}{% endblock %}</div>
     {% include "partials/debug.html" %}
     {% include "partials/footer.html" %}
