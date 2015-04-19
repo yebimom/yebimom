@@ -8,7 +8,7 @@ from api.views.reviews import UserVisitReviewList, UserUseReviewList
 from api.views.reviews import CreateVisitReview, UpdateVisitReview, DeleteVisitReview
 from api.views.reviews import CreateUseReview, UpdateUseReview, DeleteUseReview
 from api.views.favorites import CreateFavorite, DeleteFavorite, UserFavoritesList
-from api.views.categories import CategoryList
+from api.views.categories import CategoryList, CategoryDetail
 
 
 urlpatterns = patterns(
@@ -23,6 +23,7 @@ urlpatterns = patterns(
     url(r'^centers/(?P<hash_id>\w{5})/$', CenterDetail.as_view(), name='center_detail'),
 
     url(r'^categories/$', CategoryList.as_view(), name='categories_list'),
+    url(r'^categories/(?P<slug>\w+)/$', CategoryDetail.as_view(), name='category_detail'),
 
     url(r'^regions/$', RegionList.as_view(), name='regions_list'),
 
