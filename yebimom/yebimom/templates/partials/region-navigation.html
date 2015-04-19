@@ -1,26 +1,42 @@
 <section id="region-navigation-section">
   <div class="container" id="region-navigation">
-    <div class="bs-example">
-      <ul class="nav nav-pills">
-        <li class="active"><a data-toggle="tab" href="#sectionA">지역 선택</a></li>
-        {% for region_second_layer in regions_second_layer %}
-          <li><a data-toggle="tab" href="#{{ region_second_layer.name }}">{{ region_second_layer.name }}</a></li>
-        {% endfor %}
-      </ul>
+    <div>
+      <div class="row">
+        <ul class="nav nav-pills">
+          <li class="active"><a data-toggle="tab" href="#sectionA" class="btn-region-select" id="region-select"> 지역 선택 ▶ </a></li>
+          {% for region_second_layer in regions_second_layer %}
+            <li><a data-toggle="tab" class="btn-second-region" href="#{{ region_second_layer.name }}" id="second-region">{{ region_second_layer.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
       <div class="tab-content">
         <div id="sectionA" class="tab-pane fade in active">
         </div>
         {% for region_second_layer in regions_second_layer %}
           <div id="{{ region_second_layer.name }}" class="tab-pane fade">
-            <a type="button" class="btn-region" href="{% url 'centers:list' %}?location={{ region_second_layer.name }}">{{ region_second_layer.name }} 지역 전체</a>
-            {% for region_third_layer in regions_third_layer %}
-              {% if region_third_layer.region_second_layer.name == region_second_layer.name %}
-                <a type="button" class="btn-region" href="{% url 'centers:list' %}?location={{ region_third_layer.name }}">{{ region_third_layer.name }}</a>
-              {% endif %}
-            {% endfor %}
+            <hr>
+            <ul>
+              <li><a type="button" class="btn-third-region" href="{% url 'centers:list' %}?location={{ region_second_layer.name }}">{{ region_second_layer.name }} 지역 전체</a></li>
+              {% for region_third_layer in regions_third_layer %}
+                {% if region_third_layer.region_second_layer.name == region_second_layer.name %}
+                  <li><a type="button" class="btn-third-region" href="{% url 'centers:list' %}?location={{ region_third_layer.name }}">{{ region_third_layer.name }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
           </div>
         {% endfor %}
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  $('#region-select').click( function(){
+      $('#region-select').text(" 지역 선택 ▶ ");
+    }
+  );
+  $('#second-region').click( function(){
+      $('#region-select').text(" 지역 선택 ▲ ");
+    }
+  );
+</script>
