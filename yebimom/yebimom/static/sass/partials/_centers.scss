@@ -1,6 +1,6 @@
 .center {
   i.favorite {
-    font-size: 30px;
+    font-size: 35px;
     cursor: pointer;
     
     position: absolute;
@@ -8,11 +8,11 @@
     right: 30px;
 
     &.favorite-off {
-      color: grey;
+      color: #BABABA;
     }
 
     &.favorite-on {
-      color: red;
+      color: $yebimom-color-red;
     }
 
     &.favorite-border {
