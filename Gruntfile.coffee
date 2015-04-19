@@ -61,7 +61,7 @@ module.exports = (grunt) ->
         watch:
             compass:
                 files: 'yebimom/**/*.scss'
-                tasks: 'compass'
+                tasks: 'compass_with_notify'
 
             jshint:
                 files: '<%= jshint.files %>'
@@ -86,6 +86,11 @@ module.exports = (grunt) ->
                     title: "UnitTest - Suceess!"
                     message: "Keep Calm and Love TDD"
 
+            compass:
+                options:
+                    title: "Compass - Success!"
+                    message: "Syntactically Awesome Style Sheets"
+
 
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-bowercopy'
@@ -103,6 +108,11 @@ module.exports = (grunt) ->
         'notify:unittest'
     ]
 
+    grunt.registerTask 'compass_with_notify', [
+        'compass'
+        'notify:compass'
+    ]
+
     grunt.registerTask 'dev', [
     ]
 
@@ -113,7 +123,7 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', [
         'clean'
         'bowercopy'
-        'compass'
+        'compass_with_notify'
         'jshint'
         'watch'
     ]
