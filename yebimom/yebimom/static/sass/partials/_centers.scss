@@ -4,7 +4,7 @@
     cursor: pointer;
     
     position: absolute;
-    top: 30px;
+    top: 12px;
     right: 30px;
 
     &.favorite-off {
@@ -17,6 +17,16 @@
 
     &.favorite-border {
       color: white;
+    }
+  }
+
+  .center-summary {
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 16px;
     }
   }
 }
