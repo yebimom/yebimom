@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
 from centers.models import Center, Category
+from centers.models.region import RegionSecondLayer, RegionThirdLayer
 
 
 class Home(TemplateView):
@@ -20,6 +21,9 @@ class Home(TemplateView):
         context['centers_with_window_view'] = Center.objects.all()[:3]
 
         context['categories'] = Category.objects.all()[:8]
+
+        context['regions_second_layer'] = RegionSecondLayer.objects.all()
+        context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
         return context
 
