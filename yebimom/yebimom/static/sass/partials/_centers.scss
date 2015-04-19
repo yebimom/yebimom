@@ -20,6 +20,19 @@
     }
   }
 
+  div.center-price {
+    position: absolute;
+    bottom: 80px;
+
+    padding: 10px 20px 0px 15px;
+
+    font-size: 20px;
+    color: white;
+    background-color: rgba($yebimom-color-red, 0.5);
+
+    border-radius: 0 20px 20px 0;
+  }
+
   .center-summary {
     a {
       text-decoration: none;
