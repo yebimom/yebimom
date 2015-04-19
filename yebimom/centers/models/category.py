@@ -21,7 +21,7 @@ class Category(models.Model):
         return unicode(self.name)
 
     def _get_thumbnail_image_url(self):
-        if self.image :
+        if self.image:
             return self.image.url
         return "http://placehold.it/300x200"
     thumbnail_image_url = property(_get_thumbnail_image_url)
