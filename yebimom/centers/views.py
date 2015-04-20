@@ -61,6 +61,14 @@ class CenterList(ListView):
         centers_region_third_layer = Center.objects.filter(region_third_layer__contains=regions_third_layer)
         return centers_region_second_layer | centers_region_third_layer
 
+    def get_context_data(self, **kwargs):
+        context = super(CenterList, self).get_context_data(**kwargs)
+
+        context['regions_second_layer'] = RegionSecondLayer.objects.all()
+        context['regions_third_layer'] = RegionThirdLayer.objects.all()
+
+        return context
+
 
 class CenterDetail(DetailView):
     model = Center
@@ -80,6 +88,14 @@ class CenterDetail(DetailView):
         ).exclude(
             id=context[self.context_object_name].id
         )[:3]
+
+        return context
+
+    def get_context_data(self, **kwargs):
+        context = super(CenterDetail, self).get_context_data(**kwargs)
+
+        context['regions_second_layer'] = RegionSecondLayer.objects.all()
+        context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
         return context
 
