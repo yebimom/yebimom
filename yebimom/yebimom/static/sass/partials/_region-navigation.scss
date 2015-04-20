@@ -42,8 +42,9 @@ section#region-navigation-section {
   }
 
   a.btn-third-region {
-    color : #ffffff;
-    background-color: $yebimom-color-blue;
+    color : goldenrod;
+    background-color: #ffffff;
+    border : 1px solid goldenrod;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
@@ -52,7 +53,7 @@ section#region-navigation-section {
 
     &:hover {
       text-decoration: none;
-      background-color: $yebimom-color-dark-blue;
+      background-color: rgba(goldenrod, 0.2);
       opacity: 50;
     }
   }
