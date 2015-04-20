@@ -12,7 +12,35 @@
     }
 
     &.favorite-on {
-      color: red;
+      color: $main-color;
+    }
+
+    &.favorite-border {
+      color: white;
+    }
+  }
+
+  div.center-price {
+    position: absolute;
+    bottom: 80px;
+
+    padding: 10px 20px 0px 15px;
+
+    font-size: 20px;
+    color: white;
+    background-color: rgba($main-color, 0.5);
+
+    border-radius: 0 20px 20px 0;
+  }
+
+  .center-summary {
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      color: black;
+      font-size: 16px;
     }
   }
 }
