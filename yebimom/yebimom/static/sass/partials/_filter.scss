@@ -1,5 +1,15 @@
 section#filters {
   padding-top: 20px;
-  height: 300px;
-  background-color: gray;
+  background-color: #ffffff;
+
+  div.filters-section {
+    margin: 10px;
+  }
+
+  hr {
+    border-top-width : 1px;
+    margin-bottom : 8px;
+    margin-top: 45px;
+    border-top-color: $base-color;
+  }
 }
