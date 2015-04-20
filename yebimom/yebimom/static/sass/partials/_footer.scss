@@ -1,8 +1,11 @@
 footer {
   background-color: $base-color;
+  padding-bottom: 30px;
 
   #footer-link {
-    padding: 10px 0px;
+    padding: 15px 0px;
+    margin-bottom: -60px;
+
     ul {
       list-style-type: none;
       margin: 0;
@@ -10,10 +13,27 @@ footer {
 
       li {
         display: inline;
+        margin-top: 30px;
+        margin: 6px;
+        color: rgba(#000000, 0.5);
+
+        #customer_service_center {
+          font-size: 24px;
+          letter-spacing: -3px;
+          background-color: rgba(#000000, 0.1);
+        }
 
         a {
-          color: white;
+          color: rgba(#000000, 0.6);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+            //color: rgba($main-color, 0.8);
+          }
         }
+
+
       }
     }
   }
@@ -21,6 +41,21 @@ footer {
   #info {
     #company-info {
       font-size: 11px;
+      margin-top: 20px;
+      color: rgba(#000000, 0.4);
     }
+
+    a {
+      color: $main-color;
+    }
+  }
+
+  #escro img {
+    position: absolute;
+    left: 50px;
+  }
+
+  #language {
+    margin-top: 20px;
   }
 }
