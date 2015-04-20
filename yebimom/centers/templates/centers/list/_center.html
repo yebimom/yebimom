@@ -1,7 +1,18 @@
 {% load favorites %}
 
 <div class="col-xs-4 center" data-center_hash_id={{ center.hash_id }}>
-  <a href='{% url 'centers:detail' center.hash_id %}'>{{ center.name }}</a>
   <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
   <i class="favorite {{ user|favorite_class:center }} fa fa-heart"></i>
+  <i class="favorite favorite-border fa fa-heart-o"></i>
+  <div class="center-price">
+    <!-- <p>{{ center.min_price }}</p> -->
+    <p>300만원</p>
+  </div>
+
+  <div class="center-summary">
+    <a href='{% url 'centers:detail' center.hash_id %}'><h2>{{ center.name }}</h2></a>
+    <div class="center-region">
+      {{ center.region_second_layer.name }} > {{ center.region_third_layer.name }}
+    </div>
+  </div>
 </div>
