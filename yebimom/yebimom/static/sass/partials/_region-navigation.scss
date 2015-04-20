@@ -1,5 +1,5 @@
 section#region-navigation-section {
-  background-color: #EEE8E9;
+  background-color: $base-color;
   padding: 15px;
 
   hr {
@@ -10,9 +10,9 @@ section#region-navigation-section {
   }
 
   a.btn-region-select {
-    color : $yebimom-color-red;
+    color : $main-color;
     background-color: #ffffff;
-    border : 1px solid $yebimom-color-red;
+    border : 1px solid $main-color;
     padding: 10px;
     border-radius: 10px;
     display: inline-block;
@@ -23,7 +23,7 @@ section#region-navigation-section {
 
   a.btn-second-region {
     color : #ffffff;
-    background-color: $yebimom-color-red;
+    background-color: $main-color;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -37,14 +37,14 @@ section#region-navigation-section {
 
     &:hover {
       text-decoration: none;
-      background-color: rgba($yebimom-color-red, 0.8);
+      background-color: rgba($main-color, 0.8);
     }
   }
 
   a.btn-third-region {
-    color : goldenrod;
+    color : $sub-color;
     background-color: #ffffff;
-    border : 1px solid goldenrod;
+    border : 1px solid $sub-color;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
@@ -53,7 +53,7 @@ section#region-navigation-section {
 
     &:hover {
       text-decoration: none;
-      background-color: rgba(goldenrod, 0.2);
+      background-color: rgba($sub-color, 0.2);
       opacity: 50;
     }
   }

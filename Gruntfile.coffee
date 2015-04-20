@@ -33,8 +33,7 @@ module.exports = (grunt) ->
         compass:
             dist:
                 options:
-                    sassDir: 'yebimom/yebimom/static/sass'
-                    cssDir: 'yebimom/yebimom/static/css'
+                    config: 'config.rb'
 
         jshint:
             files: ['yebimom/yebimom/**/*.js']

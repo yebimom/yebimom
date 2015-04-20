@@ -1,5 +1,5 @@
 header#header {
-  background-color: #EEE8E9;
+  background-color: $base-color;
   opacity: 0.8;
 
   .navbar-header a {
@@ -18,7 +18,7 @@ header#header {
     height: 30px;
     width: 200px;
 
-    border: 1px solid $yebimom-color-red;
+    border: 1px solid $main-color;
     border-radius: 20px;
 
     font-size: 12px;
