@@ -12,12 +12,13 @@ $(document).ready(function(){
     }
   });
 
-  $('.center i.favorite').click(function(){
+  $('.center i.favorite-border').click(function(){
     var center_hash_id = $(this).closest('.center').data('center_hash_id');
+    var favorite = $(this).parent(".center").find(".favorite");
 
-    if ($(this).hasClass('favorite-on')) {
-      $(this).removeClass('favorite-on');
-      $(this).addClass('favorite-off');
+    if (favorite.hasClass('favorite-on')) {
+      favorite.removeClass('favorite-on');
+      favorite.addClass('favorite-off');
 
       $.ajax({
         method: "DELETE",
@@ -25,8 +26,8 @@ $(document).ready(function(){
       });
 
     } else {
-      $(this).removeClass('favorite-off');
-      $(this).addClass('favorite-on');
+      favorite.removeClass('favorite-off');
+      favorite.addClass('favorite-on');
 
       $.ajax({
         method: "POST",
