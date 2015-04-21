@@ -1,6 +1,7 @@
 section#filters {
   padding-top: 20px;
   background-color: #ffffff;
+  color: rgba(#000000, 0.5);
 
   div.filters-section {
     margin: 10px;
@@ -8,8 +9,29 @@ section#filters {
 
   hr {
     border-top-width : 1px;
-    margin-bottom : 8px;
-    margin-top: 45px;
     border-top-color: $base-color;
   }
+
+  #filter_button {
+    color : $sub-color;
+    background-color: #ffffff;
+    border : 1px solid $sub-color;
+    padding: 10px;
+    display: inline-block;
+    margin: 3px;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+
+  #filter {
+    margin-left: 10px;
+  }
+
+  #price {
+    input.form-control {
+      width: 20%;
+      display: inline-block;
+    }
+  }
+
 }
