@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <ul class="nav nav-pills">
-      <li><a data-toggle="tab" href="#filter" id="filter_button">상세검색</a></li>
+      <li><a data-toggle="tab" href="#filter" id="filter_button"> 상세검색 ▼ </a></li>
     </ul>
   </div>
   <form>
@@ -16,9 +16,9 @@
             <div class="filter-label">
               <label>예정 날짜</label>
             </div>
-            <div>
-              <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
-              <select name="baby_num">
+            <div class="input-group date" id="datetimepicker">
+              <input name="expected_date" type="text" class="form-control" placeholder="입원예정일">
+              <select name="baby_num" class="form-control">
                 <option value="" selected="selected">아기 수</option>
                 <option value="">=====</option>
                 <option value="1">하나</option>
@@ -36,15 +36,15 @@
             </div>
 
             <div>
-              <label>
+              <label class="checkbox-inline">
                 <input type="checkbox" class="pull-left" name="center_type" value="great_view">
                 전망이 좋은
               </label>
-              <label>
+              <label class="checkbox-inline">
                 <input type="checkbox" class="pull-left" name="center_type" value="celeb">
                 연예인이 이용한
               </label>
-              <label>
+              <label class="checkbox-inline">
                 <input type="checkbox" class="pull-left" name="center_type" value="event">
                 이벤트가 있는
               </label>
@@ -52,25 +52,29 @@
           </div>
         </div>
 
-        <div class="filters-section price">
-          <div class="row">
-            <div class="filter-label">
-              <label>가격</label>
-            </div>
-            <input name="min_price" type="text" placeholder="최소가격">~
-            <input name="max_price" type="text" placeholder="최대가격">
+        <div>
+          <div class="row pull-right">
+            <input type="submit" class="btn btn-default" id="btn_filter" value="상세검색">
           </div>
         </div>
 
-        <div>
-          <div class="row pull-right">
-            <input type="submit" class="btn btn-default" value="상세검색">
+        <div class="filters-section price">
+          <div class="row form-group" id="price">
+            <div class="filter-label">
+              <label>가격</label>
+            </div>
+            <input name="min_price" type="text" placeholder="최소가격" class="form-control">~
+            <input name="max_price" type="text" placeholder="최대가격" class="form-control">
           </div>
         </div>
-        <hr>
+
+
+
       </div>
     </div>
   </form>
+  <hr>
+
 
 </div>
 
@@ -83,6 +87,20 @@
       } else {
         $('#filter').addClass('hide');
       }
+    }
+  );
+
+
+  $(function () {
+    $('#datetimepicker').datetimepicker();
+  });
+
+
+  $('#filter_button').click( function(){
+      if ($('#filter').hasClass('hide'))
+        $('#filter_button').text(" 상세검색 ▼ ");
+      else
+        $('#filter_button').text(" 상세검색 ▲ ");
     }
   );
 </script>
