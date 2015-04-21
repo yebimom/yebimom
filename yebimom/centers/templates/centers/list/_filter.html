@@ -1,59 +1,106 @@
 <div class="container">
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li><a data-toggle="tab" href="#filter" id="filter_button"> 상세검색 ▼ </a></li>
+    </ul>
+  </div>
   <form>
     <input type="hidden" name="search" value="{{ request.GET.search }}">
     <input type="hidden" name="location" value="{{ request.GET.location }}">
-    <div class="filters-section intro-filter">
-      <div class="row">
-        <div class="text-center-xs filter-label">
-          <label>예정 날짜</label>
+
+    <div class="tab-contents">
+
+      <div id="filter" class="tab-pane hide">
+        <div class="filters-section intro-filter">
+          <div class="row">
+            <div class="filter-label">
+              <label>예정 날짜</label>
+            </div>
+            <div class="input-group date" id="datetimepicker">
+              <input name="expected_date" type="text" class="form-control" placeholder="입원예정일">
+              <select name="baby_num" class="form-control">
+                <option value="" selected="selected">아기 수</option>
+                <option value="">=====</option>
+                <option value="1">하나</option>
+                <option value="2">쌍둥이</option>
+                <option value="3">다둥이</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div>
-          <input name="expected_date" type="text" class="ui-datepicker-target" placeholder="입원예정일">
-          <select name="baby_num">
-            <option value="" selected="selected">아기 수</option>
-            <option value="">=====</option>
-            <option value="1">하나</option>
-            <option value="2">쌍둥이</option>
-            <option value="3">다둥이</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="filters-section category">
-      <div class="row">
-        <div class="text-center-xs filter-label">
-          <label>조리원 타입</label>
+
+        <div class="filters-section category">
+          <div class="row">
+            <div class="filter-label">
+              <label>조리원 타입</label>
+            </div>
+
+            <div>
+              <label class="checkbox-inline">
+                <input type="checkbox" class="pull-left" name="center_type" value="great_view">
+                전망이 좋은
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" class="pull-left" name="center_type" value="celeb">
+                연예인이 이용한
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" class="pull-left" name="center_type" value="event">
+                이벤트가 있는
+              </label>
+            </div>
+          </div>
         </div>
 
         <div>
-          <label class="checkbox checkbox-inline panel">
-            <input type="checkbox" class="pull-left" name="center_type" value="great_view">
-            전망이 좋은
-          </label>
-          <label class="checkbox checkbox-inline panel">
-            <input type="checkbox" class="pull-left" name="center_type" value="celeb">
-            연예인이 이용한
-          </label>
-          <label class="checkbox checkbox-inline panel">
-            <input type="checkbox" class="pull-left" name="center_type" value="event">
-            이벤트가 있는
-          </label>
+          <div class="row pull-right">
+            <input type="submit" class="btn btn-default" id="btn_filter" value="상세검색">
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="filters-section price">
-      <div class="row">
-        <div class="text-center-xs filter-label">
-          <label>가격</label>
+
+        <div class="filters-section price">
+          <div class="row form-group" id="price">
+            <div class="filter-label">
+              <label>가격</label>
+            </div>
+            <input name="min_price" type="text" placeholder="최소가격" class="form-control">~
+            <input name="max_price" type="text" placeholder="최대가격" class="form-control">
+          </div>
         </div>
-        <input name="min_price" type="text" placeholder="최소가격">~
-        <input name="max_price" type="text" placeholder="최대가격">
-      </div>
-    </div>
-    <div>
-      <div class="row">
-        <input type="submit" value="필터링">
+
+
+
       </div>
     </div>
   </form>
+  <hr>
+
+
 </div>
+
+
+<script>
+  $('#filter_button').click( function(){
+      if ($('#filter').hasClass('hide')) {
+        $('#filter').removeClass('hide');
+
+      } else {
+        $('#filter').addClass('hide');
+      }
+    }
+  );
+
+
+  $(function () {
+    $('#datetimepicker').datetimepicker();
+  });
+
+
+  $('#filter_button').click( function(){
+      if ($('#filter').hasClass('hide'))
+        $('#filter_button').text(" 상세검색 ▼ ");
+      else
+        $('#filter_button').text(" 상세검색 ▲ ");
+    }
+  );
+</script>
