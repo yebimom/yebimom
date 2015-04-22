@@ -1,0 +1,24 @@
+section#center {
+  img.img-responsive {
+    width: 800px;
+    height: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+section#reviews {
+  div.alert-info {
+    color: $main-color;
+    background-color: rgba($main-color, 0.1);
+    border-color: rgba($main-color, 0.1);
+  }
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid $main-color;
+}
