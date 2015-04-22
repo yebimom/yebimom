@@ -5,6 +5,9 @@ from django.shortcuts import render
 
 from centers.models import Category
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
+from events.models import Event
+
+from django.utils import timezone
 
 
 class Home(TemplateView):
@@ -24,6 +27,8 @@ class Home(TemplateView):
 
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
         context['regions_third_layer'] = RegionThirdLayer.objects.all()
+
+        context['events_in_progress'] = Event.objects.filter(ends_at__gt=timezone.now())
 
         return context
 
