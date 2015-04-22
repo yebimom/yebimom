@@ -1,0 +1,44 @@
+[
+{
+  "fields": {
+    "name": "아빠면회"
+  },
+  "model": "centers.policy"
+},
+{
+  "fields": {
+    "name": "직계가족면회"
+  },
+  "model": "centers.policy"
+},
+  {
+  "fields": {
+    "name": "면회시간제한"
+  },
+  "model": "centers.policy"
+},
+  {
+  "fields": {
+    "name": "남편산모방출입"
+  },
+  "model": "centers.policy"
+},
+  {
+  "fields": {
+    "name": "외부음식반입금지"
+  },
+  "model": "centers.policy"
+},
+  {
+  "fields": {
+    "name": "금연구역"
+  },
+  "model": "centers.policy"
+},
+  {
+  "fields": {
+    "name": "꽃바구니반입금지"
+  },
+  "model": "centers.policy"
+}
+]
