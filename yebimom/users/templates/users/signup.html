@@ -31,6 +31,14 @@
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-<a href="{% url "social:begin" backend="kakao" %}">카카오톡으로 로그인하기</a>
-<a href="{% url "social:begin" backend="facebook" %}">페이스북으로 로그인하기</a>
+<a href="{% url "social:begin" backend="kakao" %}">
+  <div class="auth_button">
+    <img src="https://40.media.tumblr.com/a558aa4cbbe633d67d5a9ff4eed0ce0a/tumblr_nn8dgompI61ur9lggo1_1280.png" />
+  </div>
+</a>
+<a href="{% url "social:begin" backend="facebook" %}">
+  <div class="auth_button">
+    <img src="https://40.media.tumblr.com/387f8969ebb3c8ecae1adbde451112d8/tumblr_nn8dh0JQyi1ur9lggo1_1280.png" />
+  </div>
+</a>
 {% endblock %}
