@@ -16,7 +16,7 @@ class Home(TemplateView):
         """
         this is just a simple example for centers/templates/centers/list/_centers.html
         should refactor after Category app is finished.
-<Up>        """
+        """
         context['centers_with_celeb'] = Category.objects.get(slug='celeb').centers.all()[:3]
         context['centers_with_window_view'] = Category.objects.get(slug='great_view').centers.all()[:3]
 
