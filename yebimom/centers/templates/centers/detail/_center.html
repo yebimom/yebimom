@@ -2,12 +2,12 @@
   <div class="container">
     <h1><b>{{ center.name }}</b></h1>
     <hr>
-
+    <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
     <table class="table table-hover">
       <tr>
         <td>위치</td>
         <td>{{ center.address }}<br><br>
-        {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}</td>
+          {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}</td>
       </tr>
       <tr>
         <td>전화번호</td>
@@ -25,7 +25,7 @@
         <td>최소가격</td>
         {% if center.min_price == None %}
           <td>가격 미정</td>
-          {% else %}
+        {% else %}
           <td>{{ center.min_price }}</td>
         {% endif %}
       </tr>
@@ -33,7 +33,7 @@
         <td>최대가격</td>
         {% if center.max_price == None %}
           <td>가격 미정</td>
-          {% else %}
+        {% else %}
           <td>{{ center.max_price }}</td>
         {% endif %}
       </tr>
