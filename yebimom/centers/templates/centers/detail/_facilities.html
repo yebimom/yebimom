@@ -1,15 +1,30 @@
 <section id="facilities">
   <div class="container">
-    <h1>Facilities</h1>
+    <h2>편의시설</h2>
+  <hr>
 
-    <ul>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>이름</th>
+        <th>유무</th>
+      </tr>
+      </thead>
+      <tbody>
       {% for facility in facilities %}
         {% if facility in center.facility_set.all %}
-          <li>{{ facility.name }}</li>
+          <tr>
+            <td>{{ facility.name }}</td>
+            <td>O</td>
+          </tr>
         {% else %}
-          <li><strike>{{ facility.name }}</strike></li>
+          <tr>
+            <td>{{ facility.name }}</td>
+            <td>X</td>
+          </tr>
         {% endif %}
       {% endfor %}
-    </ul>
+      </tbody>
+    </table>
   </div>
 </section>

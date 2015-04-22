@@ -1,15 +1,31 @@
 <section id="policies">
   <div class="container">
-    <h1>Policies</h1>
+    <h2>준수사항</h2>
+  <hr>
 
-    <ul>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>이름</th>
+        <th>가능여부</th>
+      </tr>
+      </thead>
+      <tbody>
       {% for policy in policies %}
         {% if policy in center.policy_set.all %}
-          <li>{{ policy.name }}</li>
+          <tr>
+            <td>{{ policy.name }}</td>
+            <td>O</td>
+          </tr>
         {% else %}
-          <li><strike>{{ policy.name }}</strike></li>
+          <tr>
+            <td>{{ policy.name }}</td>
+            <td>X</td>
+          </tr>
         {% endif %}
       {% endfor %}
-    </ul>
+      </tbody>
+    </table>
+
   </div>
 </section>

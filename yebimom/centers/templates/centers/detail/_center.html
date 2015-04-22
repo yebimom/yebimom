@@ -1,7 +1,49 @@
 <section id="center">
   <div class="container">
-    <h1>{{ center.name }}</h1>
+    <h1><b>{{ center.name }}</b></h1>
+    <hr>
 
-    {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}
+    <table class="table table-hover">
+      <tr>
+        <td>위치</td>
+        <td>{{ center.address }}<br><br>
+        {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}</td>
+      </tr>
+      <tr>
+        <td>전화번호</td>
+        <td>{{ center.phone }}</td>
+      </tr>
+      <tr>
+        <td>홈페이지</td>
+        {% if center.url == None %}
+          <td>홈페이지 없음</td>
+        {% else %}
+          <td><a href="{{ center.url }}">홈페이지 바로가기</a></td>
+        {% endif %}
+      </tr>
+      <tr>
+        <td>최소가격</td>
+        {% if center.min_price == None %}
+          <td>가격 미정</td>
+          {% else %}
+          <td>{{ center.min_price }}</td>
+        {% endif %}
+      </tr>
+      <tr>
+        <td>최대가격</td>
+        {% if center.max_price == None %}
+          <td>가격 미정</td>
+          {% else %}
+          <td>{{ center.max_price }}</td>
+        {% endif %}
+      </tr>
+      </tr>
+
+    </table>
+
+
+
+
+
   </div>
 </section>
