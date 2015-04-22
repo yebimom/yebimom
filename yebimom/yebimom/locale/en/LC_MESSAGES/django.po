@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-23 05:41+0900\n"
+"PO-Revision-Date: 2015-04-23 05:59+0828\n"
+"Last-Translator:   <a@a.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+#: yebimom/settings/partials/international.py:23
+msgid "Korean"
+msgstr ""
+
+#: yebimom/settings/partials/international.py:24
+msgid "English"
+msgstr ""
+
+#: yebimom/settings/partials/international.py:25
+msgid "Simplified Chinese"
+msgstr ""
+
+#: yebimom/settings/partials/international.py:26
+msgid "Traditional Chinese"
+msgstr ""
+
+#: yebimom/templates/base.html:16
+msgid "예비맘"
+msgstr "Yebimom"
+
+#: yebimom/templates/home.html:6
+msgid "연예인이 방문한 산후조리원"
+msgstr "Postpartum care centers visited by celebrities"
+
+#: yebimom/templates/home.html:11
+msgid "뷰가 좋은 산후조리원"
+msgstr "Postpartum care centers where have a good view"
+
+#: yebimom/templates/home.html:16
+msgid "진행중인 이벤트"
+msgstr "Events are in progress"
+
+#: yebimom/templates/home.html:21
+msgid "인기 카테고리별 산후조리원"
+msgstr "Postpartum care centers in Popular categories"
+
+#: yebimom/templates/partials/footer.html:8
+msgid "회사소개"
+msgstr "About Us"
+
+#: yebimom/templates/partials/footer.html:10
+msgid "이용약관"
+msgstr "Terms of Use"
+
+#: yebimom/templates/partials/footer.html:12
+msgid "개인정보 취급방침"
+msgstr "Privacy Policy"
+
+#: yebimom/templates/partials/footer.html:14
+msgid "책임의 한계와 법적고지"
+msgstr "Disclaimer"
+
+#: yebimom/templates/partials/footer.html:16
+msgid "이메일 무단수집 거부"
+msgstr "Email denying"
+
+#: yebimom/templates/partials/footer.html:17
+msgid "365 고객센터 070-8777-5763"
+msgstr "365 Contact 82)-70-8777-5763"
+
+#: yebimom/templates/partials/footer.html:24
+msgid "예비맘파트너스(Yebimom Partners) | 대표 : 안수찬 | 사업자등록번호 : 331-07-00029 "
+msgstr ""
+"예비맘파트너스(Yebimom Partners) | CEO: ansuchan | Business Registration Number: "
+"331-07-00029"
+
+#: yebimom/templates/partials/footer.html:24
+msgid "사업자정보조회"
+msgstr "Lookup Company Information"
+
+#: yebimom/templates/partials/footer.html:25
+msgid "통신판매업신고 : 제2015-서울관악-0326호 | 개인정보관리책임자 : 김진우 "
+msgstr ""
+"Online sales registration :The Seoul Gwanak No. 2015- -0326 | Privacy "
+"Officer: Jinwoo Kim"
+
+#: yebimom/templates/partials/footer.html:26
+msgid ""
+"서울특별시 관악구 남부순환로 1799 대영빌딩 | Tel : 070-8777-5763 | Fax : 0303-3444-4010 "
+msgstr ""
+"Gwanak-gu, Seoul, South Ring Road 1799 British building | Tel : "
+"070-8777-5763 | Fax : 0303-3444-4010"
+
+#: yebimom/templates/partials/header.html:4
+msgid "모두의 산후조리원"
+msgstr "Maternity care centers for Everyone"
+
+#: yebimom/templates/partials/header.html:8
+msgid "산후조리원"
+msgstr "Center"
+
+#: yebimom/templates/partials/header.html:9
+msgid "이벤트"
+msgstr "Event"
+
+#: yebimom/templates/partials/header.html:21
+msgid " 마이페이지"
+msgstr "My page"
+
+#: yebimom/templates/partials/header.html:23
+msgid "대쉬보드"
+msgstr "Dashboard"
+
+#: yebimom/templates/partials/header.html:24
+msgid "로그아웃"
+msgstr "Sign Out"
+
+#: yebimom/templates/partials/header.html:27
+msgid "리뷰 작성하고 상품권 받기"
+msgstr "Write a review"
+
+#: yebimom/templates/partials/header.html:30
+msgid "회원가입"
+msgstr "Sign Up"
+
+#: yebimom/templates/partials/search.html:4
+msgid "함께 만드는 프리미엄 산후조리원 정보"
+msgstr "Premium postpartum care centers maked by together"
