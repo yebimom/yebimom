@@ -88,12 +88,6 @@ class CenterDetail(DetailView):
         ).exclude(
             id=context[self.context_object_name].id
         )[:3]
-
-        return context
-
-    def get_context_data(self, **kwargs):
-        context = super(CenterDetail, self).get_context_data(**kwargs)
-
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
         context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
