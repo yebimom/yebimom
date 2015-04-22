@@ -52,11 +52,5 @@
     "name": "마사지"
   },
   "model": "centers.facility"
-},
-{
-  "fields": {
-    "name": "남편식사"
-  },
-  "model": "centers.facility"
 }
 ]
