@@ -2,12 +2,14 @@
   <section id="visit-reviews">
     <div class="container">
       <h2>방문/상담 리뷰 ({{ center.visitreview_set.count }})</h2>
+    <hr>
       <p>산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
 
       <ul>
         {% for review in center.visitreview_set.all %}
         <li>
           {{ review.user }} - {{ review.content }}
+          <div class="hide">
           {% if review.user == user %}
             <form action='{% url 'centers:delete_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
               <input type="submit" name="delete" value="delete">
@@ -18,6 +20,7 @@
               <input type="submit" name="update" value="update">
             </form>
           {% endif %}
+          </div>
         </li>
         {% endfor %}
       </ul>
