@@ -1,80 +1,112 @@
 <section id="reviews">
-  <section id="visit-reviews">
-    <div class="container">
-      <h2>방문/상담 리뷰 ({{ center.visitreview_set.count }})</h2>
-    <hr>
-      <p>산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#visit-reviews" data-toggle="tab">방문/상담 리뷰 ({{ center.visitreview_set.count }})</a></li>
+      <li><a href="#use-reviews" data-toggle="tab">이용 리뷰 ({{ center.usereview_set.count }})</a></li>
+    </ul>
 
-      <ul>
-        {% for review in center.visitreview_set.all %}
-        <li>
-          {{ review.user }} - {{ review.content }}
-          <div class="hide">
-          {% if review.user == user %}
-            <form action='{% url 'centers:delete_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-              <input type="submit" name="delete" value="delete">
-            </form>
+    <div class="tab-content ">
 
-            <form action='{% url 'centers:update_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-              {{ visit_review_form }}
-              <input type="submit" name="update" value="update">
-            </form>
-          {% endif %}
+      <div id="visit-reviews" class="tab-pane fade in active">
+        <hr>
+        <p>산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>작성자</th>
+            <th>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for review in center.visitreview_set.all %}
+            <tr>
+              <td>{{ review.user }}</td>
+              <td>{{ review.content }}</td>
+            </tr>
+
+            <!--  <div class="hide">
+              {% if review.user == user %}
+                <form action='{% url 'centers:delete_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+                  <input type="submit" name="delete" value="delete">
+                </form>
+
+                <form action='{% url 'centers:update_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+                  {{ visit_review_form }}
+                  <input type="submit" name="update" value="update">
+                </form>
+              {% endif %}
+            </div>
+
+            -->
+
+          {% endfor %}
+          </tbody>
+        </table>
+
+        {% if user.is_authenticated %}
+          <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+            <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ visit_review_form }}
+            <input type="submit" name="Post Review" value="등록"> </div>
+
+          </form>
+        {% else %}
+          <div class="alert alert-danger">
+            리뷰를 남기시려면 로그인이 필요합니다. <a href='{% url 'users:login' %}'>로그인 바로가기</a>
           </div>
-        </li>
-        {% endfor %}
-      </ul>
+        {% endif %}
 
-      {% if user.is_authenticated %}
-        <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-          <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
-          {{ visit_review_form }}
-          <input type="submit" name="Post Review">
-        </form>
-      {% else %}
-        <div class="alert alert-danger">
-          리뷰를 남기시려면 로그인이 필요합니다. <a href='{% url 'users:login' %}'>로그인 바로가기</a>
-        </div>
-      {% endif %}
+      </div>
+
+      <div id="use-reviews" class="tab-pane fade">
+      <hr>
+        <p>실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>작성자</th>
+            <th>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for review in center.usereview_set.all %}
+
+            <tr>
+              <td>{{ review.user }}</td>
+              <td>{{ review.content }}</td>
+            </tr>
+
+            <!--
+            {% if review.user == user %}
+              <form action='{% url 'centers:delete_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+                <input type="submit" name="delete" value="delete">
+              </form>
+
+              <form action='{% url 'centers:update_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+                {{ use_review_form }}
+                <input type="submit" name="update" value="update">
+              </form>
+            {% endif %}
+          -->
+
+          {% endfor %}
+          </tbody>
+        </table>
+
+        {% if user.is_authenticated %}
+          <form action='{% url 'centers:create_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
+            <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ use_review_form }}
+            <input type="submit" name="Post Review" value="등록"></div>
+          </form>
+        {% else %}
+          <div class="alert alert-danger">
+            리뷰를 남기시려면 로그인이 필요합니다. <a href='{% url 'users:login' %}'>로그인 바로가기</a>
+          </div>
+        {% endif %}
+
+      </div>
 
     </div>
-  </section>
-
-  <section id="use-reviews">
-    <div class="container">
-      <h2>이용 리뷰 ({{ center.usereview_set.count }})</h2>
-      <p>실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
-
-      <ul>
-        {% for review in center.usereview_set.all %}
-        <li>
-          {{ review.user }} - {{ review.content }}
-          {% if review.user == user %}
-            <form action='{% url 'centers:delete_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-              <input type="submit" name="delete" value="delete">
-            </form>
-
-            <form action='{% url 'centers:update_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-              {{ use_review_form }}
-              <input type="submit" name="update" value="update">
-            </form>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-
-      {% if user.is_authenticated %}
-        <form action='{% url 'centers:create_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-          <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기 </div>
-          {{ use_review_form }}
-          <input type="submit" name="Post Review">
-        </form>
-      {% else %}
-        <div class="alert alert-danger">
-          리뷰를 남기시려면 로그인이 필요합니다. <a href='{% url 'users:login' %}'>로그인 바로가기</a>
-        </div>
-      {% endif %}
-
-    </div>
-  </section>
+  </div>
 </section>
