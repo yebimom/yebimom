@@ -26,7 +26,6 @@ class Home(TemplateView):
         context['categories'] = Category.objects.all()[:8]
 
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
-        context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
         context['events_in_progress'] = Event.objects.filter(ends_at__gt=timezone.now())
 

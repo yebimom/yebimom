@@ -17,10 +17,8 @@
             <hr>
             <ul>
               <li><a type="button" class="btn-third-region" href="{% url 'centers:list' %}?location={{ region_second_layer.name }}">{{ region_second_layer.name }} 지역 전체</a></li>
-              {% for region_third_layer in regions_third_layer %}
-                {% if region_third_layer.region_second_layer.name == region_second_layer.name %}
-                  <li><a type="button" class="btn-third-region" href="{% url 'centers:list' %}?location={{ region_third_layer.name }}">{{ region_third_layer.name }}</a></li>
-                {% endif %}
+              {% for region_third_layer in region_second_layer.regionthirdlayer_set.all %}
+                <li><a type="button" class="btn-third-region" href="{% url 'centers:list' %}?location={{ region_third_layer.name }}">{{ region_third_layer.name }}</a></li>
               {% endfor %}
             </ul>
           </div>
