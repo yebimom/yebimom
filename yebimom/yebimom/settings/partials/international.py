@@ -22,8 +22,8 @@ LOCALE_PATHS = (
 LANGUAGES = (
     ('ko', _('Korean')),
     ('en', _('English')),
-    ('zh-cn', _('Simplified Chinese')),
-    ('zh-tw', _('Traditional Chinese')),
+    ('zh-hans', _('Simplified Chinese')),
+    ('zh-hant', _('Traditional Chinese')),
 )
 
 MODELTRANSLATION_AUTO_POPULATE = True

@@ -3,17 +3,22 @@
 {% block content %}
 <div class="container">
   <section id="centers-with-celeb">
-    <h2>연예인이 방문한 산후조리원</h2>
+    <h2>{% trans "연예인이 방문한 산후조리원" %}</h2>
     {% include "centers/list/_centers.html" with centers=centers_with_celeb %}
   </section>
 
   <section id="centers-with-window_view">
-    <h2>뷰가 좋은 산후조리원</h2>
+    <h2{% trans "뷰가 좋은 산후조리원" %}</h2>
     {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
   </section>
 
+  <section id="centers-with-window_view">
+    <h2>{% trans "진행중인 이벤트" %}</h2>
+    {% include "events/list/_events.html" with events=events_in_progress %}
+  </section>
+
   <section id="category">
-    <h2>인기 카테고리별 산후조리원</h2>
+    <h2>{% trans "인기 카테고리별 산후조리원" %}</h2>
     {% include "categories/list/_categories.html" with categories=categories %}
   </section>
 </div>

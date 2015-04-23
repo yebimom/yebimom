@@ -3,8 +3,11 @@
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
-from centers.models import Center, Category
+from centers.models import Category
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
+from events.models import Event
+
+from django.utils import timezone
 
 
 class Home(TemplateView):
@@ -17,13 +20,15 @@ class Home(TemplateView):
         this is just a simple example for centers/templates/centers/list/_centers.html
         should refactor after Category app is finished.
         """
-        context['centers_with_celeb'] = Center.objects.all()[:3]
-        context['centers_with_window_view'] = Center.objects.all()[:3]
+        context['centers_with_celeb'] = Category.objects.get(slug='celeb').centers.all()[:3]
+        context['centers_with_window_view'] = Category.objects.get(slug='great_view').centers.all()[:3]
 
         context['categories'] = Category.objects.all()[:8]
 
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
         context['regions_third_layer'] = RegionThirdLayer.objects.all()
+
+        context['events_in_progress'] = Event.objects.filter(ends_at__gt=timezone.now())
 
         return context
 

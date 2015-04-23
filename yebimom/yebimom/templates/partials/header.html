@@ -1,12 +1,12 @@
 <header id="header" class="navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a href="{% url 'home' %}" class="navbar-brand">모두의 산후조리원</a>
+      <a href="{% url 'home' %}" class="navbar-brand">{% trans "모두의 산후조리원" %}</a>
     </div>
     
     <ul class="nav navbar-nav">
-      <li><a href="{% url 'centers:list' %}">산후조리원</a></li>
-      <li><a href="{% url 'events:list' %}">이벤트</a></li>
+      <li><a href="{% url 'centers:list' %}">{% trans "산후조리원" %}</a></li>
+      <li><a href="{% url 'events:list' %}">{% trans "이벤트" %}</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
@@ -18,16 +18,16 @@
       </li>
       
       {% if user.is_authenticated %}
-        <li><a href="" data-toggle="dropdown"><i class="fa fa-user"></i> 마이페이지</a>
+      <li><a href="" data-toggle="dropdown"><i class="fa fa-user"></i>{% trans " 마이페이지" %}</a>
           <ul class="dropdown-menu">
-            <li><a href="{% url 'users:dashboard' %}">대쉬보드</a></li>
-            <li><a href="{% url 'users:logout' %}">로그아웃</a></li>
+            <li><a href="{% url 'users:dashboard' %}">{% trans "대쉬보드" %}</a></li>
+            <li><a href="{% url 'users:logout' %}">{% trans "로그아웃" %}</a></li>
           </ul>
         </li>
-        <li><a href="">리뷰 작성하고 상품권 받기</a></li>
+        <li><a href="">{% trans "리뷰 작성하고 상품권 받기" %}</a></li>
       {% else %}
-      <li><a href="{% url 'users:login' %}">로그인</a></li>
-      <li><a href="{% url 'users:signup' %}">회원가입</a></li>
+      <li><a href="{% url 'users:login' %}">{% trans "로그인" %}</a></li>
+      <li><a href="{% url 'users:signup' %}">{% trans "회원가입" %}</a></li>
       {% endif %}
     </ul>
   </div>

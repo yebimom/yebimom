@@ -1,0 +1,9 @@
+<div class="col-xs-4 event">
+  <a href="{% url 'events:detail' event.pk %}">
+    <img src="{{ event.thumbnail.url }}" alt="{{ event.title }}" class="img-responsive"/>
+  </a>
+
+  <div class="event-summary">
+    <a href='{% url 'events:detail' event.pk %}'><h2>{{ event.title }}</h2></a>
+  </div>
+</div>
