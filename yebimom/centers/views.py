@@ -65,7 +65,6 @@ class CenterList(ListView):
         context = super(CenterList, self).get_context_data(**kwargs)
 
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
-        context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
         return context
 
@@ -89,7 +88,6 @@ class CenterDetail(DetailView):
             id=context[self.context_object_name].id
         )[:3]
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
-        context['regions_third_layer'] = RegionThirdLayer.objects.all()
 
         return context
 
