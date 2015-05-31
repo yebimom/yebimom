@@ -87,6 +87,7 @@ node_modules/
 
 # Static, Media Files for local developent ( STATIC_ROOT )
 yebimom/media/
+yebimom/static/
 
 # CSS
 *.css

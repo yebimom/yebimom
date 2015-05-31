@@ -1,4 +1,4 @@
-from yebimom.settings.settings import *
+from yebimom.settings import *
 import os
 
 
@@ -21,7 +21,9 @@ STATIC_URL = 'https://cdn.yebimom.com/'
 # https://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'yebimom.storage.S3PipelineManifestStorage'
+
+STATIC_URL = 'https://cdn.yebimom.com/'
 
 
 # Setting for AWS

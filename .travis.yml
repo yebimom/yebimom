@@ -12,7 +12,6 @@ script:
 - npm install
 - gem install compass
 - grunt bowercopy compass
-- python yebimom/manage.py collectstatic --noinput --ignore '*.scss'
 - pep8
 - python yebimom/manage.py makemigrations users centers events reviews
 - python yebimom/manage.py migrate
