@@ -32,6 +32,13 @@ STATICFILES_FINDERS = (
     'pipeline.finders.PipelineFinder',
 )
 
+
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.closure.ClosureCompressor'
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
+
+PIPELINE_CLOSURE_BINARY = '/usr/local/bin/closure-compiler'
+
+
 PIPELINE_JS = {
     'vendor': {
         'source_filenames': (
