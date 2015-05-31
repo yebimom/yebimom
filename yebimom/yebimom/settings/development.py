@@ -1,4 +1,4 @@
-from yebimom.settings.settings import *
+from yebimom.settings import *
 
 
 INSTALLED_APPS += (
