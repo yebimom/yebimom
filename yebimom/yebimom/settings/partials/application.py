@@ -127,5 +127,11 @@ API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
 SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
 
 
+# Amazon Web Services ( AWS )
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+
+
 # Load template tags to All template
 add_to_builtins('django.templatetags.i18n')
