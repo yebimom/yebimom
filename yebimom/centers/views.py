@@ -92,6 +92,13 @@ class CenterDetail(DetailView):
         return context
 
 
+class CenterLanding(DetailView):
+    model = Center
+    template_name = 'centers/landing.html'
+    context_object_name = 'center'
+    slug_field = 'slug'
+
+
 class ReviewBase(View):
     fields = ['content', ]
 
