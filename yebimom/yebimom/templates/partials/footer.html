@@ -7,13 +7,13 @@
         <ul>
           <li><a href="">{% trans "회사소개" %}</a></li>
           <li>|</li>
-          <li><a href="">{% trans "이용약관" %}</a></li>
+          <li><a href="{% url "service" %}">{% trans "이용약관" %}</a></li>
           <li>|</li>
-          <li><a href="">{% trans "개인정보 취급방침" %}</a></li>
+          <li><a href="{% url "privacy" %}">{% trans "개인정보 취급방침" %}</a></li>
           <li>|</li>
-          <li><a href="">{% trans "책임의 한계와 법적고지" %}</a></li>
+          <li><a href="{% url "disclaimer" %}">{% trans "책임의 한계와 법적고지" %}</a></li>
           <li>|</li>
-          <li><a href="">{% trans "이메일 무단수집 거부" %}</a></li>
+          <li><a href="{% url "search_policy" %}">{% trans "이메일 무단수집 거부" %}</a></li>
           <li><a href="" id="customer_service_center">{% trans "365 고객센터 070-8777-5763" %}</a></li>
         </ul>
       </div>
