@@ -7,6 +7,7 @@ from django.contrib.auth.admin import UserAdmin
 from users.models import UserProfile
 from users.models.contact import Question, Answer
 from users.models.favorite import Favorite
+from users.models.management import Management
 
 
 class UserProfileInline(admin.StackedInline):
@@ -42,6 +43,12 @@ class QuestionAdmin(admin.ModelAdmin):
               'phone', 'email', 'title', 'content',)
 
     inlines = [AnswerInline]
+
+
+@admin.register(Management)
+class ManagementAdmin(admin.ModelAdmin):
+    model = Management
+    readonly_fields = ('created_at', )
 
 
 admin.site.unregister(User)
