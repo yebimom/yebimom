@@ -53,6 +53,7 @@ PIPELINE_JS = {
     'yebimom': {
         'source_filenames': (
             'js/yebimom.js',
+            'js/centers/*.js',
         ),
         'output_filename': 'js/yebimom.min.js'
     }

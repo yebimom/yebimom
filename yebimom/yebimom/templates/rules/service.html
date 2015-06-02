@@ -2,6 +2,17 @@
 
 {% block content %}
 
-<h1>이용약관</h1>
+<section id="rule-service">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        {% include "rules/_service/_content.html" %}
+      </div>
+      <div class="col-xs-3">
+        {% include "rules/_service/_nav.html" %}
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
