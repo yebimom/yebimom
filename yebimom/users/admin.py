@@ -11,10 +11,23 @@ from users.models.favorite import Favorite
 
 class UserProfileInline(admin.StackedInline):
     model = UserProfile
+    max_num = 1
+    can_delete = False
+    inline_classes = ('grp-collapse grp-open',)
 
 
-class UserProfileAdmin(UserAdmin):
-    inlines = [UserProfileInline]
+class UserAdmin(UserAdmin):
+    list_display = [
+        'username',
+    ]
+
+    def add_view(self, *args, **kwargs):
+        self.inlines = []
+        return super(UserAdmin, self).add_view(*args, **kwargs)
+
+    def change_view(self, *args, **kwargs):
+        self.inlines = [UserProfileInline, ]
+        return super(UserAdmin, self).change_view(*args, **kwargs)
 
 
 class AnswerInline(admin.StackedInline):
@@ -32,6 +45,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.unregister(User)
-admin.site.register(User, UserProfileAdmin)
+admin.site.register(User, UserAdmin)
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Favorite)
