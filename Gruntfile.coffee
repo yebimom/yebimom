@@ -29,6 +29,7 @@ module.exports = (grunt) ->
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [
+                      'NanumBarunGothic/',
                       'components-font-awesome/fonts/',
                       'bootstrap/fonts/'
                     ]
