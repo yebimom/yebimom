@@ -26,4 +26,3 @@ STATIC_URL = 'https://cdn.yebimom.com/'
 RAVEN_CONFIG = {
     'dsn': os.environ['SENTRY_DSN'],
 }
-
