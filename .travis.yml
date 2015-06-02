@@ -15,7 +15,7 @@ script:
 - pep8
 - python yebimom/manage.py makemigrations users centers events reviews
 - python yebimom/manage.py migrate
-- python yebimom/manage.py loaddata regions facilities
+- python yebimom/manage.py loaddata regions facilities centers categories
 - python yebimom/manage.py test yebimom/ -v2
 deploy:
   provider: heroku
