@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, url
 
-from managements.views import Home
+from managements.views import ManagementDashboard
 
 
 urlpatterns = patterns(
     '',
 
-    url(r'^$', Home.as_view(), name='home'),
+    url(r'^$', ManagementDashboard.as_view(), name='dashboard'),
 )
