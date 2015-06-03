@@ -12,3 +12,7 @@ class ManagementBaseView(View):
 
 class ManagementDashboard(ManagementBaseView, TemplateView):
     template_name = "managements/home.html"
+
+
+class ManagementCenterLanding(ManagementBaseView, TemplateView):
+    template_name = "managements/landing.html"

@@ -20,12 +20,7 @@
           <ul class="nav nav-second-level">
             <li><a href="">통합관리</a></li>
             <li><a href="{% url "centers:detail" center.hash_id %}" target="_blank">상세페이지 바로가기</a></li>
-
-            {% if center.slug %}
-              <li><a href="{% url "landing" center.slug %}" target="_blank">랜딩페이지 바로가기</a></li>
-            {% else %}
-              <li><a href="">랜딩페이지 생성하기</a></li>
-            {% endif %}
+            <li><a href="{% url "managements:landing-list" center.hash_id %}">랜딩페이지 관리하기</a></li>
           </ul>
         </li>
       {% endfor %}
