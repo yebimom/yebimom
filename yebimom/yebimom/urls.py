@@ -37,6 +37,7 @@ urlpatterns = patterns(
     url(r'^events/', include('events.urls', namespace='events')),
     url(r'^', include('users.urls', namespace='users')),
     url(r'^api/', include('api.urls', namespace='api')),
+    url(r'^manage/', include('managements.urls', namespace='managements')),
 
     url(r'^category/$', CategoryList.as_view(), name='category-list'),
     url(r'^category/(?P<slug>\w+)/$', CategoryDetail.as_view(), name='category-detail'),
