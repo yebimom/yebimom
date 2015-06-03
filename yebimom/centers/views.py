@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 
 from django.views.generic import View
@@ -15,6 +16,7 @@ from centers.models.facility import Facility
 from centers.models.policy import Policy
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
 from centers.models.category import Category
+from centers.models.center_landing import CenterLanding
 from reviews.models import VisitReview
 from reviews.models import UseReview
 
@@ -93,10 +95,12 @@ class CenterDetail(DetailView):
 
 
 class CenterLanding(DetailView):
-    model = Center
+    model = CenterLanding
     template_name = 'centers/landing/home.html'
-    context_object_name = 'center'
-    slug_field = 'slug'
+    context_object_name = 'center_landing'
+
+    def get_object(self):
+        return get_object_or_404(self.model, hash_id=self.kwargs['hash_id'])
 
 
 class ReviewBase(View):

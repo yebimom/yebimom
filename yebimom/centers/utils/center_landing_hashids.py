@@ -3,7 +3,7 @@ from yebimom.settings.partials.application import HASHIDS_CENTER_LANDING_SALT
 
 
 def get_center_landing_hashids_object():
-    return Hashids(salt=HASHIDS_CENTER_SALT, min_length=6)
+    return Hashids(salt=HASHIDS_CENTER_LANDING_SALT, min_length=6)
 
 
 def get_encoded_center_landing_hashid(center_id):

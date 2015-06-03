@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from centers.models.center import Center
 from django.db.models.signals import post_save
@@ -14,6 +15,9 @@ class CenterLanding(models.Model):
 
     hash_id = models.CharField(max_length=12, unique=True, blank=True, null=True)
     center = models.ForeignKey(Center)
+
+    def get_absolute_url(self):
+        return reverse("landing", kwargs={'slug':self.center.slug, 'hash_id':self.hash_id})
 
 
 @receiver(post_save, sender=CenterLanding)
