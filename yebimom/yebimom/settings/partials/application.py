@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'robots',
     'rosetta',
     'mathfilters',
+    'pipeline',
 
     # Yebimom Apps
     'users',
@@ -125,6 +126,15 @@ MAILGUN_SERVER_NAME = os.environ['MAILGUN_SERVER_NAME']
 API_STORE_SMS_KEY = os.environ['API_STORE_SMS_KEY']
 API_STORE_SMS_BASE_URL = os.environ['API_STORE_SMS_BASE_URL']
 SMS_SEND_PHONE = os.environ['SMS_SEND_PHONE']
+
+
+# Amazon Web Services ( AWS )
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+
+AWS_S3_CUSTOM_DOMAIN = 'cdn.yebimom.com'
+AWS_S3_URL_PROTOCOL = 'https'
 
 
 # Load template tags to All template

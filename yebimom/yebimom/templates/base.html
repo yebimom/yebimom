@@ -1,3 +1,4 @@
+{% load pipeline %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,8 +16,12 @@
 
     <title>{% block title %}{% trans "예비맘" %}{% endblock %}</title>
 
-    {% include "partials/stylesheets.html" %}
-    {% include "partials/javascripts.html" %}
+    {% javascript 'vendor' %}
+    {% javascript 'yebimom' %}
+
+    {% stylesheet 'vendor' %}
+    {% stylesheet 'yebimom' %}
+
     {% if GOOGLE_ANALYTICS_TRACKING_ID %}{% include "partials/google-analytics.html" %}{% endif %}
   </head>
   <body>
@@ -24,7 +29,6 @@
     {% include "partials/search.html" %}
     {% include "partials/region-navigation.html" %}
     <div id="content">{% block content %}{% endblock %}</div>
-    {% include "partials/debug.html" %}
     {% include "partials/footer.html" %}
   </body>
 </html>

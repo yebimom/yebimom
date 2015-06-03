@@ -28,7 +28,15 @@ module.exports = (grunt) ->
                     'js/underscore-min.map': 'underscore/underscore-min.map'
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
-                    'fonts/': 'components-font-awesome/fonts/'
+                    'fonts/': [
+                      'NanumBarunGothic/',
+                      'components-font-awesome/fonts/',
+                      'bootstrap/fonts/'
+                    ]
+
+                    'css/images': [
+                      'jquery-ui/themes/smoothness/images/'
+                    ]
 
         compass:
             dist:
