@@ -1,18 +1,31 @@
+{% load staticfiles %}
 {% load pipeline %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    {# Meta - Description, Keywords #}
-    <meta
-      name="description"
-      content="{% block meta_description %}산모의 산모에 의한 산모를 위한 에비맘닷컴{% endblock %}"
-    >
-    <meta
-      name="keywords"
-      content="{% block meta_keywords %}예비맘, 예비맘닷컴, 산후조리원{% endblock %}"
-    >
+    <meta name="description" content="{% block meta_description %}산모의 산모에 의한 산모를 위한 에비맘닷컴{% endblock %}" >
+    <meta name="keywords" content="{% block meta_keywords %}예비맘, 예비맘닷컴, 산후조리원{% endblock %}" >
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static "img/fabicon/apple-touch-icon-57x57.png" %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static "img/fabicon/apple-touch-icon-60x60.png" %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/fabicon/apple-touch-icon-72x72.png" %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "img/fabicon/apple-touch-icon-76x76.png" %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/fabicon/apple-touch-icon-114x114.png" %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static "img/fabicon/apple-touch-icon-120x120.png" %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/fabicon/apple-touch-icon-144x144.png" %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "img/fabicon/apple-touch-icon-152x152.png" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/fabicon/apple-touch-icon-180x180.png" %}">
+    <link rel="icon" type="image/png" href="{% static "img/fabicon/favicon-32x32.png" %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static "img/fabicon/favicon-194x194.png" %}" sizes="194x194">
+    <link rel="icon" type="image/png" href="{% static "img/fabicon/favicon-96x96.png" %}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{% static "img/fabicon/android-chrome-192x192.png" %}" sizes="192x192">
+    <link rel="icon" type="image/png" href="{% static "img/fabicon/favicon-16x16.png" %}" sizes="16x16">
+    <link rel="manifest" href="{% static "img/fabicon/manifest.json" %}">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-TileImage" content="{% static "img/fabicon/mstile-144x144.png" %}">
+    <meta name="theme-color" content="#ffffff">
 
     <title>{% block title %}{% trans "예비맘" %}{% endblock %}</title>
 
