@@ -47,7 +47,7 @@
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ visit_review_form }}
-            <input type="submit" name="Post Review" value="등록"> </div>
+              <input type="submit" name="Post Review" value="등록"> </div>
 
           </form>
         {% else %}
@@ -97,7 +97,7 @@
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ use_review_form }}
-            <input type="submit" name="Post Review" value="등록"></div>
+              <input type="submit" name="Post Review" value="등록"></div>
           </form>
         {% else %}
           <div class="alert alert-danger">
