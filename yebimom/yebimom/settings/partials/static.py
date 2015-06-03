@@ -57,6 +57,18 @@ PIPELINE_JS = {
             'js/centers/*.js',
         ),
         'output_filename': 'js/yebimom.min.js'
+    },
+    'managements': {
+        'source_filenames': (
+            'managements/js/jquery-2.1.1.js',
+            'managements/js/bootstrap.min.js',
+            'managements/js/plugins/metisMenu/jquery.metisMenu.js',
+            'managements/js/plugins/slimscroll/jquery.slimscroll.min.js',
+
+            'managements/js/inspinia.js',
+            'managements/js/plugins/pace/pace.min.js',
+        ),
+        'output_filename': 'js/managements.min.js'
     }
 }
 
@@ -74,5 +86,14 @@ PIPELINE_CSS = {
             'css/yebimom.css',
         ),
         'output_filename': 'css/yebimom.min.css'
-    }
+    },
+    'managements': {
+        'source_filenames': (
+            'managements/css/bootstrap.min.css',
+            'managements/font-awesome/css/font-awesome.css',
+            'managements/css/animate.css',
+            'managements/css/style.css',
+        ),
+        'output_filename': 'css/managements.min.css'
+    },
 }

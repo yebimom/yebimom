@@ -20,9 +20,10 @@ For managements app, ( in this case admin theme )
 manually copy 3rd party resources from Google Drive ( `yebimom/contents/` )
 
 ```
-yebimom/managements/compontent/
+yebimom/managements/compontent/managements/
 
 yebimom
 ├── managements
 │   ├── components
+│       ├── managements
 ```
