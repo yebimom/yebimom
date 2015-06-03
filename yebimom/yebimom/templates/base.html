@@ -14,10 +14,44 @@
 -->
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="naver-site-verification" content="0d921114eb160931f493692c8ddb661ad208e193"/>
 
     <meta name="description" content="{% block meta_description %}산모의 산모에 의한 산모를 위한 모두의 산후조리원{% endblock %}" >
     <meta name="keywords" content="{% block meta_keywords %}모두의 산후조리원, 산후조리원, 예비맘, 예비맘닷컴{% endblock %}" >
+
+    <meta property="og:title" content="모두의 산후조리원" />
+    <meta property="og:site_name" content="모두의 산후조리원"/>
+    <meta property="og:url" content="https://yebimom.com{{ request.path }}" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="산모의 산모에 의한 산모를 위한 산후조리원에 대한 모든 것">
+    <meta property="fb:app_id" content="1058893210804001" />
+
+    <meta property="og:image" content="{% static "img/meta/yebimom_01_1200x630.jpg" %}" />
+    <meta property="og:image:secure_url" content="{% static "img/meta/yebimom_01_1200x630.jpg" %}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta property="og:image" content="{% static "img/meta/yebimom_02_1200x630.jpg" %}" />
+    <meta property="og:image:secure_url" content="{% static "img/meta/yebimom_02_1200x630.jpg" %}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta property="og:image" content="{% static "img/meta/yebimom_03_1200x630.jpg" %}" />
+    <meta property="og:image:secure_url" content="{% static "img/meta/yebimom_03_1200x630.jpg" %}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yebimom">
+    <meta name="twitter:creator" content="@yebimom">
+    <meta name="twitter:title" content="모두의 산후조리원">
+    <meta name="twitter:description" content="산모의 산모에 의한 산모를 위한 산후조리원에 대한 모든 것">
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static "img/fabicon/apple-touch-icon-57x57.png" %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static "img/fabicon/apple-touch-icon-60x60.png" %}">
@@ -47,6 +81,12 @@
     {% stylesheet 'yebimom' %}
 
     {% if GOOGLE_ANALYTICS_TRACKING_ID %}{% include "partials/google-analytics.html" %}{% endif %}
+    <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if(!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "11211742e16170c";
+      wcs_do();
+    </script>
   </head>
   <body>
     {% include "partials/header.html" %}
