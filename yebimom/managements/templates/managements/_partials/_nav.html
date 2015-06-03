@@ -14,12 +14,21 @@
           Yebimom
         </div>
       </li>
-      <li class="active">
-        <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">마마스산후조리원</span></a>
-      </li>
-      <li>
-        <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">맘스맘스산후조리원</span></a>
-      </li>
+      {% for center in user.userprofile.managements.all %}
+        <li>
+          <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">{{ center.name }}</span><span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li><a href="">통합관리</a></li>
+            <li><a href="{% url "centers:detail" center.hash_id %}" target="_blank">상세페이지 바로가기</a></li>
+
+            {% if center.slug %}
+              <li><a href="{% url "landing" center.slug %}" target="_blank">랜딩페이지 바로가기</a></li>
+            {% else %}
+              <li><a href="">랜딩페이지 생성하기</a></li>
+            {% endif %}
+          </ul>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </nav>
