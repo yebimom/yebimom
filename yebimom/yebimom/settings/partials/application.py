@@ -31,6 +31,7 @@ INSTALLED_APPS = (
     'rosetta',
     'pipeline',
     'corsheaders',
+    'notifications',
 
     # Yebimom Apps
     'users',
