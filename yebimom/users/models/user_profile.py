@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 
 from centers.models import Center
 from users.models.favorite import Favorite
+from users.models.management import Management
 
 
 class UserProfile(models.Model):
@@ -20,6 +21,7 @@ class UserProfile(models.Model):
     is_male = models.BooleanField(default=True)
 
     favorites = models.ManyToManyField(Center, through=Favorite)
+    managements = models.ManyToManyField(Center, through=Management, related_name="managers")
 
     def __unicode__(self):
         return self.user.username
