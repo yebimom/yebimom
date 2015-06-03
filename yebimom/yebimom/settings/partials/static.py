@@ -18,6 +18,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     os.path.join(PROJECT_ROOT, 'components'),
+    os.path.join(PROJECT_ROOT, 'managements/components'),
 )
 
 

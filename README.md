@@ -12,3 +12,17 @@ and creates cached versions of assets ( ex, `yebimom.min.css` -> `css/yebimom.mi
 ```
 $ python manage.py collectstatic --settings=yebimom.settings.production -v2
 ```
+
+
+## 3rd Party Resources ##
+
+For managements app, ( in this case admin theme ) 
+manually copy 3rd party resources from Google Drive ( `yebimom/contents/` )
+
+```
+yebimom/managements/compontent/
+
+yebimom
+├── managements
+│   ├── components
+```

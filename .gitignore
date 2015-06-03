@@ -82,6 +82,9 @@ migrations/
 bower_components/
 yebimom/components/
 
+# Management Components
+yebimom/managements/components/
+
 # Node Modules
 node_modules/
 
