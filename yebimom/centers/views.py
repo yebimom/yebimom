@@ -94,7 +94,7 @@ class CenterDetail(DetailView):
 
 class CenterLanding(DetailView):
     model = Center
-    template_name = 'centers/landing.html'
+    template_name = 'centers/landing/home.html'
     context_object_name = 'center'
     slug_field = 'slug'
 
