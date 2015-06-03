@@ -9,7 +9,7 @@ class CenterLandingManager(models.Manager):
     pass
 
 
-class CenterLanding(models.Manager):
+class CenterLanding(models.Model):
     objects = CenterLandingManager()
 
     hash_id = models.CharField(max_length=12, unique=True, blank=True, null=True)
