@@ -38,4 +38,4 @@ django-rosetta>=0.7.6
 django-modeltranslation==0.8
 django-pipeline==1.5.0
 flower==0.8.2
-django-notifications==hq-0.7.0
+django-notifications-hq==0.7.0
