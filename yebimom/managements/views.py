@@ -23,4 +23,3 @@ class ManagementCenterLanding(ManagementBaseView, ListView):
     def get_queryset(self):
         center = Center.objects.get(hash_id=self.kwargs['hash_id'])
         return center.centerlanding_set.all()
-

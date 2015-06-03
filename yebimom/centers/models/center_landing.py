@@ -17,7 +17,7 @@ class CenterLanding(models.Model):
     center = models.ForeignKey(Center)
 
     def get_absolute_url(self):
-        return reverse("landing", kwargs={'slug':self.center.slug, 'hash_id':self.hash_id})
+        return reverse("landing", kwargs={'slug': self.center.slug, 'hash_id': self.hash_id})
 
 
 @receiver(post_save, sender=CenterLanding)
