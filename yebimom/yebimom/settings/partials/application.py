@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'robots',
     'rosetta',
+    'mathfilters',
 
     # Yebimom Apps
     'users',
