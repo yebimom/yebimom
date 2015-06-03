@@ -50,6 +50,12 @@
     {% stylesheet 'yebimom' %}
 
     {% if GOOGLE_ANALYTICS_TRACKING_ID %}{% include "partials/google-analytics.html" %}{% endif %}
+    <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if(!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "11211742e16170c";
+      wcs_do();
+    </script>
   </head>
   <body>
     {% include "partials/header.html" %}
