@@ -2,4 +2,9 @@
 
 
 {% block content %}
+<ul>
+  {% for center_landing in center_landings %}
+  <li>{{ center_landing.hash_id }} - {{ center_landing }}</li>
+  {% endfor %}
+</ul>
 {% endblock %}
