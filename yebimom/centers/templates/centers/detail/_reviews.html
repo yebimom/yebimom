@@ -1,4 +1,4 @@
-<section id="reviews">
+<div class="panel_head center_review">
   <div class="container">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#visit-reviews" data-toggle="tab">방문/상담 리뷰 ({{ center.visitreview_set.count }})</a></li>
@@ -8,8 +8,8 @@
     <div class="tab-content ">
 
       <div id="visit-reviews" class="tab-pane fade in active">
-        <hr>
-        <p>산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
+
+        <p class="explainaion">산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
 
         <table class="table table-hover">
           <thead>
@@ -47,7 +47,7 @@
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ visit_review_form }}
-            <input type="submit" name="Post Review" value="등록"> </div>
+              <input type="submit" name="Post Review" value="등록"> </div>
 
           </form>
         {% else %}
@@ -59,8 +59,8 @@
       </div>
 
       <div id="use-reviews" class="tab-pane fade">
-      <hr>
-        <p>실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
+
+        <p class="explainaion">실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
 
         <table class="table table-hover">
           <thead>
@@ -97,7 +97,7 @@
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
             <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ use_review_form }}
-            <input type="submit" name="Post Review" value="등록"></div>
+              <input type="submit" name="Post Review" value="등록"></div>
           </form>
         {% else %}
           <div class="alert alert-danger">
@@ -109,4 +109,4 @@
 
     </div>
   </div>
-</section>
+</div>

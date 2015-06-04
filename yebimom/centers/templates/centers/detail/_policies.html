@@ -1,31 +1,58 @@
-<section id="policies">
-  <div class="container">
-    <h2>준수사항</h2>
-  <hr>
+{% load mathfilters %}
 
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th>이름</th>
-        <th>가능여부</th>
-      </tr>
-      </thead>
-      <tbody>
-      {% for policy in policies %}
-        {% if policy in center.policy_set.all %}
-          <tr>
-            <td>{{ policy.name }}</td>
-            <td>O</td>
-          </tr>
-        {% else %}
-          <tr>
-            <td>{{ policy.name }}</td>
-            <td>X</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
+<hr>
 
+<div class="row">
+  <div class="col-md-3 text-muted">
+    준수사항
   </div>
-</section>
+
+
+  <div class="col-md-9 expandable expandable-trigger-more expanded">
+
+
+    <div class="expandable-content-full policy-list">
+      <div class="row">
+        <div class="col-sm-6">
+
+
+          {% for policy in policies %}
+
+            {% if policy in center.policy_set.all %}
+
+              <div class="row-space-1 ">
+                <i class="icon h3 icon-meal"></i>
+                &nbsp;
+                  <span>
+                      <strong>
+                        {{ policy.name }}
+                      </strong>
+                  </span>
+              </div>
+            {% else %}
+              <div class="row-space-1 ">
+                <i class="icon h3 icon-meal"></i>
+                &nbsp;
+                  <span>
+                      <del>
+                        {{ policy.name }}
+                      </del>
+                  </span>
+              </div>
+            {% endif %}
+            {% if forloop.counter|mul:1.0 == policies|length|div:2|add:1 %}
+              </div>
+              <div class="col-sm-6">
+            {% endif %}
+          {% endfor %}
+
+
+
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
