@@ -6,7 +6,67 @@ section#center {
     margin-left: auto;
     margin-right: auto;
   }
+}
 
+.center_head {
+  padding: 30px;
+
+  img.img-summary {
+    width: 200px;
+    height: 150px;
+  }
+
+  .price {
+    background-color: #d9534f;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 120%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+  }
+
+  .category-label {
+    margin-top: 20px;
+  }
+
+}
+
+.panel_head {
+  border: 1px solid #dce0e0;
+  background-color: #fff;
+  border-radius: 0;
+}
+
+.center_detail {
+  font-size: 14px;
+  line-height: 1.43;
+  color: #565a5c;
+  background-color: #f5f5f5;
+
+
+  hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #dce0e0;
+  }
+
+  a#refund_revel {
+    color: red;
+  }
+}
+
+.center_review {
+  padding: 30px;
+
+  p.explainaion {
+    margin : 10px;
+  }
 }
 
 section#reviews {
@@ -21,4 +81,21 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border-top: 1px solid $main-color;
+}
+
+.policy-list {
+  transition: none;
+  -webkit-transition: none;
+}
+
+.row-space-8 {
+  margin-bottom: 50px;
+}
+
+.row-space-4 {
+  margin-bottom: 25px;
+}
+
+.row-space-top-8 {
+  margin-top: 50px;
 }

@@ -1,49 +1,148 @@
+
 <section id="center">
-  <div class="container">
-    <h1><b>{{ center.name }}</b></h1>
-    <hr>
-    <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
-    <table class="table table-hover">
-      <tr>
-        <td>위치</td>
-        <td>{{ center.address }}<br><br>
-          {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}</td>
-      </tr>
-      <tr>
-        <td>전화번호</td>
-        <td>{{ center.phone }}</td>
-      </tr>
-      <tr>
-        <td>홈페이지</td>
-        {% if center.url == None %}
-          <td>홈페이지 없음</td>
-        {% else %}
-          <td><a href="{{ center.url }}">홈페이지 바로가기</a></td>
-        {% endif %}
-      </tr>
-      <tr>
-        <td>최소가격</td>
-        {% if center.min_price == None %}
-          <td>가격 미정</td>
-        {% else %}
-          <td>{{ center.min_price }}</td>
-        {% endif %}
-      </tr>
-      <tr>
-        <td>최대가격</td>
-        {% if center.max_price == None %}
-          <td>가격 미정</td>
-        {% else %}
-          <td>{{ center.max_price }}</td>
-        {% endif %}
-      </tr>
-      </tr>
+  <div class="panel_head center_head">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-summary"/>
+        </div>
+        <div class="col-md-6">
+          <h3><b>{{ center.name }}</b></h3>
 
-    </table>
+          <div>
+            {{ center.address }}
+            <a href="#review">
+              ★★★★★
+              ({{ center.visitreview_set.count }})
+            </a>
+          </div>
 
-
-
-
+          <div class="row row-condensed text-muted text-center category-label">
+            <div class="col-sm-3">
+              <span class="label label-info">전망이 좋은</span>
+            </div>
+            <div class="col-sm-3">
+              <span class="label label-warning">연예인이 방문한</span>
+            </div>
+            <div class="col-sm-3">
+              <span class="label label-success">리뷰가 많은</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <br>
+          <span class="price">￦{% if center.min_price == None %}
+            가격 미정
+          {% else %}
+            {{ center.min_price }}
+          {% endif %}</span>
+        </div>
+      </div>
+    </div>
 
   </div>
+
+
+
+  <div class="center_detail">
+    <div class="container">
+      <div class="col-lg-8">
+        <div class="row-space-8 row-space-top-8">
+
+          <h4 class="row-space-4 text-center-sm">
+            산후조리원 상세 설명
+          </h4>
+
+          <div class="panel panel-dark row-space-4">
+            <div class="panel-body">에어비앤비를 통해 주택에서부터 아파트, 트리하우스, 이글루에 이르기까지 이색적인 숙소를 찾으실 수 있습니다. 숙소에 대한 설명은 아래의 숙소 상세정보를 참조하세요. 궁금한 점이 있으시면, 호스트에게 직접 연락하시기 바랍니다.</div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="text-muted">
+                주소 & 전화번호
+              </div>
+
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-12">
+                  <div>주소: <strong>{{ center.address }}</strong>
+                    {% if NAVER_OPENAPI_MAP_API_KEY %}{% include "centers/partials/map.html" with width=600 height=400 %}{% endif %}</div>
+                  <div>전화번호: <strong>{{ center.phone }}</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="text-muted">
+                홈페이지
+              </div>
+
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-12">
+                  <div>홈페이지: <strong>{% if center.url == None %}
+                    X
+                  {% else %}<a href="{{ center.url }}">홈페이지 바로가기</a>
+                  {% endif %}</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="text-muted">
+                가격
+              </div>
+
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                  <div>예약금 : <strong><span id="localized_people_pricing_description_string">예약금 없음</span></strong></div>
+                  <div>환불정책 : <a id="refund_revel">엄격</a></div>
+                </div>
+                <div class="col-md-6">
+                  <div>최저 요금:<strong><span id="monthly_price_string"> ₩{% if center.min_price == None %}가격 미정
+                  {% else %}
+                    {{ center.min_price }}
+                  {% endif %}</span> /3주</strong></div>
+                  <div>최고 요금: <strong><span id="weekly_price_string"> ₩{% if center.max_price == None %}가격 미정
+                  {% else %}
+                    {{ center.max_price }}
+                  {% endif %}</span> /3주</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          {% include "centers/detail/_facilities.html" %}
+          {% include "centers/detail/_policies.html" %}
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  {% include "centers/detail/_reviews.html" %}
 </section>

@@ -6,16 +6,14 @@
 
 {% block content %}
 
-{% include "centers/detail/_center.html" %}
-{% include "centers/detail/_facilities.html" %}
-{% include "centers/detail/_policies.html" %}
-{% include "centers/detail/_reviews.html" %}
 
-<section id="centers-nearby">
-  <div class="container">
-    <h2>예비맘 추천 산후조리원</h2>
-    {% include "centers/list/_centers.html" with centers=centers_nearby %}
-  </div>
-</section>
+  {% include "centers/detail/_center.html" %}
+
+  <section id="centers-nearby">
+    <div class="container">
+      <h2>예비맘 추천 산후조리원</h2>
+      {% include "centers/list/_centers.html" with centers=centers_nearby %}
+    </div>
+  </section>
 
 {% endblock %}
