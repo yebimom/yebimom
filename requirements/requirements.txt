@@ -39,3 +39,4 @@ django-modeltranslation==0.8
 django-pipeline==1.5.0
 flower==0.8.2
 django-mathfilters==0.3.0
+django-notifications-hq==0.7.0

@@ -31,13 +31,15 @@ INSTALLED_APPS = (
     'rosetta',
     'mathfilters',
     'pipeline',
+    'corsheaders',
+    'notifications',
 
     # Yebimom Apps
     'users',
     'centers',
     'events',
     'reviews',
-    'corsheaders'
+    'managements',
 )
 
 MIDDLEWARE_CLASSES = (
