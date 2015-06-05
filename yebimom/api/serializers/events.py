@@ -6,7 +6,7 @@ from events.models import Event
 
 
 class EventSerializer(serializers.ModelSerializer):
-    api_url = serializers.HyperlinkedIdentityField(view_name='api:detail')
+    api_url = serializers.HyperlinkedIdentityField(view_name='api:event_detail')
     web_url = serializers.HyperlinkedIdentityField(view_name='events:detail')
 
     class Meta:
