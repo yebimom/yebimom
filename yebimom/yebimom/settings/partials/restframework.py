@@ -15,6 +15,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
+
+    'DEFAULT_MODEL_SERIALIZER_CLASS': (
+        'rest_framework.serializers.HyperlinkedModelSerializer',
+    )
 }
 
 
