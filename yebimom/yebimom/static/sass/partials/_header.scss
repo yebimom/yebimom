@@ -7,6 +7,10 @@ header#header {
     // should remove after change it to logo image
   }
 
+  .navbar-header {
+    height: 80px;
+  }
+
   ul.nav.navbar-nav li a {
     color: black;
   }
@@ -32,5 +36,10 @@ header#header {
     position: absolute;
     top: 17px;
     right: 5px;
+  }
+
+  #logo {
+    height: 47px;
+    width: 256px;
   }
 }

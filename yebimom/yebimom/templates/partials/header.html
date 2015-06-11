@@ -1,7 +1,8 @@
+{% load staticfiles %}
 <header id="header" class="navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a href="{% url 'home' %}" class="navbar-brand">{% trans "모두의 산후조리원" %}</a>
+      <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static "img/yebimom_logo.png" %}" id="logo"></a>
     </div>
     
     <ul class="nav navbar-nav">
