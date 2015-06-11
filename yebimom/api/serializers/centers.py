@@ -6,6 +6,7 @@ from centers.models import Center
 
 
 class CenterSerializer(serializers.ModelSerializer):
+    facility_set = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Center
