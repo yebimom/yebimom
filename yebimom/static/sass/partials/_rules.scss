@@ -1,0 +1,39 @@
+ul.rules {
+  list-style-type: none;
+  padding-left: 16px;
+  border-left: 1px solid #EEEEEE;
+  font-size: 16px;
+  line-height: 1.75;
+
+  li.rule {
+    padding-bottom: 30px;
+    font-weight: lighter;
+
+    h2 {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+nav.rules-nav {
+  font-size: 14px;
+
+  li {
+    &.active {
+      color: $main-color;
+      border-left: 1px solid $main-color;
+    }
+
+    a {
+      padding: 3px;
+      padding-left: 10px;
+      color: inherit;
+
+      &:hover {
+        color: $main-color;
+        border-left: 1px solid $main-color;
+      }
+    }
+  }
+}

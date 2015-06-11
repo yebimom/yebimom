@@ -1,0 +1,46 @@
+.center {
+  i.favorite {
+    font-size: 35px;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 12px;
+    right: 30px;
+
+    &.favorite-off {
+      color: #BABABA;
+    }
+
+    &.favorite-on {
+      color: $main-color;
+    }
+
+    &.favorite-border {
+      color: white;
+    }
+  }
+
+  div.center-price {
+    position: absolute;
+    bottom: 80px;
+
+    padding: 10px 20px 0px 15px;
+
+    font-size: 20px;
+    color: white;
+    background-color: rgba($main-color, 0.5);
+
+    border-radius: 0 20px 20px 0;
+  }
+
+  .center-summary {
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      color: black;
+      font-size: 16px;
+    }
+  }
+}
