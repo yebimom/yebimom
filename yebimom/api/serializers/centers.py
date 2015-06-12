@@ -26,4 +26,6 @@ class CenterSerializer(serializers.ModelSerializer):
             'policy_set',
             'program_set',
             'main_image_url',
+            'latitude',
+            'longitude',
         )
