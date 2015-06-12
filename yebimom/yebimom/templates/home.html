@@ -45,20 +45,20 @@
 
     <div class="main-lists col-md-12">
       <div class="main-list">
-          <h2 class="jua">{% trans "연예인이 방문한 산후조리원" %}</h2>
+          <h1 class="jua">{% trans "연예인이 방문한 산후조리원" %}</h2>
           {% include "centers/list/_centers.html" with centers=centers_with_celeb %}
       </div>
 
       <div class="main-list">
         <section id="centers-with-window_view">
-          <h2 class="jua">{% trans "전망이 좋은 산후조리원" %}</h2>
+          <h1 class="jua">{% trans "전망이 좋은 산후조리원" %}</h2>
           {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
         </section>
       </div>
 
       <div class="main-list">
         <section id="centers-with-window_view">
-          <h2 class="jua">{% trans "진행중인 이벤트" %}</h2>
+          <h1 class="jua">{% trans "진행중인 이벤트" %}</h2>
           {% include "events/list/_events.html" with events=events_in_progress %}
         </section>
       </div>
