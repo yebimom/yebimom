@@ -1,0 +1,48 @@
+.category-section {
+  color: $title-color;
+
+  .text-center{
+    text-align: center;
+  }
+
+  .row-space-6{
+    margin-bottom: 37.5px;
+  }
+
+  .row-space-top-8 {
+    margin-top : 50px;
+  }
+
+  .row-space-1 {
+    margin-bottom: 6.25px;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .text-lead {
+    font-size: 16px;
+  }
+}
+
+.category-tile {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .long-tile {
+    margin-top: 10px;
+  }
+
+  .no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.main-list {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
