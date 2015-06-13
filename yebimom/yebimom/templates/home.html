@@ -1,25 +1,68 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
-<div class="container">
-  <section id="centers-with-celeb">
-    <h2>{% trans "연예인이 방문한 산후조리원" %}</h2>
-    {% include "centers/list/_centers.html" with centers=centers_with_celeb %}
-  </section>
+  <div class="container">
+    <div class="category-section">
+      <div class="section-intro text-center row-space-6 row-space-top-8 jua">
+        <h2 class="row-space-1 strong">
+          맞춤형 산후조리원 정보를 제공합니다
+        </h2>
+        <p class="text-lead">
+          편안한 산후조리 하세요
+        </p>
+      </div>
+    </div>
 
-  <section id="centers-with-window_view">
-    <h2{% trans "뷰가 좋은 산후조리원" %}</h2>
-    {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
-  </section>
+    <div class="category-tile">
+      <div class="col-lg-4 no-padding long-tile">
+        <a href="{% url 'category-detail' 'great_view' %}">
+          <img src="{% static "img/categories/greate_view.png" %}">
+        </a>
+      </div>
+      <div class="col-lg-4 no-padding">
+        <a href="{% url 'category-detail' 'event' %}">
+          <img src="{% static "img/categories/event.png" %}">
+        </a>
+      </div>
+      <div class="col-lg-4 no-padding">
+        <a href="{% url 'category-detail' 'good_price' %}">
+          <img src="{% static "img/categories/good_price.png" %}">
+        </a>
+      </div>
+      <div class="col-lg-4 no-padding">
+        <a href="{% url 'category-detail' 'many_review' %}">
+          <img src="{% static "img/categories/many_review.png" %}">
+        </a>
+      </div>
+      <div class="col-lg-4 no-padding">
+        <a href="{% url 'category-detail' 'celeb' %}">
+          <img src="{% static "img/categories/celeb.png" %}">
+        </a>
+      </div>
 
-  <section id="centers-with-window_view">
-    <h2>{% trans "진행중인 이벤트" %}</h2>
-    {% include "events/list/_events.html" with events=events_in_progress %}
-  </section>
+    </div>
 
-  <section id="category">
-    <h2>{% trans "인기 카테고리별 산후조리원" %}</h2>
-    {% include "categories/list/_categories.html" with categories=categories %}
-  </section>
+    <div class="main-lists col-md-12">
+      <div class="main-list">
+          <h1 class="jua">{% trans "연예인이 방문한 산후조리원" %}</h2>
+          {% include "centers/list/_centers.html" with centers=centers_with_celeb %}
+      </div>
+
+      <div class="main-list">
+        <section id="centers-with-window_view">
+          <h1 class="jua">{% trans "전망이 좋은 산후조리원" %}</h2>
+          {% include "centers/list/_centers.html" with centers=centers_with_window_view %}
+        </section>
+      </div>
+
+      <div class="main-list">
+        <section id="centers-with-window_view">
+          <h1 class="jua">{% trans "진행중인 이벤트" %}</h2>
+          {% include "events/list/_events.html" with events=events_in_progress %}
+        </section>
+      </div>
+    </div>
 </div>
+
 {% endblock %}

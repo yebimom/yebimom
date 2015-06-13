@@ -4,9 +4,14 @@
       text-decoration: none;
     }
 
+
     h2 {
-      color: black;
+      text-align: center;
+      font-weight: bold;
+      color: $title-color;
       font-size: 16px;
+      margin-top: 13px;
+      margin-bottom: 8px;
     }
   }
 }
