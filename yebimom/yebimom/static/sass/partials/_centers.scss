@@ -2,7 +2,7 @@
   i.favorite {
     font-size: 35px;
     cursor: pointer;
-    
+
     position: absolute;
     top: 12px;
     right: 30px;
@@ -57,5 +57,26 @@
 
   img.img-responsive {
     border-radius: 10px;
+  }
+}
+
+.centers-result {
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+#centers{
+  .list-intro {
+    font-size: 20px;
+    color: rgba($title-color, 0.9);
+    background-color: rgba($title-color, 0.1);
+
+    span.word {
+      color: $main-color;
+    }
+
+    span.number {
+      color: $main-color;
+    }
   }
 }
