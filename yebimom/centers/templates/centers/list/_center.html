@@ -1,12 +1,18 @@
 {% load favorites %}
 
 <div class="col-xs-4 center" data-center_hash_id={{ center.hash_id }}>
+  <a href='{% url 'centers:detail' center.hash_id %}'>
   <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-responsive"/>
+  </a>
   <i class="favorite {{ user|favorite_class:center }} fa fa-heart"></i>
   <i class="favorite favorite-border fa fa-heart-o"></i>
   <div class="center-price">
     <!-- <p>{{ center.min_price }}</p> -->
-    <p>300만원</p>
+    <p class="jua">{% if center.min_price == None %}
+            가격 미정
+          {% else %}
+            {{ center.min_price }}만원
+          {% endif %}</p>
   </div>
 
   <div class="center-summary">

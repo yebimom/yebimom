@@ -34,13 +34,28 @@
   }
 
   .center-summary {
+    text-align: center;
+
     a {
+      color: $title-color;
       text-decoration: none;
     }
 
     h2 {
-      color: black;
+      font-weight: bold;
+      color: $title-color;
       font-size: 16px;
+      margin-top: 13px;
+      margin-bottom: 8px;
     }
+
+    .center-region {
+      font-size: 12px;
+      color: rgba($title-color, 0.7);
+    }
+  }
+
+  img.img-responsive {
+    border-radius: 10px;
   }
 }
