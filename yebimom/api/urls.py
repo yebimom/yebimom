@@ -1,4 +1,5 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
+from django.conf import settings
 
 # Views
 from api.views.events import EventList, EventDetail
@@ -42,3 +43,9 @@ urlpatterns = patterns(
     url(r'^centers/(?P<hash_id>\w{5})/favorite/$', CreateFavorite.as_view(), name='create_favorite'),
     url(r'^centers/(?P<hash_id>\w{5})/favorite/delete/$', DeleteFavorite.as_view(), name='delete_favorite'),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns(
+        '',
+        url(r'^docs/', include('rest_framework_swagger.urls')),
+    )
