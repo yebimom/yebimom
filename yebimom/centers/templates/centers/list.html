@@ -10,6 +10,18 @@
 
   <section id="centers">
     <div class="container">
+
+      {% if request.GET.search %}
+        <span class="list-intro jua"><span class="word">"{{ request.GET.search }}"</span> 산후조리원 검색 결과 : <span class="number">{{ centers|length }}</span> 건</span>
+      {% elif request.GET.location %}
+        <span class="list-intro jua"><span class="word">"{{ request.GET.location }}"</span>에 위치한 산후조리원 검색 결과 : <span class="number">{{ centers|length }}</span> 건</span>
+      {% endif %}
+
+      {% if centers|length == 0 %}
+        <div class="center-well">검색 결과가 존재하지 않습니다</div>
+      {% endif %}
+
+
       {% include "centers/list/_centers.html" %}
     </div>
   </section>
