@@ -18,6 +18,8 @@ class CenterLanding(models.Model):
     hash_id = models.CharField(max_length=12, unique=True, blank=True, null=True)
     center = models.ForeignKey(Center)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
     def get_absolute_url(self):
         return reverse("landing", kwargs={'slug': self.center.slug, 'hash_id': self.hash_id})
 
