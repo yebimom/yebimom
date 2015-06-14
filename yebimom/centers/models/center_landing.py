@@ -5,6 +5,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from centers.utils.center_landing_hashids import get_encoded_center_landing_hashid
 
+from yebimom.settings import YEBIMOM_URL
+
 
 class CenterLandingManager(models.Manager):
     pass
@@ -18,6 +20,9 @@ class CenterLanding(models.Model):
 
     def get_absolute_url(self):
         return reverse("landing", kwargs={'slug': self.center.slug, 'hash_id': self.hash_id})
+
+    def get_full_absolute_url(self):
+        return YEBIMOM_URL + self.get_absolute_url()
 
 
 @receiver(post_save, sender=CenterLanding)
