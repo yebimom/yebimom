@@ -1,11 +1,13 @@
 from django.views.generic import View, TemplateView
-# from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import FormView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 from centers.models.center import Center
 from centers.models.center_landing import CenterLanding
+
+from centers.forms import CenterLandingForm
+from django.core.urlresolvers import reverse
 
 
 class ManagementBaseView(View):
@@ -19,9 +21,9 @@ class ManagementDashboard(ManagementBaseView, TemplateView):
     template_name = "managements/home.html"
 
 
-class ManagementCenterLanding(ManagementBaseView, CreateView):
+class ManagementCenterLanding(ManagementBaseView, FormView):
     template_name = "managements/landing.html"
-    model = CenterLanding
+    form_class = CenterLandingForm
 
     def get_context_data(self, **kwargs):
         context = super(ManagementCenterLanding, self).get_context_data(**kwargs)
@@ -30,3 +32,10 @@ class ManagementCenterLanding(ManagementBaseView, CreateView):
         context['center_landings'] = center.centerlanding_set.all()
 
         return context
+
+    def form_valid(self, form):
+        return super(ManagementCenterLanding, self).form_valid(self)
+
+    def get_success_url(self):
+        center = Center.objects.get(hash_id=self.kwargs['hash_id'])
+        return reverse("managements:landing-list", kwargs={'hash_id': center.hash_id})
