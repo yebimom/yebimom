@@ -57,3 +57,12 @@ class ManagementCenterLanding(ManagementCenterBase, FormView):
     def get_success_url(self):
         center = Center.objects.get(hash_id=self.kwargs['hash_id'])
         return reverse("managements:landing-list", kwargs={'hash_id': center.hash_id})
+
+
+class ManagementCenterLandingDetail(DetailView):
+    template_name = "managements/landing_detail.html"
+    model = CenterLanding
+    context_object_name = "center_landing"
+
+    def get_object(self):
+        return CenterLanding.objects.get(hash_id=self.kwargs['center_landing_hash_id'])

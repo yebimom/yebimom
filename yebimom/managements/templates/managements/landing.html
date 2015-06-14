@@ -7,7 +7,7 @@
   <a href="{% url "managements:center" center.hash_id %}">{{ center.name }}</a>
 </li>
 <li>
-  <a href="">랜딩페이지 관리하기</a>
+  <a href="{% url "managements:landing-list" center.hash_id %}">랜딩페이지 관리하기</a>
 </li>
 {% endblock %}
 
@@ -42,8 +42,9 @@
                 <th>제목</th>
                 <th>랜딩페이지 주소</th>
                 <th>생성일</th>
-                <th>상태</th>
+                <th>관리하기</th>
                 <th>바로가기</th>
+                <th>상태</th>
               </tr>
             </thead>
             <tbody>
@@ -53,8 +54,9 @@
                   <td>{{ center_landing.title }}</td>
                   <td>{{ center_landing.get_full_absolute_url }}</td>
                   <td>{{ center_landing.created_at }}</td>
-                  <td><span class="label label-success">OPEN</span></td>
+                  <td><span class="label label-default"><a href="{% url "managements:landing-detail" center.hash_id center_landing.hash_id %}">관리하기</a></span></td>
                   <td><span class="label label-default"><a href="{% url "landing" center.slug center_landing.hash_id %}" target="_blank">바로가기</a></span></td>
+                  <td><span class="label label-success">OPEN</span></td>
                 </tr>
               {% endfor %}
             </tbody>

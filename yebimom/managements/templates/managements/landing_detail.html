@@ -1,0 +1,18 @@
+{% extends "managements/_base.html" %}
+
+
+{% block content-title %}랜딩페이지 관리하기{% endblock %}
+{% block breadcrumb %}
+<li>
+  <a href="{% url "managements:center" center_landing.center.hash_id %}">{{ center_landing.center.name }}</a>
+</li>
+<li>
+  <a href="{% url "managements:landing-list" center_landing.center.hash_id %}">랜딩페이지 관리하기</a>
+</li>
+<li>
+  <a href="{% url "managements:landing-detail" center_landing.center.hash_id center_landing.hash_id %}">{{ center_landing.title }}</a>
+</li>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
