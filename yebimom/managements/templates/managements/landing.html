@@ -43,6 +43,7 @@
                 <th>랜딩페이지 주소</th>
                 <th>생성일</th>
                 <th>상태</th>
+                <th>바로가기</th>
               </tr>
             </thead>
             <tbody>
@@ -53,6 +54,7 @@
                   <td>{{ center_landing.get_full_absolute_url }}</td>
                   <td>{{ center_landing.created_at }}</td>
                   <td><span class="label label-success">OPEN</span></td>
+                  <td><span class="label label-default"><a href="{% url "landing" center.slug center_landing.hash_id %}" target="_blank">바로가기</a></span></td>
                 </tr>
               {% endfor %}
             </tbody>
