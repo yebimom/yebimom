@@ -23,3 +23,9 @@ class ManagementCenterLanding(ManagementBaseView, ListView):
     def get_queryset(self):
         center = Center.objects.get(hash_id=self.kwargs['hash_id'])
         return center.centerlanding_set.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(ManagementCenterLanding, self).get_context_data(**kwargs)
+        context['center'] = Center.objects.get(hash_id=self.kwargs['hash_id'])
+        return context
+

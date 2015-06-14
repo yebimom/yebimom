@@ -36,6 +36,19 @@
 
       <div id="page-wrapper" class="gray-bg">
         {% include "managements/_partials/_header.html" %}
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+          <div class="col-lg-10">
+            <h2>{% block content-title %}{% endblock %}</h2>
+            <ol class="breadcrumb">
+              <li>
+                <a href="{% url "managements:dashboard" %}">산후조리원 관리하기</a>
+              </li>
+              {% block breadcrumb %}{% endblock %}
+            </ol>
+          </div>  
+        </div>
+
         <div class="wrapper wrapper-content animated fadeInRight">
           {% block content %}{% endblock %}
         </div>
