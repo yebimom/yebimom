@@ -27,6 +27,8 @@ module.exports = (grunt) ->
                     'js/underscore.min.js': 'underscore/underscore-min.js'
                     'js/underscore-min.map': 'underscore/underscore-min.map'
 
+                    'js/highcharts.min.js': 'highcharts-release/highcharts.js'
+
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [
                       'NanumBarunGothic/',

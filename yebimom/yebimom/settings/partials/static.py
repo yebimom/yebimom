@@ -67,6 +67,8 @@ PIPELINE_JS = {
 
             'managements/js/inspinia.js',
             'managements/js/plugins/pace/pace.min.js',
+
+            'js/highcharts.min.js',
         ),
         'output_filename': 'js/managements.min.js'
     }
