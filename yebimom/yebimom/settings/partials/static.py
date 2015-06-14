@@ -71,6 +71,7 @@ PIPELINE_JS = {
             'js/highcharts.min.js',
             'js/highcharts/data.min.js',
             'js/highcharts/exporting.min.js',
+            'js/highcharts/grid-light.min.js',
         ),
         'output_filename': 'js/managements.min.js'
     }

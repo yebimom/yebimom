@@ -30,6 +30,7 @@ module.exports = (grunt) ->
                     'js/highcharts.min.js': 'highcharts-release/highcharts.js'
                     'js/highcharts/data.min.js': 'highcharts-release/modules/data.js'
                     'js/highcharts/exporting.min.js': 'highcharts-release/modules/exporting.js'
+                    'js/highcharts/grid-light.min.js': 'highcharts-release/themes/grid-light.js'
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [
