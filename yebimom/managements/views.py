@@ -34,6 +34,13 @@ class ManagementCenterLanding(ManagementBaseView, FormView):
         return context
 
     def form_valid(self, form):
+        center = Center.objects.get(hash_id=self.kwargs['hash_id'])
+
+        self.object = form.save(commit=False)
+        self.object.center = center
+
+        self.object.save()
+
         return super(ManagementCenterLanding, self).form_valid(self)
 
     def get_success_url(self):
