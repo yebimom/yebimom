@@ -6,6 +6,7 @@ INSTALLED_APPS += (
     'django_nose',
     'django_extensions',
     'debug_toolbar',
+    'rest_framework_swagger',
 )
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
