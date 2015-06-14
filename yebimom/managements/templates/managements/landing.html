@@ -39,7 +39,7 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>식별자</th>
+                <th>제목</th>
                 <th>랜딩페이지 주소</th>
                 <th>생성일</th>
                 <th>상태</th>
@@ -49,7 +49,7 @@
               {% for center_landing in center_landings %}
                 <tr>
                   <td>{{ forloop.counter }}</td>
-                  <td>{{ center_landing.hash_id }}</td>
+                  <td>{{ center_landing.title }}</td>
                   <td>{{ center_landing.get_full_absolute_url }}</td>
                   <td>{{ center_landing.created_at }}</td>
                   <td><span class="label label-success">OPEN</span></td>
@@ -109,7 +109,7 @@
             <div class="hr-line-dashed"></div>
 
             <div class="form-group"><label class="col-sm-2 control-label">랜딩페이지 제목</label>
-              <div class="col-sm-10"><input type="text" class="form-control" placeholder="&#9733;{{ center.name }}&#9733; - 리뉴얼 기념 무료상담 이벤트">
+              <div class="col-sm-10"><input id="id_title" name="title" type="text" class="form-control" placeholder="&#9733;{{ center.name }}&#9733; - 리뉴얼 기념 무료상담 이벤트" required>
                 <span class="help-block m-b-none">
                   랜딩페이지 제목은 페이스북, 카카오스토리 공유 시
                   가장 먼저 눈에 띄는 항목이므로 신중하게 입력해주시기 바랍니다.

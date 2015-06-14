@@ -6,4 +6,4 @@ class CenterLandingForm(ModelForm):
 
     class Meta:
         model = CenterLanding
-        fields = []
+        fields = ['title', ]

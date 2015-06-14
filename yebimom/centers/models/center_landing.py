@@ -18,6 +18,8 @@ class CenterLanding(models.Model):
     hash_id = models.CharField(max_length=12, unique=True, blank=True, null=True)
     center = models.ForeignKey(Center)
 
+    title = models.CharField(max_length=30, blank=True, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
