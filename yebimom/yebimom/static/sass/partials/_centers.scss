@@ -2,7 +2,7 @@
   i.favorite {
     font-size: 35px;
     cursor: pointer;
-    
+
     position: absolute;
     top: 12px;
     right: 30px;
@@ -34,13 +34,49 @@
   }
 
   .center-summary {
+    text-align: center;
+
     a {
+      color: $title-color;
       text-decoration: none;
     }
 
     h2 {
-      color: black;
+      font-weight: bold;
+      color: $title-color;
       font-size: 16px;
+      margin-top: 13px;
+      margin-bottom: 8px;
+    }
+
+    .center-region {
+      font-size: 12px;
+      color: rgba($title-color, 0.7);
+    }
+  }
+
+  img.img-responsive {
+    border-radius: 10px;
+  }
+}
+
+.centers-result {
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+#centers{
+  .list-intro {
+    font-size: 20px;
+    color: rgba($title-color, 0.9);
+    background-color: rgba($title-color, 0.1);
+
+    span.word {
+      color: $main-color;
+    }
+
+    span.number {
+      color: $main-color;
     }
   }
 }
