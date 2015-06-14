@@ -4,7 +4,7 @@
 {% block content-title %}랜딩페이지 관리하기{% endblock %}
 {% block breadcrumb %}
 <li>
-  <a href="">{{ center.name }}</a>
+  <a href="{% url "managements:center" center.hash_id %}">{{ center.name }}</a>
 </li>
 <li>
   <a href="">랜딩페이지 관리하기</a>
