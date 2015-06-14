@@ -33,6 +33,7 @@ class Center(MetaMixin):
     )
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
 
     slug = models.SlugField(blank=True, null=True, unique=True)
 
