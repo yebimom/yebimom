@@ -15,4 +15,71 @@
 {% endblock %}
 
 {% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>랜딩페이지 상세정보 <small>생성된 랜딩페이지 정보를 확인하거나 수정하실 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <form method="POST" class="form-horizontal">{% csrf_token %}
+            <div class="form-group">
+              <label class="col-lg-2 control-label">산후조리원 이름</label>
+              <div class="col-lg-10">
+                <input type="text" disabled="" placeholder="{{ center_landing.center.name }}" class="form-control">
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">랜딩페이지 타입</label>
+
+              <div class="col-lg-10">
+                <input type="text" disabled="" placeholder="무료상담 이벤트 랜딩페이지 ( 데스크탑, 모바일 반응형 )" class="form-control">
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">랜딩페이지 제목</label>
+              <div class="col-sm-10"><input id="id_title" name="title" type="text" class="form-control" maxlength="200" value="{{ center_landing.title }}" placeholder="&#9733;{{ center.name }}&#9733; - 리뉴얼 기념 무료상담 이벤트" required>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">통계기능 활성화<br/>
+              <small class="text-navy">Google Analytics</small></label>
+
+              <div class="col-sm-10">
+                <div class="checkbox">
+                  <label><input type="checkbox" checked="" value=""> 구글 어낼리틱스를 이용한 방문자 통계 기능 활성화</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-primary" type="submit">랜딩페이지 업데이트</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
