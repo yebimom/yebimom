@@ -28,4 +28,3 @@ class ManagementCenterLanding(ManagementBaseView, ListView):
         context = super(ManagementCenterLanding, self).get_context_data(**kwargs)
         context['center'] = Center.objects.get(hash_id=self.kwargs['hash_id'])
         return context
-
