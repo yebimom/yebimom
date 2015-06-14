@@ -1,0 +1,141 @@
+{% extends "managements/_base.html" %}
+
+
+{% block content-title %}랜딩페이지 관리하기{% endblock %}
+{% block breadcrumb %}
+<li>
+  <a href="">{{ center.name }}</a>
+</li>
+<li>
+  <a href="">랜딩페이지 관리하기</a>
+</li>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>랜딩페이지 목록</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>제목</th>
+                <th>랜딩페이지 주소</th>
+                <th>생성일</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for center_landing in center_landings %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ center_landing.title }}</td>
+                  <td>{{ center_landing.get_full_absolute_url }}</td>
+                  <td>{{ center_landing.created_at }}</td>
+                  <td><span class="label label-success">OPEN</span></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>랜딩페이지 생성하기 <small>새로운 랜딩 페이지를 생성하고 이벤트를 진행할 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <form method="POST" class="form-horizontal">{% csrf_token %}
+            <div class="form-group">
+              <label class="col-lg-2 control-label">산후조리원</label>
+              <div class="col-lg-10">
+                <input type="text" disabled="" placeholder="{{ center.name }}" class="form-control">
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">랜딩페이지 타입<br/>
+              <small class="text-navy">업데이트 예정 ( 2015. 07. )</small></label>
+
+              <div class="col-sm-10">
+                <div class="radio i-checks"><label> <input type="radio" checked=""><i></i>무료상담 이벤트 랜딩페이지 ( 데스크탑, 모바일 반응형 )</label></div>
+                <div class="radio i-checks"><label> <input type="radio" disabled=""><i></i>이벤트 신청 랜딩페이지</label></div>
+                <div class="radio i-checks"><label> <input type="radio" disabled=""><i></i>가격정보 받아보기 랜딩페이지</label></div>
+                <div class="radio i-checks"><label> <input type="radio" disabled=""><i></i>직접 랜딩페이지 생성하기</label></div>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">랜딩페이지 제목</label>
+              <div class="col-sm-10"><input id="id_title" name="title" type="text" class="form-control" maxlength="200" placeholder="&#9733;{{ center.name }}&#9733; - 리뉴얼 기념 무료상담 이벤트" required>
+                <span class="help-block m-b-none">
+                  랜딩페이지 제목은 페이스북, 카카오스토리 공유 시
+                  가장 먼저 눈에 띄는 항목이므로 신중하게 입력해주시기 바랍니다.
+                </span>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">통계기능 활성화<br/>
+              <small class="text-navy">Google Analytics</small></label>
+
+              <div class="col-sm-10">
+                <div class="checkbox">
+                  <label><input type="checkbox" checked="" value=""> 구글 어낼리틱스를 이용한 방문자 통계 기능 활성화</label></div>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-primary" type="submit">랜딩페이지 생성하기</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

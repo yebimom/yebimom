@@ -1,0 +1,29 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ user.username }}</strong>
+           </span> <span class="text-muted text-xs block">산후조리원 관리자 <b class="caret"></b></span> </span> </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="{% url "users:logout" %}">로그아웃</a></li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          Yebimom
+        </div>
+      </li>
+      {% for center in user.userprofile.managements.all %}
+        <li>
+          <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">{{ center.name }}</span><span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li><a href="">통합관리</a></li>
+            <li><a href="{% url "centers:detail" center.hash_id %}" target="_blank">상세페이지 바로가기</a></li>
+            <li><a href="{% url "managements:landing-list" center.hash_id %}">랜딩페이지 관리하기</a></li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
