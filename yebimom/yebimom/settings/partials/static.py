@@ -69,6 +69,8 @@ PIPELINE_JS = {
             'managements/js/plugins/pace/pace.min.js',
 
             'js/highcharts.min.js',
+            'js/highcharts/data.min.js',
+            'js/highcharts/exporting.min.js',
         ),
         'output_filename': 'js/managements.min.js'
     }
