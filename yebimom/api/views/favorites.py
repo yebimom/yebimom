@@ -12,6 +12,8 @@ from rest_framework.permissions import IsAuthenticated
 from centers.models import Center
 from api.serializers.centers import CenterSerializer
 
+from users.models.favorite import Favorite
+
 
 class FavoriteBase(APIView):
     permission_classes = (IsAuthenticated, )
@@ -22,13 +24,20 @@ class FavoriteBase(APIView):
 
     def post(self, request, *args, **kwargs):
         center = Center.objects.get(hash_id=self.kwargs['hash_id'])
-        self.request.user.userprofile.favorites.add(center)
+        Favorite.objects.create(
+            user_profile=request.user.userprofile,
+            center=center
+        )
 
         return Response(status=status.HTTP_200_OK)
 
     def delete(self, request, *args, **kwargs):
         center = Center.objects.get(hash_id=self.kwargs['hash_id'])
-        self.request.user.userprofile.favorites.remove(center)
+        # After favorite center field as unique, filter -> get
+        Favorite.objects.filter(
+            center=center,
+            user_profile=user.userprofile
+        ).delete()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
