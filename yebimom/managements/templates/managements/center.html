@@ -1,0 +1,15 @@
+{% extends "managements/_base.html" %}
+
+
+{% block content-title %}{{ center.name }} 통합관리{% endblock %}
+{% block breadcrumb %}
+<li>
+  <a href="{% url "managements:center" center.hash_id %}">{{ center.name }}</a>
+</li>
+<li>
+  <a href="">통합관리</a>
+</li>
+{% endblock %}
+
+{% block title %}
+{% endblock %}
