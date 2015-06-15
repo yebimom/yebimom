@@ -6,13 +6,14 @@
 {% block content %}
 <section id="events">
   <div class="container">
+    <div class="jua event-intro">이벤트</div>
     {% for three_events in events|group_by:3 %}
       <div class="row">
         {% for event in three_events %}
-          <div class="col-xs-4">
+          <div class="col-xs-4 event">
             <a href="{% url "events:detail" pk=event.pk %}">
               <img src="{{ event.thumbnail.url }}" alt="{{event.title}}" class="img-responsive">
-              <div>
+              <div class="event-title">
                 {{ event.title }}
                 {% if event.is_in_progress %}
                   <span class="label label-primary">진행중인 이벤트</span>
@@ -28,7 +29,5 @@
   </div>
 </section>
 
-<pre>
-# 전체 이벤트 : {{ events.count }}
-</pre>
+
 {% endblock %}
