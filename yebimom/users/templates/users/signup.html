@@ -4,41 +4,45 @@
 
 
 {% block content %}
-<h1>Sign Up</h1>
+
+  <div class="user-well">
+    <h1 class="jua">회원가입</h1>
 
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+    {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
 
-<form method="post" action="{% url 'users:signup' %}">{% csrf_token %}
-  <table>
-    <tr>
-      <td>{{ form.username.label_tag }}</td>
-      <td>{{ form.username }}</td>
-    </tr>
-    <tr>
-      <td>{{ form.password1.label_tag }}</td>
-      <td>{{ form.password1 }}</td>
-    </tr>
-    <tr>
-      <td>{{ form.password2.label_tag }}</td>
-      <td>{{ form.password2 }}</td>
-    </tr>
-  </table>
+    <form method="post" action="{% url 'users:signup' %}">{% csrf_token %}
+      <table>
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password1.label_tag }}</td>
+          <td>{{ form.password1 }}</td>
+        </tr>
+        <tr>
+          <td>{{ form.password2.label_tag }}</td>
+          <td>{{ form.password2 }}</td>
+        </tr>
+      </table>
 
-  <input type="submit" value="회원가입" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+      <input type="submit" value="회원가입" class="submit"/>
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
 
-<a href="{% url "social:begin" backend="kakao" %}">
-  <div class="auth_button">
-    <img src="https://40.media.tumblr.com/a558aa4cbbe633d67d5a9ff4eed0ce0a/tumblr_nn8dgompI61ur9lggo1_1280.png" />
+    <a href="{% url "social:begin" backend="kakao" %}">
+      <div class="auth_button">
+        <img src="https://40.media.tumblr.com/a558aa4cbbe633d67d5a9ff4eed0ce0a/tumblr_nn8dgompI61ur9lggo1_1280.png" />
+      </div>
+    </a>
+    <a href="{% url "social:begin" backend="facebook" %}">
+      <div class="auth_button">
+        <img src="https://40.media.tumblr.com/387f8969ebb3c8ecae1adbde451112d8/tumblr_nn8dh0JQyi1ur9lggo1_1280.png" />
+      </div>
+    </a>
+
   </div>
-</a>
-<a href="{% url "social:begin" backend="facebook" %}">
-  <div class="auth_button">
-    <img src="https://40.media.tumblr.com/387f8969ebb3c8ecae1adbde451112d8/tumblr_nn8dh0JQyi1ur9lggo1_1280.png" />
-  </div>
-</a>
 {% endblock %}

@@ -18,11 +18,17 @@ from django.contrib.auth.decorators import login_required
 from users.forms import ContactForm
 from django.contrib.auth.forms import UserCreationForm
 
+#Models
+from centers.models.region import RegionSecondLayer
+
 
 @anonymous_required
 def login_view(request):
     return default_login_view(
-        request, template_name="users/login.html"
+        request, template_name="users/login.html",
+        extra_context={
+            'regions_second_layer': RegionSecondLayer.objects.all()
+        }
     )
 
 
@@ -46,11 +52,13 @@ def signup(request):
             return redirect("home")
 
         return render(request, "users/signup.html", {
-            'form': user_form
+            'form': user_form,
+            'regions_second_layer': RegionSecondLayer.objects.all()
         })
 
     return render(request, "users/signup.html", {
-        'form': UserCreationForm
+        'form': UserCreationForm,
+        'regions_second_layer': RegionSecondLayer.objects.all()
     })
 
 

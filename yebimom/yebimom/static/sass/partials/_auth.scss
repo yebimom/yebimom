@@ -6,3 +6,21 @@
     padding-top: 5px;
   }
 }
+
+.user-well {
+  margin-bottom: 100px;
+  margin-top: 100px;
+  color: $title-color;
+  text-align: center;
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .submit {
+    margin: 15px;
+    width: 200px;
+  }
+}
