@@ -7,7 +7,80 @@ section#center {
     margin-right: auto;
   }
 
+  .rslides_container {
+    margin-bottom: 50px;
+    position: relative;
+    float: left;
+    width: 100%;
+  }
 
+  .centered-btns_nav {
+    z-index: 3;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    top: 50%;
+    left: 0;
+    opacity: 0.1;
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    height: 61px;
+    width: 38px;
+    background: transparent url("../../../static/img/themes.gif") no-repeat left top;
+    margin-top: -45px;
+  }
+
+  .centered-btns_nav:active {
+    opacity: 0.4;
+  }
+
+  .centered-btns_nav.next {
+    left: auto;
+    background-position: right top;
+    right: 0;
+  }
+
+  .transparent-btns_nav {
+    z-index: 3;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    top: 0;
+    left: 0;
+    display: block;
+    background: #fff; /* Fix for IE6-9 */
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 48%;
+    text-indent: -9999px;
+    overflow: hidden;
+    height: 91%;
+  }
+
+  .centered-btns_nav.next {
+    left: auto;
+    background-position: right top;
+    right: 0;
+  }
+
+  .centered-btns-1 {
+    display: block;
+    float: left;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  .centered-btns-2 {
+    float: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    display: list-item;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+  }
 }
 
 .center_head {
@@ -16,6 +89,7 @@ section#center {
   img.img-summary {
     width: 200px;
     height: 150px;
+    border-radius: 10px;
   }
 
   .price {
@@ -64,10 +138,42 @@ section#center {
 }
 
 .center_review {
+  color: rgba($title-color, 0.6);
   padding: 30px;
 
   p.explainaion {
     margin : 10px;
+  }
+
+  .center-well {
+    min-height: 20px;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    text-align: center;
+    font-size: 16px;
+    color: rgba($title-color, 0.7);
+  }
+
+  #id_content {
+    width: 800px;
+    height: 25px;
+  }
+
+  .thead {
+    color: $main-color;
+  }
+
+  .nav-tab {
+    a {
+      color: #4AB733;
+      text-decoration: none;
+    }
   }
 }
 
@@ -77,6 +183,8 @@ section#reviews {
     background-color: rgba($main-color, 0.1);
     border-color: rgba($main-color, 0.1);
   }
+
+
 }
 
 hr {
@@ -100,4 +208,8 @@ hr {
 
 .row-space-top-8 {
   margin-top: 50px;
+}
+
+.recommendation {
+  color: #6b7073;
 }

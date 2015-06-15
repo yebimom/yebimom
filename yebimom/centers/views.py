@@ -16,12 +16,15 @@ from centers.models.facility import Facility
 from centers.models.policy import Policy
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
 from centers.models.category import Category
+
+from centers.models.image import CenterImage
 from centers.models.center_landing import CenterLanding
 from reviews.models import VisitReview
 from reviews.models import UseReview
 
 from reviews.forms import VisitReviewForm
 from reviews.forms import UseReviewForm
+
 
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -90,6 +93,10 @@ class CenterDetail(DetailView):
             id=context[self.context_object_name].id
         )[:3]
         context['regions_second_layer'] = RegionSecondLayer.objects.all()
+        context['center_image'] = CenterImage.objects.filter(
+            center=context[self.context_object_name],
+            is_main=False
+        )
 
         return context
 
@@ -166,3 +173,10 @@ class CategoryList(ListView):
 class CategoryDetail(DetailView):
     template_name = "categories/detail.html"
     model = Category
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryDetail, self).get_context_data(**kwargs)
+
+        context['regions_second_layer'] = RegionSecondLayer.objects.all()
+
+        return context

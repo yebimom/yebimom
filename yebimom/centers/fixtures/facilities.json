@@ -1,55 +1,64 @@
 [
 {
   "fields": {
-    "name": "헤어드라이기"
+    "name": "헤어드라이기",
+    "slug": "hair-dryer"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "개인 화장실"
+    "name": "개인 화장실",
+    "slug": "bathroom"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "비데"
+    "name": "비데",
+    "slug": "bidet"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "좌욕기"
+    "name": "좌욕기",
+    "slug": "hip-bath"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "찜질기"
+    "name": "찜질기",
+    "slug": "hot-bath"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "유축기"
+    "name": "유축기",
+    "slug": "breast-pump"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "공기청정기"
+    "name": "공기청정기",
+    "slug": "air-cleaner"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "와이파이"
+    "name": "와이파이",
+    "slug": "wifi"
   },
   "model": "centers.facility"
 },
 {
   "fields": {
-    "name": "마사지"
+    "name": "마사지",
+    "slug": "massage"
   },
   "model": "centers.facility"
 }

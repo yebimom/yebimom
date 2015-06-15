@@ -4,7 +4,6 @@
       text-decoration: none;
     }
 
-
     h2 {
       text-align: center;
       font-weight: bold;
@@ -13,5 +12,27 @@
       margin-top: 13px;
       margin-bottom: 8px;
     }
+  }
+}
+
+.event-intro {
+  font-size: 40px;
+  color: $title-color;
+  margin: 30px;
+}
+
+#events {
+  .event {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  .event-title {
+    margin-top: 5px;
+    text-align: center;
   }
 }

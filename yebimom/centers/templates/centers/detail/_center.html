@@ -1,13 +1,50 @@
+{% load staticfiles %}
+<script>
+  $(function () {
+
+    // Slideshow 1
+    $("#slider1").responsiveSlides({
+      auto: true,
+      pager: false,
+      nav: true,
+      speed: 500,
+      maxwidth: 970,
+      namespace: "centered-btns"
+    });
+
+
+  });
+</script>
+
 
 <section id="center">
   <div class="panel_head center_head">
     <div class="container">
+
+    {% if center_image %}
+
+      <div class="rslides_container">
+        <ul class="rslides centered-btns centered-btns1" id="slider1" style="max-width: 800px;">
+          {% for image in center_image %}
+            <li class="centered-btns-2">
+              <img src="/media/{{ image.image }}">
+            </li>
+          {% endfor %}
+
+
+        </ul>
+        <a href="#" class="centered-btns_nav centered-btns1_nav prev">Previous</a>
+        <a href="#" class="centered-btns_nav centered-btns1_nav next">Next</a>
+      </div>
+    {% endif %}
+
+
       <div class="row">
         <div class="col-md-3">
           <img src="{{ center.main_image_url }}" alt="{{center.title}}" class="img-summary"/>
         </div>
         <div class="col-md-6">
-          <h3><b>{{ center.name }}</b></h3>
+          <b><h3 class="jua">{{ center.name }}</h3></b>
 
           <div>
             {{ center.address }}
@@ -54,7 +91,12 @@
           </h4>
 
           <div class="panel panel-dark row-space-4">
-            <div class="panel-body">에어비앤비를 통해 주택에서부터 아파트, 트리하우스, 이글루에 이르기까지 이색적인 숙소를 찾으실 수 있습니다. 숙소에 대한 설명은 아래의 숙소 상세정보를 참조하세요. 궁금한 점이 있으시면, 호스트에게 직접 연락하시기 바랍니다.</div>
+            <div class="panel-body">
+              {% if center.description == None %}
+                산후조리원 소개가 없습니다.
+                {% else %}{{ center.description }}
+              {% endif %}
+            </div>
           </div>
 
           <hr>
@@ -89,7 +131,7 @@
             <div class="col-md-9">
               <div class="row">
                 <div class="col-md-12">
-                  <div>홈페이지: <strong>{% if center.url == None %}
+                  <div><strong>{% if center.url == None %}
                     X
                   {% else %}<a href="{{ center.url }}">홈페이지 바로가기</a>
                   {% endif %}</strong></div>

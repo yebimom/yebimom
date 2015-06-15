@@ -1,4 +1,5 @@
 {% load mathfilters %}
+{% load staticfiles %}
 
 <hr>
 
@@ -20,8 +21,8 @@
             {% if facility in center.facility_set.all %}
 
               <div class="row-space-1 ">
-                <i class="icon h3 icon-meal"></i>
                 &nbsp;
+                <img src="{% static "" %}img/facilities/{{facility.slug}}.png" class="icon">
                   <span id="amenity-long-tooltip-trigger-8">
                       <strong>
                         {{ facility.name }}

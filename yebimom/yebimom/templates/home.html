@@ -58,8 +58,10 @@
 
       <div class="main-list">
         <section id="centers-with-window_view">
+          {% if events_in_progress %}
           <h1 class="jua">{% trans "진행중인 이벤트" %}</h2>
           {% include "events/list/_events.html" with events=events_in_progress %}
+            {% endif %}
         </section>
       </div>
     </div>

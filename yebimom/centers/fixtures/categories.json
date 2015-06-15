@@ -50,6 +50,13 @@
 },
   {
   "fields": {
+    "slug": "good_price",
+    "name": "가성비가 좋은"
+  },
+  "model": "centers.category"
+},
+  {
+  "fields": {
     "slug": "franchise",
     "name": "프랜차이즈"
   },

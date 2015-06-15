@@ -9,6 +9,7 @@ class Facility(models.Model):
 
     center = models.ManyToManyField(Center, blank=True)
     name = models.CharField(max_length=40, unique=True)
+    slug = models.CharField(max_length=20, blank=True)
 
     def __unicode__(self):
         return unicode(self.name)

@@ -23,6 +23,7 @@
     "jquery-ui": "~1.11.4",
     "jquery-cookie": "~1.4.1",
     "NanumBarunGothic": "~1.0.0",
+    "jquery.responsive-slides": "~1.54.1",
     "highcharts-release": "~4.1.5"
   }
 }
