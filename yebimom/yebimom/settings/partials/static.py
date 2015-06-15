@@ -47,6 +47,7 @@ PIPELINE_JS = {
             'js/jquery-ui.min.js',
             'js/jquery-cookie.js',
             'js/bootstrap.min.js',
+            'js/responsiveslides.min.js',
         ),
         'output_filename': 'js/vendor.min.js',
     },
@@ -65,6 +66,7 @@ PIPELINE_CSS = {
             'css/bootstrap.min.css',
             'css/font-awesome.min.css',
             'css/jquery-ui-smoothness.min.css',
+            'css/responsiveslides.css',
         ),
         'output_filename': 'css/vendor.min.css'
     },

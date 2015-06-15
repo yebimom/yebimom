@@ -7,7 +7,80 @@ section#center {
     margin-right: auto;
   }
 
+  .rslides_container {
+    margin-bottom: 50px;
+    position: relative;
+    float: left;
+    width: 100%;
+  }
 
+  .centered-btns_nav {
+    z-index: 3;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    top: 50%;
+    left: 0;
+    opacity: 0.1;
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    height: 61px;
+    width: 38px;
+    background: transparent url("../../../static/img/themes.gif") no-repeat left top;
+    margin-top: -45px;
+  }
+
+  .centered-btns_nav:active {
+    opacity: 0.4;
+  }
+
+  .centered-btns_nav.next {
+    left: auto;
+    background-position: right top;
+    right: 0;
+  }
+
+  .transparent-btns_nav {
+    z-index: 3;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    top: 0;
+    left: 0;
+    display: block;
+    background: #fff; /* Fix for IE6-9 */
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 48%;
+    text-indent: -9999px;
+    overflow: hidden;
+    height: 91%;
+  }
+
+  .centered-btns_nav.next {
+    left: auto;
+    background-position: right top;
+    right: 0;
+  }
+
+  .centered-btns-1 {
+    display: block;
+    float: left;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  .centered-btns-2 {
+    float: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    display: list-item;
+    -webkit-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+  }
 }
 
 .center_head {

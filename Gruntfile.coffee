@@ -24,8 +24,10 @@ module.exports = (grunt) ->
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
-                    'js/underscore.min.js': 'underscore/underscore-min.js'
-                    'js/underscore-min.map': 'underscore/underscore-min.map'
+
+                    'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
+                    'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
+
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [
