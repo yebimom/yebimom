@@ -138,10 +138,42 @@ section#center {
 }
 
 .center_review {
+  color: rgba($title-color, 0.6);
   padding: 30px;
 
   p.explainaion {
     margin : 10px;
+  }
+
+  .center-well {
+    min-height: 20px;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    text-align: center;
+    font-size: 16px;
+    color: rgba($title-color, 0.7);
+  }
+
+  #id_content {
+    width: 800px;
+    height: 25px;
+  }
+
+  .thead {
+    color: $main-color;
+  }
+
+  .nav-tab {
+    a {
+      color: #4AB733;
+      text-decoration: none;
+    }
   }
 }
 
@@ -151,6 +183,8 @@ section#reviews {
     background-color: rgba($main-color, 0.1);
     border-color: rgba($main-color, 0.1);
   }
+
+
 }
 
 hr {
@@ -174,4 +208,8 @@ hr {
 
 .row-space-top-8 {
   margin-top: 50px;
+}
+
+.recommendation {
+  color: #6b7073;
 }

@@ -11,21 +11,23 @@
 
         <p class="explainaion">산후조리원에 방문하거나, 상담을 받은 사용자들의 리뷰입니다</p>
 
-        <table class="table table-hover">
-          <thead>
-          <tr>
-            <th>작성자</th>
-            <th>내용</th>
-          </tr>
-          </thead>
-          <tbody>
-          {% for review in center.visitreview_set.all %}
-            <tr>
-              <td>{{ review.user }}</td>
-              <td>{{ review.content }}</td>
-            </tr>
+        {% if center.visitreview_set %}
 
-            <!--  <div class="hide">
+          <table class="table table-hover">
+            <thead>
+            <tr class="thead">
+              <th>작성자</th>
+              <th>내용</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for review in center.visitreview_set.all %}
+              <tr>
+                <td>{{ review.user }}</td>
+                <td>{{ review.content }}</td>
+              </tr>
+
+              <!--  <div class="hide">
               {% if review.user == user %}
                 <form action='{% url 'centers:delete_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
                   <input type="submit" name="delete" value="delete">
@@ -40,14 +42,19 @@
 
             -->
 
-          {% endfor %}
-          </tbody>
-        </table>
+            {% endfor %}
+            </tbody>
+          </table>
+
+        {% else %}
+          <div class="center-well">리뷰가 없습니다</div>
+
+        {% endif %}
 
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_visit_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-            <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ visit_review_form }}
-              <input type="submit" name="Post Review" value="등록"> </div>
+            <div> <br>{{ visit_review_form }}
+              <input type="submit" name="Post Review" value="리뷰남기기"> </div>
 
           </form>
         {% else %}
@@ -62,22 +69,24 @@
 
         <p class="explainaion">실제 산후조리원을 이용한 사용자들의 리뷰입니다</p>
 
-        <table class="table table-hover">
-          <thead>
-          <tr>
-            <th>작성자</th>
-            <th>내용</th>
-          </tr>
-          </thead>
-          <tbody>
-          {% for review in center.usereview_set.all %}
+        {% if center.usereview_set %}
 
-            <tr>
-              <td>{{ review.user }}</td>
-              <td>{{ review.content }}</td>
+          <table class="table table-hover">
+            <thead>
+            <tr class="thead">
+              <th>작성자</th>
+              <th>내용</th>
             </tr>
+            </thead>
+            <tbody>
+            {% for review in center.usereview_set.all %}
 
-            <!--
+              <tr>
+                <td>{{ review.user }}</td>
+                <td>{{ review.content }}</td>
+              </tr>
+
+              <!--
             {% if review.user == user %}
               <form action='{% url 'centers:delete_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
                 <input type="submit" name="delete" value="delete">
@@ -90,14 +99,19 @@
             {% endif %}
           -->
 
-          {% endfor %}
-          </tbody>
-        </table>
+            {% endfor %}
+            </tbody>
+          </table>
+
+        {% else %}
+          <div class="center-well">리뷰가 없습니다</div>
+
+        {% endif %}
 
         {% if user.is_authenticated %}
           <form action='{% url 'centers:create_use_review' slug=center.hash_id %}' method="post">{% csrf_token %}
-            <div class="alert alert-info"> {{ user }}의 이름으로 {{ center.name }} 에 댓글 남기기<br>{{ use_review_form }}
-              <input type="submit" name="Post Review" value="등록"></div>
+            <div> <br>{{ use_review_form }}
+              <input type="submit" name="Post Review" value="리뷰남기기"></div>
           </form>
         {% else %}
           <div class="alert alert-danger">
