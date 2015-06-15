@@ -24,6 +24,9 @@ module.exports = (grunt) ->
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
+                    'js/underscore.min.js': 'underscore/underscore-min.js'
+                    'js/underscore-min.map': 'underscore/underscore-min.map'
+
                     'js/responsiveslides.min.js': 'jquery.responsive-slides/jquery.responsive-slides.min.js'
                     'css/responsiveslides.css': 'jquery.responsive-slides/jquery.responsive-slides.css'
 
