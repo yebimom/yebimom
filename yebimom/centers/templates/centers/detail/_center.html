@@ -4,11 +4,11 @@
 
     // Slideshow 1
     $("#slider1").responsiveSlides({
-      auto: false,
+      auto: true,
       pager: false,
       nav: true,
       speed: 500,
-      maxwidth: 800,
+      maxwidth: 970,
       namespace: "centered-btns"
     });
 
@@ -20,6 +20,8 @@
 <section id="center">
   <div class="panel_head center_head">
     <div class="container">
+
+    {% if center_image %}
 
       <div class="rslides_container">
         <ul class="rslides centered-btns centered-btns1" id="slider1" style="max-width: 800px;">
@@ -34,6 +36,7 @@
         <a href="#" class="centered-btns_nav centered-btns1_nav prev">Previous</a>
         <a href="#" class="centered-btns_nav centered-btns1_nav next">Next</a>
       </div>
+    {% endif %}
 
 
       <div class="row">
