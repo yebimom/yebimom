@@ -24,9 +24,8 @@ module.exports = (grunt) ->
                     'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
                     'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
 
-
-                    'js/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
-                    'css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
+                    'js/responsiveslides.min.js': 'jquery.responsive-slides/jquery.responsive-slides.min.js'
+                    'css/responsiveslides.css': 'jquery.responsive-slides/jquery.responsive-slides.css'
 
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
