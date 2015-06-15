@@ -4,11 +4,17 @@
 
 <section id="category">
   <div class="container">
-    <h1>{{ category.name }}</h1>
+    <h1 class="jua recommendation space">{{ category.name }} 산후조리원</h1>
 
+    {% if category.centers.all %}
     <section id="centers-in-category">
       {% include "centers/list/_centers.html" with centers=category.centers.all %}
     </section>
+
+    {% else %}
+    <div class="category-well">{{ category.name }} 산후조리원이 없습니다</div>
+
+    {% endif %}
   </div>
 </section>
 
