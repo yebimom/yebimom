@@ -1,0 +1,222 @@
+{% extends "managements/_base.html" %}
+
+
+{% block content-title %}랜딩페이지 관리하기{% endblock %}
+{% block breadcrumb %}
+<li>
+  <a href="{% url "managements:center" center_landing.center.hash_id %}">{{ center_landing.center.name }}</a>
+</li>
+<li>
+  <a href="{% url "managements:landing-list" center_landing.center.hash_id %}">랜딩페이지 관리하기</a>
+</li>
+<li>
+  <a href="{% url "managements:landing-detail" center_landing.center.hash_id center_landing.hash_id %}">{{ center_landing.title }}</a>
+</li>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>랜딩페이지 상세정보 <small>생성된 랜딩페이지 정보를 확인하거나 수정하실 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <form method="POST" class="form-horizontal">{% csrf_token %}
+            <div class="form-group">
+              <label class="col-lg-2 control-label">산후조리원 이름</label>
+              <div class="col-lg-10">
+                <input type="text" disabled="" placeholder="{{ center_landing.center.name }}" class="form-control">
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label">랜딩페이지 타입</label>
+
+              <div class="col-lg-10">
+                <input type="text" disabled="" placeholder="무료상담 이벤트 랜딩페이지 ( 데스크탑, 모바일 반응형 )" class="form-control">
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">랜딩페이지 제목</label>
+              <div class="col-sm-10"><input id="id_title" name="title" type="text" class="form-control" maxlength="200" value="{{ center_landing.title }}" placeholder="&#9733;{{ center.name }}&#9733; - 리뉴얼 기념 무료상담 이벤트" required>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><label class="col-sm-2 control-label">통계기능 활성화<br/>
+              <small class="text-navy">Google Analytics</small></label>
+
+              <div class="col-sm-10">
+                <div class="checkbox">
+                  <label><input type="checkbox" checked="" value=""> 구글 어낼리틱스를 이용한 방문자 통계 기능 활성화</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-primary" type="submit">랜딩페이지 업데이트</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+
+        <div class="ibox-title">
+          <h5>랜딩페이지 이용자 통계 <small>생성된 랜딩페이지에 대한 통계정보를 확인하실 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div id="analytics"></div>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    $(function () {
+        $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=analytics.csv&callback=?', function (csv) {
+            $('#analytics').highcharts({
+                data: {
+                    csv: csv
+                },
+                title: {
+                  text: '{{ center_landing.center.name }} - {{ center_landing.title }} 랜딩페이지 유입'
+                },
+
+                subtitle: {
+                    text: 'Source: Google Analytics'
+                },
+
+                xAxis: {
+                    tickInterval: 7 * 24 * 3600 * 1000, // one week
+                    tickWidth: 0,
+                    gridLineWidth: 1,
+                    labels: {
+                        align: 'left',
+                        x: 3,
+                        y: -3
+                    }
+                },
+
+                yAxis: [{ // left y axis
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        align: 'left',
+                        x: 3,
+                        y: 16,
+                        format: '{value:.,0f}'
+                    },
+                    showFirstLabel: false
+                }, { // right y axis
+                    linkedTo: 0,
+                    gridLineWidth: 0,
+                    opposite: true,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        align: 'right',
+                        x: -3,
+                        y: 16,
+                        format: '{value:.,0f}'
+                    },
+                    showFirstLabel: false
+                }],
+
+                legend: {
+                    align: 'left',
+                    verticalAlign: 'top',
+                    y: 20,
+                    floating: true,
+                    borderWidth: 0
+                },
+
+                tooltip: {
+                    shared: true,
+                    crosshairs: true
+                },
+
+                plotOptions: {
+                    series: {
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function (e) {
+                                    hs.htmlExpand(null, {
+                                        pageOrigin: {
+                                            x: e.pageX || e.clientX,
+                                            y: e.pageY || e.clientY
+                                        },
+                                        headingText: this.series.name,
+                                        maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                                            this.y + ' visits',
+                                        width: 200
+                                    });
+                                }
+                            }
+                        },
+                        marker: {
+                            lineWidth: 1
+                        }
+                    }
+                },
+
+                series: [{
+                    name: 'All visits',
+                    lineWidth: 4,
+                    marker: {
+                        radius: 4
+                    }
+                }, {
+                    name: 'New visitors'
+                }]
+            });
+        });
+    });
+  </script>
+{% endblock %}

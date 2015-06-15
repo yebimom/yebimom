@@ -30,6 +30,10 @@ module.exports = (grunt) ->
                     'js/responsiveslides.min.js': 'jquery.responsive-slides/jquery.responsive-slides.min.js'
                     'css/responsiveslides.css': 'jquery.responsive-slides/jquery.responsive-slides.css'
 
+                    'js/highcharts.min.js': 'highcharts-release/highcharts.js'
+                    'js/highcharts/data.min.js': 'highcharts-release/modules/data.js'
+                    'js/highcharts/exporting.min.js': 'highcharts-release/modules/exporting.js'
+                    'js/highcharts/grid-light.min.js': 'highcharts-release/themes/grid-light.js'
 
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [

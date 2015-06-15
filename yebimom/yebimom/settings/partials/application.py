@@ -7,6 +7,8 @@ from django.template.base import add_to_builtins
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
+YEBIMOM_URL = "https://yebimom.com"
+
 INSTALLED_APPS = (
     # Django 3rd Party Modules ( must set before django.contrib.admin )
     'grappelli',
@@ -89,6 +91,7 @@ TEMPLATE_DIRS = (
 
 HASHIDS_USER_PROFILE_SALT = os.environ['HASHIDS_USER_PROFILE_SALT']
 HASHIDS_CENTER_SALT = os.environ['HASHIDS_CENTER_SALT']
+HASHIDS_CENTER_LANDING_SALT = os.environ['HASHIDS_CENTER_LANDING_SALT']
 
 SITE_ID = 1
 
