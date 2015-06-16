@@ -61,13 +61,23 @@ PIPELINE_JS = {
     },
     'managements': {
         'source_filenames': (
+            'managements/js/plugins/fullcalendar/moment.min.js',
+
             'managements/js/jquery-2.1.1.js',
             'managements/js/bootstrap.min.js',
+
             'managements/js/plugins/metisMenu/jquery.metisMenu.js',
             'managements/js/plugins/slimscroll/jquery.slimscroll.min.js',
 
             'managements/js/inspinia.js',
             'managements/js/plugins/pace/pace.min.js',
+
+            'managements/js/jquery-ui.custom.min.js',
+
+            'managements/js/plugins/iCheck/icheck.min.js',
+
+            'managements/js/plugins/fullcalendar/fullcalendar.min.js',
+            'js/fullcalendar/gcal.js',
 
             'js/highcharts.min.js',
             'js/highcharts/data.min.js',
@@ -98,6 +108,11 @@ PIPELINE_CSS = {
         'source_filenames': (
             'managements/css/bootstrap.min.css',
             'managements/font-awesome/css/font-awesome.css',
+
+            'managements/css/plugins/iCheck/custom.css',
+
+            'managements/css/plugins/fullcalendar/fullcalendar.css',
+
             'managements/css/animate.css',
             'managements/css/style.css',
         ),

@@ -11,5 +11,115 @@
 </li>
 {% endblock %}
 
-{% block title %}
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+
+        <div class="ibox-title">
+          <h5>{{ center.name }} - 유입 분석 <small>산후조리원 상세페이지에 대한 통계정보를 확인하실 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div id="analytics"></div>  
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row animated fadeInDown">
+    <div class="col-lg-3">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>일정 미등록 상담자 목록</h5>
+          <div class="ibox-tools">
+              <a class="collapse-link">
+                  <i class="fa fa-chevron-up"></i>
+              </a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-wrench"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+                  <li>
+                    <a href="#">준비중입니다</a>
+                  </li>
+              </ul>
+              <a class="close-link">
+                  <i class="fa fa-times"></i>
+              </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div id='external-events'>
+            <p>일정이 등록되지 않은 상담자 목록입니다. 드래그하여 캘린더에 추가하여 관리할 수 있습니다.</p>
+            <div class='external-event navy-bg'>@서정봉 방문상담 - 팀장님 감사합니다</div>
+            <div class='external-event navy-bg'>@최한나 전화상담 - 선임님 감사합니다</div>
+            <div class='external-event navy-bg'>@배권한 방문예약 - 멘토님 감사합니다</div>
+            <div class='external-event navy-bg'>@김진우 전화상담</div>
+            <div class='external-event navy-bg'>@안수찬 방문예약</div>
+            <div class='external-event navy-bg'>@임원균 방문예약</div>
+            <div class='external-event navy-bg'>@전소정 전화상담</div>
+            <p class="m-t">
+              <input type='checkbox' id='drop-remove' class="i-checks" checked /> <label for='drop-remove'>일정 등록 후 목록에서 제거</label>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-lg-9">
+      <div class="ibox float-e-margins">
+
+        <div class="ibox-title">
+          <h5>{{ center.name }} - 상담 및 예약 일정 관리</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div id="calendar"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% include "managements/_partials/_analytics.html" with title="산후조리원 상세페이지 유입자 분석" %}
+  {% include "managements/_partials/_calendar.html" %}
+
 {% endblock %}
