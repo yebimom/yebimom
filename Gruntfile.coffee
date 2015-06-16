@@ -35,6 +35,8 @@ module.exports = (grunt) ->
                     'js/highcharts/exporting.min.js': 'highcharts-release/modules/exporting.js'
                     'js/highcharts/grid-light.min.js': 'highcharts-release/themes/grid-light.js'
 
+                    'js/fullcalendar/gcal.js': 'fullcalendar/dist/gcal.js'
+
                     'css/font-awesome.min.css': 'components-font-awesome/css/font-awesome.min.css'
                     'fonts/': [
                       'NanumBarunGothic/',

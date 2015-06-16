@@ -77,6 +77,7 @@ PIPELINE_JS = {
             'managements/js/plugins/iCheck/icheck.min.js',
 
             'managements/js/plugins/fullcalendar/fullcalendar.min.js',
+            'js/fullcalendar/gcal.js',
 
             'js/highcharts.min.js',
             'js/highcharts/data.min.js',
