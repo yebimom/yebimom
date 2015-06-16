@@ -11,5 +11,38 @@
 </li>
 {% endblock %}
 
-{% block title %}
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+
+        <div class="ibox-title">
+          <h5>산후조리원 상세페이지 유입 분석 <small>산후조리원 상세페이지에 대한 통계정보를 확인하실 수 있습니다</small></h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#">준비중입니다</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div id="analytics"></div>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% include "managements/_partials/_analytics.html" with title="산후조리원 상세페이지 유입자 분석" %}
 {% endblock %}
