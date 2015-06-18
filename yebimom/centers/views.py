@@ -115,10 +115,19 @@ class CenterLandingView(FormView):
         return context
 
     def form_valid(self, form):
-        pass
+        center = Center.objects.get(slug=self.kwargs['slug'])
+        center_landing = CenterLanding.objects.get(hash_id=self.kwargs['hash_id'])
+
+        self.object = form.save(commit=False)
+        self.object.center = center
+        self.object.center_landing = center_landing
+
+        self.object.save()
+
+        return super(CenterLandingView, self).form_valid(self)
 
     def get_success_url(self):
-        pass
+        return reverse("landing", kwargs={'slug': self.kwargs['slug'], 'hash_id': self.kwargs['hash_id']})
 
 
 class ReviewBase(View):
