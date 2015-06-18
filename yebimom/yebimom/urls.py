@@ -9,7 +9,7 @@ from yebimom.sitemaps import sitemaps
 
 from yebimom.views import Home
 from centers.views import CategoryList, CategoryDetail
-from centers.views import CenterLanding
+from centers.views import CenterLandingView
 
 
 urlpatterns = patterns(
@@ -49,5 +49,5 @@ urlpatterns = patterns(
     url(r'^rosetta/', include('rosetta.urls')),
 
     # Landing
-    url(r'^(?P<slug>\w+)/landing/(?P<hash_id>\w+)/$', CenterLanding.as_view(), name='landing'),
+    url(r'^(?P<slug>\w+)/landing/(?P<hash_id>\w+)/$', CenterLandingView.as_view(), name='landing'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
