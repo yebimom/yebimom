@@ -29,4 +29,8 @@ class CenterContact(models.Model):
 @receiver(post_save, sender=CenterContact)
 def _create_center_contact(sender, instance, created, **kwargs):
     if created:
-        send_center_landing_sms.delay(instance.phonenumber, instance.name, instance.center.name, instance.center_landing.shorten_url)
+        send_center_landing_sms.delay(
+            instance.phonenumber,
+            instance.name,
+            instance.center.name,
+            instance.center_landing.shorten_url)
