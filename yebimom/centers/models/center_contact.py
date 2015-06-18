@@ -4,6 +4,8 @@ from centers.models.center_landing import CenterLanding
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from yebimom.tasks import send_center_landing_sms
+
 
 class CenterContactManager(models.Manager):
     pass
@@ -27,6 +29,4 @@ class CenterContact(models.Model):
 @receiver(post_save, sender=CenterContact)
 def _create_center_contact(sender, instance, created, **kwargs):
     if created:
-        # Send SMS to CenterAdmin
-        # Send SMS to User
-        pass
+        send_center_landing_sms.delay(instance.phonenumber, instance.name, instance.center.name, instance.center_landing.shorten_url)

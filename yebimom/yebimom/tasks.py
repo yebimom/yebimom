@@ -104,6 +104,26 @@ def _send_sms(phone, username, data):
 
 
 @shared_task
+def send_center_landing_sms(phone, name, center, url):
+    phone = phone.encode('utf-8')
+    name = name.encode('utf-8')
+    center = center.encode('utf-8')
+    url = url.encode('utf-8')
+
+    # Send SMS to User
+    data = {
+        'msg_body': "[%s] %s님, 산후조리원 이벤트에 신청되었습니다. %s" % (center, name, url),
+    }
+    _send_sms(phone, name, data)
+
+    # Send SMS to CenterAdmin
+    data = {
+        'msg_body': "[모두의 산후조리원] 새로운 이벤트 신청 ( %s / %s )" % (name, phone),
+    }
+    _send_sms("01022205736", "모두의 산후조리원", data)
+
+
+@shared_task
 def send_question_email(email, phone, title, content):
     _send_question_email_to_user(email, content)
     _send_question_email_to_admin(email, phone, title, content)
