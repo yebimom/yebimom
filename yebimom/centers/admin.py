@@ -8,6 +8,7 @@ from centers.models import CenterImage
 from centers.models.region import RegionSecondLayer, RegionThirdLayer
 from centers.models.category import Category
 from centers.models.center_landing import CenterLanding
+from centers.models.center_contact import CenterContact
 
 # Translation
 from modeltranslation.admin import TranslationAdmin
@@ -57,6 +58,11 @@ class CenterImageAdmin(admin.ModelAdmin):
 
 @admin.register(CenterLanding)
 class CenterLandingAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CenterContact)
+class CenterContactAdmin(admin.ModelAdmin):
     pass
 
 
