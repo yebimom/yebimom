@@ -14,7 +14,7 @@ def shorten_center_landing_url(center_landing_id, long_url):
     """
     instance = CenterLanding.objects.get(id=center_landing_id)
     short_url = shorten_url(long_url)
-    
+
     instance.shorten_url = short_url
     instance.save()
 
