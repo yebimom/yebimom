@@ -48,6 +48,8 @@ def _create_center_landing(sender, instance, created, **kwargs):
             utm_source="yebimom",
             utm_medium="yebimom",
             utm_campaign=instance_campaign_name)
-        instance.shorten_url = shorten_url(full_url_with_utm_params)
+
+        result = shorten_url.delay(full_url_with_utm_params)
+        instance.shorten_url = result.get()
 
         instance.save()

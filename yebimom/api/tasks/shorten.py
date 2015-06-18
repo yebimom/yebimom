@@ -8,18 +8,6 @@ import json
 
 
 @shared_task
-def shorten_center_landing_url(center_landing_id, long_url):
-    """
-    Shorten CenterLanding url, and update instance
-    """
-    instance = CenterLanding.objects.get(id=center_landing_id)
-    short_url = shorten_url(long_url)
-
-    instance.shorten_url = short_url
-    instance.save()
-
-
-@shared_task
 def shorten_url(long_url):
     """
     Generate shorten URL via goo.gl api

@@ -10,7 +10,7 @@ os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE', os.environ['DJANGO_SETTINGS_MODULE']
 )
 
-app = Celery('yebimom')
+app = Celery('yebimom', backend="redis://localhost")
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
