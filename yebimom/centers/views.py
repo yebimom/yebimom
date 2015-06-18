@@ -8,6 +8,7 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import FormView
 
 from django.http import HttpResponseRedirect
 
@@ -24,6 +25,8 @@ from reviews.models import UseReview
 
 from reviews.forms import VisitReviewForm
 from reviews.forms import UseReviewForm
+
+from centers.forms import CenterContactForm
 
 
 from django.utils.decorators import method_decorator
@@ -101,13 +104,30 @@ class CenterDetail(DetailView):
         return context
 
 
-class CenterLanding(DetailView):
-    model = CenterLanding
+class CenterLandingView(FormView):
     template_name = 'centers/landing/home.html'
-    context_object_name = 'center_landing'
+    form_class = CenterContactForm
 
-    def get_object(self):
-        return get_object_or_404(self.model, hash_id=self.kwargs['hash_id'])
+    def get_context_data(self, **kwargs):
+        context = super(CenterLandingView, self).get_context_data(**kwargs)
+        context['center_landing'] = CenterLanding.objects.get(hash_id=self.kwargs['hash_id'])
+
+        return context
+
+    def form_valid(self, form):
+        center = Center.objects.get(slug=self.kwargs['slug'])
+        center_landing = CenterLanding.objects.get(hash_id=self.kwargs['hash_id'])
+
+        self.object = form.save(commit=False)
+        self.object.center = center
+        self.object.center_landing = center_landing
+
+        self.object.save()
+
+        return super(CenterLandingView, self).form_valid(self)
+
+    def get_success_url(self):
+        return reverse("landing", kwargs={'slug': self.kwargs['slug'], 'hash_id': self.kwargs['hash_id']})
 
 
 class ReviewBase(View):

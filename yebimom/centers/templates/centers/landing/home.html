@@ -1,4 +1,15 @@
 {% extends "centers/landing/_base.html" %}
 
 {% block content %}
+
+<h1>랜딩페이지 - {{ center_landing.title }}</h1>
+
+<form action="" method="POST" accept-charset="utf-8">{% csrf_token %}
+  이름 : <input type="text" value="" name="name" id="id_name"/>
+  휴대폰 번호 : <input type="phone" value="" name="phonenumber" id="id_phonenumber"/>
+  남기는 말 : <textarea name="description" id="id_description"></textarea>
+
+  <p><input type="submit" value="Continue →"></p>
+</form>
+
 {% endblock %}
