@@ -41,6 +41,7 @@
                 <th>#</th>
                 <th>제목</th>
                 <th>랜딩페이지 주소</th>
+                <th>공유주소</th>
                 <th>생성일</th>
                 <th>관리하기</th>
                 <th>바로가기</th>
@@ -53,6 +54,7 @@
                   <td>{{ forloop.counter }}</td>
                   <td>{{ center_landing.title }}</td>
                   <td>{{ center_landing.get_full_absolute_url }}</td>
+                  <td>{{ center_landing.shorten_url }}</td>
                   <td>{{ center_landing.created_at }}</td>
                   <td><span class="label label-default"><a href="{% url "managements:landing-detail" center.hash_id center_landing.hash_id %}">관리하기</a></span></td>
                   <td><span class="label label-default"><a href="{% url "landing" center.slug center_landing.hash_id %}" target="_blank">바로가기</a></span></td>

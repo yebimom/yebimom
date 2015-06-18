@@ -142,5 +142,10 @@ AWS_S3_CUSTOM_DOMAIN = 'cdn.yebimom.com'
 AWS_S3_URL_PROTOCOL = 'https'
 
 
+# Google API
+
+GOOGLE_API_KEY = os.environ['GOOGLE_API_KEY']
+
+
 # Load template tags to All template
 add_to_builtins('django.templatetags.i18n')
